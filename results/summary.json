@@ -1,0 +1,83 @@
+{
+  "evl_prolog": {
+    "n": 40,
+    "valid_first_try": 39,
+    "valid_eventually": 40,
+    "loop_judge_converged": 40,
+    "mean_rounds_when_converged": 0.55,
+    "sonnet_first": {
+      "equivalent": 20,
+      "minor": 13,
+      "major": 7
+    },
+    "sonnet_final": {
+      "equivalent": 29,
+      "minor": 10,
+      "major": 1
+    }
+  },
+  "amr": {
+    "n": 40,
+    "valid_first_try": 40,
+    "valid_eventually": 40,
+    "loop_judge_converged": 24,
+    "mean_rounds_when_converged": 0.75,
+    "sonnet_first": {
+      "equivalent": 10,
+      "minor": 10,
+      "major": 20
+    },
+    "sonnet_final": {
+      "equivalent": 13,
+      "minor": 16,
+      "major": 11
+    }
+  },
+  "gf_rgl": {
+    "n": 40,
+    "valid_first_try": 11,
+    "valid_eventually": 31,
+    "loop_judge_converged": 22,
+    "mean_rounds_when_converged": 1.32,
+    "sonnet_first": {
+      "equivalent": 15,
+      "minor": 14,
+      "major": 11
+    },
+    "sonnet_final": {
+      "equivalent": 16,
+      "minor": 12,
+      "major": 12
+    }
+  },
+  "evl_prolog_llm_realizer": {
+    "n": 40,
+    "valid_first_try": 38,
+    "valid_eventually": 40,
+    "loop_judge_converged": 40,
+    "mean_rounds_when_converged": 0.2,
+    "sonnet_first": {
+      "equivalent": 27,
+      "minor": 8,
+      "major": 5
+    },
+    "sonnet_final": {
+      "equivalent": 32,
+      "minor": 8,
+      "major": 0
+    }
+  },
+  "_judge_mutation_detection": {
+    "drop_fact": "24/26",
+    "negation": "40/40",
+    "quantifier": "33/34",
+    "role_swap": "23/23",
+    "tense": "35/36",
+    "ALL": "155/159"
+  },
+  "_llm_stats": {
+    "calls": 128,
+    "cached": 14,
+    "cost_usd": 0.7899929999999998
+  }
+}

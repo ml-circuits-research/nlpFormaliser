@@ -106,8 +106,16 @@ lexical_arg(inst(_, C), C).
 lexical_arg(event(_, C), C).
 lexical_arg(prop(_, C), C).
 lexical_arg(kind(C, _), C).
+lexical_arg(role(_, _, A), C) :- \+ id_like(A), sub_lemma(A, C).
+lexical_arg(rel(_, R, _), R).
+
+% atoms nested inside role arguments, e.g. more(tall) -> tall, more_than(forty_hours_per_week) -> both parts
+sub_lemma(A, A) :- atom(A).
+sub_lemma(T, C) :- compound(T), T =.. [F|Args], ( C = F ; member(X, Args), sub_lemma(X, C) ).
 
 lemma_ok(very(C)) :- !, lemma_ok(C).
+lemma_ok(C) :- number(C), !.
+lemma_ok(C) :- string(C), !, fail.
 lemma_ok(C) :- atom(C), atomic_list_concat(Parts, '_', C), length(Parts, N), N =< 3,
                \+ sub_atom(C, _, _, _, ' ').
 

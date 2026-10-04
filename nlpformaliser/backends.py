@@ -178,7 +178,9 @@ Output ONLY one ```gf block containing a single expression of type Text or Utt o
 
     def check(self, code):
         out, err = self._run(self._clean(code))
-        bad = err or not out or re.search(r"(?im)^(constant not found|.*error|.*not found|.*type of|.*expected)", out)
+        lines = [l for l in out.splitlines() if l.strip()]
+        bad = (err or len(lines) != 1 or re.search(
+            r"(?i)(constant not found|error|not found|not parsed|type of|expected|unknown|cannot|couldn't)", out))
         if bad:
             return [((err + "\n" + out).strip())[:800]]
         return []

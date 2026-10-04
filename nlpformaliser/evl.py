@@ -252,7 +252,11 @@ class English:
                 if poss:
                     y = poss[0]
                     ye = self.kb.ents.get(y)
-                    det = PRON[ye.pron][2] if ye and ye.pron else self.np(y, "obj") + "'s"
+                    if ye and ye.pron:
+                        det = PRON[ye.pron][2]
+                    else:
+                        owner = self.np(y, "obj")
+                        det = owner + ("'" if owner.endswith("s") and self.is_plural(y) else "'s")
                 elif q is None:
                     det = ("" if plural else "a") if first else "the"
                 elif isinstance(q, int):

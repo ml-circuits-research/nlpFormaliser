@@ -1,0 +1,40 @@
+{"id": "s01", "cat": "simple", "text": "The cat is sleeping on the sofa."}
+{"id": "s02", "cat": "simple", "text": "Mary bought a red car yesterday."}
+{"id": "s03", "cat": "ditransitive", "text": "John gave his sister a book for her birthday."}
+{"id": "s04", "cat": "passive", "text": "The window was broken by a stone."}
+{"id": "s05", "cat": "negation", "text": "The children did not eat the vegetables."}
+{"id": "s06", "cat": "negation", "text": "Nobody answered the phone."}
+{"id": "s07", "cat": "quantifier", "text": "Every student passed the exam."}
+{"id": "s08", "cat": "quantifier", "text": "Some dogs bark at strangers."}
+{"id": "s09", "cat": "quantifier", "text": "Most birds can fly, but penguins cannot."}
+{"id": "s10", "cat": "number", "text": "Three engineers repaired two bridges in five days."}
+{"id": "s11", "cat": "modality", "text": "You must not park here after midnight."}
+{"id": "s12", "cat": "modality", "text": "The meeting might be cancelled because the manager is ill."}
+{"id": "s13", "cat": "tense-aspect", "text": "She has been working at the hospital for ten years."}
+{"id": "s14", "cat": "tense-aspect", "text": "By next week, they will have finished the report."}
+{"id": "s15", "cat": "relative", "text": "The woman who lives next door is a famous pianist."}
+{"id": "s16", "cat": "relative", "text": "Every farmer who owns a donkey feeds it."}
+{"id": "s17", "cat": "attitude", "text": "Tom believes that the earth is flat."}
+{"id": "s18", "cat": "attitude", "text": "The doctor told Anna that she should rest."}
+{"id": "s19", "cat": "conditional", "text": "If it rains tomorrow, the match will be postponed."}
+{"id": "s20", "cat": "conditional", "text": "Unless you hurry, you will miss the train."}
+{"id": "s21", "cat": "causal", "text": "The road was closed because a tree had fallen across it."}
+{"id": "s22", "cat": "temporal", "text": "After the guests left, Peter washed the dishes."}
+{"id": "s23", "cat": "comparative", "text": "Paris is larger than Lyon but smaller than London."}
+{"id": "s24", "cat": "comparative", "text": "This is the most expensive restaurant in the city."}
+{"id": "s25", "cat": "coordination", "text": "Alice and Bob met in Berlin and decided to start a company."}
+{"id": "s26", "cat": "purpose", "text": "He saved money to buy a house near the sea."}
+{"id": "s27", "cat": "possession", "text": "My neighbour's dog chased the postman's bicycle."}
+{"id": "s28", "cat": "existential", "text": "There are no apples left in the basket."}
+{"id": "s29", "cat": "generic", "text": "Whales are mammals, not fish."}
+{"id": "s30", "cat": "control", "text": "The teacher asked the students to close their books."}
+{"id": "s31", "cat": "multi-sentence", "text": "A man entered the room. He was carrying a large box, which he put on the table."}
+{"id": "s32", "cat": "multi-sentence", "text": "The company hired twenty new employees last year. Half of them work in sales."}
+{"id": "s33", "cat": "multi-sentence", "text": "Lisa wanted to visit Rome, but she could not get a visa, so she went to Lisbon instead."}
+{"id": "s34", "cat": "legal-like", "text": "A tenant may terminate the lease with thirty days' written notice."}
+{"id": "s35", "cat": "legal-like", "text": "Employees who work more than forty hours per week are entitled to overtime pay."}
+{"id": "s36", "cat": "scientific", "text": "Water boils at 100 degrees Celsius at sea level."}
+{"id": "s37", "cat": "scientific", "text": "Increasing the temperature speeds up most chemical reactions."}
+{"id": "s38", "cat": "narrative", "text": "When the alarm rang, the thief dropped the jewels and ran out of the shop."}
+{"id": "s39", "cat": "scope", "text": "Not every child likes chocolate."}
+{"id": "s40", "cat": "scope", "text": "Only Sarah knew where the key was hidden."}

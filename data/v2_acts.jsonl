@@ -1,0 +1,26 @@
+{"id": "k01", "cat": "yes-no", "act": "ask", "text": "Did the children eat the vegetables?"}
+{"id": "k02", "cat": "yes-no", "act": "ask", "text": "Can penguins fly?"}
+{"id": "k03", "cat": "yes-no", "act": "ask", "text": "Has the report been finished yet?"}
+{"id": "k04", "cat": "yes-no", "act": "ask", "text": "Is Paris larger than Lyon?"}
+{"id": "k05", "cat": "wh-subject", "act": "ask", "text": "Who broke the window?"}
+{"id": "k06", "cat": "wh-subject", "act": "ask", "text": "Which train goes to Berlin?"}
+{"id": "k07", "cat": "wh-object", "act": "ask", "text": "What did Mary buy yesterday?"}
+{"id": "k08", "cat": "wh-object", "act": "ask", "text": "Who did John give the book to?"}
+{"id": "k09", "cat": "wh-adverbial", "act": "ask", "text": "Where did Alice and Bob meet?"}
+{"id": "k10", "cat": "wh-adverbial", "act": "ask", "text": "When does the museum open?"}
+{"id": "k11", "cat": "wh-adverbial", "act": "ask", "text": "Why was the road closed?"}
+{"id": "k12", "cat": "wh-adverbial", "act": "ask", "text": "How many students passed the exam?"}
+{"id": "k13", "cat": "indirect-question", "act": "ask", "text": "Do you know where the station is?"}
+{"id": "k14", "cat": "indirect-question", "act": "ask", "text": "I wonder who won the election."}
+{"id": "k15", "cat": "indirect-request", "act": "request", "text": "Can you pass me the salt?"}
+{"id": "k16", "cat": "indirect-request", "act": "request", "text": "Would you mind closing the window?"}
+{"id": "k17", "cat": "indirect-request", "act": "request", "text": "It's really cold in here, could someone shut the door?"}
+{"id": "k18", "cat": "command", "act": "command", "text": "Do not touch the wires!"}
+{"id": "k19", "cat": "command", "act": "command", "text": "Submit the report by Friday."}
+{"id": "k20", "cat": "suggestion", "act": "suggest", "text": "Let's take a short break."}
+{"id": "k21", "cat": "offer", "act": "offer", "text": "Shall I carry your bag?"}
+{"id": "k22", "cat": "promise", "act": "promise", "text": "I promise that I will call you tomorrow."}
+{"id": "k23", "cat": "warning", "act": "warn", "text": "Be careful, the floor is wet."}
+{"id": "k24", "cat": "thanks", "act": "thank", "text": "Thank you for helping me with the move."}
+{"id": "k25", "cat": "reported", "act": "request", "text": "The teacher asked the students to close their books."}
+{"id": "k26", "cat": "reported", "act": "ask", "text": "Maria asked Peter whether he had seen her keys."}

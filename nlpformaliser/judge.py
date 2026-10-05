@@ -16,6 +16,10 @@ Check carefully, in both directions (A entails B and B entails A):
 entities and their properties, who-did-what-to-whom (roles), negation and its scope, quantifiers
 (every/some/most/no/only/numbers), tense and aspect, modality (must/may/can/might), attitudes (believe/say/want),
 conditionals, causal/temporal/contrast relations, comparatives, definiteness that changes meaning.
+If A is not a plain statement (a question, request, command, suggestion, offer, promise, warning, thanks...),
+B must perform the SAME speech act and ask/request exactly the same thing (for questions: the same information
+is requested — same wh-item or the same yes/no proposition). A question is never equivalent to a statement,
+and an indirect request ("Could you open the door?") is equivalent to a direct one ("Please open the door.").
 Answer with JSON only:
 {"equivalent": true|false, "differences": ["<concise description of each meaning difference, saying what B is missing, adds or distorts>"]}
 "equivalent" is true only if there is no meaning difference that a careful reader would care about."""
@@ -39,6 +43,9 @@ Labels:
 - "equivalent": same truth conditions; a reader learns exactly the same facts.
 - "minor": almost the same; a small nuance is lost or added (e.g. definiteness, an adverb, a weak implicature).
 - "major": a fact, participant, negation, quantifier, number, modality, tense or relation is missing, wrong or added.
+For questions/requests/commands etc. the reconstruction must perform the same speech act and ask/request the same
+thing (an indirect request like "Could you open the door?" = "Please open the door."); a different speech act or a
+different requested item is "major".
 Reply with JSON only: {"label": "equivalent"|"minor"|"major", "reason": "<one sentence>"}"""
 
 
@@ -51,3 +58,21 @@ def eval_judge(original: str, candidate: str, model: str = SONNET) -> dict:
         return d
     except Exception as e:  # noqa: BLE001
         return {"label": "major", "reason": f"judge error: {e}"}
+
+
+QA_SYSTEM = """You grade answers to reading-comprehension questions. You get the CONTEXT, the QUESTION, the GOLD answer
+and a SYSTEM answer. The system answer is correct if it gives the same answer as the gold one (same entity/value, same
+yes/no/unknown polarity). Wording, articles and extra detail do not matter. "probably yes" counts as correct when the
+gold says yes-with-a-hedge ("usually", "most likely"), and as wrong when the gold is a plain yes/no about a definite fact.
+"unknown" is correct only if the gold says the text does not settle the question.
+Reply with JSON only: {"correct": true|false, "reason": "<short>"}"""
+
+
+def qa_judge(context: str, question: str, gold: str, predicted: str, model: str = SONNET) -> dict:
+    prompt = f"CONTEXT:\n{context}\n\nQUESTION: {question}\nGOLD: {gold}\nSYSTEM: {predicted}"
+    try:
+        d = extract_json(complete(prompt, QA_SYSTEM, model=model))
+        d["correct"] = bool(d.get("correct"))
+        return d
+    except Exception as e:  # noqa: BLE001
+        return {"correct": False, "reason": f"judge error: {e}"}

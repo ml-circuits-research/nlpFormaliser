@@ -85,6 +85,28 @@ class EVLBackend(Backend):
         return self.evl.english(code)
 
 
+class EVLQuestionBackend(EVLBackend):
+    """EVL formalisation of a question/request *about a given formalised context*: the LLM sees the context
+    facts so that it reuses the same lemmas, roles and names (otherwise the query could not match)."""
+    name = "evl_question"
+
+    def __init__(self, ctx_code: str):
+        super().__init__()
+        self.ctx_code = ctx_code
+        self.ctx_note = ("FORMALISED CONTEXT the question is about (reuse its concept lemmas, verbs, roles and names "
+                         "exactly; do NOT copy its facts; use fresh ids for the question):\n```prolog\n"
+                         f"{ctx_code}\n```\n\n")
+
+    def formalize(self, text):
+        out = complete(f"{self.ctx_note}Formalise this question:\n\n{text}", self.system, model=self.model)
+        return extract_block(out)
+
+    def refine(self, text, code, errors, realization, differences):
+        prompt = self.ctx_note + REFINE_TMPL.format(text=text, code=code, lang=self.lang,
+                                                     feedback=_feedback(errors, realization, differences))
+        return extract_block(complete(prompt, self.system, model=self.model))
+
+
 class EVLLLMRealizerBackend(EVLBackend):
     """Control condition: same EVL formalisation, but an LLM (not the interpreter) turns it into English.
     Shows how much an LLM verbaliser silently 'repairs' an incomplete formalisation."""

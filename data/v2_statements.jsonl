@@ -1,0 +1,30 @@
+{"id": "g01", "cat": "generic", "text": "Whales are mammals, not fish."}
+{"id": "g02", "cat": "generic", "text": "Increasing the temperature speeds up most chemical reactions."}
+{"id": "g03", "cat": "generic", "text": "Dogs bark when strangers approach."}
+{"id": "g04", "cat": "generic", "text": "A triangle has three sides."}
+{"id": "g05", "cat": "generic", "text": "Most birds can fly, but penguins cannot."}
+{"id": "g06", "cat": "generic", "text": "Metals expand when they are heated."}
+{"id": "q01", "cat": "scope", "text": "Not every child likes chocolate."}
+{"id": "q02", "cat": "scope", "text": "Every child does not like spinach; in fact, no child likes it."}
+{"id": "q03", "cat": "scope", "text": "There is one book that every student in the class has read."}
+{"id": "q04", "cat": "scope", "text": "Every student read a different book."}
+{"id": "q05", "cat": "scope", "text": "No doctor recommended any of the treatments."}
+{"id": "p01", "cat": "group", "text": "Alice and Bob met in Berlin and decided to start a company together."}
+{"id": "p02", "cat": "group", "text": "The three brothers lifted the piano together."}
+{"id": "p03", "cat": "group", "text": "Each of the three brothers lifted the box alone."}
+{"id": "p04", "cat": "group", "text": "Anna, Paul and Maria share an apartment in Vienna."}
+{"id": "m01", "cat": "measure", "text": "Water boils at 100 degrees Celsius at sea level."}
+{"id": "m02", "cat": "measure", "text": "Employees who work more than forty hours per week are entitled to overtime pay."}
+{"id": "m03", "cat": "measure", "text": "The bridge is 340 meters long and at least 80 years old."}
+{"id": "m04", "cat": "measure", "text": "Fewer than ten people attended the meeting."}
+{"id": "m05", "cat": "measure", "text": "A tenant may terminate the lease with thirty days' written notice."}
+{"id": "f01", "cat": "focus", "text": "Only Sarah knew where the key was hidden."}
+{"id": "f02", "cat": "focus", "text": "Even the teacher failed the test."}
+{"id": "f03", "cat": "focus", "text": "Lisa wanted to visit Rome, but she went to Lisbon instead."}
+{"id": "f04", "cat": "focus", "text": "John also bought a ticket."}
+{"id": "a01", "cat": "frequency", "text": "Cats usually sleep during the day."}
+{"id": "a02", "cat": "frequency", "text": "The train is always late on Mondays."}
+{"id": "a03", "cat": "frequency", "text": "Tom never drinks coffee after six in the evening."}
+{"id": "c01", "cat": "counterfactual", "text": "If it had rained, the match would have been postponed."}
+{"id": "c02", "cat": "counterfactual", "text": "If I were rich, I would buy a house by the sea."}
+{"id": "c03", "cat": "counterfactual", "text": "Had the driver braked earlier, the accident would not have happened."}

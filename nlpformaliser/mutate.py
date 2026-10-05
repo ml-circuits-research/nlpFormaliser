@@ -57,6 +57,14 @@ def mutations(code: str) -> dict[str, str]:
     t = kb.evs[main].tense
     nt = {"past": "future", "present": "past", "future": "past"}[t]
     out["tense"] = "\n".join([f for f in facts if not re.match(rf"tense\(\s*{main}\s*,", f)] + [f"tense({main}, {nt})."])
+    # 4b. speech-act change (question <-> request <-> command)
+    for i, f in enumerate(facts):
+        m = re.match(r"act\(\s*(\w+)\s*,\s*(\w+)\s*,\s*(\w+)\s*\)", f)
+        if m:
+            a_, t_, c_ = m.groups()
+            nt_ = {"ask": "command", "request": "ask", "command": "ask"}.get(t_, "ask")
+            out["speech_act"] = "\n".join(facts[:i] + [f"act({a_}, {nt_}, {c_})."] + facts[i + 1:])
+            break
     # 5. drop one non-core role / property (information loss)
     rng = random.Random(len(code))
     cands = [i for i, f in enumerate(facts)

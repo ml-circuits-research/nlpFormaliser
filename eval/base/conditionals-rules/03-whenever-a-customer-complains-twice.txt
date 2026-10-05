@@ -1,0 +1,1 @@
+Whenever a customer complains twice in the same week, escalate the ticket to a supervisor.

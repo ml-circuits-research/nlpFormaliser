@@ -1,0 +1,1 @@
+If the temperature drops below zero, turn on the heating in the garage.

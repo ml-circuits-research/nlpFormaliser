@@ -1,0 +1,17 @@
+{
+  "name": "nlpformaliser",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Evaluate formalisation strategies: natural language → formalisation → executed CNL → LLM judge",
+  "type": "module",
+  "workspaces": ["strategies/*"],
+  "scripts": {
+    "formalize": "node tools/formalize.mjs",
+    "judge": "node tools/judge.mjs",
+    "eval": "node tools/run-eval.mjs",
+    "test": "npm test --workspaces --if-present"
+  },
+  "optionalDependencies": { "@anthropic-ai/sdk": "^0.131.0" },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

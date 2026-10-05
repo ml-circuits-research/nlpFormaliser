@@ -1,10 +1,10 @@
+node_modules/
 .llm_cache/
+.llm_cache_js/
 __pycache__/
 *.pyc
-results/logs/
-results/v2/logs/
-js/node_modules/
-results/bench/run.log
-.llm_cache_js/
-results/bench/run*.log
-results/bench/summary.stdout
+draftStrategies/**/results/logs/
+draftStrategies/**/results/v2/logs/
+draftStrategies/**/results/bench/run*.log
+draftStrategies/**/results/bench/summary.stdout
+draftStrategies/**/node_modules/

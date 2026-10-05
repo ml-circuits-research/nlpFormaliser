@@ -1,0 +1,1 @@
+If the build passes and nobody objects within an hour, merge the pull request.

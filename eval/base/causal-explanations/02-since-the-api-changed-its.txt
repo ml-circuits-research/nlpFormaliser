@@ -1,0 +1,1 @@
+Since the API changed its rate limits, our nightly sync takes three times longer.

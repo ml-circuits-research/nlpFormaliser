@@ -1,0 +1,10 @@
+{
+  "name": "@nlpformaliser/strategy-evl",
+  "version": "1.0.0",
+  "description": "Formalisation strategy: English → EVL Prolog-style event facts → deterministic English CNL",
+  "type": "module",
+  "main": "index.mjs",
+  "dependencies": { "compromise": "^14.17.0" },
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "license": "MIT"
+}

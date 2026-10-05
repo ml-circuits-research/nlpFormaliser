@@ -1,0 +1,1 @@
+The contract expires thirty days after the last payment is received.

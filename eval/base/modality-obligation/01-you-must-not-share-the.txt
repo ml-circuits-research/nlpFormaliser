@@ -1,0 +1,1 @@
+You must not share the access token with anyone outside the company.

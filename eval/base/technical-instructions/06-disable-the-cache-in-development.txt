@@ -1,0 +1,1 @@
+Disable the cache in development but keep it enabled in production.

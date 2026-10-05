@@ -123,7 +123,19 @@ node js/bin/nlpf.mjs bench --dataset data/roundtrip_all.jsonl --config js/exampl
 AMR e conectat ca **metodă externă** (`adapters/amr_adapter.py`, prin `commandMethod`), la fel cum se
 poate conecta orice alt formalizator.
 
-<!-- BENCH_RESULTS -->
+**Cazuri de test: 96 pentru EVL și pentru control; 24 pentru AMR.** Rularea AMR a fost oprită la 24 din 96
+la reorganizarea repo-ului: fiecare apel își reîncărca modelul, deci rularea era foarte lentă. Ultimul rând
+compară EVL pe exact aceleași 24 de texte.
+
+| metodă | cazuri | validă din prima | echivalent din prima | echivalent după buclă | echivalent sau minor după buclă | major după buclă |
+|---|---|---|---|---|---|---|
+| EVL (JS) | 96 | 97% | 56% | 71% | 96% | 4% |
+| EVL + verbalizator LLM (control) | 96 | 98% | 73% | 84% | 97% | 3% |
+| AMR (amrlib, prin `commandMethod`) | 24 | 100% | 38% | 50% | 83% | 17% |
+| EVL pe aceleași 24 de texte ca AMR | 24 | 96% | 50% | 75% | 100% | 0% |
+
+Rezultatele reproduc experimentele 1–2 cu librăria JS. Controlul arată din nou mai bine din cauza
+verbalizatorului LLM, nu a formalizării (vezi secțiunea 3).
 
 ## 6. Subiect separat: execuția întrebărilor (`results/v2/qa.jsonl`)
 

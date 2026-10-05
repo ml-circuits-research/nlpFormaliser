@@ -1,0 +1,1 @@
+Run the migration script on staging first and only touch production if all checks pass.

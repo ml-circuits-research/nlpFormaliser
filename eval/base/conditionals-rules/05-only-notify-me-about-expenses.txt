@@ -1,0 +1,1 @@
+Only notify me about expenses over 500 euros, unless they come from the travel budget.

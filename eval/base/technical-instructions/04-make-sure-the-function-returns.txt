@@ -1,0 +1,1 @@
+Make sure the function returns an empty list instead of null when there are no results.

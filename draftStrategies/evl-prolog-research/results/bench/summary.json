@@ -1,0 +1,15 @@
+{
+  "evl": {
+    "n": 96,
+    "deterministicRealizer": true,
+    "hasRefine": true,
+    "validFirst": 93,
+    "valid": 96,
+    "loopAccepted": 92,
+    "equivalentFirst": 54,
+    "equivalent": 68,
+    "minor": 24,
+    "major": 4,
+    "meanRounds": 0.5
+  }
+}

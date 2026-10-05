@@ -1,0 +1,1 @@
+What was our average response time on weekends compared to weekdays?

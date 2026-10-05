@@ -1,0 +1,1 @@
+List the customers who bought something in 2023 but nothing in 2024.

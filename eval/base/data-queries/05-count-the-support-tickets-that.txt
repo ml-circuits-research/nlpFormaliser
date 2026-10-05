@@ -1,0 +1,1 @@
+Count the support tickets that were reopened more than once.

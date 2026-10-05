@@ -1,0 +1,1 @@
+Archive the emails from last quarter, but keep the ones that are flagged as important in the inbox.

@@ -1,0 +1,40 @@
+{
+  "stopped": "2026-10-05T22:00:39.577Z",
+  "reason": "Stopped by hand: the provider kept returning truncated replies (content ends after {\"results\":, finish_reason stop, no usage), 429 and 502 for about 30 minutes; the item judgments did not finish.",
+  "requests": 10,
+  "truncatedReplies": 5,
+  "itemsJudged": 0,
+  "controls": {
+    "sensitivity": {
+      "correct": 26,
+      "n": 27,
+      "rate": 0.9629629629629629,
+      "wilson95": [
+        0.8171653406642414,
+        0.9934318540192149
+      ]
+    },
+    "specificity": {
+      "correct": 14,
+      "n": 18,
+      "rate": 0.7777777777777778,
+      "wilson95": [
+        0.5478541568378739,
+        0.9099907189139831
+      ]
+    },
+    "gate": {
+      "passed": false,
+      "reasons": [
+        "false accepts on negative controls: archive-lose_modality-bad",
+        "specificity 14/18 below 0.8"
+      ],
+      "thresholds": {
+        "minSensitivity": 0.8,
+        "minSpecificity": 0.8,
+        "maxErrors": 0
+      }
+    }
+  },
+  "evidence": "none for the strategy: no item verdict was recorded"
+}

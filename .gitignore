@@ -2,3 +2,4 @@
 __pycache__/
 *.pyc
 results/logs/
+results/v2/logs/

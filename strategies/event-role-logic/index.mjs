@@ -5,9 +5,11 @@
 //   toCNL(formalization) → string                         deterministic, no LLM
 //   check(formalization) → { ok, errors }                 optional
 import { check } from "./src/check.mjs";
-import { englishFromFacts, folFromFacts } from "./src/english.mjs";
+import { englishFromFacts } from "./src/english.mjs";
+import { folFromFacts } from "./src/fol.mjs";
 import { blockingErrors, formalizeWithLoop, SPEC } from "./src/loop.mjs";
 import { answerFacts } from "./src/qa.mjs";
+import { evlSymbols } from "./src/symbols.mjs";
 
 export default {
   name: "evl",
@@ -33,6 +35,7 @@ export default {
     const { errors } = blockingErrors(formalization);
     return { ok: errors.length === 0, errors };
   },
+  symbols: evlSymbols,
   toReasoning(formalization) {
     return {format:'evl-prolog-facts/1',code:formalization,fol:folFromFacts(check(formalization).facts),semantics:'Reified EVL facts; requires the EVL interpreter, not arbitrary direct Horn entailment.'};
   },

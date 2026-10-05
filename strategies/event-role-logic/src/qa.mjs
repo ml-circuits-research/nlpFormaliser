@@ -351,6 +351,19 @@ function render(ctxFacts, x, wh = null) {
   return adj(x);
 }
 
+// Effective operators of an event: polarity (neg, freq never, a "no" participant),
+// modality, tense, other frequency adverbs and "few" participants.
+function eventOperators(kb, e) {
+  const ev = kb.evs.get(e);
+  if (!ev) return {neg: false, modal: null, tense: "present", freq: null, few: false, generic: false};
+  const fillers = ev.roles.map(([, a]) => a).filter((a) => kb.isEnt(a)).map((a) => kb.ents.get(a));
+  const noFiller = fillers.some((x) => x.quant === "no");
+  const neg = Boolean(ev.neg) !== (ev.freq === "never") !== noFiller;
+  const explicitTense = kb.facts.some((f) => f instanceof Compound && f.f === "tense" && f.args[0] === e);
+  return {neg, modal: ev.modal ?? null, tense: ev.tense ?? "present", explicitTense, freq: ev.freq === "never" || ev.freq === "always" ? null : ev.freq ?? null,
+    few: fillers.some((x) => x.quant === "few"), generic: Boolean(ev.generic)};
+}
+
 /**
  * Execute a formalised question against formalised context facts.
  * @param {Array} ctxFacts  parsed+checked context facts
@@ -385,7 +398,19 @@ export function answerFacts(ctxFacts, qFacts) {
   }
   const sols = [...seen.values()].sort((a, b) => { for (let i = 0; i < 5; i++) { const c = cmp(a[i], b[i]); if (c) return c; } return 0; });
   out.n_solutions = sols.length;
-  const good = sols.filter((s) => OK_STATUS.includes(s[1]));
+  // Operators must match before a context event can answer: modality, tense,
+  // frequency and quantified participants. freq(never) and a "no" participant
+  // flip polarity; any other mismatch makes the event unusable (answer unknown).
+  const qOps = eventOperators(comp.q, main);
+  const good = sols.filter((s) => OK_STATUS.includes(s[1])).flatMap((s) => {
+    const c = eventOperators(new KB(R.facts), s[0]);
+    if (c.modal !== qOps.modal || c.freq !== qOps.freq || c.few) return [];
+    // Tense is compared only when the question states it (tense/2); an omitted
+    // tense in a question is treated as unconstrained, not as "present".
+    if (qOps.explicitTense && !c.generic && !qOps.generic && s[1] !== "generic" && c.tense !== qOps.tense) return [];
+    const neg = c.neg !== qOps.neg;
+    return [[s[0], s[1], neg ? "neg" : "pos", s[3], s[4]]];
+  });
   const direct = (s) => s[4].every((m) => m === "direct");
   let support = [];
   if (wh === null) {
@@ -414,8 +439,7 @@ export function answerFacts(ctxFacts, qFacts) {
       } else Object.assign(out, { answer: "unknown", mode: "none" });
     }
   } else {
-    const qneg = qev.neg ? "neg" : "pos";
-    const cands = good.filter((s) => s[2] === qneg && direct(s));
+    const cands = good.filter((s) => s[2] === "pos" && direct(s));
     const vals = [];
     for (const s of cands) if (s[3] !== undefined && !vals.some((v) => eqT(v, s[3]))) vals.push(s[3]);
     support = cands.map((s) => s[0]);

@@ -1,5 +1,6 @@
 // EVL signature + integrity checker (JS port of nlpformaliser/evl.pl).
 import { Compound, isCompound, isGround, parseProgram, termToString } from "./terms.mjs";
+import { MAX_SYMBOL_WORDS, symbolWords } from "../../../tools/lib/symbols.mjs";
 
 export const SIG = {
   inst: 2, name: 2, pron: 2, prop: 2, quant: 2, plural: 1, rel: 3, restrict: 2,
@@ -13,7 +14,8 @@ export const ROLES = ["agent", "experiencer", "patient", "theme", "stimulus", "r
 export const PRONOUNS = ["i", "you", "he", "she", "it", "we", "they"];
 export const TENSES = ["past", "present", "future"];
 export const ASPECTS = ["progressive", "perfect", "perfect_progressive"];
-export const MODALS = ["can", "could", "must", "may", "might", "should", "would"];
+// "need" (with neg: "need not") expresses absence of necessity.
+export const MODALS = ["can", "could", "must", "may", "might", "should", "would", "need"];
 export const CONNS = ["and", "but", "because", "if", "when", "before", "after", "while", "although", "so", "unless", "until",
   "since", "as_soon_as", "instead_of"];
 export const QUANTS = ["a", "the", "every", "all", "some", "no", "most", "many", "few", "several", "any", "this", "that",
@@ -29,11 +31,24 @@ const isInt = (x) => Number.isInteger(x);
 
 export const idLike = (a) => typeof a === "string" && /^[xegaq]\d+$/.test(a);
 
+// Concepts are lemmas of at most 3 words. Words are counted with the shared
+// symbol rule (underscores, hyphens, digits and camelCase), so camelCase cannot
+// hide a phrase.
 function lemmaOk(c) {
   if (isCompound(c, "very", 1)) return lemmaOk(c.args[0]);
   if (typeof c === "number") return true;
   if (typeof c !== "string") return false;
-  return c.split("_").length <= 3 && !c.includes(" ");
+  return symbolWords(c).length <= MAX_SYMBOL_WORDS && !c.includes(" ");
+}
+// name/2 holds a proper name: at most 3 name tokens, each starting with an
+// upper-case letter or digit (lower-case particles such as "van" or "de" are
+// allowed between them), and no sentence punctuation. Free text is rejected.
+export function properNameOk(n) {
+  if (typeof n !== "string") return false;
+  const tokens = n.trim().split(/\s+/).filter(Boolean);
+  if (!tokens.length || tokens.length > MAX_SYMBOL_WORDS) return false;
+  if (!tokens.every((t) => /^[\p{L}\p{N}][\p{L}\p{N}'’.&-]*$/u.test(t))) return false;
+  return /^[\p{Lu}\p{N}]/u.test(tokens[0]) && /^[\p{Lu}\p{N}]/u.test(tokens.at(-1));
 }
 function* subLemmas(t) {
   if (typeof t === "string") yield t;
@@ -72,7 +87,7 @@ export function check(code) {
     has("group", 2, (a) => a[0] === x) || has("measure", 3, (a) => a[0] === x) || has("wh", 2, (a) => a[0] === x);
   const ev = (e) => has("event", 2, (a) => a[0] === e);
   const actId = (a) => has("act", 3, (x) => x[0] === a);
-  const scopeArg = (t) => (isCompound(t, "neg", 1) ? ev(t.args[0]) : entity(t));
+  const scopeArg = (t) => (isCompound(t, "neg", 1) ? ev(t.args[0]) : entity(t) || t === "modal");
   const out = [];
   const add = (m) => { if (!out.includes(m)) out.push(m); };
 
@@ -106,7 +121,12 @@ export function check(code) {
     else if (!FOCUS.includes(p)) add(`bad focus particle ${q(p)}`);
   }
   for (const [e, f] of by("freq", 2)) if (!FREQS.includes(f)) add(`bad frequency ${q(f)} for ${e}`);
-  for (const [a, b] of by("scope", 2)) for (const t of [a, b]) if (!scopeArg(t)) add(`scope/2 argument ${q(t)} must be an entity id or neg(Event)`);
+  for (const [a, b] of by("scope", 2)) for (const t of [a, b]) if (!scopeArg(t)) add(`scope/2 argument ${q(t)} must be an entity id, neg(Event) or modal`);
+  // scope(neg(E), modal): negation outscopes the modal of E ("need not", "is not required to").
+  for (const [a, b] of by("scope", 2)) if (b === "modal" && !(isCompound(a, "neg", 1) && has("neg", 1, (x) => x[0] === a.args[0]) && has("modal", 2, (x) => x[0] === a.args[0])))
+    add(`scope(${q(a)}, modal) needs neg/1 and modal/2 on the same event`);
+  for (const [a] of by("scope", 2)) if (a === "modal") add("modal can only be the second argument of scope/2");
+  for (const [x, n] of by("name", 2)) if (!properNameOk(n)) add(`name of ${q(x)} must be a proper name of at most ${MAX_SYMBOL_WORDS} capitalised tokens, got ${q(n)}`);
   for (const [a, t, c] of by("act", 3)) {
     if (!ACT_TYPES.includes(t)) add(`bad act type ${q(t)} for ${a}`);
     else if (!ev(c) && c !== "none") add(`act ${a} content ${q(c)} is not a declared event`);

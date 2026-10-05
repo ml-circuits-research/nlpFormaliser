@@ -60,8 +60,21 @@ export class English {
   }
 
   // ---- scope
+  // A determiner can only carry the negation ("no X", "not every X") when the
+  // entity is realised with a determiner. Names, pronouns, groups, amounts and wh
+  // items keep the negation on the verb (otherwise it would be dropped).
+  determinerNP(x) {
+    const e = this.kb.ents.get(x);
+    return Boolean(e) && !e.name && !e.pron && !(e.members && e.members.length) && !e.measure && !e.wh &&
+      !this.kb.ents.get(x).rels.some(([r]) => r === "poss");
+  }
+
   applyScope() {
+    this.negOverModal = new Set();
+    for (const [a, b] of this.kb.scopes) if (isCompound(a, "neg", 1) && b === "modal") this.negOverModal.add(a.args[0]);
     for (const [a, b] of this.kb.scopes) {
+      if (isCompound(a, "neg", 1) && this.kb.isEnt(b) && !this.determinerNP(b)) continue;
+      if (isCompound(b, "neg", 1) && this.kb.isEnt(a) && !this.determinerNP(a)) continue;
       if (isCompound(a, "neg", 1) && this.kb.isEnt(b)) {
         const q = this.kb.ents.get(b).quant;
         if (UNIVERSAL_Q.includes(q)) { this.detOverride.set(b, q === "all" ? "not all" : "not every"); this.negSuppressed.add(a.args[0]); }
@@ -215,6 +228,8 @@ export class English {
   }
 
   verbGroup(ev, subj, form = "finite", question = false, cfRole = null, eid = null) {
+    // scope(neg(E), modal): absence of necessity is realised as "need not".
+    if (eid !== null && this.negOverModal?.has(eid) && ["must", "should"].includes(ev.modal)) ev = new Ev(ev.verb, {...ev, modal: "need", roles: ev.roles});
     const [chain, tense] = this.chain(ev, form, cfRole);
     const subjunctiveWere = ev.cf && cfRole === "antecedent" && ev.tense !== "past" && chain[0][0] === "be";
     let out = [], prev = null;
@@ -500,8 +515,9 @@ export class English {
 /** facts → English (deterministic) */
 export function englishFromFacts(facts) { return new English(new KB(facts)).render(); }
 
-/** facts → neo-Davidsonian first-order logic (scope-aware) */
-export function folFromFacts(facts) {
+/** Native facts → FOL reading, kept unchanged for parity with the Python reference.
+ * The active strategy uses the nested reading in fol.mjs. */
+export function nativeFolFromFacts(facts) {
   const kb = new KB(facts);
   const arg = (a) => (typeof a === "string" ? a : adj(a).replaceAll(" ", "_"));
   const evAtoms = (e, negate = true) => {

@@ -1,4 +1,4 @@
-import microir from '../microir/index.mjs';
+import microir from '../compact-scope-logic/index.mjs';
 const quote=JSON.stringify;
 const name='([A-Z][a-z]+)', noun='([a-z]+)';
 // Closed, fully anchored grammar. A match consumes every semantic token. No

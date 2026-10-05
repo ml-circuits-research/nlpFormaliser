@@ -1,3 +1,3 @@
-# Strategy documentation moved
+# Withdrawn: microir-hybrid
 
-The current architecture, recovered source documents and integration notes are in [microir-hybrid](../../strategies/microir-hybrid/docs/README.md). The earlier page described the initial integration and is superseded by the [fidelity restoration audit](../restoration-audit.md). Historical experiment outputs remain unchanged.
+The unregistered `strategies/microir-hybrid` folder was removed; its closed-grammar code and provenance note live in [strategies/_superseded](../../strategies/_superseded/closed-grammar.README.md). It was never an archive strategy; see the [fidelity restoration audit](../restoration-audit.md). Historical experiment outputs remain unchanged.

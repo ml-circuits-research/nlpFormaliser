@@ -1,7 +1,7 @@
-import {HeuristicStrategy} from './src/strategies/heuristic.mjs';
-import {DirectLLMStrategy} from './src/strategies/direct-llm.mjs';
-import {ProtoLLMStrategy} from './src/strategies/proto-llm.mjs';
-import {validateIR} from './src/ir.mjs';
+import {HeuristicStrategy} from '../lab-shared/src/strategies/heuristic.mjs';
+import {DirectLLMStrategy} from '../lab-shared/src/strategies/direct-llm.mjs';
+import {ProtoLLMStrategy} from '../lab-shared/src/strategies/proto-llm.mjs';
+import {validateIR} from '../lab-shared/src/ir.mjs';
 export const SUFFIX='\nUse facts, rules and queries only. Do not put clauses in symbols, glosses, entity names or predicate names.';
 
 // The original renderer allowed arbitrary cnl templates and glosses. Only logic

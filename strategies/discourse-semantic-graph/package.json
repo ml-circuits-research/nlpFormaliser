@@ -1,0 +1,9 @@
+{
+  "name": "@nlpformaliser/strategy-discourse-semantic-graph",
+  "version": "1.0.0",
+  "description": "Formalisation strategy: English discourse -> symbolic semantic graph -> deterministic CNL",
+  "type": "module",
+  "main": "index.mjs",
+  "dependencies": { "compromise": "^14.17.0" },
+  "license": "MIT"
+}

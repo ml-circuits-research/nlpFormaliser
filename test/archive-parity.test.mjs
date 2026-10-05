@@ -13,6 +13,7 @@ import {toCNL} from '../strategies/compact-scope-logic/src/cnl.mjs';
 import {formalizeConversation,renderTurn} from '../strategies/_archive/discourse/src/formalizer.mjs';
 import {behaviorMetrics} from '../strategies/_archive/lab/src/evaluator.mjs';
 import {taskLLM} from '../tools/lib/pworker.mjs';
+import {comparableTurn} from './fixtures/record-divergences.mjs';
 
 // strategies/_archive is provenance. Behaviour that is intentionally unchanged
 // must equal the archive; intentional divergences must equal the recorded
@@ -60,15 +61,13 @@ test('30-turn discourse retains state, uncertainties and audits; rendering diffe
   const strategy=await loadStrategy('discourse-semantic-graph');
   const r=await strategy.formalize(sample.text,{turns:sample.turns});
   const expected=formalizeConversation(sample.turns);
-  // The AST, state and ambiguity records equal the archive; only the judged CNL changed.
-  const strip=c=>({...c,turns:c.turns.map(({cnl,...t})=>t)});
-  assert.deepEqual(strip(r.formalization),strip(expected));
-  assert.deepEqual(DISCOURSE.changedTurns,{});
+  // Turns the parser does not change equal the archive (ids aside); changed turns equal the recorded fixture.
+  r.formalization.turns.forEach((t,i)=>{
+    const recorded=DISCOURSE.changedTurns[t.id];
+    assert.deepEqual(comparableTurn(t),recorded??comparableTurn(expected.turns[i]),t.id);
+  });
   const cnl=strategy.toCNL(r.formalization);
   assert.equal(cnl,DISCOURSE.cnl);
-  // Outside ambiguity listings and unresolved fragments, the lines are the archive lines.
-  const keep=text=>text.split('\n').filter(l=>!/^\s+(?:- |OPTIONS:|ASK:)/.test(l)&&!/UNRESOLVED|PREFERENCE /.test(l));
-  assert.deepEqual(keep(cnl),keep(expected.turns.map(renderTurn).join('\n\n')));
   assert.ok(!/ASK: /.test(cnl),'helper questions are not rendered into judged CNL');
   for(const line of cnl.split('\n').filter(l=>/NOTED AMBIGUITY/.test(l)))assert.ok((line.match(/"([^"]*)"/)?.[1]??'').split(/\s+/).length<=3,line);
   assert.ok(r.helperRequests.length);assert.equal(r.reviewBatches.flatMap(b=>b.items).length,30);

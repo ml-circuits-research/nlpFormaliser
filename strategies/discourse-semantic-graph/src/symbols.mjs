@@ -9,6 +9,8 @@ export function discourseSymbols(conversation) {
   function ref(r, path) {
     if (!r || typeof r !== 'object') return;
     if (r.kind === 'ref' || r.kind === 'literal') add(`${path}.text`, r.text);
+    if (r.kind === 'group') r.items.forEach((x, i) => ref(x, `${path}.items[${i}]`));
+    (r.rel ?? []).forEach((x, i) => ref(x.ref, `${path}.rel[${i}]`));
     if (r.kind === 'var') add(`${path}.type`, r.text, 'symbol');
   }
   function walk(n, path) {
@@ -22,6 +24,7 @@ export function discourseSymbols(conversation) {
       return;
     }
     if (n.type === 'attitude') { add(`${path}.predicate`, n.predicate, 'symbol'); ref(n.agent, `${path}.agent`); ref(n.recipient, `${path}.recipient`); walk(n.content, `${path}.content`); return; }
+    if (n.type === 'causal' && n.causeRef) ref(n.causeRef, `${path}.causeRef`);
     if (n.type === 'comparison') { ref(n.agent, `${path}.agent`); ref(n.left, `${path}.left`); ref(n.right, `${path}.right`); return; }
     if (n.type === 'directive') {
       add(`${path}.operator`, n.operator, 'symbol');
@@ -38,6 +41,6 @@ export function discourseSymbols(conversation) {
     if (n.entityType) add(`${path}.entityType`, n.entityType, 'symbol');
     for (const [k, v] of Object.entries(n)) if (v && typeof v === 'object' && k !== 'focus') walk(v, `${path}.${k}`);
   }
-  (conversation?.turns ?? []).forEach((t, i) => walk(t.content, `turns[${i}].content`));
+  (conversation?.turns ?? []).forEach((t, i) => { (t.discourse ?? []).forEach((d, k) => add(`turns[${i}].discourse[${k}]`, d, 'symbol')); walk(t.content, `turns[${i}].content`); });
   return out;
 }

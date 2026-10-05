@@ -8,6 +8,8 @@
  */
 
 
+import {tagTokens,isLexicalVerb,verbRoot,inflectedRoot,canBeVerb} from './lexicon.mjs';
+
 const VERSION = '1.0.0-strategy';
 
 const AUX = new Set(['am','is','are','was','were','be','been','being','do','does','did','have','has','had','can','could','may','might','must','shall','should','will','would']);
@@ -108,6 +110,14 @@ function lemma(word) {
   let w = lower(word).replace(/[^a-z0-9'-]/g,'');
   if (IRREGULAR.has(w)) return IRREGULAR.get(w);
   if (VERBS.has(w)) return w;
+  // Lexicon before suffix stripping: "died" is die (not "di"), "broke" is break.
+  const root=verbRoot(w);
+  if (root && root!==w) return root;
+  if (/(?:ed|ing)$/.test(w) && w.length>4) {
+    // Archive stripping first when it yields a known verb; otherwise the conjugation rules ("licensed" is license, not "licens").
+    const b=w.replace(/(?:ed|ing)$/,'');
+    if (!VERBS.has(b) && !VERBS.has(b+'e') && !VERBS.has(b.slice(0,-1))) { const r=inflectedRoot(w); if (r) return r; }
+  }
   if (w.endsWith('ies') && w.length > 4) return w.slice(0,-3)+'y';
   if (w.endsWith('ied') && w.length > 4) return w.slice(0,-3)+'y';
   if (w.endsWith('ing') && w.length > 5) {
@@ -140,8 +150,9 @@ function looksVerb(tok, i, toks) {
   if (VERBS.has(l) || IRREGULAR.has(lower(tok))) return true;
   const w=lower(tok);
   if (/\b(?:ed|ing)$/.test(w)) return true;
-  if (/s$/.test(w) && i>0 && !DETERMINERS.has(lower(toks[i-1]))) return VERBS.has(l);
-  return false;
+  if (/s$/.test(w) && i>0 && !DETERMINERS.has(lower(toks[i-1])) && VERBS.has(l)) return true;
+  // Verbs outside the archive's small list, recognized by the lexicon in sentence context.
+  return Array.isArray(toks) && isLexicalVerb(tagTokens(toks)[i],tok);
 }
 
 function parseNP(raw, state, ambiguities, role='entity') {
@@ -172,11 +183,91 @@ function parseNP(raw, state, ambiguities, role='entity') {
     return {kind:'quantified_np', quantifier:q, type, text:raw};
   }
 
+  const decomposed = decomposeNP(raw, state, ambiguities, role);
+  if (decomposed) return decomposed;
+
   // Proper-name-ish or descriptive concrete NP.
   const label = raw.replace(/^(?:the|this|that|these|those)\s+/i,'').trim();
   const type = inferType(label);
   const ent = internEntity(state, label, type, role);
   return {kind:'ref', id:ent.id, text:ent.label, type:ent.type};
+}
+
+// Long noun phrases are decomposed instead of becoming one long label: a relative clause becomes a restriction on the head entity
+// (hoisted next to the event that mentions it), a list becomes an AND/OR group, and a prepositional tail becomes a relation of the
+// head. Phrases of at most 3 words are left as they are.
+const NP_PREPS=new Set(['of','for','from','with','without','in','on','at','to','about','over','under','between','except','including','by','into','within','across','during','per']);
+function wordCount(s) { return cleanSpace(String(s)).split(/\s+/).filter(Boolean).length; }
+const decomposing=new Set();
+function decomposeNP(raw,state,ambiguities,role) {
+  const label=cleanSpace(raw.replace(/^(?:the|this|that|these|those)\s+/i,''));
+  if (wordCount(label)<=3 || /['"“”‘’]/.test(label.replace(/\b'\b|'s\b/g,'')) || decomposing.has(lower(label))) return null;
+  // A restriction re-parses the head with its clause; the same phrase must not be decomposed again inside it.
+  decomposing.add(lower(label));
+  try { return decomposeNPOnce(label,state,ambiguities,role); } finally { decomposing.delete(lower(label)); }
+}
+function decomposeNPOnce(label,state,ambiguities,role) {
+  // Relative clause: "examples that require specialist knowledge", "the customers who bought something".
+  let m=label.match(/^(.+?)\s+(?:who|that|which)\s+(.+)$/i);
+  if (m && !isClause(m[1]) && isClause(`x ${m[2]}`)) {
+    const head=parseNP(m[1],state,ambiguities,role);
+    if (head.kind==='ref') { head.restriction=parseSentence(`${head.text} ${m[2]}`,state,ambiguities); return head; }
+  }
+  const toks=tokenize(label).filter(t=>![',',';'].includes(t));
+  const tags=tagTokens(toks);
+  // Reduced relative: "the person helping me" (active), "the item delivered yesterday" (passive).
+  for (let k=1;k<toks.length;k++) {
+    if (toks.slice(0,k).some((t,i)=>looksVerb(t,i,toks))) break;
+    const t=tags[k];
+    if (!t||!t.has('Verb')||CLOSED_WORDS.has(lower(toks[k]))) continue;
+    if (!tags[k-1]?.has('Noun')) break;
+    const headRaw=toks.slice(0,k).join(' '), tail=toks.slice(k).join(' ');
+    if (t.has('Gerund')||/ing$/i.test(toks[k])) {
+      const head=parseNP(headRaw,state,ambiguities,role);
+      if (head.kind==='ref') { head.restriction=parseSentence(`${head.text} ${tail}`,state,ambiguities); return head; }
+    } else if (t.has('PastTense')||t.has('Participle')||/ed$/i.test(toks[k])) {
+      const head=parseNP(headRaw,state,ambiguities,role);
+      if (head.kind==='ref') { head.restriction=parseSentence(`${head.text} was ${tail}`,state,ambiguities); return head; }
+    }
+    break;
+  }
+  {
+    // List: "negation, modality and references", "either Paris or Lyon".
+    const body=label.replace(/^(?:either|both)\s+/i,'');
+    if (/\s(?:and|or)\s|,/.test(body) && !toks.some((w,i)=>i>0&&looksVerb(w,i,toks))) {
+      const parts=body.split(/\s*,\s*(?:and\s+|or\s+)?|\s+(?:and|or)\s+/i).map(cleanSpace).filter(Boolean);
+      if (parts.length>=2) return {kind:'group',op:/\s(?:or)\s|^either\b/i.test(label)?'or':'and',items:parts.map(x=>parseNP(x,state,ambiguities,role))};
+    }
+  }
+  // Prepositional tail: "summary of this article", "budget for the laptop".
+  for (let k=1;k<toks.length-1;k++) {
+    if (!NP_PREPS.has(lower(toks[k]))) continue;
+    if (toks.slice(0,k).some((t,i)=>looksVerb(t,i,toks)) || !tags[k-1]?.has('Noun')) break;
+    const head=parseNP(toks.slice(0,k).join(' '),state,ambiguities,role);
+    if (head.kind!=='ref') break;
+    head.rel=[...(head.rel??[]),{prep:lower(toks[k]),ref:parseNP(toks.slice(k+1).join(' '),state,ambiguities,'entity')}];
+    return head;
+  }
+  return null;
+}
+const CLOSED_WORDS=new Set(['and','or','but','not','no','the','a','an','of','to','for','in','on','at','by','with']);
+
+// Restrictions from decomposed noun phrases become propositions next to the node that mentions the entity.
+function takeRestrictions(ref,out) {
+  if (!ref||typeof ref!=='object') return;
+  if (ref.restriction) { out.push(ref.restriction); delete ref.restriction; }
+  for (const x of ref.rel??[]) takeRestrictions(x.ref,out);
+  if (ref.kind==='group') for (const x of ref.items) takeRestrictions(x,out);
+}
+function hoistRestrictions(node) {
+  const found=[];
+  (function visit(n) {
+    if (!n||typeof n!=='object') return;
+    if (Array.isArray(n)) { n.forEach(visit); return; }
+    if (n.kind) { takeRestrictions(n,found); return; }
+    for (const [k,v] of Object.entries(n)) { if (k==='roles') Object.values(v).forEach(r=>takeRestrictions(r,found)); else if (v&&typeof v==='object') visit(v); }
+  })(node);
+  return found.length?{type:'and',items:[node,...found]}:node;
 }
 
 function singularize(s) {
@@ -230,6 +321,12 @@ function newState() {
   return {turnIndex:0,entities:[],propositions:[],lastProposition:null,speaker:'user',addressee:'assistant'};
 }
 
+function startsWithImperative(text) {
+  const toks=tokenize(text).filter(t=>/\w/.test(t));
+  if (toks.length<2) return false;
+  const tags=tagTokens(toks)[0];
+  return isLexicalVerb(tags,toks[0]) && (tags.has('Imperative')||tags.has('Infinitive')) && !tags.has('PastTense') && !tags.has('Gerund') && !/s$/i.test(toks[0]);
+}
 function classifyAct(text) {
   const s=cleanSpace(text);
   const core=s.replace(/^(?:now|finally|then)[:,]?\s+/i,'');
@@ -247,6 +344,8 @@ function classifyAct(text) {
   if (/^otherwise\s+/i.test(s)) { const f=lemma(tokenize(s.replace(/^otherwise\s+/i,''))[0]??''); if(IMPERATIVE_VERBS.has(f)) return 'INSTRUCT'; }
   const first=lemma(tokenize(core)[0] ?? '');
   if (IMPERATIVE_VERBS.has(first)) return 'INSTRUCT';
+  // A sentence that starts with a bare verb form ("Book me a seat", "Cancel all meetings") is an instruction.
+  if (startsWithImperative(core)) return 'INSTRUCT';
   return 'ASSERT';
 }
 
@@ -316,6 +415,9 @@ function parseSentence(text,state,ambiguities,opts={}) {
   s=s.replace(/^(?:now|finally|then)[:,]?\s+/i,'').replace(/^otherwise\s+/i,'');
   if (!s) return {type:'raw',text:''};
 
+  const linked=parseClauseLinks(s,state,ambiguities,opts);
+  if (linked) return linked;
+
   // Conditional forms.
   let m=s.match(/^if\s+(.+?),\s*(.+?);\s*otherwise,?\s*(.+)$/i);
   if (m) return {type:'if_else',condition:parseSentence(m[1],state,ambiguities,opts),then:parseSentence(m[2],state,ambiguities,opts),else:parseSentence(m[3],state,ambiguities,opts)};
@@ -333,25 +435,39 @@ function parseSentence(text,state,ambiguities,opts={}) {
     const left=parseSentence(m[3],state,ambiguities,opts);
     return {type:'temporal',relation:m[1].toUpperCase(),left,right};
   }
+  const complement=parseComplementClause(s,state,ambiguities,opts);
+  if (complement) return complement;
   m=s.match(/^(.+?)\s+if\s+(.+)$/i);
   if (m && !/^if\b/i.test(s)) return {type:'if',condition:parseSentence(m[2],state,ambiguities,opts),consequence:parseSentence(m[1],state,ambiguities,opts)};
   // Suffix condition/causal forms. These are explicit subordinate-clause markers, not guessed attachments.
   m=s.match(/^(.+?)\s+when\s+(.+)$/i);
   if (m && !/^when\b/i.test(s)) return {type:'if',trigger:'WHEN',condition:parseSentence(m[2],state,ambiguities,opts),consequence:parseSentence(m[1],state,ambiguities,opts)};
+  m=s.match(/^(.+?)\s+because\s+of\s+(.+)$/i);
+  if (m) return {type:'causal',effect:parseSentence(m[1],state,ambiguities,opts),causeRef:parseRefOrNP(m[2],state,ambiguities,opts.boundVars||{},'cause')};
   m=s.match(/^(.+?)\s+because\s+(.+)$/i);
   if (m) return {type:'causal',effect:parseSentence(m[1],state,ambiguities,opts),cause:parseSentence(m[2],state,ambiguities,opts)};
   // Full finite clause after BEFORE/AFTER: parse both propositions rather than storing a string adjunct.
   m=s.match(/^(.+?)\s+(before|after)\s+([A-Z]?[A-Za-z_][A-Za-z0-9_.-]*\s+.+)$/i);
-  if (m && !/^(?:asking|returning|leaving|arriving|using|running|reviewing|approving)\b/i.test(m[3])) {
+  if (m && !/^(?:asking|returning|leaving|arriving|using|running|reviewing|approving)\b/i.test(m[3]) && isClause(m[3])) {
     const rel=m[2].toUpperCase();
     return {type:'temporal',relation:rel,left:parseSentence(m[1],state,ambiguities,opts),right:parseSentence(m[3],state,ambiguities,opts)};
   }
   m=s.match(/^(.+?)\s+care(?:s)?\s+more\s+about\s+(.+?)\s+than\s+(.+)$/i);
   if (m) return {type:'comparison',relation:'PREFER_OVER',agent:parseNP(m[1],state,ambiguities,'agent'),left:{kind:'literal',text:cleanSpace(m[2])},right:{kind:'literal',text:cleanSpace(m[3])}};
   m=s.match(/^only\s+(.+?)\s+(must not|must|should not|should|may not|may|cannot|can|will|[A-Za-z'-]+)\s+(.+)$/i);
-  if (m) { const focus=parseNP(m[1],state,ambiguities,'focus'); return {type:'only',focus,body:parseSentence(`${refText(focus)} ${m[2]} ${m[3]}`,state,ambiguities,opts)}; }
+  if (m) {
+    const focus=parseNP(m[1],state,ambiguities,'focus');
+    // A restriction of the focus ("only information licensed by the source") belongs to the ONLY set, not to the discourse facts.
+    const where=[]; takeRestrictions(focus,where);
+    const body=parseSentence(`${refText(focus)} ${m[2]} ${m[3]}`,state,ambiguities,opts);
+    // The focus phrase may only be complete in the body ("only information licensed by X may be used"): its restriction moves too.
+    (function visit(n){ if(!n||typeof n!=='object')return; if(Array.isArray(n)){n.forEach(visit);return;}
+      if(n.kind){ if(n.id===focus.id) takeRestrictions(n,where); return; }
+      for(const [k,v] of Object.entries(n)){ if(k==='roles')Object.values(v).forEach(r=>{if(r?.id===focus.id)takeRestrictions(r,where);}); else if(v&&typeof v==='object')visit(v);} })(body);
+    return {type:'only',focus,...(where.length?{where:where.length===1?where[0]:{type:'and',items:where}}:{}),body};
+  }
   const firstTok=lemma(tokenize(s)[0]??'');
-  if (IMPERATIVE_VERBS.has(firstTok)) return normalizeDirective(s,'INSTRUCT',state,ambiguities);
+  if (IMPERATIVE_VERBS.has(firstTok) || (!opts.boundVars && startsWithImperative(s))) return normalizeDirective(s,'INSTRUCT',state,ambiguities);
 
   // Not every ...
   m=s.match(/^not\s+every\s+(.+?)\s+(.+)$/i);
@@ -453,19 +569,93 @@ function parseSentence(text,state,ambiguities,opts={}) {
   return parseAtomic(s,state,ambiguities,opts);
 }
 
+// A clause has a finite verb (lexical or auxiliary) after at least one other word.
+function isClause(text) {
+  const toks=tokenize(text).filter(t=>![',',';'].includes(t));
+  return toks.length>=2 && (toks.some((t,i,a)=>i>0&&(AUX.has(lower(t))||looksVerb(t,i,a)))
+    || toks.some((t,i)=>i>0 && !DETERMINERS.has(lower(toks[i-1])) && !QUANTIFIERS.has(lower(toks[i-1])) && /s$/i.test(t) && canBeVerb(t)));
+}
+
+// Connectives between two full clauses. Each side must be a clause, so "black and white" or "but only" are left to finer rules.
+// but/although/while keep their contrast as the connective of an AND; so / which is why / since are causal; then is temporal order;
+// a trailing unless/provided/as long as is a condition on the main clause.
+const LINKS=[
+  {re:/^(.+?)\s*;\s*(.+)$/, make:(l,r)=>({type:'and',items:[l,r]})},
+  {re:/^(.+?),?\s+which is why\s+(.+)$/i, make:(l,r)=>({type:'causal',cause:l,effect:r})},
+  {re:/^(.+?),\s*(?:and\s+)?so\s+(?!that\b)(.+)$/i, make:(l,r)=>({type:'causal',cause:l,effect:r})},
+  {re:/^(.+?),?\s+but\s+(.+)$/i, make:(l,r)=>({type:'and',connective:'BUT',items:[l,r]})},
+  {re:/^(.+?),?\s+although\s+(.+)$/i, make:(l,r)=>({type:'and',connective:'ALTHOUGH',items:[r,l]})},
+  {re:/^although\s+(.+?),\s*(.+)$/i, make:(l,r)=>({type:'and',connective:'ALTHOUGH',items:[l,r]})},
+  {re:/^(.+?),\s*while\s+(.+)$/i, make:(l,r)=>({type:'and',connective:'WHILE',items:[l,r]})},
+  {re:/^(.+?),\s*(?:and\s+)?then\s+(.+)$/i, make:(l,r)=>({type:'temporal',relation:'BEFORE',left:l,right:r})},
+  {re:/^since\s+(.+?),\s*(.+)$/i, make:(l,r)=>({type:'causal',cause:l,effect:r})},
+  {re:/^(?:as soon as|once)\s+(.+?),\s*(.+)$/i, make:(l,r)=>({type:'if',trigger:'WHEN',condition:l,consequence:r})},
+  {re:/^whenever\s+(.+?),\s*(.+)$/i, make:(l,r)=>({type:'if',trigger:'WHENEVER',condition:l,consequence:r})},
+  {re:/^(.+?),?\s+unless\s+(.+)$/i, make:(l,r)=>({type:'if',condition:{type:'not',body:r},consequence:l})},
+  {re:/^(.+?),?\s+(?:provided(?: that)?|as long as)\s+(.+)$/i, make:(l,r)=>({type:'if',condition:r,consequence:l})},
+];
+function parseClauseLinks(s,state,ambiguities,opts) {
+  for (const {re,make} of LINKS) {
+    const m=s.match(re);
+    if (!m || !isClause(m[1]) || !isClause(m[2])) continue;
+    // Left to right, so referents of the first clause are available to pronouns in the second.
+    return make(parseSentence(m[1],state,ambiguities,opts),parseSentence(m[2],state,ambiguities,opts));
+  }
+  return null;
+}
+
+// Reported speech, attitudes and embedded questions: "X claims (that) S", "X promised Y that S", "X is worried that S",
+// "X checks whether S". The embedded clause is parsed as a proposition, never stored as a string. "X does not think S" is NOT over
+// the attitude.
+const ATTITUDE_VERBS='say|says|said|claim|claims|claimed|believe|believes|believed|think|thinks|thought|know|knows|knew|report|reports|reported|hear|hears|heard|suspect|suspects|suspected|hope|hopes|hoped|fear|fears|feared|doubt|doubts|doubted|assume|assumes|assumed|agree|agrees|agreed|notice|notices|noticed|realize|realizes|realized|feel|feels|felt|insist|insists|insisted|deny|denies|denied|admit|admits|admitted|guess|guesses|guessed|expect|expects|expected|mention|mentions|mentioned|confirm|confirms|confirmed|explain|explains|explained|show|shows|showed|suggest|suggests|suggested|mean|means|meant|bet|suppose|supposes|supposed|wonder|wonders|wondered|ensure|ensures|ensured|decide|decides|decided';
+const TELL_VERBS='tell|tells|told|promise|promises|promised|warn|warns|warned|remind|reminds|reminded|inform|informs|informed|assure|assures|assured|convince|convinced|ask|asks|asked';
+const QUESTION_VERBS='ask|asks|asked|check|checks|checked|know|knows|knew|wonder|wonders|wondered|see|tell|decide|decides|decided|determine|determines|determined|verify|verifies|verified|confirm|confirms|confirmed|find out|investigate|test|clarify';
+const THATLESS_VERBS='think|thinks|thought|believe|believes|believed|guess|suppose|hope|hopes|hoped|feel|feels|felt|know|knows|knew|say|says|said|heard|bet|doubt|expect|expects|expected|wish|wishes|wished|mean|meant';
+// Agent and recipient are interned before the content is parsed, so pronouns in the content can refer to them.
+function attitudeNode(subjectRaw,neg,verb,contentOf,state,ambiguities,recipientRaw) {
+  const agent=parseNP(subjectRaw,state,ambiguities,'agent');
+  const recipient=recipientRaw?parseNP(recipientRaw,state,ambiguities,'recipient'):null;
+  const node={type:'attitude',predicate:lemma(verb),agent,...(recipient?{recipient}:{}),content:contentOf()};
+  return neg?{type:'not',body:node}:node;
+}
+function parseComplementClause(s,state,ambiguities,opts) {
+  const NEG='(\\s+(?:do|does|did)\\s+not)?';
+  let m=s.match(new RegExp(`^(.+?)${NEG}\\s+(${QUESTION_VERBS})\\s+(whether|if)\\s+(.+)$`,'i'));
+  if (m && isClause(m[5])) return attitudeNode(m[1],m[2],m[3].split(' ')[0],()=>({type:'query',queryKind:'WHETHER',body:parseSentence(m[5],state,ambiguities,opts)}),state,ambiguities);
+  m=s.match(new RegExp(`^(.+?)${NEG}\\s+(${TELL_VERBS})\\s+(.+?)\\s+that\\s+(.+)$`,'i'));
+  if (m && isClause(m[5]) && !isClause(m[4])) return attitudeNode(m[1],m[2],m[3],()=>parseSentence(m[5],state,ambiguities,opts),state,ambiguities,m[4]);
+  m=s.match(new RegExp(`^(.+?)${NEG}\\s+(${ATTITUDE_VERBS})\\s+that\\s+(.+)$`,'i'));
+  if (m && isClause(m[4])) return attitudeNode(m[1],m[2],m[3],()=>parseSentence(m[4],state,ambiguities,opts),state,ambiguities);
+  // Adjective + that-clause: "I am worried that S", "We are not sure that S".
+  m=s.match(/^(.+?)\s+(?:am|is|are|was|were)\s+(not\s+)?(?:(?:really|so|very|quite|still|a bit|rather|extremely|truly|totally)\s+)*([A-Za-z]+)\s+that\s+(.+)$/i);
+  if (m && isClause(m[4]) && !isClause(m[1])) return attitudeNode(m[1],m[2],m[3].toLowerCase(),()=>parseSentence(m[4],state,ambiguities,opts),state,ambiguities);
+  // That-less complement: the remainder must itself start with a subject and contain a verb ("Tom thinks the server crashed").
+  m=s.match(new RegExp(`^(.+?)${NEG}\\s+(${THATLESS_VERBS})\\s+(.+)$`,'i'));
+  if (m && !isClause(m[1])) {
+    const rest=tokenize(m[4]).filter(t=>![',',';'].includes(t));
+    if (rest.length>=2 && !looksVerb(rest[0],0,rest) && !/^(?:about|of|so|that|it|to|for|in|on|at|with)$/i.test(rest[0]) && isClause(m[4]))
+      return attitudeNode(m[1],m[2],m[3],()=>parseSentence(m[4],state,ambiguities,opts),state,ambiguities);
+  }
+  return null;
+}
+
 function findClauseCoordination(s) {
   const re=/\s+(and|or)\s+/ig; let m;
   while((m=re.exec(s))) {
     const left=s.slice(0,m.index), right=s.slice(m.index+m[0].length);
     const lt=tokenize(left), rt=tokenize(right);
     const lv=lt.some((t,i,a)=>looksVerb(t,i,a)); const rv=rt.some((t,i,a)=>looksVerb(t,i,a));
-    if (lv&&rv) return {word:lower(m[1]),left,right};
+    // A single word ("..., and references") is a list item, not a clause.
+    if (lv&&rv&&rt.filter(t=>/\w/.test(t)).length>1) return {word:lower(m[1]),left,right};
   }
   return null;
 }
 
-function parseAtomic(s,state,ambiguities,opts={}) {
+function parseAtomic(s,state,ambiguities,opts={}) { return hoistRestrictions(parseAtomicCore(s,state,ambiguities,opts)); }
+function parseAtomicCore(s,state,ambiguities,opts={}) {
   const boundVars=opts.boundVars||{};
+  // Quoted material is a mention, not structure; without a representation for mentions it stays unresolved.
+  if (/(?:^|\s)['"“‘][^'"“”‘’]*\s[^'"“”‘’]*['"”’](?=\s|$|[.,;:?!])/.test(s)) return {type:'raw',text:s};
   let toks=tokenize(s).filter(t=>![',',';'].includes(t));
   if (!toks.length) return {type:'raw',text:s};
 
@@ -497,6 +687,12 @@ function parseAtomic(s,state,ambiguities,opts={}) {
     // Copular fallback if 'is/are' was skipped.
     const ci=toks.findIndex(t=>['is','are','was','were'].includes(lower(t)));
     if (ci>0) vi=ci;
+  }
+  if (vi<1) {
+    // Rebuilt clauses ("deployment start", "x1 handles customer data") lose the context that tags their verb: take the first word
+    // with a verb reading that does not follow a determiner.
+    const fi=toks.findIndex((t,i)=>i>0 && !DETERMINERS.has(lower(toks[i-1])) && !QUANTIFIERS.has(lower(toks[i-1])) && canBeVerb(t));
+    if (fi>0) vi=fi;
   }
   if (vi<1) return {type:'raw',text:s};
 
@@ -542,6 +738,9 @@ function parseAtomic(s,state,ambiguities,opts={}) {
   if (adv) { rest=adv[1]; modifiers.push({kind:'manner',value:adv[2]}); }
 
   const roles={agent:actualSubject};
+  // Pronoun recipient before a determined object: "book me a seat", "give us the totals".
+  const dm=rest.match(/^(me|us|you|him|them)\s+((?:a|an|the|some|any|all|my|your|our|his|their|this|these|those|one|two|three|\d+)\b.+)$/i);
+  if (dm) { roles.recipient=parseNP(dm[1],state,ambiguities,'recipient'); rest=dm[2]; }
   if (rest) {
     const objQ=parseQuantifiedObject(rest,state,ambiguities,boundVars);
     if (objQ) {
@@ -741,9 +940,19 @@ function postParseUncertainty(source,content) {
   return a;
 }
 
-function parseTurn(text,state,{speaker='user',addressee='assistant',turnId=null}={}) {
+// Sentence-initial discourse markers ("Therefore", "Well, basically", "Yeah, sorry") relate the turn to the conversation; they are kept as
+// turn markers instead of being parsed as a subject. now/finally/then/otherwise keep the archive's handling inside parseSentence.
+const DISCOURSE_MARKERS=/^(therefore|thus|hence|so|also|basically|well|actually|anyway|however|still|yeah|yes|ok|okay|sorry|right|oh|besides|moreover|furthermore|meanwhile|instead|honestly|frankly|unfortunately|fortunately|apparently)\b[,:]?\s+/i;
+function discourseMarkers(text) {
+  const markers=[]; let rest=cleanSpace(text), m;
+  while ((m=rest.match(DISCOURSE_MARKERS)) && isClause(rest.slice(m[0].length))) { markers.push(lower(m[1])); rest=rest.slice(m[0].length); }
+  return {markers,rest};
+}
+
+function parseTurn(source,state,{speaker='user',addressee='assistant',turnId=null}={}) {
   state.turnIndex += 1; state.speaker=speaker; state.addressee=addressee;
   const id=turnId||`t${state.turnIndex}`;
+  const {markers,rest:text}=discourseMarkers(source);
   const act=classifyAct(text);
   let ambiguities=detectSymbolicRisks(text,state);
   let content;
@@ -761,6 +970,7 @@ function parseTurn(text,state,{speaker='user',addressee='assistant',turnId=null}
     content={type:'correction',body:body?(isMean?{type:'resolution_hint',value:body}:parseSentence(body,state,ambiguities)):null};
   } else if (act==='CONFIRM') content={type:'confirm',target:state.lastProposition?.id||null};
   else content=parseSentence(text,state,ambiguities);
+  content=hoistRestrictions(content);
 
   // Drop a preliminary pronoun warning when parsing itself found one unique referent.
   ambiguities.push(...postParseUncertainty(text,content));
@@ -770,7 +980,8 @@ function parseTurn(text,state,{speaker='user',addressee='assistant',turnId=null}
   const rawPenalty=countNodes(content,n=>n.type==='raw')*0.12;
   const confidence=Math.max(0.05,Math.min(0.98,0.94-riskPenalty-rawPenalty));
   const proposition={id:uid('p'),turn:id,content}; state.propositions.push(proposition); state.lastProposition=proposition;
-  return {id,source:text,speaker,addressee,act,content,ambiguities,confidence:Number(confidence.toFixed(2)),cnl:renderTurn({id,speaker,addressee,act,content,ambiguities,confidence})};
+  const discourse=markers.length?{discourse:markers}:{};
+  return {id,source,speaker,addressee,act,...discourse,content,ambiguities,confidence:Number(confidence.toFixed(2)),cnl:renderTurn({id,speaker,addressee,act,...discourse,content,ambiguities,confidence})};
 }
 
 
@@ -812,6 +1023,7 @@ function renderTurn(turn) {
   const lines=[`TURN ${turn.id}:`,`  ACT ${turn.act}`];
   if (turn.speaker) lines.push(`  SPEAKER ${quoteAtom(turn.speaker)}`);
   if (turn.addressee && ['REQUEST','INSTRUCT','PROPOSE'].includes(turn.act)) lines.push(`  ADDRESSEE ${quoteAtom(turn.addressee)}`);
+  if (turn.discourse?.length) lines.push(`  DISCOURSE ${turn.discourse.join(' ')}`);
   lines.push('  CONTENT:');
   lines.push(...renderNode(turn.content,2,{fragments:0}));
   // Ambiguities are listed as noted references. Their messages and helper
@@ -833,7 +1045,8 @@ function quoteAtom(x) { x=String(x??''); return /^[A-Za-z_][A-Za-z0-9_.-]*$/.tes
 function renderRef(r) {
   if (!r) return 'UNKNOWN';
   if (r.kind==='var') return `${r.id}:${quoteAtom(r.text)}`;
-  if (r.kind==='ref') return `${r.id}:${JSON.stringify(r.text)}`;
+  if (r.kind==='group') return `${r.op.toUpperCase()}(${r.items.map(renderRef).join(', ')})`;
+  if (r.kind==='ref') return `${r.id}:${JSON.stringify(r.text)}${(r.rel??[]).map(x=>` ${x.prep.toUpperCase()} ${renderRef(x.ref)}`).join('')}`;
   if (r.kind==='literal') return JSON.stringify(r.text);
   if (r.kind==='unresolved_ref') return `UNRESOLVED_REF(${JSON.stringify(r.text)})`;
   return JSON.stringify(r.text||'UNKNOWN');
@@ -845,14 +1058,14 @@ function renderNode(node,indent=0,ctx={fragments:0}) {
     case 'if_else': return [`${p}IF:`,...renderNode(node.condition,indent+1,ctx),`${p}THEN:`,...renderNode(node.then,indent+1,ctx),`${p}ELSE:`,...renderNode(node.else,indent+1,ctx)];
     case 'even_if': return [`${p}EVEN_IF:`,...renderNode(node.condition,indent+1,ctx),`${p}STILL:`,...renderNode(node.body,indent+1,ctx)];
     case 'not': return [`${p}NOT:`,...renderNode(node.body,indent+1,ctx)];
-    case 'only': return [`${p}ONLY ${renderRef(node.focus)}:`,...renderNode(node.body,indent+1,ctx)];
+    case 'only': return [`${p}ONLY ${renderRef(node.focus)}:`,...(node.where?[`${p}  WHERE:`,...renderNode(node.where,indent+2,ctx)]:[]),...renderNode(node.body,indent+1,ctx)];
     case 'modal': return [`${p}${node.modality}:`,...renderNode(node.body,indent+1,ctx)];
     case 'quantifier': return [`${p}${node.quantifier} ${node.entityType} ${node.var}:`,...renderNode(node.body,indent+1,ctx)];
-    case 'and': return [`${p}AND:`,...node.items.flatMap(x=>renderNode(x,indent+1,ctx))];
+    case 'and': return [`${p}${node.connective?`AND ${node.connective}`:'AND'}:`,...node.items.flatMap(x=>renderNode(x,indent+1,ctx))];
     case 'or': return [`${p}OR:`,...node.items.flatMap(x=>renderNode(x,indent+1,ctx))];
     case 'attitude': { const a=[`${p}ATTITUDE ${node.predicate}:`,`${p}  AGENT ${renderRef(node.agent)}`]; if(node.recipient)a.push(`${p}  RECIPIENT ${renderRef(node.recipient)}`); a.push(`${p}  CONTENT:`,...renderNode(node.content,indent+2,ctx)); return a; }
     case 'temporal': return [`${p}${node.relation}:`,`${p}  LEFT:`,...renderNode(node.left,indent+2,ctx),`${p}  RIGHT:`,...renderNode(node.right,indent+2,ctx)];
-    case 'causal': return [`${p}BECAUSE:`,...renderNode(node.cause,indent+1,ctx),`${p}THEREFORE:`,...renderNode(node.effect,indent+1,ctx)];
+    case 'causal': return [...(node.causeRef?[`${p}BECAUSE OF ${renderRef(node.causeRef)}`]:[`${p}BECAUSE:`,...renderNode(node.cause,indent+1,ctx)]),`${p}THEREFORE:`,...renderNode(node.effect,indent+1,ctx)];
     case 'comparison': return [`${p}${node.relation}:`,`${p}  AGENT ${renderRef(node.agent)}`,`${p}  LEFT ${renderRef(node.left)}`,`${p}  RIGHT ${renderRef(node.right)}`];
     case 'event': {
       const a=[`${p}EVENT ${node.id} ${quoteAtom(node.predicate)}:`];

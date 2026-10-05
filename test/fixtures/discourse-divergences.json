@@ -1,7 +1,836 @@
 {
  "note": "Recorded active outputs for the 30-turn archive dialogue where the discourse parser intentionally diverges (see docs/restoration-audit.md).",
- "changedTurns": {},
- "stateEqual": true,
- "cnl": "TURN t01:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    THERE_EXISTS formalizer x2:\n      AND:\n        EVENT ev5 want:\n          AGENT e1:\"We\"\n          THEME x2:formalizer\n        EVENT ev4 convert:\n          AGENT x2:formalizer\n          THEME e3:\"English requests\"\n          DESTINATION \"a canonical controlled language\"\n  CONFIDENCE 0.94\n\nTURN t02:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    FOR_EVERY candidate formalization x7:\n      OBLIGATORY:\n        EVENT ev9 preserve:\n          AGENT x7:\"candidate formalization\"\n          THEME e8:\"negation modality quantifiers temporal order and references\"\n  CONFIDENCE 0.94\n\nTURN t03:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev12 be:\n        THEME e11:\"symbolic parser\"\n        PROPERTY \"uncertain\"\n    THEN:\n      DIRECTIVE DO TO assistant\n        BODY:\n          EVENT ev15 mark:\n            AGENT e13:\"assistant\"\n            THEME e14:\"ambiguity instead of guessing\"\n  CONFIDENCE 0.94\n\nTURN t04:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE FIND TO assistant\n      LIMIT three\n      BODY:\n        FIND difficult examples involving pronouns and modal scope x:\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a17 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.85\n\nTURN t05:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    NOT:\n      DIRECTIVE INCLUDE TO assistant\n        BODY:\n          EVENT ev20 include:\n            AGENT e13:\"assistant\"\n            THEME e19:\"examples that require specialist medical knowledge\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a21 HIGH structural_residue\n  CONFIDENCE 0.76\n\nTURN t06:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    ATTITUDE tell:\n      AGENT e25:\"Bob\"\n      RECIPIENT e26:\"Alan\"\n      CONTENT:\n        RECOMMENDED:\n          EVENT ev29 review:\n            AGENT UNRESOLVED_REF(\"he\")\n            THEME e28:\"report\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a23 HIGH anaphora \"he\"\n  CONFIDENCE 0.76\n\nTURN t07:\n  ACT REJECT_OR_CORRECT\n  SPEAKER user\n  CONTENT:\n    CORRECT:\n      RESOLVE_REFERENCE_AS \"Alan\"\n  CONFIDENCE 0.94\n\nTURN t08:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    NOT:\n      FOR_EVERY reviewer x34:\n        OBLIGATORY:\n          THERE_EXISTS paper x35:\n            EVENT ev36 accept:\n              AGENT x34:reviewer\n              THEME x35:paper\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a32 MEDIUM quantifier_scope\n      OPTIONS: \"forall > exists\" | \"exists > forall\"\n    - NOTED AMBIGUITY #2 a33 MEDIUM negation_scope \"not\"\n  CONFIDENCE 0.76\n\nTURN t09:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK WHETHER:\n      NOT:\n        EVENT ev40 require:\n          THEME e38:\"mean some reviewer\"\n          TO \"accept a paper\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a39 MEDIUM semantic_role\n      OPTIONS: recipient | destination | \"purpose/other\"\n  CONFIDENCE 0.85\n\nTURN t10:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    BEFORE:\n      LEFT:\n        OBLIGATORY:\n          EVENT ev45 review:\n            AGENT e25:\"Bob\"\n            THEME e28:\"report\"\n      RIGHT:\n        EVENT ev44 approve:\n          AGENT e43:\"Ada\"\n          THEME e28:\"report\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a42 MEDIUM temporal_attachment \"Before\"\n  CONFIDENCE 0.85\n\nTURN t11:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev51 reject:\n        AGENT e25:\"Bob\"\n        THEME UNRESOLVED_REF(\"it\")\n    THEN:\n      DISCOURAGED:\n        EVENT ev53 publish:\n          AGENT e43:\"Ada\"\n          THEME UNRESOLVED_REF(\"it\")\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a47 HIGH anaphora \"it\"\n      OPTIONS: report | paper\n    - NOTED AMBIGUITY #2 a49 MEDIUM negation_scope \"not\"\n  CONFIDENCE 0.67\n\nTURN t12:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK WHICH report x55:\n      EVENT ev57 discuss:\n        AGENT e56:\"x55 is being\"\n  CONFIDENCE 0.94\n\nTURN t13:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE USE TO assistant\n      BODY:\n        EVENT ev60 use:\n          AGENT e13:\"assistant\"\n          THEME e28:\"report\"\n          SOURCE e59:\"previous example\"\n  CONFIDENCE 0.94\n\nTURN t14:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      FOR_NO material x63:\n        EVENT ev65 mean:\n          AGENT x63:material\n          THEME e64:\"is missing\"\n    THEN:\n      PERMITTED:\n        THERE_EXISTS candidate x67:\n          EVENT ev68 accept:\n            AGENT e66:\"evaluator\"\n            THEME x67:candidate\n            MANNER \"only\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a62 HIGH only_scope \"only\"\n      OPTIONS: \"ONLY(entity)\" | \"ONLY(event/argument)\" | \"ONLY(condition)\"\n  CONFIDENCE 0.76\n\nTURN t15:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    BECAUSE:\n      NOT:\n        EVENT ev75 be:\n          THEME e74:\"CNL invents a condition that\"\n          PROPERTY \"present in the source\"\n    THEREFORE:\n      PERMITTED:\n        THERE_EXISTS candidate x72:\n          EVENT ev73 reject:\n            AGENT UNRESOLVED_REF(\"It\")\n            THEME x72:candidate\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a70 HIGH anaphora \"It\"\n      OPTIONS: \"is missing\" | evaluator | candidate | report | \"previous example\"\n    - NOTED AMBIGUITY #2 a76 HIGH structural_residue\n    - NOTED AMBIGUITY #3 a77 MEDIUM operator_not_formalized \"because\"\n  CONFIDENCE 0.49\n\nTURN t16:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      NOT:\n        AND:\n          EVENT ev82 be:\n            THEME e81:\"source\"\n            PROPERTY \"ambiguous\"\n          EVENT ev85 resolve:\n            AGENT e83:\"context\"\n            THEME UNRESOLVED_REF(\"it\")\n    THEN:\n      OBLIGATORY:\n        EVENT ev87 return:\n          AGENT e66:\"evaluator\"\n          THEME e86:\"uncertain\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a79 HIGH anaphora \"it\"\n      OPTIONS: 5 alternatives (not rendered)\n    - NOTED AMBIGUITY #2 a80 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.67\n\nTURN t17:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE SHOW TO assistant\n      BODY:\n        FIND me x:\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a89 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.85\n\nTURN t18:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE KEEP TO assistant\n      BODY:\n        EVENT ev92 keep:\n          AGENT e13:\"assistant\"\n          THEME e91:\"explanation short but preserve the exact evidence spans\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a93 HIGH structural_residue\n  CONFIDENCE 0.76\n\nTURN t19:\n  ACT PREFERENCE\n  SPEAKER user\n  CONTENT:\n    PREFERENCE UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a95 HIGH coverage_gap\n  CONFIDENCE 0.64\n\nTURN t20:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev100 be:\n        THEME e99:\"ten candidates\"\n        PROPERTY \"ready\"\n    THEN:\n      UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a97 MEDIUM temporal_attachment \"When\"\n    - NOTED AMBIGUITY #2 a98 HIGH anaphora \"them\"\n    - NOTED AMBIGUITY #3 a101 HIGH coverage_gap \"validate them together\"\n  CONFIDENCE 0.37\n\nTURN t21:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    NOT:\n      DIRECTIVE DO TO assistant\n        BODY:\n          IF:\n            EVENT ev106 ask:\n              AGENT e105:\"user\"\n              MANNER \"explicitly\"\n              FOR \"an immediate verdict\"\n          THEN:\n            EVENT ev107 wait:\n              AGENT e13:\"assistant\"\n              FOR \"ten\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a103 MEDIUM for_attachment \"for\"\n  CONFIDENCE 0.85\n\nTURN t22:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    FOR_EVERY candidate x109:\n      IF:\n        UNRESOLVED_FRAGMENT#1\n      THEN:\n        POSSIBLE:\n          EVENT ev111 be:\n            THEME e110:\"x109 still\"\n            PROPERTY \"wrong\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a112 HIGH coverage_gap\n  CONFIDENCE 0.64\n\nTURN t23:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    EVENT ev116 review:\n      AGENT e115:\"Therefore sample some apparently safe candidates for LLM\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a114 MEDIUM for_attachment \"for\"\n  CONFIDENCE 0.85\n\nTURN t24:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK COUNT of the last twenty candidate:\n      UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a118 HIGH coverage_gap \"judged equivalent\"\n  CONFIDENCE 0.64\n\nTURN t25:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev121 be:\n        THEME e120:\"fewer than eighteen\"\n        PROPERTY \"equivalent\"\n    THEN:\n      UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a122 HIGH coverage_gap\n  CONFIDENCE 0.64\n\nTURN t26:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    FORBIDDEN:\n      EVENT ev128 use:\n        AGENT e125:\"judge\"\n        THEME e127:\"world knowledge\"\n        TO \"fill missing information\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a124 MEDIUM negation_scope \"not\"\n    - NOTED AMBIGUITY #2 a126 MEDIUM semantic_role\n      OPTIONS: recipient | destination | \"purpose/other\"\n  CONFIDENCE 0.76\n\nTURN t27:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    ONLY e132:\"information\":\n      PERMITTED:\n        EVENT ev134 use:\n          THEME e133:\"information licensed by the source or the conversation\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a130 HIGH only_scope \"only\"\n      OPTIONS: \"ONLY(entity)\" | \"ONLY(event/argument)\" | \"ONLY(condition)\"\n    - NOTED AMBIGUITY #2 a131 MEDIUM coordination_scope \"or\"\n  CONFIDENCE 0.67\n\nTURN t28:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK WHETHER:\n      FORBIDDEN:\n        POSSIBLE:\n          UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a136 MEDIUM negation_scope \"not\"\n    - NOTED AMBIGUITY #2 a137 HIGH negation_scope \"not have to\"\n      OPTIONS: \"NOT(REQUIRED(...))\" | \"FORBIDDEN(...)\"\n    - NOTED AMBIGUITY #3 a138 HIGH coverage_gap\n  CONFIDENCE 0.37\n\nTURN t29:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE TEST TO assistant\n      BODY:\n        AND:\n          EVENT ev142 test:\n            AGENT e13:\"assistant\"\n            THEME e141:\"both readings\"\n          DIRECTIVE DO TO assistant\n            BODY:\n              EVENT ev143 mark:\n                AGENT e13:\"assistant\"\n                THEME \"any scope error\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a140 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.85\n\nTURN t30:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE RETURN TO assistant\n      BODY:\n        FIND the CNL, the symbolic warnings, and the LLM verdict for each tested turn x:\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a145 MEDIUM for_attachment \"for\"\n    - NOTED AMBIGUITY #2 a146 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.76",
+ "changedTurns": {
+  "t02": {
+   "id": "t02",
+   "source": "Every candidate formalization must preserve negation, modality, quantifiers, temporal order, and references.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASSERT",
+   "content": {
+    "type": "quantifier",
+    "quantifier": "FOR_EVERY",
+    "var": "x#",
+    "entityType": "candidate formalization",
+    "body": {
+     "type": "modal",
+     "modality": "OBLIGATORY",
+     "body": {
+      "type": "event",
+      "id": "ev#",
+      "predicate": "preserve",
+      "roles": {
+       "agent": {
+        "kind": "var",
+        "id": "x#",
+        "text": "candidate formalization"
+       },
+       "theme": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "negation modality quantifiers temporal order and references",
+        "type": "reference"
+       }
+      },
+      "modifiers": []
+     }
+    }
+   },
+   "ambiguities": [
+    {
+     "id": "a#",
+     "kind": "coordination_scope",
+     "severity": "medium",
+     "span": "and",
+     "message": "Coordination may have more than one grouping.",
+     "options": [],
+     "question": ""
+    },
+    {
+     "id": "a#",
+     "kind": "structural_residue",
+     "severity": "high",
+     "span": "negation modality quantifiers temporal order and references",
+     "message": "Clause marker survived inside role theme; the parse may have collapsed structure into a string.",
+     "options": [],
+     "question": "Clarify the internal clause structure of: negation modality quantifiers temporal order and references"
+    }
+   ],
+   "confidence": 0.67
+  },
+  "t05": {
+   "id": "t05",
+   "source": "Do not include examples that require specialist medical knowledge.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "INSTRUCT",
+   "content": {
+    "type": "not",
+    "body": {
+     "type": "directive",
+     "operator": "include",
+     "addressee": "assistant",
+     "body": {
+      "type": "and",
+      "items": [
+       {
+        "type": "event",
+        "id": "ev#",
+        "predicate": "include",
+        "roles": {
+         "agent": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "assistant",
+          "type": "assistant"
+         },
+         "theme": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "examples",
+          "type": "example"
+         }
+        },
+        "modifiers": []
+       },
+       {
+        "type": "event",
+        "id": "ev#",
+        "predicate": "require",
+        "roles": {
+         "agent": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "examples",
+          "type": "example"
+         },
+         "theme": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "specialist medical knowledge",
+          "type": "knowledge"
+         }
+        },
+        "modifiers": []
+       }
+      ]
+     }
+    }
+   },
+   "ambiguities": [],
+   "confidence": 0.94
+  },
+  "t09": {
+   "id": "t09",
+   "source": "Does that mean some reviewer is not required to accept a paper?",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASK",
+   "content": {
+    "type": "query",
+    "queryKind": "WHETHER",
+    "body": {
+     "type": "attitude",
+     "predicate": "mean",
+     "agent": {
+      "kind": "unresolved_ref",
+      "text": "that",
+      "candidates": [
+       "p#",
+       "x#",
+       "e#"
+      ]
+     },
+     "content": {
+      "type": "quantifier",
+      "quantifier": "THERE_EXISTS",
+      "var": "x#",
+      "entityType": "reviewer",
+      "body": {
+       "type": "not",
+       "body": {
+        "type": "event",
+        "id": "ev#",
+        "predicate": "require",
+        "roles": {
+         "theme": {
+          "kind": "var",
+          "id": "x#",
+          "text": "reviewer"
+         }
+        },
+        "modifiers": [
+         {
+          "kind": "to",
+          "value": "accept a paper"
+         }
+        ]
+       }
+      }
+     }
+    }
+   },
+   "ambiguities": [
+    {
+     "id": "a#",
+     "kind": "anaphora",
+     "severity": "high",
+     "span": "that",
+     "message": "Pronoun 'that' does not have one symbolically unique antecedent.",
+     "options": [
+      "previous proposition p#",
+      "paper",
+      "Bob"
+     ],
+     "question": "What does 'that' refer to?"
+    },
+    {
+     "id": "a#",
+     "kind": "semantic_role",
+     "severity": "medium",
+     "span": "to accept a paper",
+     "message": "Role of 'to accept a paper' is not determined by the verb 'require'.",
+     "options": [
+      "recipient",
+      "destination",
+      "purpose/other"
+     ],
+     "question": "What role does 'to accept a paper' have?"
+    }
+   ],
+   "confidence": 0.67
+  },
+  "t15": {
+   "id": "t15",
+   "source": "It may reject a candidate because the CNL invents a condition that is not present in the source.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASSERT",
+   "content": {
+    "type": "causal",
+    "effect": {
+     "type": "modal",
+     "modality": "PERMITTED",
+     "body": {
+      "type": "quantifier",
+      "quantifier": "THERE_EXISTS",
+      "var": "x#",
+      "entityType": "candidate",
+      "body": {
+       "type": "event",
+       "id": "ev#",
+       "predicate": "reject",
+       "roles": {
+        "agent": {
+         "kind": "unresolved_ref",
+         "text": "It",
+         "candidates": [
+          "e#",
+          "e#",
+          "x#",
+          "e#",
+          "e#"
+         ]
+        },
+        "theme": {
+         "kind": "var",
+         "id": "x#",
+         "text": "candidate"
+        }
+       },
+       "modifiers": []
+      }
+     }
+    },
+    "cause": {
+     "type": "not",
+     "body": {
+      "type": "quantifier",
+      "quantifier": "THERE_EXISTS",
+      "var": "x#",
+      "entityType": "condition",
+      "body": {
+       "type": "and",
+       "items": [
+        {
+         "type": "event",
+         "id": "ev#",
+         "predicate": "invent",
+         "roles": {
+          "agent": {
+           "kind": "ref",
+           "id": "e#",
+           "text": "CNL",
+           "type": "cnl"
+          },
+          "theme": {
+           "kind": "var",
+           "id": "x#",
+           "text": "condition"
+          }
+         },
+         "modifiers": []
+        },
+        {
+         "type": "event",
+         "id": "ev#",
+         "predicate": "be",
+         "roles": {
+          "theme": {
+           "kind": "var",
+           "id": "x#",
+           "text": "condition"
+          },
+          "property": {
+           "kind": "literal",
+           "text": "present in the source"
+          }
+         },
+         "modifiers": []
+        }
+       ]
+      }
+     }
+    }
+   },
+   "ambiguities": [
+    {
+     "id": "a#",
+     "kind": "anaphora",
+     "severity": "high",
+     "span": "It",
+     "message": "'It' may have multiple or no antecedents.",
+     "options": [
+      "is missing",
+      "evaluator",
+      "candidate",
+      "report",
+      "previous example"
+     ],
+     "question": "What does 'It' refer to?"
+    },
+    {
+     "id": "a#",
+     "kind": "operator_not_formalized",
+     "severity": "medium",
+     "span": "because",
+     "message": "Operator 'because' appears in the source but has no dedicated symbolic form in this parse.",
+     "options": []
+    }
+   ],
+   "confidence": 0.67
+  },
+  "t16": {
+   "id": "t16",
+   "source": "If the source is ambiguous and the context does not resolve it, the evaluator must return uncertain.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASSERT",
+   "content": {
+    "type": "if",
+    "condition": {
+     "type": "not",
+     "body": {
+      "type": "and",
+      "items": [
+       {
+        "type": "event",
+        "id": "ev#",
+        "predicate": "be",
+        "roles": {
+         "theme": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "source",
+          "type": "source"
+         },
+         "property": {
+          "kind": "literal",
+          "text": "ambiguous"
+         }
+        },
+        "modifiers": []
+       },
+       {
+        "type": "event",
+        "id": "ev#",
+        "predicate": "resolve",
+        "roles": {
+         "agent": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "context",
+          "type": "context"
+         },
+         "theme": {
+          "kind": "unresolved_ref",
+          "text": "it",
+          "candidates": [
+           "e#",
+           "e#",
+           "x#",
+           "e#",
+           "x#"
+          ]
+         }
+        },
+        "modifiers": []
+       }
+      ]
+     }
+    },
+    "consequence": {
+     "type": "modal",
+     "modality": "OBLIGATORY",
+     "body": {
+      "type": "event",
+      "id": "ev#",
+      "predicate": "return",
+      "roles": {
+       "agent": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "evaluator",
+        "type": "evaluator"
+       },
+       "theme": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "uncertain",
+        "type": "uncertain"
+       }
+      },
+      "modifiers": []
+     }
+    }
+   },
+   "ambiguities": [
+    {
+     "id": "a#",
+     "kind": "anaphora",
+     "severity": "high",
+     "span": "it",
+     "message": "'it' may have multiple or no antecedents.",
+     "options": [
+      "candidate",
+      "CNL",
+      "condition",
+      "is missing",
+      "evaluator"
+     ],
+     "question": "What does 'it' refer to?"
+    },
+    {
+     "id": "a#",
+     "kind": "coordination_scope",
+     "severity": "medium",
+     "span": "and",
+     "message": "Coordination may have more than one grouping.",
+     "options": [],
+     "question": ""
+    }
+   ],
+   "confidence": 0.67
+  },
+  "t18": {
+   "id": "t18",
+   "source": "Keep the explanation short, but preserve the exact evidence spans.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "INSTRUCT",
+   "content": {
+    "type": "directive",
+    "operator": "keep",
+    "addressee": "assistant",
+    "body": {
+     "type": "and",
+     "connective": "BUT",
+     "items": [
+      {
+       "type": "event",
+       "id": "ev#",
+       "predicate": "keep",
+       "roles": {
+        "agent": {
+         "kind": "ref",
+         "id": "e#",
+         "text": "assistant",
+         "type": "assistant"
+        },
+        "theme": {
+         "kind": "ref",
+         "id": "e#",
+         "text": "explanation short",
+         "type": "short"
+        }
+       },
+       "modifiers": []
+      },
+      {
+       "type": "directive",
+       "operator": "do",
+       "addressee": "assistant",
+       "body": {
+        "type": "event",
+        "id": "ev#",
+        "predicate": "preserve",
+        "roles": {
+         "agent": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "assistant",
+          "type": "assistant"
+         },
+         "theme": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "exact evidence spans",
+          "type": "span"
+         }
+        },
+        "modifiers": []
+       }
+      }
+     ]
+    }
+   },
+   "ambiguities": [],
+   "confidence": 0.94
+  },
+  "t20": {
+   "id": "t20",
+   "source": "When ten candidates are ready, validate them together.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASSERT",
+   "content": {
+    "type": "if",
+    "condition": {
+     "type": "event",
+     "id": "ev#",
+     "predicate": "be",
+     "roles": {
+      "theme": {
+       "kind": "ref",
+       "id": "e#",
+       "text": "ten candidates",
+       "type": "candidate"
+      },
+      "property": {
+       "kind": "literal",
+       "text": "ready"
+      }
+     },
+     "modifiers": []
+    },
+    "consequence": {
+     "type": "directive",
+     "operator": "do",
+     "addressee": "assistant",
+     "body": {
+      "type": "event",
+      "id": "ev#",
+      "predicate": "validate",
+      "roles": {
+       "agent": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "assistant",
+        "type": "assistant"
+       },
+       "theme": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "them together",
+        "type": "together"
+       }
+      },
+      "modifiers": []
+     }
+    },
+    "trigger": "WHEN"
+   },
+   "ambiguities": [
+    {
+     "id": "a#",
+     "kind": "temporal_attachment",
+     "severity": "medium",
+     "span": "When",
+     "message": "Temporal clause attachment can be ambiguous.",
+     "options": [],
+     "question": ""
+    },
+    {
+     "id": "a#",
+     "kind": "anaphora",
+     "severity": "high",
+     "span": "them",
+     "message": "More than one recent discourse entity can satisfy this pronoun.",
+     "options": [],
+     "question": ""
+    }
+   ],
+   "confidence": 0.67
+  },
+  "t22": {
+   "id": "t22",
+   "source": "A candidate that passes the symbolic audit can still be wrong.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASSERT",
+   "content": {
+    "type": "quantifier",
+    "quantifier": "FOR_EVERY",
+    "var": "x#",
+    "entityType": "candidate",
+    "body": {
+     "type": "if",
+     "condition": {
+      "type": "event",
+      "id": "ev#",
+      "predicate": "pass",
+      "roles": {
+       "agent": {
+        "kind": "var",
+        "id": "x#",
+        "text": "candidate"
+       },
+       "theme": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "symbolic audit",
+        "type": "audit"
+       }
+      },
+      "modifiers": []
+     },
+     "consequence": {
+      "type": "modal",
+      "modality": "POSSIBLE",
+      "body": {
+       "type": "event",
+       "id": "ev#",
+       "predicate": "be",
+       "roles": {
+        "theme": {
+         "kind": "ref",
+         "id": "e#",
+         "text": "x# still",
+         "type": "still"
+        },
+        "property": {
+         "kind": "literal",
+         "text": "wrong"
+        }
+       },
+       "modifiers": []
+      }
+     }
+    }
+   },
+   "ambiguities": [],
+   "confidence": 0.94
+  },
+  "t23": {
+   "id": "t23",
+   "source": "Therefore sample some apparently safe candidates for LLM review.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "INSTRUCT",
+   "discourse": [
+    "therefore"
+   ],
+   "content": {
+    "type": "directive",
+    "operator": "do",
+    "addressee": "assistant",
+    "body": {
+     "type": "event",
+     "id": "ev#",
+     "predicate": "review",
+     "roles": {
+      "agent": {
+       "kind": "ref",
+       "id": "e#",
+       "text": "assistant sample some apparently safe candidates",
+       "type": "candidate",
+       "rel": [
+        {
+         "prep": "for",
+         "ref": {
+          "kind": "ref",
+          "id": "e#",
+          "text": "LLM",
+          "type": "llm"
+         }
+        }
+       ]
+      }
+     },
+     "modifiers": []
+    }
+   },
+   "ambiguities": [
+    {
+     "id": "a#",
+     "kind": "for_attachment",
+     "severity": "medium",
+     "span": "for",
+     "message": "A 'for' phrase may encode purpose, beneficiary, duration, or argument structure.",
+     "options": [],
+     "question": ""
+    }
+   ],
+   "confidence": 0.85
+  },
+  "t25": {
+   "id": "t25",
+   "source": "If fewer than eighteen were equivalent, report the failure rate.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASSERT",
+   "content": {
+    "type": "if",
+    "condition": {
+     "type": "event",
+     "id": "ev#",
+     "predicate": "be",
+     "roles": {
+      "theme": {
+       "kind": "ref",
+       "id": "e#",
+       "text": "fewer than eighteen",
+       "type": "eighteen"
+      },
+      "property": {
+       "kind": "literal",
+       "text": "equivalent"
+      }
+     },
+     "modifiers": []
+    },
+    "consequence": {
+     "type": "directive",
+     "operator": "do",
+     "addressee": "assistant",
+     "body": {
+      "type": "event",
+      "id": "ev#",
+      "predicate": "report",
+      "roles": {
+       "agent": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "assistant",
+        "type": "assistant"
+       },
+       "theme": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "failure rate",
+        "type": "rate"
+       }
+      },
+      "modifiers": []
+     }
+    }
+   },
+   "ambiguities": [],
+   "confidence": 0.94
+  },
+  "t27": {
+   "id": "t27",
+   "source": "Only information licensed by the source or the conversation may be used.",
+   "speaker": "user",
+   "addressee": "assistant",
+   "act": "ASSERT",
+   "content": {
+    "type": "only",
+    "focus": {
+     "kind": "ref",
+     "id": "e#",
+     "text": "information",
+     "type": "information"
+    },
+    "where": {
+     "type": "event",
+     "id": "ev#",
+     "predicate": "license",
+     "roles": {
+      "agent": {
+       "kind": "group",
+       "op": "or",
+       "items": [
+        {
+         "kind": "ref",
+         "id": "e#",
+         "text": "source",
+         "type": "source"
+        },
+        {
+         "kind": "ref",
+         "id": "e#",
+         "text": "conversation",
+         "type": "conversation"
+        }
+       ]
+      },
+      "theme": {
+       "kind": "ref",
+       "id": "e#",
+       "text": "information",
+       "type": "information"
+      }
+     },
+     "modifiers": []
+    },
+    "body": {
+     "type": "modal",
+     "modality": "PERMITTED",
+     "body": {
+      "type": "event",
+      "id": "ev#",
+      "predicate": "use",
+      "roles": {
+       "theme": {
+        "kind": "ref",
+        "id": "e#",
+        "text": "information",
+        "type": "information"
+       }
+      },
+      "modifiers": []
+     }
+    }
+   },
+   "ambiguities": [
+    {
+     "id": "a#",
+     "kind": "only_scope",
+     "severity": "high",
+     "span": "only",
+     "message": "The scope of 'only' must be made explicit in the CNL.",
+     "options": [
+      "ONLY(entity)",
+      "ONLY(event/argument)",
+      "ONLY(condition)"
+     ],
+     "question": "What exactly does 'only' restrict?"
+    },
+    {
+     "id": "a#",
+     "kind": "coordination_scope",
+     "severity": "medium",
+     "span": "or",
+     "message": "Coordination may have more than one grouping.",
+     "options": [],
+     "question": ""
+    }
+   ],
+   "confidence": 0.67
+  }
+ },
+ "stateEqual": false,
+ "cnl": "TURN t01:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    THERE_EXISTS formalizer x2:\n      AND:\n        EVENT ev5 want:\n          AGENT e1:\"We\"\n          THEME x2:formalizer\n        EVENT ev4 convert:\n          AGENT x2:formalizer\n          THEME e3:\"English requests\"\n          DESTINATION \"a canonical controlled language\"\n  CONFIDENCE 0.94\n\nTURN t02:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    FOR_EVERY candidate formalization x8:\n      OBLIGATORY:\n        EVENT ev10 preserve:\n          AGENT x8:\"candidate formalization\"\n          THEME e9:\"negation modality quantifiers temporal order and references\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a7 MEDIUM coordination_scope \"and\"\n    - NOTED AMBIGUITY #2 a11 HIGH structural_residue\n  CONFIDENCE 0.67\n\nTURN t03:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev14 be:\n        THEME e13:\"symbolic parser\"\n        PROPERTY \"uncertain\"\n    THEN:\n      DIRECTIVE DO TO assistant\n        BODY:\n          EVENT ev17 mark:\n            AGENT e15:\"assistant\"\n            THEME e16:\"ambiguity instead of guessing\"\n  CONFIDENCE 0.94\n\nTURN t04:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE FIND TO assistant\n      LIMIT three\n      BODY:\n        FIND difficult examples involving pronouns and modal scope x:\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a19 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.85\n\nTURN t05:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    NOT:\n      DIRECTIVE INCLUDE TO assistant\n        BODY:\n          AND:\n            EVENT ev24 include:\n              AGENT e15:\"assistant\"\n              THEME e21:\"examples\"\n            EVENT ev23 require:\n              AGENT e21:\"examples\"\n              THEME e22:\"specialist medical knowledge\"\n  CONFIDENCE 0.94\n\nTURN t06:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    ATTITUDE tell:\n      AGENT e28:\"Bob\"\n      RECIPIENT e29:\"Alan\"\n      CONTENT:\n        RECOMMENDED:\n          EVENT ev32 review:\n            AGENT UNRESOLVED_REF(\"he\")\n            THEME e31:\"report\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a26 HIGH anaphora \"he\"\n  CONFIDENCE 0.76\n\nTURN t07:\n  ACT REJECT_OR_CORRECT\n  SPEAKER user\n  CONTENT:\n    CORRECT:\n      RESOLVE_REFERENCE_AS \"Alan\"\n  CONFIDENCE 0.94\n\nTURN t08:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    NOT:\n      FOR_EVERY reviewer x37:\n        OBLIGATORY:\n          THERE_EXISTS paper x38:\n            EVENT ev39 accept:\n              AGENT x37:reviewer\n              THEME x38:paper\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a35 MEDIUM quantifier_scope\n      OPTIONS: \"forall > exists\" | \"exists > forall\"\n    - NOTED AMBIGUITY #2 a36 MEDIUM negation_scope \"not\"\n  CONFIDENCE 0.76\n\nTURN t09:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK WHETHER:\n      ATTITUDE mean:\n        AGENT UNRESOLVED_REF(\"that\")\n        CONTENT:\n          THERE_EXISTS reviewer x42:\n            NOT:\n              EVENT ev44 require:\n                THEME x42:reviewer\n                TO \"accept a paper\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a41 HIGH anaphora \"that\"\n      OPTIONS: \"previous proposition p40\" | paper | Bob\n    - NOTED AMBIGUITY #2 a43 MEDIUM semantic_role\n      OPTIONS: recipient | destination | \"purpose/other\"\n  CONFIDENCE 0.67\n\nTURN t10:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    BEFORE:\n      LEFT:\n        OBLIGATORY:\n          EVENT ev49 review:\n            AGENT e28:\"Bob\"\n            THEME e31:\"report\"\n      RIGHT:\n        EVENT ev48 approve:\n          AGENT e47:\"Ada\"\n          THEME e31:\"report\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a46 MEDIUM temporal_attachment \"Before\"\n  CONFIDENCE 0.85\n\nTURN t11:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev55 reject:\n        AGENT e28:\"Bob\"\n        THEME UNRESOLVED_REF(\"it\")\n    THEN:\n      DISCOURAGED:\n        EVENT ev57 publish:\n          AGENT e47:\"Ada\"\n          THEME UNRESOLVED_REF(\"it\")\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a51 HIGH anaphora \"it\"\n      OPTIONS: report | paper\n    - NOTED AMBIGUITY #2 a53 MEDIUM negation_scope \"not\"\n  CONFIDENCE 0.67\n\nTURN t12:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK WHICH report x59:\n      EVENT ev61 discuss:\n        AGENT e60:\"x59 is being\"\n  CONFIDENCE 0.94\n\nTURN t13:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE USE TO assistant\n      BODY:\n        EVENT ev64 use:\n          AGENT e15:\"assistant\"\n          THEME e31:\"report\"\n          SOURCE e63:\"previous example\"\n  CONFIDENCE 0.94\n\nTURN t14:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      FOR_NO material x67:\n        EVENT ev69 mean:\n          AGENT x67:material\n          THEME e68:\"is missing\"\n    THEN:\n      PERMITTED:\n        THERE_EXISTS candidate x71:\n          EVENT ev72 accept:\n            AGENT e70:\"evaluator\"\n            THEME x71:candidate\n            MANNER \"only\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a66 HIGH only_scope \"only\"\n      OPTIONS: \"ONLY(entity)\" | \"ONLY(event/argument)\" | \"ONLY(condition)\"\n  CONFIDENCE 0.76\n\nTURN t15:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    BECAUSE:\n      NOT:\n        THERE_EXISTS condition x79:\n          AND:\n            EVENT ev81 invent:\n              AGENT e78:\"CNL\"\n              THEME x79:condition\n            EVENT ev80 be:\n              THEME x79:condition\n              PROPERTY \"present in the source\"\n    THEREFORE:\n      PERMITTED:\n        THERE_EXISTS candidate x76:\n          EVENT ev77 reject:\n            AGENT UNRESOLVED_REF(\"It\")\n            THEME x76:candidate\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a74 HIGH anaphora \"It\"\n      OPTIONS: \"is missing\" | evaluator | candidate | report | \"previous example\"\n    - NOTED AMBIGUITY #2 a82 MEDIUM operator_not_formalized \"because\"\n  CONFIDENCE 0.67\n\nTURN t16:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      NOT:\n        AND:\n          EVENT ev87 be:\n            THEME e86:\"source\"\n            PROPERTY \"ambiguous\"\n          EVENT ev90 resolve:\n            AGENT e88:\"context\"\n            THEME UNRESOLVED_REF(\"it\")\n    THEN:\n      OBLIGATORY:\n        EVENT ev92 return:\n          AGENT e70:\"evaluator\"\n          THEME e91:\"uncertain\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a84 HIGH anaphora \"it\"\n      OPTIONS: candidate | CNL | condition | \"is missing\" | evaluator\n    - NOTED AMBIGUITY #2 a85 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.67\n\nTURN t17:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE SHOW TO assistant\n      BODY:\n        FIND me x:\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a94 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.85\n\nTURN t18:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE KEEP TO assistant\n      BODY:\n        AND BUT:\n          EVENT ev97 keep:\n            AGENT e15:\"assistant\"\n            THEME e96:\"explanation short\"\n          DIRECTIVE DO TO assistant\n            BODY:\n              EVENT ev99 preserve:\n                AGENT e15:\"assistant\"\n                THEME e98:\"exact evidence spans\"\n  CONFIDENCE 0.94\n\nTURN t19:\n  ACT PREFERENCE\n  SPEAKER user\n  CONTENT:\n    PREFERENCE UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a101 HIGH coverage_gap\n  CONFIDENCE 0.64\n\nTURN t20:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev106 be:\n        THEME e105:\"ten candidates\"\n        PROPERTY \"ready\"\n    THEN:\n      DIRECTIVE DO TO assistant\n        BODY:\n          EVENT ev108 validate:\n            AGENT e15:\"assistant\"\n            THEME e107:\"them together\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a103 MEDIUM temporal_attachment \"When\"\n    - NOTED AMBIGUITY #2 a104 HIGH anaphora \"them\"\n  CONFIDENCE 0.67\n\nTURN t21:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    NOT:\n      DIRECTIVE DO TO assistant\n        BODY:\n          IF:\n            EVENT ev113 ask:\n              AGENT e112:\"user\"\n              MANNER \"explicitly\"\n              FOR \"an immediate verdict\"\n          THEN:\n            EVENT ev114 wait:\n              AGENT e15:\"assistant\"\n              FOR \"ten\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a110 MEDIUM for_attachment \"for\"\n  CONFIDENCE 0.85\n\nTURN t22:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    FOR_EVERY candidate x116:\n      IF:\n        EVENT ev118 pass:\n          AGENT x116:candidate\n          THEME e117:\"symbolic audit\"\n      THEN:\n        POSSIBLE:\n          EVENT ev120 be:\n            THEME e119:\"x116 still\"\n            PROPERTY \"wrong\"\n  CONFIDENCE 0.94\n\nTURN t23:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  DISCOURSE therefore\n  CONTENT:\n    DIRECTIVE DO TO assistant\n      BODY:\n        EVENT ev125 review:\n          AGENT e123:\"assistant sample some apparently safe candidates\" FOR e124:\"LLM\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a122 MEDIUM for_attachment \"for\"\n  CONFIDENCE 0.85\n\nTURN t24:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK COUNT of the last twenty candidate:\n      UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a127 HIGH coverage_gap \"judged equivalent\"\n  CONFIDENCE 0.64\n\nTURN t25:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    IF:\n      EVENT ev130 be:\n        THEME e129:\"fewer than eighteen\"\n        PROPERTY \"equivalent\"\n    THEN:\n      DIRECTIVE DO TO assistant\n        BODY:\n          EVENT ev132 report:\n            AGENT e15:\"assistant\"\n            THEME e131:\"failure rate\"\n  CONFIDENCE 0.94\n\nTURN t26:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    FORBIDDEN:\n      EVENT ev138 use:\n        AGENT e135:\"judge\"\n        THEME e137:\"world knowledge\"\n        TO \"fill missing information\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a134 MEDIUM negation_scope \"not\"\n    - NOTED AMBIGUITY #2 a136 MEDIUM semantic_role\n      OPTIONS: recipient | destination | \"purpose/other\"\n  CONFIDENCE 0.76\n\nTURN t27:\n  ACT ASSERT\n  SPEAKER user\n  CONTENT:\n    ONLY e142:\"information\":\n      WHERE:\n        EVENT ev144 license:\n          AGENT OR(e86:\"source\", e143:\"conversation\")\n          THEME e142:\"information\"\n      PERMITTED:\n        EVENT ev145 use:\n          THEME e142:\"information\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a140 HIGH only_scope \"only\"\n      OPTIONS: \"ONLY(entity)\" | \"ONLY(event/argument)\" | \"ONLY(condition)\"\n    - NOTED AMBIGUITY #2 a141 MEDIUM coordination_scope \"or\"\n  CONFIDENCE 0.67\n\nTURN t28:\n  ACT ASK\n  SPEAKER user\n  CONTENT:\n    ASK WHETHER:\n      FORBIDDEN:\n        POSSIBLE:\n          UNRESOLVED_FRAGMENT#1\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a147 MEDIUM negation_scope \"not\"\n    - NOTED AMBIGUITY #2 a148 HIGH negation_scope \"not have to\"\n      OPTIONS: \"NOT(REQUIRED(...))\" | \"FORBIDDEN(...)\"\n    - NOTED AMBIGUITY #3 a149 HIGH coverage_gap\n  CONFIDENCE 0.37\n\nTURN t29:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE TEST TO assistant\n      BODY:\n        AND:\n          EVENT ev153 test:\n            AGENT e15:\"assistant\"\n            THEME e152:\"both readings\"\n          DIRECTIVE DO TO assistant\n            BODY:\n              EVENT ev154 mark:\n                AGENT e15:\"assistant\"\n                THEME \"any scope error\"\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a151 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.85\n\nTURN t30:\n  ACT INSTRUCT\n  SPEAKER user\n  ADDRESSEE assistant\n  CONTENT:\n    DIRECTIVE RETURN TO assistant\n      BODY:\n        FIND the CNL, the symbolic warnings, and the LLM verdict for each tested turn x:\n  AMBIGUITIES:\n    - NOTED AMBIGUITY #1 a156 MEDIUM for_attachment \"for\"\n    - NOTED AMBIGUITY #2 a157 MEDIUM coordination_scope \"and\"\n  CONFIDENCE 0.76",
  "archiveCnlEqual": false
 }

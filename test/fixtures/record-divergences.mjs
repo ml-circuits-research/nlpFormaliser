@@ -31,6 +31,13 @@ export async function labDivergences() {
   return out;
 }
 
+// Node ids (e12, ev5, x3, p7, a9) come from one counter per conversation, so a change in one turn renumbers every later turn. Turns are
+// compared without their ids and without the rendered CNL (the whole CNL is compared separately).
+export function comparableTurn(t) {
+  const {cnl:_c,...rest}=t;
+  return JSON.parse(JSON.stringify(rest).replace(/\b(ev|e|x|p|a)\d+\b/g,'$1#'));
+}
+
 export async function discourseDivergences() {
   const [sample]=loadSet('archive-discourse-dialogue');
   const strategy=await loadStrategy('discourse-semantic-graph');
@@ -39,8 +46,7 @@ export async function discourseDivergences() {
   const turns={};
   r.formalization.turns.forEach((t,i)=>{
     const e=expected.turns[i];
-    const {cnl:_a,...ta}=t,{cnl:_b,...tb}=e;
-    if(!isDeepStrictEqual(ta,tb))turns[t.id]={content:t.content,ambiguities:t.ambiguities,confidence:t.confidence};
+    if(!isDeepStrictEqual(comparableTurn(t),comparableTurn(e)))turns[t.id]=comparableTurn(t);
   });
   return {changedTurns:turns,stateEqual:isDeepStrictEqual(r.formalization.state,expected.state),cnl:strategy.toCNL(r.formalization),
     archiveCnlEqual:strategy.toCNL(r.formalization)===expected.turns.map(renderTurn).join('\n\n')};

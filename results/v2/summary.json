@@ -1,0 +1,88 @@
+{
+  "v1_old40": {
+    "n": 40,
+    "first": {},
+    "final": {
+      "equivalent": 28,
+      "minor": 11,
+      "major": 1
+    },
+    "loop_converged": 40
+  },
+  "old40": {
+    "n": 40,
+    "first": {
+      "equivalent": 20,
+      "minor": 15,
+      "major": 5
+    },
+    "final": {
+      "equivalent": 29,
+      "minor": 9,
+      "major": 2
+    },
+    "loop_converged": 38
+  },
+  "new_phenomena": {
+    "n": 30,
+    "first": {
+      "equivalent": 13,
+      "minor": 11,
+      "major": 6
+    },
+    "final": {
+      "equivalent": 20,
+      "minor": 7,
+      "major": 3
+    },
+    "loop_converged": 26
+  },
+  "speech_acts": {
+    "n": 26,
+    "first": {
+      "equivalent": 19,
+      "minor": 6,
+      "major": 1
+    },
+    "final": {
+      "equivalent": 24,
+      "minor": 2
+    },
+    "loop_converged": 25
+  },
+  "act_type_accuracy": [
+    23,
+    26
+  ],
+  "mutations": {
+    "negation": [
+      50,
+      50
+    ],
+    "quantifier": [
+      34,
+      37
+    ],
+    "tense": [
+      38,
+      38
+    ],
+    "drop_fact": [
+      17,
+      18
+    ],
+    "role_swap": [
+      28,
+      29
+    ],
+    "speech_act": [
+      23,
+      24
+    ]
+  },
+  "qa": {
+    "n": 35,
+    "symbolic": 30,
+    "baseline": 34
+  }
+}

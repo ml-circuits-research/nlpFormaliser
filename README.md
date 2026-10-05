@@ -95,6 +95,35 @@ acceptate cu verbalizatorul LLM și le-am executat cu interpretorul determinist:
   (Haiku a „smuggle-uit” `more_than(forty_hours_per_week)` la s35). Asta e singurul cod acceptat
   din rulare care ar fi respins acum.
 
+## Rezultate v2: întrebări, acte de vorbire, generici, scope, grupuri, măsuri (`results/v2/`)
+
+EVL v2 adaugă `act/3` + `wh/2` (întrebări, cereri, comenzi etc.), `generic/1`, `scope/2`, `group/2`,
+`measure/3` + `rate/2`, `focus/2`, `freq/2` și `counterfactual/1`. Formalizarea, reparația și judecătorul
+din buclă sunt Haiku. Etichetele de mai jos vin de la Sonnet, ca judecător independent.
+
+**Cazuri de test:** 40 de propoziții vechi + 30 de propoziții cu fenomene noi + 26 de întrebări și acte
+de vorbire = 96 de texte pentru dus-întors; 35 de întrebări pe 10 texte scurte pentru execuția întrebărilor;
+196 de formalizări modificate deliberat pentru testul judecătorului.
+
+| set | cazuri | echivalent din prima | echivalent după buclă | echivalent sau minor după buclă | greșeală majoră după buclă |
+|---|---|---|---|---|---|
+| 40 vechi, EVL v1 (rularea inițială) | 40 | – | 70% | 98% | 2% |
+| 40 vechi, EVL v2 | 40 | 50% | 72% | 95% | 5% |
+| fenomene noi | 30 | 43% | 67% | 90% | 10% |
+| întrebări și acte de vorbire | 26 | 73% | 92% | 100% | 0% |
+
+- **Intenția (tipul actului de vorbire) recunoscută corect:** 88% din 26. Exemplu: „Can you pass me the salt?”
+  devine cerere, nu întrebare despre capacitate.
+- **Testul de mutații:** judecătorul Haiku detectează 97% din 196 de schimbări de sens (negație 100%,
+  timp verbal 100%, roluri inversate 97%, schimbarea actului de vorbire 96%, cuantificator 92%, fapt șters 94%).
+- **Execuția întrebărilor în Prolog:** 86% corecte (30/35), față de 97% (34/35) când Haiku citește direct
+  textul. Toate cele 5 greșeli vin din codări diferite ale aceluiași fapt între context și întrebare
+  („Willy is a whale” codat ca `be` + atribut, nu ca `inst/2`; `theme` vs `pp(to)`), nu din raționament.
+  Pe întrebările de tip „nu se știe din text” execuția simbolică a fost corectă 2/2, iar Haiku 1/2.
+- **Greșelile majore rămase:** timpul exact („six in the evening”), „each of the *three* brothers”
+  (cuantificator + cardinal pe aceeași entitate) și „30 days' written notice”. Pe ultimul l-am reparat
+  după rulare în verbalizator.
+
 ## Librăria JS (`js/`) — formalizatorul ca unealtă separată
 
 Librărie `.mjs` pură (Node ≥ 18). Singura dependență e [compromise](https://github.com/spencermountain/compromise),

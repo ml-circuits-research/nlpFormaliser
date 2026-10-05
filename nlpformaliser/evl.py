@@ -419,6 +419,8 @@ class English:
                 uparts[0] = inflect(uparts[0], "NNS")
             u = " ".join(CAPITALISED_UNITS.get(w, w) for w in uparts)
             s = f"{txt} {u}"
+            if e.inst:  # an amount OF something: "30 days' written notice"
+                s = " ".join([s + ("'" if s.endswith("s") else "'s"), *[_adj(p) for p in e.props], _words(e.inst[0])])
             if e.rate:
                 s += f" per {_words(e.rate)}"
             for r, y in e.rels:

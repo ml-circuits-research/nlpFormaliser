@@ -142,6 +142,8 @@ export class English {
       const uparts = String(unit).split("_");
       if (pl) uparts[0] = inflect(uparts[0], "NNS");
       let s = `${txt} ${uparts.map((w) => CAPITALISED_UNITS[w] ?? w).join(" ")}`;
+      // an amount OF something: "30 days' written notice"
+      if (e.inst.length) s = [s + (s.endsWith("s") ? "'" : "'s"), ...e.props.map(adj), words(e.inst[0])].join(" ");
       if (e.rate) s += ` per ${words(e.rate)}`;
       for (const [r, y] of e.rels) s += ` ${words(r)} ${this.np(y, "obj")}`;
       this.mentioned.add(x);

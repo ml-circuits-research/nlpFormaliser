@@ -767,14 +767,14 @@
    "code": "inst(x1, tenant).\nquant(x1, a).\ninst(x2, lease).\nquant(x2, the).\ninst(x3, notice).\nprop(x3, written).\nmeasure(x3, 30, day).\nevent(e1, terminate).\nmodal(e1, may).\nrole(e1, agent, x1).\nrole(e1, patient, x2).\nrole(e1, instrument, x3).\ngeneric(e1).",
    "ok": true,
    "n_errors": 0,
-   "english": "A tenant may terminate the lease with 30 days.",
+   "english": "A tenant may terminate the lease with 30 days' written notice.",
    "fol": "\u2203x1,x2,x3(tenant(x1) \u2227 lease(x2) \u2227 notice(x3) \u2227 written(x3) \u2227 amount(x3,30,day) \u2227 GENe1(MAY[terminate(e1) \u2227 agent(e1,x1) \u2227 patient(e1,x2) \u2227 instrument(e1,x3)]))"
   },
   {
    "code": "inst(x1, tenant).\nquant(x1, a).\ninst(x2, lease).\nquant(x2, the).\ninst(x3, notice).\nprop(x3, written).\nmeasure(x3, 30, day).\nevent(e1, terminate).\nmodal(e1, may).\nrole(e1, agent, x1).\nrole(e1, patient, x2).\nrole(e1, pp(with), x3).\ngeneric(e1).",
    "ok": true,
    "n_errors": 0,
-   "english": "A tenant may terminate the lease with 30 days.",
+   "english": "A tenant may terminate the lease with 30 days' written notice.",
    "fol": "\u2203x1,x2,x3(tenant(x1) \u2227 lease(x2) \u2227 notice(x3) \u2227 written(x3) \u2227 amount(x3,30,day) \u2227 GENe1(MAY[terminate(e1) \u2227 agent(e1,x1) \u2227 patient(e1,x2) \u2227 with(e1,x3)]))"
   },
   {
@@ -795,7 +795,7 @@
    "code": "inst(x1, tenant).\nquant(x1, a).\ninst(x2, lease).\nquant(x2, the).\ninst(x3, notice).\nquant(x3, bare).\nprop(x3, written).\nmeasure(x3, 30, day).\nevent(e1, terminate).\nmodal(e1, may).\nrole(e1, agent, x1).\nrole(e1, patient, x2).\nrole(e1, pp(with), x3).\ngeneric(e1).",
    "ok": true,
    "n_errors": 0,
-   "english": "A tenant may terminate the lease with 30 days.",
+   "english": "A tenant may terminate the lease with 30 days' written notice.",
    "fol": "\u2203x1,x2,x3(tenant(x1) \u2227 lease(x2) \u2227 notice(x3) \u2227 written(x3) \u2227 amount(x3,30,day) \u2227 GENe1(MAY[terminate(e1) \u2227 agent(e1,x1) \u2227 patient(e1,x2) \u2227 with(e1,x3)]))"
   },
   {
@@ -900,14 +900,14 @@
    "code": "inst(x1, bridge).\nquant(x1, the).\nmeasure(x1, 340, meter).\nmeasure(x1, at_least(80), year).\nevent(e1, be).\ntense(e1, present).\nrole(e1, agent, x1).\nrole(e1, attribute, long).\nevent(e2, be).\ntense(e2, present).\nrole(e2, agent, x1).\nrole(e2, attribute, old).\nlink(e1, and, e2).",
    "ok": true,
    "n_errors": 0,
-   "english": "At least 80 years are long and at least 80 years are old.",
+   "english": "At least 80 years' bridge are long and at least 80 years' bridge are old.",
    "fol": "\u2203x1(bridge(x1) \u2227 amount(x1,at_least_eighty,year) \u2227 \u2203e1(be(e1) \u2227 agent(e1,x1) \u2227 attribute(e1,long)) \u2227 \u2203e2(be(e2) \u2227 agent(e2,x1) \u2227 attribute(e2,old)) \u2227 and(e1,e2))"
   },
   {
    "code": "inst(x1, bridge).\nquant(x1, the).\ninst(x2, length).\nmeasure(x2, 340, meter).\ninst(x3, age).\nmeasure(x3, at_least(80), year).\nevent(e1, be).\ntense(e1, present).\nrole(e1, agent, x1).\nrole(e1, attribute, long).\nrole(e1, extent, x2).\nevent(e2, be).\ntense(e2, present).\nrole(e2, agent, x1).\nrole(e2, attribute, old).\nrole(e2, extent, x3).\nlink(e1, and, e2).",
    "ok": true,
    "n_errors": 0,
-   "english": "The bridge is long 340 meters and the bridge is old at least 80 years.",
+   "english": "The bridge is long 340 meters' length and the bridge is old at least 80 years' age.",
    "fol": "\u2203x1,x2,x3(bridge(x1) \u2227 length(x2) \u2227 amount(x2,340,meter) \u2227 age(x3) \u2227 amount(x3,at_least_eighty,year) \u2227 \u2203e1(be(e1) \u2227 agent(e1,x1) \u2227 attribute(e1,long) \u2227 extent(e1,x2)) \u2227 \u2203e2(be(e2) \u2227 agent(e2,x1) \u2227 attribute(e2,old) \u2227 extent(e2,x3)) \u2227 and(e1,e2))"
   },
   {
@@ -963,7 +963,7 @@
    "code": "inst(x1, brother).\nquant(x1, the).\nmeasure(x1, 3, 1).\nplural(x1).\ninst(x2, piano).\nquant(x2, the).\nevent(e1, lift).\ntense(e1, past).\nrole(e1, agent, x1).\nrole(e1, patient, x2).\nrole(e1, manner, together).",
    "ok": true,
    "n_errors": 0,
-   "english": "3 1s lifted the piano together.",
+   "english": "3 1s' brother lifted the piano together.",
    "fol": "\u2203x1,x2(brother(x1) \u2227 amount(x1,3,1) \u2227 piano(x2) \u2227 \u2203e1(lift(e1) \u2227 agent(e1,x1) \u2227 patient(e1,x2) \u2227 manner(e1,together) \u2227 past(e1)))"
   },
   {
@@ -1033,7 +1033,7 @@
    "code": "name(x1, 'Tom').\ninst(x2, coffee). quant(x2, bare).\ninst(x3, time).\nprop(x3, evening).\nmeasure(x3, 6, oclock).\nevent(e1, drink).\ngeneric(e1).\nfreq(e1, never).\nrole(e1, agent, x1).\nrole(e1, patient, x2).\nrole(e1, pp(after), x3).",
    "ok": true,
    "n_errors": 0,
-   "english": "Tom never drinks coffee after 6 oclocks.",
+   "english": "Tom never drinks coffee after 6 oclocks' evening time.",
    "fol": "\u2203x1,x2,x3(x1=Tom \u2227 coffee(x2) \u2227 time(x3) \u2227 evening(x3) \u2227 amount(x3,6,oclock) \u2227 NEVER(GENe1(drink(e1) \u2227 agent(e1,x1) \u2227 patient(e1,x2) \u2227 after(e1,x3))))"
   },
   {
@@ -1047,7 +1047,7 @@
    "code": "name(x1, 'Tom').\ninst(x2, coffee). quant(x2, bare).\ninst(x3, time_of_day).\nmeasure(x3, 6, hour).\nprop(x3, evening).\nevent(e1, drink).\ngeneric(e1).\nfreq(e1, never).\nrole(e1, agent, x1).\nrole(e1, patient, x2).\nrole(e1, pp(after), x3).",
    "ok": true,
    "n_errors": 0,
-   "english": "Tom never drinks coffee after 6 hours.",
+   "english": "Tom never drinks coffee after 6 hours' evening time of day.",
    "fol": "\u2203x1,x2,x3(x1=Tom \u2227 coffee(x2) \u2227 time_of_day(x3) \u2227 evening(x3) \u2227 amount(x3,6,hour) \u2227 NEVER(GENe1(drink(e1) \u2227 agent(e1,x1) \u2227 patient(e1,x2) \u2227 after(e1,x3))))"
   },
   {

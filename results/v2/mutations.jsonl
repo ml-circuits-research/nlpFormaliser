@@ -1,0 +1,196 @@
+{"set": "new_phenomena", "id": "g02", "mutation": "negation", "realization": "Not increasing a temperature speeds up most chemical reactions.", "detected": true}
+{"set": "new_phenomena", "id": "g05", "mutation": "negation", "realization": "Most birds can not fly but penguins can not fly.", "detected": true}
+{"set": "new_phenomena", "id": "q01", "mutation": "quantifier", "realization": "No child likes chocolate.", "detected": true}
+{"set": "new_phenomena", "id": "q01", "mutation": "tense", "realization": "Not every child liked chocolate.", "detected": true}
+{"set": "new_phenomena", "id": "g05", "mutation": "quantifier", "realization": "Few birds can fly but penguins can not fly.", "detected": true}
+{"set": "new_phenomena", "id": "g02", "mutation": "quantifier", "realization": "Increasing a temperature speeds up few chemical reactions.", "detected": true}
+{"set": "new_phenomena", "id": "g01", "mutation": "negation", "realization": "Whales are not mammal but whales are not fish.", "detected": true}
+{"set": "new_phenomena", "id": "g02", "mutation": "drop_fact", "realization": "Increasing a temperature speeds up most reactions.", "detected": true}
+{"set": "new_phenomena", "id": "q01", "mutation": "role_swap", "realization": "Chocolate likes not every child.", "detected": true}
+{"set": "new_phenomena", "id": "q04", "mutation": "tense", "realization": "Every student will read a different book.", "detected": true}
+{"set": "new_phenomena", "id": "q04", "mutation": "quantifier", "realization": "Some student read a different book.", "detected": true}
+{"set": "new_phenomena", "id": "q04", "mutation": "drop_fact", "realization": "Every student read a book.", "detected": true}
+{"set": "new_phenomena", "id": "g04", "mutation": "negation", "realization": "A triangle does not have three sides.", "detected": true}
+{"set": "new_phenomena", "id": "q04", "mutation": "negation", "realization": "Every student did not read a different book.", "detected": true}
+{"set": "new_phenomena", "id": "g01", "mutation": "tense", "realization": "Whales were mammal but whales are not fish.", "detected": true}
+{"set": "new_phenomena", "id": "g04", "mutation": "role_swap", "realization": "Three sides have a triangle.", "detected": true}
+{"set": "new_phenomena", "id": "g04", "mutation": "tense", "realization": "A triangle had three sides.", "detected": true}
+{"set": "new_phenomena", "id": "g03", "mutation": "negation", "realization": "Dogs do not bark when strangers approach.", "detected": true}
+{"set": "new_phenomena", "id": "g04", "mutation": "quantifier", "realization": "Every triangle has three sides.", "detected": false}
+{"set": "new_phenomena", "id": "q04", "mutation": "role_swap", "realization": "A different book read every student.", "detected": true}
+{"set": "new_phenomena", "id": "g06", "mutation": "negation", "realization": "Metals do not expand when metals are heated.", "detected": true}
+{"set": "new_phenomena", "id": "g03", "mutation": "tense", "realization": "Dogs barked when strangers approach.", "detected": true}
+{"set": "new_phenomena", "id": "m01", "mutation": "negation", "realization": "Water does not boil at 100 degrees Celsius at sea level.", "detected": true}
+{"set": "new_phenomena", "id": "g06", "mutation": "tense", "realization": "Metals expanded when metals are heated.", "detected": true}
+{"set": "new_phenomena", "id": "m01", "mutation": "tense", "realization": "Water boiled at 100 degrees Celsius at sea level.", "detected": true}
+{"set": "new_phenomena", "id": "p04", "mutation": "negation", "realization": "Anna, Paul and Maria do not share an apartment in Vienna.", "detected": true}
+{"set": "new_phenomena", "id": "m01", "mutation": "drop_fact", "realization": "Water boils at 100 degrees Celsius.", "detected": true}
+{"set": "new_phenomena", "id": "m02", "mutation": "drop_fact", "realization": "Employees who work for more than 40 hours per week are entitled a pay.", "detected": true}
+{"set": "new_phenomena", "id": "p04", "mutation": "role_swap", "realization": "An apartment shares Anna, Paul and Maria in Vienna.", "detected": true}
+{"set": "new_phenomena", "id": "p04", "mutation": "tense", "realization": "Anna, Paul and Maria shared an apartment in Vienna.", "detected": true}
+{"set": "new_phenomena", "id": "m02", "mutation": "negation", "realization": "Employees who do not work for more than 40 hours per week are entitled an overtime pay.", "detected": true}
+{"set": "new_phenomena", "id": "p04", "mutation": "quantifier", "realization": "Anna, Paul and Maria share every apartment in Vienna.", "detected": true}
+{"set": "new_phenomena", "id": "m02", "mutation": "tense", "realization": "Employees who worked for more than 40 hours per week are entitled an overtime pay.", "detected": true}
+{"set": "new_phenomena", "id": "p04", "mutation": "drop_fact", "realization": "Anna, Paul and Maria share an apartment.", "detected": true}
+{"set": "new_phenomena", "id": "p01", "mutation": "negation", "realization": "Alice and Bob did not meet in Berlin and Alice and Bob decided that Alice and Bob start a company together.", "detected": true}
+{"set": "new_phenomena", "id": "f01", "mutation": "negation", "realization": "Only Sarah did not know where the key was hidden.", "detected": true}
+{"set": "new_phenomena", "id": "f01", "mutation": "tense", "realization": "Only Sarah will know where the key was hidden.", "detected": true}
+{"set": "new_phenomena", "id": "f01", "mutation": "quantifier", "realization": "Only Sarah knew where every key was hidden.", "detected": true}
+{"set": "new_phenomena", "id": "p01", "mutation": "drop_fact", "realization": "Alice and Bob met and Alice and Bob decided that Alice and Bob start a company together.", "detected": true}
+{"set": "new_phenomena", "id": "p01", "mutation": "tense", "realization": "Alice and Bob will meet in Berlin and Alice and Bob decided that Alice and Bob start a company together.", "detected": true}
+{"set": "new_phenomena", "id": "p01", "mutation": "quantifier", "realization": "Alice and Bob met in Berlin and Alice and Bob decided that Alice and Bob start every company together.", "detected": true}
+{"set": "new_phenomena", "id": "p01", "mutation": "role_swap", "realization": "Alice and Bob met in Berlin and Alice and Bob decided that a company starts Alice and Bob together.", "detected": true}
+{"set": "new_phenomena", "id": "m04", "mutation": "negation", "realization": "Less than ten persons did not attend the meeting.", "detected": true}
+{"set": "new_phenomena", "id": "m04", "mutation": "tense", "realization": "Less than ten persons will attend the meeting.", "detected": true}
+{"set": "new_phenomena", "id": "f02", "mutation": "negation", "realization": "Even the teacher did not fail the test.", "detected": true}
+{"set": "new_phenomena", "id": "m04", "mutation": "quantifier", "realization": "Less than ten persons attended every meeting.", "detected": true}
+{"set": "new_phenomena", "id": "f02", "mutation": "quantifier", "realization": "Even every teacher failed the test.", "detected": true}
+{"set": "new_phenomena", "id": "f04", "mutation": "negation", "realization": "Also John did not buy a ticket.", "detected": true}
+{"set": "new_phenomena", "id": "f02", "mutation": "tense", "realization": "Even the teacher will fail the test.", "detected": true}
+{"set": "new_phenomena", "id": "f04", "mutation": "quantifier", "realization": "Also John bought every ticket.", "detected": true}
+{"set": "new_phenomena", "id": "m04", "mutation": "role_swap", "realization": "The meeting attended less than ten persons.", "detected": true}
+{"set": "new_phenomena", "id": "a01", "mutation": "negation", "realization": "Cats do not usually sleep during the day.", "detected": true}
+{"set": "new_phenomena", "id": "f04", "mutation": "tense", "realization": "Also John will buy a ticket.", "detected": true}
+{"set": "new_phenomena", "id": "a01", "mutation": "tense", "realization": "Cats usually slept during the day.", "detected": true}
+{"set": "new_phenomena", "id": "a01", "mutation": "quantifier", "realization": "Cats usually sleep during every day.", "detected": true}
+{"set": "new_phenomena", "id": "a01", "mutation": "drop_fact", "realization": "Cats usually sleep.", "detected": true}
+{"set": "new_phenomena", "id": "q03", "mutation": "quantifier", "realization": "There are two books that every student in the class has read.", "detected": true}
+{"set": "new_phenomena", "id": "f02", "mutation": "role_swap", "realization": "The test failed even the teacher.", "detected": true}
+{"set": "new_phenomena", "id": "q03", "mutation": "role_swap", "realization": "There is one book that has read every student in the class.", "detected": true}
+{"set": "new_phenomena", "id": "q03", "mutation": "negation", "realization": "There is one book that every student in the class has not read.", "detected": true}
+{"set": "new_phenomena", "id": "q02", "mutation": "negation", "realization": "Every children like spinach and no children like it.", "detected": true}
+{"set": "new_phenomena", "id": "q03", "mutation": "tense", "realization": "There is one book that every student in the class had read.", "detected": true}
+{"set": "new_phenomena", "id": "f04", "mutation": "role_swap", "realization": "A ticket bought also John.", "detected": true}
+{"set": "new_phenomena", "id": "q05", "mutation": "negation", "realization": "No doctor did not recommend the treatments.", "detected": true}
+{"set": "new_phenomena", "id": "q02", "mutation": "role_swap", "realization": "Spinach does not like every children and no children like it.", "detected": true}
+{"set": "new_phenomena", "id": "q05", "mutation": "quantifier", "realization": "Some doctor recommended the treatments.", "detected": true}
+{"set": "new_phenomena", "id": "q05", "mutation": "role_swap", "realization": "The treatments recommended no doctor.", "detected": true}
+{"set": "new_phenomena", "id": "q05", "mutation": "tense", "realization": "No doctor will recommend the treatments.", "detected": true}
+{"set": "new_phenomena", "id": "a02", "mutation": "negation", "realization": "The train is not always late on mondays.", "detected": true}
+{"set": "new_phenomena", "id": "a02", "mutation": "quantifier", "realization": "Every train is always late on mondays.", "detected": true}
+{"set": "new_phenomena", "id": "a02", "mutation": "tense", "realization": "The train was always late on mondays.", "detected": true}
+{"set": "new_phenomena", "id": "a02", "mutation": "drop_fact", "realization": "The train is always late.", "detected": true}
+{"set": "new_phenomena", "id": "c03", "mutation": "quantifier", "realization": "The accident would not have happened if every driver had braked earlier.", "detected": true}
+{"set": "new_phenomena", "id": "m03", "mutation": "negation", "realization": "The bridge is not long 340 meters and the bridge is old at least 80 years.", "detected": true}
+{"set": "new_phenomena", "id": "c03", "mutation": "drop_fact", "realization": "The accident would not have happened if the driver had braked.", "detected": true}
+{"set": "new_phenomena", "id": "q02", "mutation": "tense", "realization": "Every children did not like spinach and no children like it.", "detected": true}
+{"set": "new_phenomena", "id": "m03", "mutation": "quantifier", "realization": "Every bridge is long 340 meters and the bridge is old at least 80 years.", "detected": true}
+{"set": "new_phenomena", "id": "c02", "mutation": "negation", "realization": "I would buy a house by the sea if I were not rich.", "detected": true}
+{"set": "new_phenomena", "id": "m03", "mutation": "tense", "realization": "The bridge was long 340 meters and the bridge is old at least 80 years.", "detected": true}
+{"set": "new_phenomena", "id": "c02", "mutation": "role_swap", "realization": "A house by the sea would buy me if I were rich.", "detected": true}
+{"set": "new_phenomena", "id": "c02", "mutation": "quantifier", "realization": "I would buy every house by the sea if I were rich.", "detected": true}
+{"set": "new_phenomena", "id": "c01", "mutation": "negation", "realization": "The match would have been postponed if it had not rained.", "detected": true}
+{"set": "new_phenomena", "id": "c01", "mutation": "quantifier", "realization": "Every match would have been postponed if it had rained.", "detected": true}
+{"set": "new_phenomena", "id": "c02", "mutation": "tense", "realization": "I would buy a house by the sea if I had been rich.", "detected": true}
+{"set": "new_phenomena", "id": "a03", "mutation": "negation", "realization": "Tom does not never drink coffee after a 6 evening time.", "detected": true}
+{"set": "new_phenomena", "id": "a03", "mutation": "role_swap", "realization": "Coffee never drinks Tom after a 6 evening time.", "detected": true}
+{"set": "new_phenomena", "id": "a03", "mutation": "tense", "realization": "Tom never drank coffee after a 6 evening time.", "detected": true}
+{"set": "new_phenomena", "id": "c03", "mutation": "negation", "realization": "The accident would not have happened if the driver had not braked earlier.", "detected": true}
+{"set": "speech_acts", "id": "k02", "mutation": "negation", "realization": "Can penguins not fly?", "detected": true}
+{"set": "speech_acts", "id": "k02", "mutation": "speech_act", "realization": "Can fly penguins!", "detected": true}
+{"set": "speech_acts", "id": "k04", "mutation": "negation", "realization": "Is Paris not larger than Lyon?", "detected": true}
+{"set": "speech_acts", "id": "k04", "mutation": "tense", "realization": "Was Paris larger than Lyon?", "detected": true}
+{"set": "speech_acts", "id": "k04", "mutation": "speech_act", "realization": "Be larger than Lyon Paris!", "detected": true}
+{"set": "speech_acts", "id": "k01", "mutation": "negation", "realization": "Did the children not eat the vegetables?", "detected": true}
+{"set": "new_phenomena", "id": "a03", "mutation": "drop_fact", "realization": "Tom never drinks coffee after an evening time.", "detected": true}
+{"set": "new_phenomena", "id": "q02", "mutation": "quantifier", "realization": "Some children do not like spinach and no children like it.", "detected": false}
+{"set": "speech_acts", "id": "k01", "mutation": "role_swap", "realization": "Did the vegetables eat the children?", "detected": true}
+{"set": "speech_acts", "id": "k01", "mutation": "tense", "realization": "Will the children eat the vegetables?", "detected": true}
+{"set": "speech_acts", "id": "k01", "mutation": "speech_act", "realization": "Eat the vegetables the children!", "detected": true}
+{"set": "speech_acts", "id": "k05", "mutation": "negation", "realization": "Who did not break the window?", "detected": true}
+{"set": "speech_acts", "id": "k05", "mutation": "quantifier", "realization": "Who broke every window?", "detected": true}
+{"set": "speech_acts", "id": "k05", "mutation": "tense", "realization": "Who will break the window?", "detected": true}
+{"set": "speech_acts", "id": "k07", "mutation": "negation", "realization": "What did Mary not buy yesterday?", "detected": true}
+{"set": "speech_acts", "id": "k05", "mutation": "role_swap", "realization": "Who did the window break?", "detected": true}
+{"set": "speech_acts", "id": "k05", "mutation": "speech_act", "realization": "Break the window who!", "detected": true}
+{"set": "speech_acts", "id": "k07", "mutation": "speech_act", "realization": "Buy what Mary yesterday!", "detected": true}
+{"set": "speech_acts", "id": "k07", "mutation": "tense", "realization": "What will Mary buy yesterday?", "detected": true}
+{"set": "speech_acts", "id": "k07", "mutation": "role_swap", "realization": "What bought Mary yesterday?", "detected": true}
+{"set": "speech_acts", "id": "k07", "mutation": "drop_fact", "realization": "What did Mary buy?", "detected": true}
+{"set": "speech_acts", "id": "k13", "mutation": "quantifier", "realization": "Do you know where every station is?", "detected": true}
+{"set": "speech_acts", "id": "k13", "mutation": "tense", "realization": "Did you know where the station is?", "detected": true}
+{"set": "speech_acts", "id": "k13", "mutation": "negation", "realization": "Do you not know where the station is?", "detected": true}
+{"set": "speech_acts", "id": "k13", "mutation": "speech_act", "realization": "Know where the station is!", "detected": true}
+{"set": "speech_acts", "id": "k06", "mutation": "negation", "realization": "Which train does not go to Berlin?", "detected": true}
+{"set": "speech_acts", "id": "k06", "mutation": "tense", "realization": "Which train went to Berlin?", "detected": true}
+{"set": "speech_acts", "id": "k06", "mutation": "drop_fact", "realization": "Which train goes?", "detected": true}
+{"set": "speech_acts", "id": "k15", "mutation": "negation", "realization": "Please do not pass the salt to me.", "detected": true}
+{"set": "speech_acts", "id": "k06", "mutation": "speech_act", "realization": "Go which train to Berlin!", "detected": true}
+{"set": "speech_acts", "id": "k15", "mutation": "speech_act", "realization": "Do you pass the salt to me?", "detected": true}
+{"set": "speech_acts", "id": "k09", "mutation": "tense", "realization": "Where will Alice and Bob meet?", "detected": true}
+{"set": "speech_acts", "id": "k15", "mutation": "quantifier", "realization": "Please pass every salt to me.", "detected": true}
+{"set": "speech_acts", "id": "k09", "mutation": "negation", "realization": "Where did Alice and Bob not meet?", "detected": true}
+{"set": "speech_acts", "id": "k01", "mutation": "quantifier", "realization": "Did every children eat the vegetables?", "detected": false}
+{"set": "speech_acts", "id": "k09", "mutation": "speech_act", "realization": "Meet Alice and Bob in!", "detected": true}
+{"set": "speech_acts", "id": "k11", "mutation": "negation", "realization": "Why was the road not closed?", "detected": true}
+{"set": "speech_acts", "id": "k11", "mutation": "quantifier", "realization": "Why was every road closed?", "detected": true}
+{"set": "speech_acts", "id": "k11", "mutation": "tense", "realization": "Why will the road be closed?", "detected": true}
+{"set": "speech_acts", "id": "k08", "mutation": "negation", "realization": "Who did John not give the book to?", "detected": true}
+{"set": "speech_acts", "id": "k15", "mutation": "role_swap", "realization": "Please pass you the salt to me.", "detected": true}
+{"set": "speech_acts", "id": "k11", "mutation": "speech_act", "realization": "Be closed the road because of !", "detected": true}
+{"set": "speech_acts", "id": "k08", "mutation": "quantifier", "realization": "Who did John give every book to?", "detected": true}
+{"set": "speech_acts", "id": "k08", "mutation": "role_swap", "realization": "Who did the book give John to?", "detected": true}
+{"set": "speech_acts", "id": "k08", "mutation": "tense", "realization": "Who will John give the book to?", "detected": true}
+{"set": "speech_acts", "id": "k10", "mutation": "negation", "realization": "When does the museum not open?", "detected": true}
+{"set": "speech_acts", "id": "k08", "mutation": "speech_act", "realization": "Give the book John to who!", "detected": true}
+{"set": "speech_acts", "id": "k10", "mutation": "tense", "realization": "When did the museum open?", "detected": true}
+{"set": "speech_acts", "id": "k10", "mutation": "speech_act", "realization": "Open the museum at!", "detected": true}
+{"set": "speech_acts", "id": "k18", "mutation": "negation", "realization": "Touch the wires!", "detected": true}
+{"set": "speech_acts", "id": "k10", "mutation": "quantifier", "realization": "When does every museum open?", "detected": true}
+{"set": "speech_acts", "id": "k15", "mutation": "drop_fact", "realization": "Please pass the salt.", "detected": false}
+{"set": "speech_acts", "id": "k18", "mutation": "speech_act", "realization": "Do you not touch the wires?", "detected": true}
+{"set": "speech_acts", "id": "k12", "mutation": "negation", "realization": "How many students did not pass the exam?", "detected": true}
+{"set": "speech_acts", "id": "k12", "mutation": "tense", "realization": "How many students will pass the exam?", "detected": true}
+{"set": "speech_acts", "id": "k12", "mutation": "quantifier", "realization": "How many students passed every exam?", "detected": true}
+{"set": "speech_acts", "id": "k18", "mutation": "quantifier", "realization": "Do not touch every wires!", "detected": true}
+{"set": "speech_acts", "id": "k12", "mutation": "speech_act", "realization": "Pass the exam how many students!", "detected": true}
+{"set": "speech_acts", "id": "k18", "mutation": "role_swap", "realization": "Do not touch you the wires!", "detected": true}
+{"set": "speech_acts", "id": "k19", "mutation": "negation", "realization": "Do not submit the report by friday!", "detected": true}
+{"set": "speech_acts", "id": "k19", "mutation": "quantifier", "realization": "Submit every report by friday!", "detected": true}
+{"set": "speech_acts", "id": "k22", "mutation": "negation", "realization": "I promise that I will not call you tomorrow.", "detected": true}
+{"set": "speech_acts", "id": "k19", "mutation": "drop_fact", "realization": "Submit the report!", "detected": true}
+{"set": "speech_acts", "id": "k12", "mutation": "role_swap", "realization": "How many students did the exam pass?", "detected": true}
+{"set": "speech_acts", "id": "k22", "mutation": "role_swap", "realization": "I promise that you will call me tomorrow.", "detected": true}
+{"set": "speech_acts", "id": "k22", "mutation": "speech_act", "realization": "Will I call you tomorrow?", "detected": true}
+{"set": "speech_acts", "id": "k22", "mutation": "tense", "realization": "I promise that I called you tomorrow.", "detected": true}
+{"set": "speech_acts", "id": "k03", "mutation": "drop_fact", "realization": "Has the report been finished?", "detected": true}
+{"set": "speech_acts", "id": "k22", "mutation": "drop_fact", "realization": "I promise that I will call you.", "detected": true}
+{"set": "speech_acts", "id": "k03", "mutation": "quantifier", "realization": "Has every report been finished yet?", "detected": true}
+{"set": "speech_acts", "id": "k03", "mutation": "negation", "realization": "Has the report not been finished yet?", "detected": true}
+{"set": "speech_acts", "id": "k03", "mutation": "tense", "realization": "Had the report been finished yet?", "detected": true}
+{"set": "speech_acts", "id": "k25", "mutation": "negation", "realization": "The teacher asked the students not to close their books.", "detected": true}
+{"set": "speech_acts", "id": "k03", "mutation": "speech_act", "realization": "Have been finished the report yet!", "detected": true}
+{"set": "speech_acts", "id": "k19", "mutation": "role_swap", "realization": "Submit you the report by friday!", "detected": true}
+{"set": "speech_acts", "id": "k25", "mutation": "quantifier", "realization": "Every teacher asked the students to close their books.", "detected": true}
+{"set": "speech_acts", "id": "k14", "mutation": "negation", "realization": "I do not wonder who won the election.", "detected": true}
+{"set": "speech_acts", "id": "k25", "mutation": "speech_act", "realization": "The teacher asked the students whether they close their books.", "detected": true}
+{"set": "speech_acts", "id": "k25", "mutation": "role_swap", "realization": "The teacher asked the students to close them their books.", "detected": true}
+{"set": "speech_acts", "id": "k14", "mutation": "tense", "realization": "I wondered who won the election.", "detected": true}
+{"set": "speech_acts", "id": "k14", "mutation": "quantifier", "realization": "I wonder who won every election.", "detected": true}
+{"set": "speech_acts", "id": "k23", "mutation": "negation", "realization": "Do not be careful! The floor is wet.", "detected": true}
+{"set": "speech_acts", "id": "k14", "mutation": "role_swap", "realization": "I wonder who the election won.", "detected": true}
+{"set": "speech_acts", "id": "k23", "mutation": "speech_act", "realization": "Are you careful? The floor is wet.", "detected": true}
+{"set": "speech_acts", "id": "k23", "mutation": "quantifier", "realization": "Be careful! Every floor is wet.", "detected": true}
+{"set": "speech_acts", "id": "k26", "mutation": "negation", "realization": "Maria asked Peter whether he had not seen her keys.", "detected": true}
+{"set": "speech_acts", "id": "k26", "mutation": "tense", "realization": "Maria asked Peter whether he will have seen her keys.", "detected": true}
+{"set": "speech_acts", "id": "k26", "mutation": "role_swap", "realization": "Maria asked Peter whether her keys had seen him.", "detected": true}
+{"set": "speech_acts", "id": "k21", "mutation": "negation", "realization": "I offer not to carry your bag.", "detected": true}
+{"set": "speech_acts", "id": "k26", "mutation": "speech_act", "realization": "Maria ordered Peter to have seen her keys.", "detected": true}
+{"set": "speech_acts", "id": "k21", "mutation": "role_swap", "realization": "I offer to carry me.", "detected": true}
+{"set": "speech_acts", "id": "k21", "mutation": "speech_act", "realization": "Will I carry your bag?", "detected": true}
+{"set": "speech_acts", "id": "k16", "mutation": "negation", "realization": "Please do not close the window.", "detected": true}
+{"set": "speech_acts", "id": "k16", "mutation": "speech_act", "realization": "Do you close the window?", "detected": true}
+{"set": "speech_acts", "id": "k16", "mutation": "quantifier", "realization": "Please close every window.", "detected": true}
+{"set": "speech_acts", "id": "k17", "mutation": "role_swap", "realization": "Could the door shut some person? It is really cold in the place.", "detected": true}
+{"set": "speech_acts", "id": "k17", "mutation": "negation", "realization": "Could some person shut the door? It is not really cold in the place.", "detected": true}
+{"set": "speech_acts", "id": "k19", "mutation": "speech_act", "realization": "Will you submit the report by friday?", "detected": false}
+{"set": "speech_acts", "id": "k17", "mutation": "quantifier", "realization": "Could some person shut the door? It is really cold in every place.", "detected": true}
+{"set": "speech_acts", "id": "k24", "mutation": "negation", "realization": "Thank you for not helping me with the move.", "detected": true}
+{"set": "speech_acts", "id": "k24", "mutation": "quantifier", "realization": "Thank you for helping me with every move.", "detected": true}
+{"set": "speech_acts", "id": "k17", "mutation": "tense", "realization": "Could some person shut the door? It was really cold in the place.", "detected": true}
+{"set": "speech_acts", "id": "k24", "mutation": "speech_act", "realization": "Do you help me with the move?", "detected": true}
+{"set": "speech_acts", "id": "k24", "mutation": "role_swap", "realization": "Thank you for I helping you with the move.", "detected": true}
+{"set": "speech_acts", "id": "k17", "mutation": "speech_act", "realization": "Could shut the door some person! It is really cold in the place.", "detected": true}
+{"set": "speech_acts", "id": "k24", "mutation": "drop_fact", "realization": "Thank you for helping me.", "detected": true}
+{"set": "speech_acts", "id": "k16", "mutation": "role_swap", "realization": "Please close you the window.", "detected": false}
+{"set": "speech_acts", "id": "k17", "mutation": "drop_fact", "realization": "Could some person shut the door? It is really cold.", "detected": true}

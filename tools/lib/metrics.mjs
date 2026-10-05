@@ -1,4 +1,5 @@
 import {rowFailure} from './failures.mjs';
+import {ISSUE_CATEGORIES} from './audit.mjs';
 // Missing annotations are not perfect scores. Overlapping tags are reported
 // independently and must never be summed as disjoint case counts.
 export function summarizeRows(rows) {
@@ -17,6 +18,10 @@ export function summarizeRows(rows) {
     // Eligibility (reasoning-export screen) and equivalence (judge) are separate
     // criteria. eligibleEquivalent is a joint diagnostic, never the sole result.
     reasoningEligible: count(row => row.audit?.eligible),
+    // Rows failing each eligibility category (a row can fail several), and the mean source-echo ratio.
+    ineligibleBy: Object.fromEntries(ISSUE_CATEGORIES.map(c => [c, count(row => row.audit?.eligibility?.[c] === false)])),
+    meanEchoRatio: rows.some(row => row.audit?.metrics) ? rows.reduce((a, row) => a + (row.audit?.metrics?.echoRatio ?? 0), 0) / rows.filter(row => row.audit?.metrics).length : null,
+    longSymbols: rows.reduce((a, row) => a + (row.audit?.metrics?.longSymbols ?? 0), 0),
     judged: count(row => row.verdict?.status === 'judged'),
     equivalent: count(row => outcome(row) === 'equivalent'),
     notEquivalent: count(row => outcome(row) === 'not_equivalent'),

@@ -1,0 +1,1 @@
+If a device fails self-test, it must not be shipped. Device D4 passed self-test. Is D4 prohibited from being shipped?

@@ -1,0 +1,27 @@
+{
+  "id": "010-microir-tiny",
+  "stage": "calibration",
+  "repairs": 0,
+  "finished": "2026-10-05T14:30:45.082Z",
+  "strategies": {
+    "microir": {
+      "n": 5,
+      "valid": 0,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    }
+  },
+  "calls": {
+    "requests": 1,
+    "uncached": 1,
+    "inputTokens": 411,
+    "outputTokens": 5657,
+    "knownCredits": 0.1,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 1
+  }
+}

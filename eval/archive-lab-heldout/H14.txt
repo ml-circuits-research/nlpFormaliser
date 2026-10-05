@@ -1,0 +1,1 @@
+Files whose current checksum differs from the stored checksum are stale. FileA is a file whose checksum differs from the stored value.

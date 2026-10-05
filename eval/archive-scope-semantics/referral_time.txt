@@ -1,0 +1,1 @@
+The clinic may schedule an appointment only after a referral arrives. Eva’s referral arrived at 09:00, and her appointment was scheduled at 09:15. Did the referral arrive before the scheduling?

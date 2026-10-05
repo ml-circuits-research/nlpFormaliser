@@ -1,0 +1,1 @@
+Each approved expense has a receipt. Expense E3 has a receipt, but its approval status is unknown. Is E3 approved?

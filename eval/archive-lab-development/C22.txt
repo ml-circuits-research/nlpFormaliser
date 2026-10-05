@@ -1,0 +1,1 @@
+If either sensor A or sensor B detects smoke, the alarm sounds. Sensor A detects smoke.

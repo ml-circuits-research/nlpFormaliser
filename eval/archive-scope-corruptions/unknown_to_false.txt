@@ -1,0 +1,1 @@
+If the service is overloaded, latency usually increases. Today latency increased, but we do not know whether the service was overloaded. Was the service definitely overloaded?

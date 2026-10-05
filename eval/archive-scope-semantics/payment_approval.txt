@@ -1,0 +1,1 @@
+If a payment exceeds 10,000 euros, a director must approve it before it is released. Payment P7 is for 12,500 euros and has been released. Was P7 necessarily approved by a director?

@@ -1,0 +1,27 @@
+{
+  "id": "007-evl-single-16k",
+  "stage": "calibration",
+  "repairs": 0,
+  "finished": "2026-10-05T14:29:40.355Z",
+  "strategies": {
+    "evl": {
+      "n": 5,
+      "valid": 4,
+      "reasoningEligible": 4,
+      "judged": 4,
+      "equivalent": 3,
+      "eligibleEquivalent": 3,
+      "judgeErrors": 0
+    }
+  },
+  "calls": {
+    "requests": 9,
+    "uncached": 9,
+    "inputTokens": 11907,
+    "outputTokens": 20408,
+    "knownCredits": 0.8999999999999999,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 9
+  }
+}

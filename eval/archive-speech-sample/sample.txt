@@ -1,0 +1,1 @@
+Okay, so I was thinking maybe we should use Luna for this because it should be cheaper. But don't change anything yet. First check whether it gets at least 95% on the previous dataset. If it does, use it for the next experiment; otherwise stay with Sol. And could you also tell me how much slower Sol is?

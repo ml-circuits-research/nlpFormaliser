@@ -1,0 +1,67 @@
+{
+  "id": "015-restored-dialogue-offline",
+  "stage": "source",
+  "repairs": 0,
+  "finished": "2026-10-05T14:50:35.170Z",
+  "strategies": {
+    "discourse-semantic-graph": {
+      "n": 1,
+      "valid": 1,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0,
+      "behavioral": {
+        "tested": 0,
+        "passed": 0,
+        "accuracy": null,
+        "semantic": {
+          "tested": 0,
+          "passed": 0
+        },
+        "controls": {
+          "tested": 0,
+          "passed": 0
+        },
+        "unsupportedCases": 0
+      },
+      "byCategory": {
+        "discourse/connected-dialogue": {
+          "n": 1,
+          "valid": 1,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "passed": 0,
+            "accuracy": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        }
+      },
+      "byTag": {}
+    }
+  },
+  "calls": {
+    "requests": 0,
+    "uncached": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "knownCredits": 0,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 0
+  }
+}

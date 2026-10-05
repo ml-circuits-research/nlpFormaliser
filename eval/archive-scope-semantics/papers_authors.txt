@@ -1,0 +1,1 @@
+Every paper has at least one author. There is an author who wrote three papers. Is there an author who wrote at least one paper?

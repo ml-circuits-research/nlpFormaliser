@@ -1,0 +1,1 @@
+R1 is permitted to pick up B only when its gripper is empty. R1 has permission to pick up B.

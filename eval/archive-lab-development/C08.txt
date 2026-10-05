@@ -1,0 +1,1 @@
+Every researcher who owns a GPU can run a local model. Ana is a researcher and owns GPU1, which is a GPU.

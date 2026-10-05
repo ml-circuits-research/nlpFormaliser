@@ -1,0 +1,1 @@
+At least one backup is stored off-site, and every off-site backup is encrypted. Are all backups encrypted?

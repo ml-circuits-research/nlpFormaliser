@@ -1,0 +1,1 @@
+Run the benchmark and, if accuracy is below 95%, try Sol.

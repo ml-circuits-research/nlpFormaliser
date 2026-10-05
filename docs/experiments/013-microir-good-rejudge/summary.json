@@ -1,0 +1,27 @@
+{
+  "id": "013-microir-good-rejudge",
+  "stage": "calibration",
+  "repairs": 0,
+  "finished": "2026-10-05T14:29:28.425Z",
+  "strategies": {
+    "microir": {
+      "n": 5,
+      "valid": 5,
+      "reasoningEligible": 5,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 5
+    }
+  },
+  "calls": {
+    "requests": 1,
+    "uncached": 1,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "knownCredits": 0,
+    "unknownCreditRequests": 1,
+    "knownUsd": 0,
+    "unknownUsdRequests": 1
+  }
+}

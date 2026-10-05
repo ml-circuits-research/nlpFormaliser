@@ -1,0 +1,1 @@
+Normally reject the request unless an administrator approves it.

@@ -1,0 +1,36 @@
+{
+  "id": "009-deterministic-full-coverage",
+  "stage": "full",
+  "repairs": 0,
+  "finished": "2026-10-05T14:27:31.876Z",
+  "strategies": {
+    "symbolic": {
+      "n": 138,
+      "valid": 67,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "lab-heuristic": {
+      "n": 138,
+      "valid": 3,
+      "reasoningEligible": 2,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    }
+  },
+  "calls": {
+    "requests": 0,
+    "uncached": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "knownCredits": 0,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 0
+  }
+}

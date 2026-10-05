@@ -1,0 +1,95 @@
+{
+  "schema": "nlp-eval-import/1",
+  "sets": [
+    {
+      "set": "archive-lab-development",
+      "records": 31,
+      "kind": "formalization",
+      "provenance": {
+        "archive": "nl-formalizer-lab-v0.2.zip",
+        "archiveSha256": "6fcb0eec56c4806265a29ce8d9e86af2cc2c2c076e37f37cf95996fb72b9221c",
+        "member": "benchmarks/pilot-development.json",
+        "memberSha256": "39c96bd82dd4715ec52957bbc6d73a84cd47ebeeca59e673e281c1a192b2a254",
+        "partition": "development",
+        "trust": "Archive-provided reference, not independently adjudicated gold"
+      }
+    },
+    {
+      "set": "archive-lab-heldout",
+      "records": 29,
+      "kind": "formalization",
+      "provenance": {
+        "archive": "nl-formalizer-lab-v0.2.zip",
+        "archiveSha256": "6fcb0eec56c4806265a29ce8d9e86af2cc2c2c076e37f37cf95996fb72b9221c",
+        "member": "benchmarks/pilot-heldout.json",
+        "memberSha256": "21b83c6b5fbb2bf7bac53c9389e1f875f512cda15e170fdb1ba1d17f55359bd3",
+        "partition": "source-heldout",
+        "trust": "Archive-provided reference, not independently adjudicated gold"
+      }
+    },
+    {
+      "set": "archive-scope-semantics",
+      "records": 30,
+      "kind": "formalization",
+      "provenance": {
+        "archive": "microir-formalizer-mjs-v2.zip",
+        "archiveSha256": "906fce0d0a186011cf317fcb0a58e4bb0f2838cf0ebe3a522ce4da4f444a789b",
+        "member": "eval/data/semantic_cases.jsonl",
+        "memberSha256": "f7132f9601d8f725ca892a3102d7cdd8a7707981dd0dfc72b42b2f8c4f297eb2",
+        "partition": "development",
+        "trust": "Archive-provided reference, not independently adjudicated gold"
+      }
+    },
+    {
+      "set": "archive-scope-corruptions",
+      "records": 11,
+      "kind": "judge-pair",
+      "provenance": {
+        "archive": "microir-formalizer-mjs-v2.zip",
+        "archiveSha256": "906fce0d0a186011cf317fcb0a58e4bb0f2838cf0ebe3a522ce4da4f444a789b",
+        "member": "eval/data/judge_pairs.jsonl",
+        "memberSha256": "ddbc971162396863e6fc363d3812d2f1f19a824319dae25bc96664ed9fb586dd",
+        "partition": "judge-calibration",
+        "trust": "Archive-provided reference, not independently adjudicated gold"
+      }
+    },
+    {
+      "set": "archive-speech-acts",
+      "records": 50,
+      "kind": "formalization",
+      "provenance": {
+        "archive": "cnl-core-baseline.zip",
+        "archiveSha256": "45cda693c53055ad663c3cdb446692c4b085cf7b55262c04788bf2366ef286f9",
+        "member": "examples/regression.jsonl",
+        "memberSha256": "7310f4ca9bd1aa6cc8055ad65ceb6af2bd17934a6c4d85334aea81b1a12bb4c2",
+        "partition": "development",
+        "trust": "Archive-provided reference, not independently adjudicated gold"
+      }
+    },
+    {
+      "set": "archive-discourse-dialogue",
+      "records": 1,
+      "turns": 30,
+      "kind": "conversation",
+      "provenance": {
+        "archive": "nl2cnl-judge-strategy-v1.zip",
+        "archiveSha256": "8c066264fdf0a79a6b1eef9a3c14d8d9576c63dced172a501744028319f466f0",
+        "member": "examples/connected-chat.json",
+        "memberSha256": "75cb34e9d73694e03f33403fe99dc57dfad79018c14669a6fb9cfb6e4760ebae",
+        "partition": "development",
+        "trust": "Archive-provided reference, not independently adjudicated gold"
+      }
+    },
+    {
+      "set": "archive-speech-sample",
+      "records": 1,
+      "kind": "formalization"
+    }
+  ],
+  "notes": [
+    "Conversation remains a single connected 30-turn unit, not 30 context-free sentences.",
+    "Judge corruption pairs are not ordinary formalizer inputs.",
+    "sourceRecord preserves every original field; references must never enter formalizer prompts.",
+    "Source held-out labels are retained, not newly claimed independent hold-outs."
+  ]
+}

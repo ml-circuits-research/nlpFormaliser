@@ -1,0 +1,485 @@
+{
+  "note": "Duplicate texts are reported, not merged. Judge pairs may intentionally reuse formalizer texts. Overlap is not statistical independence.",
+  "sets": {
+    "archive-discourse-dialogue": {
+      "records": 1,
+      "kinds": {
+        "conversation": 1
+      },
+      "categories": {
+        "discourse/connected-dialogue": 1
+      },
+      "tags": {},
+      "behavioralProbes": 0,
+      "contextualRecords": 1,
+      "referenceRepresentations": 0
+    },
+    "archive-lab-development": {
+      "records": 31,
+      "kinds": {
+        "formalization": 31
+      },
+      "categories": {
+        "coreference/simple": 1,
+        "descriptive/spatial": 1,
+        "technical/negation": 1,
+        "event/time": 1,
+        "passive/temporal": 1,
+        "coreference/sequence": 1,
+        "conditional/rule": 1,
+        "universal/rule": 1,
+        "constraint/coreference": 1,
+        "contrast/simple": 1,
+        "quantifier/negation": 1,
+        "only/reverse implication": 1,
+        "unless/negation": 1,
+        "definition/when": 1,
+        "only-if/prerequisite": 1,
+        "comparison/conditional": 1,
+        "spatial/conjunction": 1,
+        "coreference/distinction": 1,
+        "causality": 1,
+        "reported/intensional": 1,
+        "temporal/constraint": 1,
+        "disjunction/rule": 1,
+        "attitude/nonfactive": 1,
+        "attitude/factive": 1,
+        "counterfactual": 1,
+        "modality/condition": 1,
+        "disjunction/uncertainty": 1,
+        "ambiguity/attachment": 1,
+        "conditional/nonabduction": 1,
+        "attitude/negation": 1,
+        "modality/distinction": 1
+      },
+      "tags": {},
+      "behavioralProbes": 82,
+      "contextualRecords": 0,
+      "referenceRepresentations": 31
+    },
+    "archive-lab-heldout": {
+      "records": 29,
+      "kinds": {
+        "formalization": 29
+      },
+      "categories": {
+        "coreference/simple": 1,
+        "descriptive/spatial": 1,
+        "technical/negation": 1,
+        "event/time": 1,
+        "active/temporal": 1,
+        "coreference/sequence": 1,
+        "conditional/rule": 1,
+        "universal/rule": 1,
+        "constraint/synonym": 1,
+        "lexical/negation": 1,
+        "generic/negation": 1,
+        "reverse implication": 1,
+        "conditional/negation": 1,
+        "definition/relative": 1,
+        "only-if/paraphrase": 1,
+        "conditional/paraphrase": 1,
+        "spatial/inverse": 1,
+        "coreference/synonym": 1,
+        "causality/paraphrase": 1,
+        "reported/paraphrase": 1,
+        "attitude/nonfactive": 1,
+        "attitude/factive": 1,
+        "counterfactual/inversion": 1,
+        "deontic/paraphrase": 1,
+        "disjunction/paraphrase": 1,
+        "attachment/disambiguated": 1,
+        "nonabduction/explicit": 1,
+        "modality/paraphrase": 1,
+        "disjunction/passive": 1
+      },
+      "tags": {},
+      "behavioralProbes": 64,
+      "contextualRecords": 0,
+      "referenceRepresentations": 29
+    },
+    "archive-scope-corruptions": {
+      "records": 11,
+      "kinds": {
+        "judge-pair": 11
+      },
+      "categories": {
+        "judge/corruption": 11
+      },
+      "tags": {},
+      "behavioralProbes": 0,
+      "contextualRecords": 0,
+      "referenceRepresentations": 11
+    },
+    "archive-scope-semantics": {
+      "records": 30,
+      "kinds": {
+        "formalization": 30
+      },
+      "categories": {
+        "time": 3,
+        "forall": 4,
+        "condition": 4,
+        "attribution": 2,
+        "unless": 1,
+        "only_if": 4,
+        "quantity": 1,
+        "negation_scope": 1,
+        "exception": 1,
+        "exists": 1,
+        "belief": 1,
+        "rules": 1,
+        "or": 2,
+        "causality": 1,
+        "ordering": 1,
+        "modality": 1,
+        "negation": 1
+      },
+      "tags": {
+        "time": 7,
+        "negation": 8,
+        "question": 14,
+        "quantity": 6,
+        "coreference": 5,
+        "forall": 6,
+        "condition": 8,
+        "modality": 4,
+        "attribution": 3,
+        "unless": 1,
+        "only_if": 4,
+        "wh_question": 3,
+        "ordering": 2,
+        "exists": 5,
+        "negation_scope": 1,
+        "belief": 2,
+        "exception": 2,
+        "scope": 2,
+        "rules": 1,
+        "multi_hop": 1,
+        "and": 1,
+        "or": 2,
+        "unknown": 3,
+        "causality": 1,
+        "argument_order": 1,
+        "modifier": 1,
+        "converse": 2,
+        "only": 2,
+        "state_change": 1,
+        "usually": 1
+      },
+      "behavioralProbes": 0,
+      "contextualRecords": 0,
+      "referenceRepresentations": 30
+    },
+    "archive-speech-acts": {
+      "records": 50,
+      "kinds": {
+        "formalization": 50
+      },
+      "categories": {
+        "assertion": 3,
+        "negation": 1,
+        "quantifier": 1,
+        "condition": 3,
+        "exception": 1,
+        "question": 5,
+        "request": 7,
+        "intention": 1,
+        "preference": 2,
+        "proposal": 3,
+        "revision": 2,
+        "fluff": 3,
+        "ambiguity": 3,
+        "coreference": 1,
+        "scope": 3,
+        "mixed": 3,
+        "temporal": 2,
+        "modal": 3,
+        "comparison": 1,
+        "quantity": 1,
+        "attribution": 1
+      },
+      "tags": {
+        "assertion": 3,
+        "fluff": 5,
+        "uncertainty": 2,
+        "attribution": 2,
+        "negation": 4,
+        "quantifier": 4,
+        "condition": 5,
+        "exception": 1,
+        "question": 6,
+        "embedded": 1,
+        "request": 11,
+        "polite": 1,
+        "ability": 2,
+        "sequence": 1,
+        "intention": 2,
+        "preference": 3,
+        "proposal": 5,
+        "revision": 3,
+        "context": 1,
+        "stance": 1,
+        "ambiguity": 3,
+        "coreference": 2,
+        "scope": 4,
+        "mixed": 3,
+        "temporal": 2,
+        "until": 1,
+        "modal": 4,
+        "obligation": 1,
+        "permission": 1,
+        "comparison": 2,
+        "quantity": 1,
+        "approximation": 1,
+        "only-if": 1,
+        "unless": 1,
+        "preserve": 1,
+        "tradeoff": 1,
+        "hedge": 1,
+        "reference": 1,
+        "intent": 1
+      },
+      "behavioralProbes": 0,
+      "contextualRecords": 0,
+      "referenceRepresentations": 50
+    },
+    "archive-speech-sample": {
+      "records": 1,
+      "kinds": {
+        "formalization": 1
+      },
+      "categories": {
+        "multi-intent/sample": 1
+      },
+      "tags": {},
+      "behavioralProbes": 0,
+      "contextualRecords": 0,
+      "referenceRepresentations": 1
+    },
+    "base": {
+      "records": 138,
+      "kinds": {
+        "formalization": 138
+      },
+      "categories": {
+        "agent-requests": 7,
+        "beliefs-reported-speech": 6,
+        "causal-explanations": 5,
+        "comparisons": 5,
+        "conditionals-rules": 7,
+        "constraints-preferences": 6,
+        "corrections-repairs": 6,
+        "data-queries": 6,
+        "discourse-coreference": 6,
+        "figurative-idioms": 5,
+        "generics-knowledge": 5,
+        "hypothetical-counterfactual": 5,
+        "indirect-speech-acts": 7,
+        "modality-obligation": 6,
+        "multi-intent": 5,
+        "negation-scope": 7,
+        "policy-legal": 6,
+        "quantifiers-numbers": 7,
+        "questions-wh": 7,
+        "questions-yes-no": 6,
+        "social": 6,
+        "technical-instructions": 6,
+        "time-scheduling": 6
+      },
+      "tags": {},
+      "behavioralProbes": 0,
+      "contextualRecords": 0,
+      "referenceRepresentations": 0
+    }
+  },
+  "overlaps": [
+    {
+      "normalizedTextHash": "ab248a3b3c38a9ad399a89908708f75dab7ef1a537b83d3bdf9e8dc02a040bb7",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/omit_time",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/ravi_plan",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "b87ea2ce6ba19b895e1ef0eaf1a769668e2126893af0016105546a6cf61a5aeb",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/lose_modality",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/privacy_training",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "ddc9eb32dc24e1de99e544be611c86ba072e80a58eb59e6938a5dfb2f5887bee",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/attribution_as_fact",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/reported_offline",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "5c1fb972ea7b13814555aa4ebd974fe82705bf2682f35c205c773e6b7f7e9e33",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/unless_flip",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/unless_backup",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "44094ed74448c05b41907e081d43d686250665021d7574ac5bc55d29cf5c74d3",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/only_if_reverse",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/only_if_registered",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "f747591d6bd97231cdbe59f50048d4d46ae7f72c4010b5b7c0c3f1f4e7f63329",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/lose_order",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/proposal_chain",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "c54ebf6b31fcf3c39ab540498f7f62f3ecf4203d0c48e38cced03f1a91aea527",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/negation_scope",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/promise_scope",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "01a968f795c4b53ba6dd22e899edb10d628c75e796548b83a1aff2173a70e47e",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/belief_as_fact",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/belief_tracking",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "bbb500a401def7bab7091b6a1711a7ac3bf4cc1788a07b52843faa1d8e61900e",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/argument_swap",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/key_cause",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "7b05568f5f2eba6bfaf5cab5845ba9c248d669d1729ba77b252a60f29be3aaa1",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/converse_error",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/receipt_converse",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    },
+    {
+      "normalizedTextHash": "b2ef8fd151e4dcf664b9e3382ab8d698e97238fa07e4d70de9c5126c18d9048c",
+      "records": [
+        {
+          "set": "archive-scope-corruptions",
+          "id": "archive-scope-corruptions/unknown_to_false",
+          "kind": "judge-pair",
+          "partition": "judge-calibration"
+        },
+        {
+          "set": "archive-scope-semantics",
+          "id": "archive-scope-semantics/overload_converse",
+          "kind": "formalization",
+          "partition": "development"
+        }
+      ]
+    }
+  ]
+}

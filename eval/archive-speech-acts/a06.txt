@@ -1,0 +1,1 @@
+If the signature is valid, the system accepts the file.

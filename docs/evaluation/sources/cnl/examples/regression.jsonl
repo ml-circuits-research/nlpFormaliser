@@ -1,0 +1,50 @@
+{"id":"a01","tags":["assertion","fluff"],"input":"Well, basically, the server is running now.","gold":"ASSERT: The server is running now."}
+{"id":"a02","tags":["assertion","uncertainty"],"input":"I think the small model is probably enough.","gold":"ASSERT: I think the small model is probably enough."}
+{"id":"a03","tags":["assertion","attribution"],"input":"Maria says that the benchmark failed.","gold":"ASSERT: Maria says that the benchmark failed."}
+{"id":"a04","tags":["negation","quantifier"],"input":"Not every user has access.","gold":"ASSERT: Not every user has access."}
+{"id":"a05","tags":["quantifier"],"input":"Exactly three workers are active.","gold":"ASSERT: Exactly three workers are active."}
+{"id":"a06","tags":["condition"],"input":"If the signature is valid, the system accepts the file.","gold":"ASSERT: If the signature is valid, then the system accepts the file."}
+{"id":"a07","tags":["exception"],"input":"Normally reject the request unless an administrator approves it.","gold":"REQUEST: You normally reject the request unless an administrator approves the request."}
+{"id":"q01","tags":["question"],"input":"Which model has the lowest latency?","gold":"ASK: Which model has the lowest latency?"}
+{"id":"q02","tags":["question","embedded"],"input":"Do we know whether the test passed?","gold":"ASK: Do we know whether the test passed?"}
+{"id":"q03","tags":["request","polite"],"input":"Could you check whether the tests pass?","gold":"REQUEST: You determine whether the tests pass."}
+{"id":"q04","tags":["question","ability"],"input":"Can Luna run on this hardware?","gold":"ASK: Can Luna run on this hardware?"}
+{"id":"r01","tags":["request"],"input":"Run the benchmark.","gold":"REQUEST: You run the benchmark."}
+{"id":"r02","tags":["request","condition"],"input":"Run the benchmark and, if accuracy is below 95%, try Sol.","gold":"REQUEST: You run the benchmark.\nREQUEST: If accuracy is below 95%, then you try Sol."}
+{"id":"r03","tags":["request","negation"],"input":"Please don't modify the dataset yet.","gold":"REQUEST: You do not modify the dataset yet."}
+{"id":"r04","tags":["request","sequence"],"input":"First validate the output, then save it.","gold":"REQUEST: You validate the output first.\nREQUEST: After you validate the output, you save the output."}
+{"id":"i01","tags":["intention"],"input":"I'm going to test Luna tomorrow.","gold":"INTEND: I will test Luna tomorrow."}
+{"id":"i02","tags":["preference"],"input":"I'd rather use the smaller model.","gold":"PREFER: I prefer to use the smaller model."}
+{"id":"i03","tags":["proposal"],"input":"Let's use Luna first.","gold":"PROPOSE: We use Luna first."}
+{"id":"i04","tags":["proposal","condition"],"input":"Maybe we should use Luna if it stays above 95% accuracy.","gold":"PROPOSE: We should use Luna if Luna stays above 95% accuracy."}
+{"id":"c01","tags":["revision"],"input":"Actually, the deadline is Monday, not Friday.","gold":"REVISE: The deadline is Monday, not Friday."}
+{"id":"c02","tags":["revision","context"],"input":"No, I meant the second experiment, not the first one.","gold":"REVISE: I meant the second experiment, not the first experiment."}
+{"id":"f01","tags":["fluff","request"],"input":"Okay, well, let's see... could you run the test?","gold":"REQUEST: You run the test."}
+{"id":"f02","tags":["fluff","stance"],"input":"Hmm, I guess the test probably failed.","gold":"ASSERT: I guess the test probably failed."}
+{"id":"f03","tags":["fluff","proposal","request"],"input":"Right, so maybe let's keep Luna for now, but please check the memory use first.","gold":"PROPOSE: We keep Luna for now.\nREQUEST: You check the memory use first."}
+{"id":"u01","tags":["ambiguity","coreference"],"input":"Maria told Ana that she should leave.","gold":"ASSERT: Maria told Ana that PERSON_1 should leave.\nUNCLEAR: PERSON_1 refers to Maria or Ana."}
+{"id":"u02","tags":["coreference"],"input":"Maria opened the document. She corrected it.","gold":"ASSERT: Maria opened the document.\nASSERT: Maria corrected the document."}
+{"id":"u03","tags":["ambiguity","scope"],"input":"John did not say that Maria failed.","gold":"ASSERT: John did not say that Maria failed."}
+{"id":"u04","tags":["scope","negation"],"input":"I don't think we need another symbolic parser.","gold":"ASSERT: I do not think that we need another symbolic parser."}
+{"id":"m01","tags":["mixed","proposal","request","question"],"input":"I think Luna should be enough. Don't switch yet. Check its accuracy first, and how much slower is Sol?","gold":"ASSERT: I think Luna should be enough.\nREQUEST: You do not switch yet.\nREQUEST: You check Luna's accuracy first.\nASK: How much slower is Sol than Luna?"}
+{"id":"m02","tags":["mixed","intention","preference"],"input":"I want to test both models, ideally without changing the dataset.","gold":"INTEND: I want to test both models.\nPREFER: I prefer to test both models without changing the dataset."}
+{"id":"s01","tags":["temporal"],"input":"Start the backup after the upload finishes.","gold":"REQUEST: After the upload finishes, you start the backup."}
+{"id":"s02","tags":["temporal","until"],"input":"Keep the service running until the migration is complete.","gold":"REQUEST: You keep the service running until the migration is complete."}
+{"id":"s03","tags":["modal","obligation"],"input":"Every result must include its source.","gold":"ASSERT: Every result must include its source."}
+{"id":"s04","tags":["modal","permission"],"input":"Users may cancel a job before execution starts.","gold":"ASSERT: Users may cancel a job before execution starts."}
+{"id":"s05","tags":["modal","ability"],"input":"The local model can process about 20 requests per second.","gold":"ASSERT: The local model can process about 20 requests per second."}
+{"id":"s06","tags":["comparison"],"input":"Sol is slower than Luna but more accurate.","gold":"ASSERT: Sol is slower than Luna.\nASSERT: Sol is more accurate than Luna."}
+{"id":"s07","tags":["quantity","approximation"],"input":"We have roughly 200 examples left.","gold":"ASSERT: We have roughly 200 examples left."}
+{"id":"s08","tags":["condition","only-if"],"input":"Deploy the model only if all tests pass.","gold":"REQUEST: You deploy the model only if all tests pass."}
+{"id":"s09","tags":["condition","unless"],"input":"Use Luna unless its error rate exceeds 5%.","gold":"REQUEST: You use Luna unless Luna's error rate exceeds 5%."}
+{"id":"s10","tags":["attribution","uncertainty"],"input":"I heard that the new model may be faster.","gold":"ASSERT: I heard that the new model may be faster."}
+{"id":"s11","tags":["question","quantifier"],"input":"How many failed jobs are still queued?","gold":"ASK: How many failed jobs are still queued?"}
+{"id":"s12","tags":["request","comparison"],"input":"Compare Luna with Sol on latency and accuracy.","gold":"REQUEST: You compare Luna with Sol on latency and accuracy."}
+{"id":"s13","tags":["request","preserve"],"input":"Rewrite this, but keep the technical terms unchanged.","gold":"REQUEST: You rewrite this.\nREQUEST: You keep the technical terms unchanged while you rewrite this."}
+{"id":"s14","tags":["preference","tradeoff"],"input":"I'd prefer lower latency even if accuracy drops slightly.","gold":"PREFER: I prefer lower latency even if accuracy drops slightly."}
+{"id":"s15","tags":["proposal","hedge"],"input":"Maybe we should postpone the larger run until tomorrow.","gold":"PROPOSE: Maybe we should postpone the larger run until tomorrow."}
+{"id":"s16","tags":["ambiguity","reference"],"input":"Put the report next to the summary and archive it.","gold":"REQUEST: You put the report next to the summary.\nREQUEST: You archive OBJECT_1.\nUNCLEAR: OBJECT_1 refers to the report or the summary."}
+{"id":"s17","tags":["scope","negation","modal"],"input":"You don't have to rerun every test.","gold":"ASSERT: You do not have to rerun every test."}
+{"id":"s18","tags":["scope","quantifier"],"input":"Only approved users can publish results.","gold":"ASSERT: Only approved users can publish results."}
+{"id":"s19","tags":["question","intent"],"input":"What I need to know is whether the model can run offline.","gold":"ASK: Can the model run offline?"}
+{"id":"s20","tags":["mixed","fluff","revision","request"],"input":"Yeah, sorry, use the October dataset—actually the September one—and don't retrain yet.","gold":"REVISE: You use the September dataset, not the October dataset.\nREQUEST: You do not retrain yet."}

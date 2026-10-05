@@ -1,0 +1,1 @@
+Every lab result is reviewed by either a physician or a senior scientist. Result R2 was reviewed by Dana, who is a senior scientist. Was R2 reviewed by a physician?

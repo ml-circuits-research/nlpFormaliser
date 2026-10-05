@@ -1,0 +1,1787 @@
+[
+  {
+    "id": "H01",
+    "category": "coreference/simple",
+    "text": "Mira, a physicist, owns the lab workstation.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "physicist",
+          "args": [
+            "mira"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "owns",
+          "args": [
+            "mira",
+            "lab_workstation"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "physicist",
+          "args": [
+            "mira"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "owns",
+          "args": [
+            "mira",
+            "lab_workstation"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H02",
+    "category": "descriptive/spatial",
+    "text": "Mounted on the northern wall, S1 is a red sensor.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "sensor",
+          "args": [
+            "s1"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "red",
+          "args": [
+            "s1"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "mounted_on",
+          "args": [
+            "s1",
+            "northern_wall"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "sensor",
+          "args": [
+            "s1"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "red",
+          "args": [
+            "s1"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "mounted_on",
+          "args": [
+            "s1",
+            "northern_wall"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H03",
+    "category": "technical/negation",
+    "text": "C7 accelerates reaction R2 and is not consumed in the process.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "catalyst",
+          "args": [
+            "c7"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "reaction",
+          "args": [
+            "r2"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "speeds_up",
+          "args": [
+            "c7",
+            "r2"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "consumed_by",
+          "args": [
+            "c7",
+            "r2"
+          ],
+          "neg": true
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "speeds_up",
+          "args": [
+            "c7",
+            "r2"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "consumed_by",
+          "args": [
+            "c7",
+            "r2"
+          ],
+          "neg": false
+        },
+        "expected": "FALSE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H04",
+    "category": "event/time",
+    "text": "On Monday, Bob emailed the report to Alice.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "sent",
+          "args": [
+            "bob",
+            "alice",
+            "report"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "sent_on",
+          "args": [
+            "bob",
+            "report",
+            "monday"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "sent",
+          "args": [
+            "bob",
+            "alice",
+            "report"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "sent_on",
+          "args": [
+            "bob",
+            "report",
+            "monday"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H05",
+    "category": "active/temporal",
+    "text": "Dana approved the report only after the audit was complete.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "approved",
+          "args": [
+            "dana",
+            "report"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "approval_after",
+          "args": [
+            "report",
+            "audit"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "approved",
+          "args": [
+            "dana",
+            "report"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "approval_after",
+          "args": [
+            "report",
+            "audit"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H06",
+    "category": "coreference/sequence",
+    "text": "After entering the laboratory, Leo turned the alarm off.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "entered",
+          "args": [
+            "leo",
+            "laboratory"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "switched_off",
+          "args": [
+            "leo",
+            "alarm"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "before_action",
+          "args": [
+            "enter_laboratory",
+            "switch_off_alarm"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "entered",
+          "args": [
+            "leo",
+            "laboratory"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "switched_off",
+          "args": [
+            "leo",
+            "alarm"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "before_action",
+          "args": [
+            "enter_laboratory",
+            "switch_off_alarm"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H07",
+    "category": "conditional/rule",
+    "text": "Whenever a server becomes overloaded, the scheduler redirects new jobs elsewhere. Node7 is an overloaded server.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "server",
+          "args": [
+            "node7"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "overloaded",
+          "args": [
+            "node7"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "moves",
+            "args": [
+              "scheduler",
+              "new_jobs",
+              "elsewhere"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "server",
+              "args": [
+                "?s"
+              ],
+              "neg": false
+            },
+            {
+              "pred": "overloaded",
+              "args": [
+                "?s"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "moves",
+          "args": [
+            "scheduler",
+            "new_jobs",
+            "elsewhere"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "overloaded",
+          "args": [
+            "node7"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H08",
+    "category": "universal/rule",
+    "text": "Researchers who have a GPU available can execute a local model. Ana is a researcher, GPU1 is a GPU, and Ana owns GPU1.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "researcher",
+          "args": [
+            "ana"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "gpu",
+          "args": [
+            "gpu1"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "owns",
+          "args": [
+            "ana",
+            "gpu1"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "can_run",
+            "args": [
+              "?x",
+              "local_model"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "researcher",
+              "args": [
+                "?x"
+              ],
+              "neg": false
+            },
+            {
+              "pred": "owns",
+              "args": [
+                "?x",
+                "?g"
+              ],
+              "neg": false
+            },
+            {
+              "pred": "gpu",
+              "args": [
+                "?g"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "can_run",
+          "args": [
+            "ana",
+            "local_model"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "owns",
+          "args": [
+            "ana",
+            "gpu1"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H09",
+    "category": "constraint/synonym",
+    "text": "Reviewers are forbidden from approving papers they wrote themselves. Nina is a reviewer; she wrote paper7.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "reviewer",
+          "args": [
+            "nina"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "authored",
+          "args": [
+            "nina",
+            "paper7"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "prohibited_approve",
+            "args": [
+              "?x",
+              "?p"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "reviewer",
+              "args": [
+                "?x"
+              ],
+              "neg": false
+            },
+            {
+              "pred": "authored",
+              "args": [
+                "?x",
+                "?p"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "prohibited_approve",
+          "args": [
+            "nina",
+            "paper7"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "authored",
+          "args": [
+            "nina",
+            "paper7"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H10",
+    "category": "lexical/negation",
+    "text": "Sample3 is uncontaminated, whereas sample4 is contaminated.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "contaminated",
+          "args": [
+            "sample3"
+          ],
+          "neg": true
+        },
+        {
+          "pred": "contaminated",
+          "args": [
+            "sample4"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "contaminated",
+          "args": [
+            "sample3"
+          ],
+          "neg": false
+        },
+        "expected": "FALSE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "contaminated",
+          "args": [
+            "sample4"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H11",
+    "category": "generic/negation",
+    "text": "Authentication is unnecessary for public status requests. R17 is one such public status request.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "public_status_request",
+          "args": [
+            "r17"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "requires_auth",
+            "args": [
+              "?x"
+            ],
+            "neg": true
+          },
+          "body": [
+            {
+              "pred": "public_status_request",
+              "args": [
+                "?x"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "requires_auth",
+          "args": [
+            "r17"
+          ],
+          "neg": false
+        },
+        "expected": "FALSE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "public_status_request",
+          "args": [
+            "r17"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H12",
+    "category": "reverse implication",
+    "text": "Anyone who deletes an account must be an administrator. Kim deleted account42.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "deleted",
+          "args": [
+            "kim",
+            "account42"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "administrator",
+            "args": [
+              "?x"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "deleted",
+              "args": [
+                "?x",
+                "?a"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "administrator",
+          "args": [
+            "kim"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "deleted",
+          "args": [
+            "kim",
+            "account42"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H13",
+    "category": "conditional/negation",
+    "text": "Deployment is forbidden if the backup has not succeeded. The backup has not succeeded.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "succeeded",
+          "args": [
+            "backup"
+          ],
+          "neg": true
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "prohibited_start",
+            "args": [
+              "deployment"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "succeeded",
+              "args": [
+                "backup"
+              ],
+              "neg": true
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "prohibited_start",
+          "args": [
+            "deployment"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "succeeded",
+          "args": [
+            "backup"
+          ],
+          "neg": false
+        },
+        "expected": "FALSE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H14",
+    "category": "definition/relative",
+    "text": "Files whose current checksum differs from the stored checksum are stale. FileA is a file whose checksum differs from the stored value.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "file",
+          "args": [
+            "filea"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "checksum_differs",
+          "args": [
+            "filea"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "stale",
+            "args": [
+              "?f"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "file",
+              "args": [
+                "?f"
+              ],
+              "neg": false
+            },
+            {
+              "pred": "checksum_differs",
+              "args": [
+                "?f"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "stale",
+          "args": [
+            "filea"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "checksum_differs",
+          "args": [
+            "filea"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H15",
+    "category": "only-if/paraphrase",
+    "text": "R1 is permitted to pick up B only when its gripper is empty. R1 has permission to pick up B.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "may_pick",
+          "args": [
+            "r1",
+            "b"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "gripper_empty",
+            "args": [
+              "r1"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "may_pick",
+              "args": [
+                "r1",
+                "b"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "may_pick",
+          "args": [
+            "r1",
+            "b"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "gripper_empty",
+          "args": [
+            "r1"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H16",
+    "category": "conditional/paraphrase",
+    "text": "Water may freeze whenever the temperature is below zero. The temperature is currently below zero.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "below",
+          "args": [
+            "temperature",
+            "zero_c"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "can_freeze",
+            "args": [
+              "water"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "below",
+              "args": [
+                "temperature",
+                "zero_c"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "can_freeze",
+          "args": [
+            "water"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "below",
+          "args": [
+            "temperature",
+            "zero_c"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H17",
+    "category": "spatial/inverse",
+    "text": "Berlin lies east of Paris, and Warsaw lies east of Berlin.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "west_of",
+          "args": [
+            "paris",
+            "berlin"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "west_of",
+          "args": [
+            "berlin",
+            "warsaw"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "west_of",
+          "args": [
+            "paris",
+            "berlin"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "west_of",
+          "args": [
+            "berlin",
+            "warsaw"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H18",
+    "category": "coreference/synonym",
+    "text": "Alice owns the key. Bob currently has it in his hand.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "belongs_to",
+          "args": [
+            "key",
+            "alice"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "holding",
+          "args": [
+            "bob",
+            "key"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "belongs_to",
+          "args": [
+            "key",
+            "alice"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "holding",
+          "args": [
+            "bob",
+            "key"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H19",
+    "category": "causality/paraphrase",
+    "text": "Loss of power to the pump caused the experiment to fail.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "lost_power",
+          "args": [
+            "pump"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "failed",
+          "args": [
+            "experiment"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "caused",
+          "args": [
+            "pump_lost_power",
+            "experiment_failure"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "lost_power",
+          "args": [
+            "pump"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "failed",
+          "args": [
+            "experiment"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "caused",
+          "args": [
+            "pump_lost_power",
+            "experiment_failure"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H20",
+    "category": "reported/paraphrase",
+    "text": "Bob received Alice's promise that she would submit the draft.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "promised",
+          "args": [
+            "alice",
+            "bob",
+            "submit_draft"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "will_submit",
+          "args": [
+            "alice",
+            "draft"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "promised",
+          "args": [
+            "alice",
+            "bob",
+            "submit_draft"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "will_submit",
+          "args": [
+            "alice",
+            "draft"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H21",
+    "category": "attitude/nonfactive",
+    "text": "According to Dana, she believes server S2 failed.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "believes",
+          "args": [
+            "dana",
+            "s2_failed"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "believes",
+          "args": [
+            "dana",
+            "s2_failed"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "failed",
+          "args": [
+            "s2"
+          ],
+          "neg": false
+        },
+        "expected": "UNKNOWN",
+        "kind": "control"
+      }
+    ]
+  },
+  {
+    "id": "H22",
+    "category": "attitude/factive",
+    "text": "Dana is aware that server S2 failed.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "knows",
+          "args": [
+            "dana",
+            "s2_failed"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "failed",
+          "args": [
+            "s2"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "knows",
+          "args": [
+            "dana",
+            "s2_failed"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "failed",
+          "args": [
+            "s2"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H23",
+    "category": "counterfactual/inversion",
+    "text": "Had the valve been open, the pressure would have fallen.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "counterfactual",
+          "args": [
+            "c1"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "antecedent",
+          "args": [
+            "c1",
+            "valve_open"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "consequent",
+          "args": [
+            "c1",
+            "pressure_fallen"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "counterfactual",
+          "args": [
+            "c1"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "open",
+          "args": [
+            "valve"
+          ],
+          "neg": false
+        },
+        "expected": "UNKNOWN",
+        "kind": "control"
+      },
+      {
+        "query": {
+          "pred": "fallen",
+          "args": [
+            "pressure"
+          ],
+          "neg": false
+        },
+        "expected": "UNKNOWN",
+        "kind": "control"
+      }
+    ]
+  },
+  {
+    "id": "H24",
+    "category": "deontic/paraphrase",
+    "text": "With the door open, R2 is prohibited from moving. The door is open.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "door_open",
+          "args": [],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "prohibited_move",
+            "args": [
+              "r2"
+            ],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "door_open",
+              "args": [],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "prohibited_move",
+          "args": [
+            "r2"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "move",
+          "args": [
+            "r2"
+          ],
+          "neg": false
+        },
+        "expected": "UNKNOWN",
+        "kind": "control"
+      }
+    ]
+  },
+  {
+    "id": "H25",
+    "category": "disjunction/paraphrase",
+    "text": "One of sensors A and B is faulty, but the log does not identify which one.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "alternative",
+          "args": [
+            "g1"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "option",
+          "args": [
+            "g1",
+            "sensor_a_faulty"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "option",
+          "args": [
+            "g1",
+            "sensor_b_faulty"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "unresolved",
+          "args": [
+            "g1"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "alternative",
+          "args": [
+            "g1"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "unresolved",
+          "args": [
+            "g1"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "faulty",
+          "args": [
+            "sensor_a"
+          ],
+          "neg": false
+        },
+        "expected": "UNKNOWN",
+        "kind": "control"
+      }
+    ]
+  },
+  {
+    "id": "H26",
+    "category": "attachment/disambiguated",
+    "text": "Using the binoculars, the guard saw the thief.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "saw",
+          "args": [
+            "guard",
+            "thief"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "used_instrument",
+          "args": [
+            "guard",
+            "binoculars"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "saw",
+          "args": [
+            "guard",
+            "thief"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "used_instrument",
+          "args": [
+            "guard",
+            "binoculars"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  },
+  {
+    "id": "H27",
+    "category": "nonabduction/explicit",
+    "text": "The device shut down, but that does not establish that the battery was empty.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "shuts_down",
+          "args": [
+            "device"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "shuts_down",
+          "args": [
+            "device"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "battery_empty",
+          "args": [],
+          "neg": false
+        },
+        "expected": "UNKNOWN",
+        "kind": "control"
+      }
+    ]
+  },
+  {
+    "id": "H28",
+    "category": "modality/paraphrase",
+    "text": "The robot has permission to move but no obligation to do so.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "permitted_move",
+          "args": [
+            "robot"
+          ],
+          "neg": false
+        },
+        {
+          "pred": "required_move",
+          "args": [
+            "robot"
+          ],
+          "neg": true
+        }
+      ],
+      "rules": []
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "permitted_move",
+          "args": [
+            "robot"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "required_move",
+          "args": [
+            "robot"
+          ],
+          "neg": false
+        },
+        "expected": "FALSE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "move",
+          "args": [
+            "robot"
+          ],
+          "neg": false
+        },
+        "expected": "UNKNOWN",
+        "kind": "control"
+      }
+    ]
+  },
+  {
+    "id": "H29",
+    "category": "disjunction/passive",
+    "text": "The alarm sounds if smoke is detected by at least one of sensors A and B. Sensor B has detected smoke.",
+    "gold_ir": {
+      "facts": [
+        {
+          "pred": "detects_smoke",
+          "args": [
+            "sensor_b"
+          ],
+          "neg": false
+        }
+      ],
+      "rules": [
+        {
+          "head": {
+            "pred": "alarm_sounds",
+            "args": [],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "detects_smoke",
+              "args": [
+                "sensor_a"
+              ],
+              "neg": false
+            }
+          ]
+        },
+        {
+          "head": {
+            "pred": "alarm_sounds",
+            "args": [],
+            "neg": false
+          },
+          "body": [
+            {
+              "pred": "detects_smoke",
+              "args": [
+                "sensor_b"
+              ],
+              "neg": false
+            }
+          ]
+        }
+      ]
+    },
+    "tests": [
+      {
+        "query": {
+          "pred": "alarm_sounds",
+          "args": [],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      },
+      {
+        "query": {
+          "pred": "detects_smoke",
+          "args": [
+            "sensor_b"
+          ],
+          "neg": false
+        },
+        "expected": "TRUE",
+        "kind": "semantic"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+Not every request requires authentication; public status requests do not. R17 is a public status request.

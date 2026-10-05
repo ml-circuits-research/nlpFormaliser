@@ -1,0 +1,981 @@
+{
+  "id": "009-deterministic-full-coverage",
+  "started": "2026-10-05T14:27:31.794Z",
+  "stage": "full",
+  "options": {
+    "strategy": [
+      "symbolic",
+      "lab-heuristic"
+    ],
+    "stage": "full",
+    "offline": true,
+    "id": "009-deterministic-full-coverage",
+    "set": "base",
+    "tier": "small",
+    "judge-tier": "good",
+    "judge-mode": "bidirectional",
+    "batch-size": "5",
+    "max-tokens": "8000",
+    "cache": "use"
+  },
+  "repairs": 0,
+  "cases": [
+    {
+      "id": "agent-requests/01-book-me-a-window-seat.txt",
+      "category": "agent-requests",
+      "text": "Book me a window seat on the earliest flight from Bucharest to Vienna next Tuesday.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/agent-requests/01-book-me-a-window-seat.txt"
+    },
+    {
+      "id": "agent-requests/02-please-rename-every-file-in.txt",
+      "category": "agent-requests",
+      "text": "Please rename every file in the reports folder that ends in .tmp so that it ends in .bak instead.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/agent-requests/02-please-rename-every-file-in.txt"
+    },
+    {
+      "id": "agent-requests/03-send-maria-the-slides-from.txt",
+      "category": "agent-requests",
+      "text": "Send Maria the slides from yesterday's meeting, but don't cc anyone from the sales team.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/agent-requests/03-send-maria-the-slides-from.txt"
+    },
+    {
+      "id": "agent-requests/04-remind-me-to-call-the.txt",
+      "category": "agent-requests",
+      "text": "Remind me to call the dentist tomorrow at 9 a.m., and again an hour later if I haven't marked it done.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/agent-requests/04-remind-me-to-call-the.txt"
+    },
+    {
+      "id": "agent-requests/05-order-two-large-pizzas-one.txt",
+      "category": "agent-requests",
+      "text": "Order two large pizzas, one vegetarian and one with extra cheese, and have them delivered to the office.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/agent-requests/05-order-two-large-pizzas-one.txt"
+    },
+    {
+      "id": "agent-requests/06-cancel-all-my-meetings-on.txt",
+      "category": "agent-requests",
+      "text": "Cancel all my meetings on Friday afternoon except the one with the investors.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/agent-requests/06-cancel-all-my-meetings-on.txt"
+    },
+    {
+      "id": "agent-requests/07-archive-the-emails-from-last.txt",
+      "category": "agent-requests",
+      "text": "Archive the emails from last quarter, but keep the ones that are flagged as important in the inbox.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/agent-requests/07-archive-the-emails-from-last.txt"
+    },
+    {
+      "id": "beliefs-reported-speech/01-tom-thinks-the-server-crashed.txt",
+      "category": "beliefs-reported-speech",
+      "text": "Tom thinks the server crashed because of a memory leak, but I'm not convinced.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/beliefs-reported-speech/01-tom-thinks-the-server-crashed.txt"
+    },
+    {
+      "id": "beliefs-reported-speech/02-my-manager-told-me-that.txt",
+      "category": "beliefs-reported-speech",
+      "text": "My manager told me that the project would be cancelled unless we found a sponsor.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/beliefs-reported-speech/02-my-manager-told-me-that.txt"
+    },
+    {
+      "id": "beliefs-reported-speech/03-maria-asked-whether-anyone-had.txt",
+      "category": "beliefs-reported-speech",
+      "text": "Maria asked whether anyone had seen her keys.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/beliefs-reported-speech/03-maria-asked-whether-anyone-had.txt"
+    },
+    {
+      "id": "beliefs-reported-speech/04-the-landlord-claims-that-the.txt",
+      "category": "beliefs-reported-speech",
+      "text": "The landlord claims that the heating was fixed last week.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/beliefs-reported-speech/04-the-landlord-claims-that-the.txt"
+    },
+    {
+      "id": "beliefs-reported-speech/05-i-heard-that-the-conference.txt",
+      "category": "beliefs-reported-speech",
+      "text": "I heard that the conference might move online this year.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/beliefs-reported-speech/05-i-heard-that-the-conference.txt"
+    },
+    {
+      "id": "beliefs-reported-speech/06-she-promised-she-would-send.txt",
+      "category": "beliefs-reported-speech",
+      "text": "She promised she would send the documents by noon.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/beliefs-reported-speech/06-she-promised-she-would-send.txt"
+    },
+    {
+      "id": "causal-explanations/01-the-flight-was-cancelled-because.txt",
+      "category": "causal-explanations",
+      "text": "The flight was cancelled because of the storm, so we had to stay an extra night.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/causal-explanations/01-the-flight-was-cancelled-because.txt"
+    },
+    {
+      "id": "causal-explanations/02-since-the-api-changed-its.txt",
+      "category": "causal-explanations",
+      "text": "Since the API changed its rate limits, our nightly sync takes three times longer.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/causal-explanations/02-since-the-api-changed-its.txt"
+    },
+    {
+      "id": "causal-explanations/03-the-plant-died-because-i.txt",
+      "category": "causal-explanations",
+      "text": "The plant died because I forgot to water it while I was on holiday.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/causal-explanations/03-the-plant-died-because-i.txt"
+    },
+    {
+      "id": "causal-explanations/04-we-lost-the-client-after.txt",
+      "category": "causal-explanations",
+      "text": "We lost the client after the third missed deadline.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/causal-explanations/04-we-lost-the-client-after.txt"
+    },
+    {
+      "id": "causal-explanations/05-prices-went-up-which-is.txt",
+      "category": "causal-explanations",
+      "text": "Prices went up, which is why I'm cancelling my subscription.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/causal-explanations/05-prices-went-up-which-is.txt"
+    },
+    {
+      "id": "comparisons/01-the-new-model-is-faster.txt",
+      "category": "comparisons",
+      "text": "The new model is faster than the old one but uses twice as much memory.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/comparisons/01-the-new-model-is-faster.txt"
+    },
+    {
+      "id": "comparisons/02-this-is-the-cheapest-flight.txt",
+      "category": "comparisons",
+      "text": "This is the cheapest flight that still allows a checked bag.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/comparisons/02-this-is-the-cheapest-flight.txt"
+    },
+    {
+      "id": "comparisons/03-our-team-closed-more-tickets.txt",
+      "category": "comparisons",
+      "text": "Our team closed more tickets this sprint than in any previous sprint.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/comparisons/03-our-team-closed-more-tickets.txt"
+    },
+    {
+      "id": "comparisons/04-the-blue-jacket-is-just.txt",
+      "category": "comparisons",
+      "text": "The blue jacket is just as warm as the black one, but it's lighter.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/comparisons/04-the-blue-jacket-is-just.txt"
+    },
+    {
+      "id": "comparisons/05-paris-is-less-expensive-than.txt",
+      "category": "comparisons",
+      "text": "Paris is less expensive than London, though not by much.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/comparisons/05-paris-is-less-expensive-than.txt"
+    },
+    {
+      "id": "conditionals-rules/01-if-the-temperature-drops-below.txt",
+      "category": "conditionals-rules",
+      "text": "If the temperature drops below zero, turn on the heating in the garage.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/conditionals-rules/01-if-the-temperature-drops-below.txt"
+    },
+    {
+      "id": "conditionals-rules/02-unless-i-tell-you-otherwise.txt",
+      "category": "conditionals-rules",
+      "text": "Unless I tell you otherwise, always reply to recruiters that I'm not interested.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/conditionals-rules/02-unless-i-tell-you-otherwise.txt"
+    },
+    {
+      "id": "conditionals-rules/03-whenever-a-customer-complains-twice.txt",
+      "category": "conditionals-rules",
+      "text": "Whenever a customer complains twice in the same week, escalate the ticket to a supervisor.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/conditionals-rules/03-whenever-a-customer-complains-twice.txt"
+    },
+    {
+      "id": "conditionals-rules/04-if-the-build-passes-and.txt",
+      "category": "conditionals-rules",
+      "text": "If the build passes and nobody objects within an hour, merge the pull request.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/conditionals-rules/04-if-the-build-passes-and.txt"
+    },
+    {
+      "id": "conditionals-rules/05-only-notify-me-about-expenses.txt",
+      "category": "conditionals-rules",
+      "text": "Only notify me about expenses over 500 euros, unless they come from the travel budget.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/conditionals-rules/05-only-notify-me-about-expenses.txt"
+    },
+    {
+      "id": "conditionals-rules/06-if-it-rains-on-saturday.txt",
+      "category": "conditionals-rules",
+      "text": "If it rains on Saturday, move the picnic to Sunday; if it rains both days, cancel it.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/conditionals-rules/06-if-it-rains-on-saturday.txt"
+    },
+    {
+      "id": "conditionals-rules/07-as-soon-as-the-shipment.txt",
+      "category": "conditionals-rules",
+      "text": "As soon as the shipment arrives, check that every box is sealed before you sign for it.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/conditionals-rules/07-as-soon-as-the-shipment.txt"
+    },
+    {
+      "id": "constraints-preferences/01-i-prefer-aisle-seats-but.txt",
+      "category": "constraints-preferences",
+      "text": "I prefer aisle seats, but on night flights I'd rather sit by the window.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/constraints-preferences/01-i-prefer-aisle-seats-but.txt"
+    },
+    {
+      "id": "constraints-preferences/02-don-t-schedule-anything-before.txt",
+      "category": "constraints-preferences",
+      "text": "Don't schedule anything before 10 a.m. on Mondays.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/constraints-preferences/02-don-t-schedule-anything-before.txt"
+    },
+    {
+      "id": "constraints-preferences/03-i-m-allergic-to-peanuts.txt",
+      "category": "constraints-preferences",
+      "text": "I'm allergic to peanuts, so please avoid any restaurant that can't guarantee a nut-free kitchen.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/constraints-preferences/03-i-m-allergic-to-peanuts.txt"
+    },
+    {
+      "id": "constraints-preferences/04-the-hotel-must-be-within.txt",
+      "category": "constraints-preferences",
+      "text": "The hotel must be within walking distance of the conference centre and cost less than 150 euros a night.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/constraints-preferences/04-the-hotel-must-be-within.txt"
+    },
+    {
+      "id": "constraints-preferences/05-my-budget-for-the-laptop.txt",
+      "category": "constraints-preferences",
+      "text": "My budget for the laptop is around 1,200 dollars, and it needs at least 16 gigabytes of memory.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/constraints-preferences/05-my-budget-for-the-laptop.txt"
+    },
+    {
+      "id": "constraints-preferences/06-i-like-spicy-food-but.txt",
+      "category": "constraints-preferences",
+      "text": "I like spicy food, but my partner can't handle anything hotter than mild.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/constraints-preferences/06-i-like-spicy-food-but.txt"
+    },
+    {
+      "id": "corrections-repairs/01-actually-make-that-thursday-not.txt",
+      "category": "corrections-repairs",
+      "text": "Actually, make that Thursday, not Wednesday.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/corrections-repairs/01-actually-make-that-thursday-not.txt"
+    },
+    {
+      "id": "corrections-repairs/02-sorry-i-meant-the-2023.txt",
+      "category": "corrections-repairs",
+      "text": "Sorry, I meant the 2023 report, not the 2024 one.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/corrections-repairs/02-sorry-i-meant-the-2023.txt"
+    },
+    {
+      "id": "corrections-repairs/03-ignore-my-last-message-the.txt",
+      "category": "corrections-repairs",
+      "text": "Ignore my last message; the issue has been fixed.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/corrections-repairs/03-ignore-my-last-message-the.txt"
+    },
+    {
+      "id": "corrections-repairs/04-wait-don-t-send-it.txt",
+      "category": "corrections-repairs",
+      "text": "Wait, don't send it yet. I need to change the second paragraph first.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/corrections-repairs/04-wait-don-t-send-it.txt"
+    },
+    {
+      "id": "corrections-repairs/05-no-the-meeting-is-with.txt",
+      "category": "corrections-repairs",
+      "text": "No, the meeting is with Daniel, not Daniela.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/corrections-repairs/05-no-the-meeting-is-with.txt"
+    },
+    {
+      "id": "corrections-repairs/06-scratch-that-let-s-keep.txt",
+      "category": "corrections-repairs",
+      "text": "Scratch that, let's keep the original deadline.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/corrections-repairs/06-scratch-that-let-s-keep.txt"
+    },
+    {
+      "id": "data-queries/01-show-me-all-orders-over.txt",
+      "category": "data-queries",
+      "text": "Show me all orders over 500 dollars from last month that haven't shipped yet.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/data-queries/01-show-me-all-orders-over.txt"
+    },
+    {
+      "id": "data-queries/02-list-the-customers-who-bought.txt",
+      "category": "data-queries",
+      "text": "List the customers who bought something in 2023 but nothing in 2024.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/data-queries/02-list-the-customers-who-bought.txt"
+    },
+    {
+      "id": "data-queries/03-what-was-our-average-response.txt",
+      "category": "data-queries",
+      "text": "What was our average response time on weekends compared to weekdays?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/data-queries/03-what-was-our-average-response.txt"
+    },
+    {
+      "id": "data-queries/04-which-products-have-fewer-than.txt",
+      "category": "data-queries",
+      "text": "Which products have fewer than ten units left in stock?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/data-queries/04-which-products-have-fewer-than.txt"
+    },
+    {
+      "id": "data-queries/05-count-the-support-tickets-that.txt",
+      "category": "data-queries",
+      "text": "Count the support tickets that were reopened more than once.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/data-queries/05-count-the-support-tickets-that.txt"
+    },
+    {
+      "id": "data-queries/06-give-me-the-names-of.txt",
+      "category": "data-queries",
+      "text": "Give me the names of employees who joined after January and work in either Paris or Lyon.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/data-queries/06-give-me-the-names-of.txt"
+    },
+    {
+      "id": "discourse-coreference/01-i-met-a-developer-at.txt",
+      "category": "discourse-coreference",
+      "text": "I met a developer at the conference. She works on compilers and offered to review our parser.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/discourse-coreference/01-i-met-a-developer-at.txt"
+    },
+    {
+      "id": "discourse-coreference/02-we-have-two-printers-the.txt",
+      "category": "discourse-coreference",
+      "text": "We have two printers. The old one jams constantly, and the new one is out of toner.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/discourse-coreference/02-we-have-two-printers-the.txt"
+    },
+    {
+      "id": "discourse-coreference/03-paul-sent-the-contract-to.txt",
+      "category": "discourse-coreference",
+      "text": "Paul sent the contract to Lisa, and she forwarded it to her lawyer the same day.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/discourse-coreference/03-paul-sent-the-contract-to.txt"
+    },
+    {
+      "id": "discourse-coreference/04-there-s-a-bug-in.txt",
+      "category": "discourse-coreference",
+      "text": "There's a bug in the login page. It only happens when the password contains a space.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/discourse-coreference/04-there-s-a-bug-in.txt"
+    },
+    {
+      "id": "discourse-coreference/05-three-people-applied-for-the.txt",
+      "category": "discourse-coreference",
+      "text": "Three people applied for the position. Two of them have no experience with Python.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/discourse-coreference/05-three-people-applied-for-the.txt"
+    },
+    {
+      "id": "discourse-coreference/06-the-kids-broke-the-vase.txt",
+      "category": "discourse-coreference",
+      "text": "The kids broke the vase. Their father wasn't happy about it.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/discourse-coreference/06-the-kids-broke-the-vase.txt"
+    },
+    {
+      "id": "figurative-idioms/01-the-new-manager-really-threw.txt",
+      "category": "figurative-idioms",
+      "text": "The new manager really threw us under the bus in that meeting.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/figurative-idioms/01-the-new-manager-really-threw.txt"
+    },
+    {
+      "id": "figurative-idioms/02-let-s-not-reinvent-the.txt",
+      "category": "figurative-idioms",
+      "text": "Let's not reinvent the wheel; use the template from last year.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/figurative-idioms/02-let-s-not-reinvent-the.txt"
+    },
+    {
+      "id": "figurative-idioms/03-this-bug-has-been-a.txt",
+      "category": "figurative-idioms",
+      "text": "This bug has been a thorn in my side for weeks.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/figurative-idioms/03-this-bug-has-been-a.txt"
+    },
+    {
+      "id": "figurative-idioms/04-can-you-give-me-a.txt",
+      "category": "figurative-idioms",
+      "text": "Can you give me a ballpark figure for the renovation?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/figurative-idioms/04-can-you-give-me-a.txt"
+    },
+    {
+      "id": "figurative-idioms/05-we-re-on-the-same.txt",
+      "category": "figurative-idioms",
+      "text": "We're on the same page about the deadline, right?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/figurative-idioms/05-we-re-on-the-same.txt"
+    },
+    {
+      "id": "generics-knowledge/01-most-birds-can-fly-but.txt",
+      "category": "generics-knowledge",
+      "text": "Most birds can fly, but penguins can't.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/generics-knowledge/01-most-birds-can-fly-but.txt"
+    },
+    {
+      "id": "generics-knowledge/02-whales-are-mammals-not-fish.txt",
+      "category": "generics-knowledge",
+      "text": "Whales are mammals, not fish.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/generics-knowledge/02-whales-are-mammals-not-fish.txt"
+    },
+    {
+      "id": "generics-knowledge/03-metals-expand-when-they-are.txt",
+      "category": "generics-knowledge",
+      "text": "Metals expand when they are heated.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/generics-knowledge/03-metals-expand-when-they-are.txt"
+    },
+    {
+      "id": "generics-knowledge/04-cats-usually-sleep-during-the.txt",
+      "category": "generics-knowledge",
+      "text": "Cats usually sleep during the day.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/generics-knowledge/04-cats-usually-sleep-during-the.txt"
+    },
+    {
+      "id": "generics-knowledge/05-water-boils-at-100-degrees.txt",
+      "category": "generics-knowledge",
+      "text": "Water boils at 100 degrees Celsius at sea level.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/generics-knowledge/05-water-boils-at-100-degrees.txt"
+    },
+    {
+      "id": "hypothetical-counterfactual/01-if-i-had-known-about.txt",
+      "category": "hypothetical-counterfactual",
+      "text": "If I had known about the traffic, I would have taken the train.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/hypothetical-counterfactual/01-if-i-had-known-about.txt"
+    },
+    {
+      "id": "hypothetical-counterfactual/02-if-you-were-in-my.txt",
+      "category": "hypothetical-counterfactual",
+      "text": "If you were in my position, would you accept the offer?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/hypothetical-counterfactual/02-if-you-were-in-my.txt"
+    },
+    {
+      "id": "hypothetical-counterfactual/03-had-we-launched-a-week.txt",
+      "category": "hypothetical-counterfactual",
+      "text": "Had we launched a week earlier, we would have beaten the competition.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/hypothetical-counterfactual/03-had-we-launched-a-week.txt"
+    },
+    {
+      "id": "hypothetical-counterfactual/04-suppose-the-budget-is-cut.txt",
+      "category": "hypothetical-counterfactual",
+      "text": "Suppose the budget is cut by 20 percent; which projects would we drop first?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/hypothetical-counterfactual/04-suppose-the-budget-is-cut.txt"
+    },
+    {
+      "id": "hypothetical-counterfactual/05-if-i-won-the-lottery.txt",
+      "category": "hypothetical-counterfactual",
+      "text": "If I won the lottery, I'd buy a house by the sea.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/hypothetical-counterfactual/05-if-i-won-the-lottery.txt"
+    },
+    {
+      "id": "indirect-speech-acts/01-could-you-possibly-take-a.txt",
+      "category": "indirect-speech-acts",
+      "text": "Could you possibly take a look at my resume when you have a moment?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/indirect-speech-acts/01-could-you-possibly-take-a.txt"
+    },
+    {
+      "id": "indirect-speech-acts/02-it-s-freezing-in-here.txt",
+      "category": "indirect-speech-acts",
+      "text": "It's freezing in here.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/indirect-speech-acts/02-it-s-freezing-in-here.txt"
+    },
+    {
+      "id": "indirect-speech-acts/03-i-was-wondering-whether-you.txt",
+      "category": "indirect-speech-acts",
+      "text": "I was wondering whether you could explain the difference between a loan and a lease.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/indirect-speech-acts/03-i-was-wondering-whether-you.txt"
+    },
+    {
+      "id": "indirect-speech-acts/04-do-you-know-if-the.txt",
+      "category": "indirect-speech-acts",
+      "text": "Do you know if the pharmacy is still open?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/indirect-speech-acts/04-do-you-know-if-the.txt"
+    },
+    {
+      "id": "indirect-speech-acts/05-would-you-mind-not-using.txt",
+      "category": "indirect-speech-acts",
+      "text": "Would you mind not using my mug?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/indirect-speech-acts/05-would-you-mind-not-using.txt"
+    },
+    {
+      "id": "indirect-speech-acts/06-i-could-really-use-a.txt",
+      "category": "indirect-speech-acts",
+      "text": "I could really use a summary of this article.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/indirect-speech-acts/06-i-could-really-use-a.txt"
+    },
+    {
+      "id": "indirect-speech-acts/07-you-might-want-to-double.txt",
+      "category": "indirect-speech-acts",
+      "text": "You might want to double-check the totals in column D.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/indirect-speech-acts/07-you-might-want-to-double.txt"
+    },
+    {
+      "id": "modality-obligation/01-you-must-not-share-the.txt",
+      "category": "modality-obligation",
+      "text": "You must not share the access token with anyone outside the company.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/modality-obligation/01-you-must-not-share-the.txt"
+    },
+    {
+      "id": "modality-obligation/02-employees-may-work-from-home.txt",
+      "category": "modality-obligation",
+      "text": "Employees may work from home up to two days a week.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/modality-obligation/02-employees-may-work-from-home.txt"
+    },
+    {
+      "id": "modality-obligation/03-the-meeting-might-be-postponed.txt",
+      "category": "modality-obligation",
+      "text": "The meeting might be postponed if the director is still ill.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/modality-obligation/03-the-meeting-might-be-postponed.txt"
+    },
+    {
+      "id": "modality-obligation/04-visitors-should-sign-in-at.txt",
+      "category": "modality-obligation",
+      "text": "Visitors should sign in at the reception before going upstairs.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/modality-obligation/04-visitors-should-sign-in-at.txt"
+    },
+    {
+      "id": "modality-obligation/05-you-don-t-have-to.txt",
+      "category": "modality-obligation",
+      "text": "You don't have to answer every question, but you have to answer the first one.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/modality-obligation/05-you-don-t-have-to.txt"
+    },
+    {
+      "id": "modality-obligation/06-we-could-probably-finish-by.txt",
+      "category": "modality-obligation",
+      "text": "We could probably finish by Friday if nothing else breaks.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/modality-obligation/06-we-could-probably-finish-by.txt"
+    },
+    {
+      "id": "multi-intent/01-find-me-a-cheap-hotel.txt",
+      "category": "multi-intent",
+      "text": "Find me a cheap hotel in Rome for the weekend and tell me what the weather will be like.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/multi-intent/01-find-me-a-cheap-hotel.txt"
+    },
+    {
+      "id": "multi-intent/02-thanks-for-the-update-can.txt",
+      "category": "multi-intent",
+      "text": "Thanks for the update. Can you also check whether the refund has gone through?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/multi-intent/02-thanks-for-the-update-can.txt"
+    },
+    {
+      "id": "multi-intent/03-add-milk-and-eggs-to.txt",
+      "category": "multi-intent",
+      "text": "Add milk and eggs to the shopping list, and remind me to buy flowers for my mom on Sunday.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/multi-intent/03-add-milk-and-eggs-to.txt"
+    },
+    {
+      "id": "multi-intent/04-summarize-the-thread-highlight-any.txt",
+      "category": "multi-intent",
+      "text": "Summarize the thread, highlight any deadlines, and draft a polite reply declining the invitation.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/multi-intent/04-summarize-the-thread-highlight-any.txt"
+    },
+    {
+      "id": "multi-intent/05-i-m-running-late-so.txt",
+      "category": "multi-intent",
+      "text": "I'm running late, so start the meeting without me and record it.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/multi-intent/05-i-m-running-late-so.txt"
+    },
+    {
+      "id": "negation-scope/01-not-every-email-you-flagged.txt",
+      "category": "negation-scope",
+      "text": "Not every email you flagged was spam.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/negation-scope/01-not-every-email-you-flagged.txt"
+    },
+    {
+      "id": "negation-scope/02-none-of-the-applicants-had.txt",
+      "category": "negation-scope",
+      "text": "None of the applicants had the required certification.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/negation-scope/02-none-of-the-applicants-had.txt"
+    },
+    {
+      "id": "negation-scope/03-i-didn-t-say-she.txt",
+      "category": "negation-scope",
+      "text": "I didn't say she stole the money; I said she borrowed it.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/negation-scope/03-i-didn-t-say-she.txt"
+    },
+    {
+      "id": "negation-scope/04-nobody-except-ana-has-access.txt",
+      "category": "negation-scope",
+      "text": "Nobody except Ana has access to the production database.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/negation-scope/04-nobody-except-ana-has-access.txt"
+    },
+    {
+      "id": "negation-scope/05-the-report-wasn-t-late.txt",
+      "category": "negation-scope",
+      "text": "The report wasn't late because of the data team; it was late because of the holidays.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/negation-scope/05-the-report-wasn-t-late.txt"
+    },
+    {
+      "id": "negation-scope/06-i-never-said-i-wouldn.txt",
+      "category": "negation-scope",
+      "text": "I never said I wouldn't come.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/negation-scope/06-i-never-said-i-wouldn.txt"
+    },
+    {
+      "id": "negation-scope/07-not-all-of-the-guests.txt",
+      "category": "negation-scope",
+      "text": "Not all of the guests have confirmed, but none have cancelled.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/negation-scope/07-not-all-of-the-guests.txt"
+    },
+    {
+      "id": "policy-legal/01-a-tenant-may-terminate-the.txt",
+      "category": "policy-legal",
+      "text": "A tenant may terminate the lease with thirty days' written notice.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/policy-legal/01-a-tenant-may-terminate-the.txt"
+    },
+    {
+      "id": "policy-legal/02-refunds-are-available-within-14.txt",
+      "category": "policy-legal",
+      "text": "Refunds are available within 14 days of purchase, provided the item is unused.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/policy-legal/02-refunds-are-available-within-14.txt"
+    },
+    {
+      "id": "policy-legal/03-employees-who-work-more-than.txt",
+      "category": "policy-legal",
+      "text": "Employees who work more than forty hours per week are entitled to overtime pay.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/policy-legal/03-employees-who-work-more-than.txt"
+    },
+    {
+      "id": "policy-legal/04-no-personal-data-may-be.txt",
+      "category": "policy-legal",
+      "text": "No personal data may be transferred outside the EU without the customer's explicit consent.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/policy-legal/04-no-personal-data-may-be.txt"
+    },
+    {
+      "id": "policy-legal/05-the-warranty-does-not-cover.txt",
+      "category": "policy-legal",
+      "text": "The warranty does not cover damage caused by water or by unauthorised repairs.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/policy-legal/05-the-warranty-does-not-cover.txt"
+    },
+    {
+      "id": "policy-legal/06-children-under-twelve-must-be.txt",
+      "category": "policy-legal",
+      "text": "Children under twelve must be accompanied by an adult at all times.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/policy-legal/06-children-under-twelve-must-be.txt"
+    },
+    {
+      "id": "quantifiers-numbers/01-at-least-three-of-the.txt",
+      "category": "quantifiers-numbers",
+      "text": "At least three of the five reviewers must approve the change before it goes live.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/quantifiers-numbers/01-at-least-three-of-the.txt"
+    },
+    {
+      "id": "quantifiers-numbers/02-most-customers-who-tried-the.txt",
+      "category": "quantifiers-numbers",
+      "text": "Most customers who tried the trial upgraded within two weeks.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/quantifiers-numbers/02-most-customers-who-tried-the.txt"
+    },
+    {
+      "id": "quantifiers-numbers/03-each-team-gets-two-tickets.txt",
+      "category": "quantifiers-numbers",
+      "text": "Each team gets two tickets, but only one person per team can attend the dinner.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/quantifiers-numbers/03-each-team-gets-two-tickets.txt"
+    },
+    {
+      "id": "quantifiers-numbers/04-fewer-than-a-third-of.txt",
+      "category": "quantifiers-numbers",
+      "text": "Fewer than a third of the survey respondents said they would recommend us.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/quantifiers-numbers/04-fewer-than-a-third-of.txt"
+    },
+    {
+      "id": "quantifiers-numbers/05-about-half-of-the-budget.txt",
+      "category": "quantifiers-numbers",
+      "text": "About half of the budget has already been spent, and it's only April.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/quantifiers-numbers/05-about-half-of-the-budget.txt"
+    },
+    {
+      "id": "quantifiers-numbers/06-every-student-read-at-least.txt",
+      "category": "quantifiers-numbers",
+      "text": "Every student read at least one of the three assigned books.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/quantifiers-numbers/06-every-student-read-at-least.txt"
+    },
+    {
+      "id": "quantifiers-numbers/07-the-parcel-weighs-2-5.txt",
+      "category": "quantifiers-numbers",
+      "text": "The parcel weighs 2.5 kilograms and costs 18 euros to ship.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/quantifiers-numbers/07-the-parcel-weighs-2-5.txt"
+    },
+    {
+      "id": "questions-wh/01-who-approved-the-budget-increase.txt",
+      "category": "questions-wh",
+      "text": "Who approved the budget increase for the marketing department?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-wh/01-who-approved-the-budget-increase.txt"
+    },
+    {
+      "id": "questions-wh/02-which-of-my-subscriptions-renew.txt",
+      "category": "questions-wh",
+      "text": "Which of my subscriptions renew automatically next month?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-wh/02-which-of-my-subscriptions-renew.txt"
+    },
+    {
+      "id": "questions-wh/03-how-many-unread-messages-do.txt",
+      "category": "questions-wh",
+      "text": "How many unread messages do I have from my manager?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-wh/03-how-many-unread-messages-do.txt"
+    },
+    {
+      "id": "questions-wh/04-where-did-i-leave-off.txt",
+      "category": "questions-wh",
+      "text": "Where did I leave off in the onboarding checklist?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-wh/04-where-did-i-leave-off.txt"
+    },
+    {
+      "id": "questions-wh/05-why-did-the-deployment-fail.txt",
+      "category": "questions-wh",
+      "text": "Why did the deployment fail last night?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-wh/05-why-did-the-deployment-fail.txt"
+    },
+    {
+      "id": "questions-wh/06-when-is-the-next-train.txt",
+      "category": "questions-wh",
+      "text": "When is the next train to Cluj that doesn't require a change?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-wh/06-when-is-the-next-train.txt"
+    },
+    {
+      "id": "questions-wh/07-what-did-the-client-say.txt",
+      "category": "questions-wh",
+      "text": "What did the client say about the new pricing?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-wh/07-what-did-the-client-say.txt"
+    },
+    {
+      "id": "questions-yes-no/01-has-the-invoice-for-march.txt",
+      "category": "questions-yes-no",
+      "text": "Has the invoice for March been paid yet?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-yes-no/01-has-the-invoice-for-march.txt"
+    },
+    {
+      "id": "questions-yes-no/02-is-the-meeting-room-on.txt",
+      "category": "questions-yes-no",
+      "text": "Is the meeting room on the third floor free at two o'clock?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-yes-no/02-is-the-meeting-room-on.txt"
+    },
+    {
+      "id": "questions-yes-no/03-did-anyone-from-the-legal.txt",
+      "category": "questions-yes-no",
+      "text": "Did anyone from the legal team review the contract before it was signed?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-yes-no/03-did-anyone-from-the-legal.txt"
+    },
+    {
+      "id": "questions-yes-no/04-can-i-bring-my-dog.txt",
+      "category": "questions-yes-no",
+      "text": "Can I bring my dog to the hotel?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-yes-no/04-can-i-bring-my-dog.txt"
+    },
+    {
+      "id": "questions-yes-no/05-are-all-the-tests-passing.txt",
+      "category": "questions-yes-no",
+      "text": "Are all the tests passing on the main branch?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-yes-no/05-are-all-the-tests-passing.txt"
+    },
+    {
+      "id": "questions-yes-no/06-was-the-package-delivered-to.txt",
+      "category": "questions-yes-no",
+      "text": "Was the package delivered to the right address?",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/questions-yes-no/06-was-the-package-delivered-to.txt"
+    },
+    {
+      "id": "social/01-thanks-a-lot-that-was.txt",
+      "category": "social",
+      "text": "Thanks a lot, that was really helpful!",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/social/01-thanks-a-lot-that-was.txt"
+    },
+    {
+      "id": "social/02-sorry-for-the-late-reply.txt",
+      "category": "social",
+      "text": "Sorry for the late reply, I was travelling all week.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/social/02-sorry-for-the-late-reply.txt"
+    },
+    {
+      "id": "social/03-good-morning-hope-you-had.txt",
+      "category": "social",
+      "text": "Good morning! Hope you had a nice weekend.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/social/03-good-morning-hope-you-had.txt"
+    },
+    {
+      "id": "social/04-congratulations-on-the-promotion-you.txt",
+      "category": "social",
+      "text": "Congratulations on the promotion, you totally deserved it.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/social/04-congratulations-on-the-promotion-you.txt"
+    },
+    {
+      "id": "social/05-i-m-really-frustrated-that.txt",
+      "category": "social",
+      "text": "I'm really frustrated that this keeps happening.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/social/05-i-m-really-frustrated-that.txt"
+    },
+    {
+      "id": "social/06-no-worries-take-your-time.txt",
+      "category": "social",
+      "text": "No worries, take your time.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/social/06-no-worries-take-your-time.txt"
+    },
+    {
+      "id": "technical-instructions/01-run-the-migration-script-on.txt",
+      "category": "technical-instructions",
+      "text": "Run the migration script on staging first and only touch production if all checks pass.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/technical-instructions/01-run-the-migration-script-on.txt"
+    },
+    {
+      "id": "technical-instructions/02-bump-the-version-to-2.txt",
+      "category": "technical-instructions",
+      "text": "Bump the version to 2.3.1, update the changelog, and tag the release.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/technical-instructions/02-bump-the-version-to-2.txt"
+    },
+    {
+      "id": "technical-instructions/03-add-a-retry-with-exponential.txt",
+      "category": "technical-instructions",
+      "text": "Add a retry with exponential backoff to the payment client, but never retry on a 4xx error.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/technical-instructions/03-add-a-retry-with-exponential.txt"
+    },
+    {
+      "id": "technical-instructions/04-make-sure-the-function-returns.txt",
+      "category": "technical-instructions",
+      "text": "Make sure the function returns an empty list instead of null when there are no results.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/technical-instructions/04-make-sure-the-function-returns.txt"
+    },
+    {
+      "id": "technical-instructions/05-revert-the-last-two-commits.txt",
+      "category": "technical-instructions",
+      "text": "Revert the last two commits on the feature branch, not on main.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/technical-instructions/05-revert-the-last-two-commits.txt"
+    },
+    {
+      "id": "technical-instructions/06-disable-the-cache-in-development.txt",
+      "category": "technical-instructions",
+      "text": "Disable the cache in development but keep it enabled in production.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/technical-instructions/06-disable-the-cache-in-development.txt"
+    },
+    {
+      "id": "time-scheduling/01-let-s-meet-every-other.txt",
+      "category": "time-scheduling",
+      "text": "Let's meet every other Thursday at 4 p.m., starting next week.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/time-scheduling/01-let-s-meet-every-other.txt"
+    },
+    {
+      "id": "time-scheduling/02-the-office-is-closed-from.txt",
+      "category": "time-scheduling",
+      "text": "The office is closed from December 24 until January 2.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/time-scheduling/02-the-office-is-closed-from.txt"
+    },
+    {
+      "id": "time-scheduling/03-i-ll-be-in-berlin.txt",
+      "category": "time-scheduling",
+      "text": "I'll be in Berlin from Monday to Wednesday, so move our call to Thursday morning.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/time-scheduling/03-i-ll-be-in-berlin.txt"
+    },
+    {
+      "id": "time-scheduling/04-the-contract-expires-thirty-days.txt",
+      "category": "time-scheduling",
+      "text": "The contract expires thirty days after the last payment is received.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/time-scheduling/04-the-contract-expires-thirty-days.txt"
+    },
+    {
+      "id": "time-scheduling/05-she-has-been-working-on.txt",
+      "category": "time-scheduling",
+      "text": "She has been working on the migration since March and expects to finish before the end of the quarter.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/time-scheduling/05-she-has-been-working-on.txt"
+    },
+    {
+      "id": "time-scheduling/06-by-the-time-you-read.txt",
+      "category": "time-scheduling",
+      "text": "By the time you read this, I will have already left for the airport.",
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/base/time-scheduling/06-by-the-time-you-read.txt"
+    }
+  ],
+  "strategies": [
+    "symbolic",
+    "lab-heuristic"
+  ],
+  "sourceHashes": {
+    "README.md": "30237ce54cb8ecbe501eb4221b7f1a124a3288fdf7ffefb349546fdacdad576e",
+    "package-lock.json": "71cdae9b8e281d346ec00a8d5b625625c26a229da80cee7e63a0e2a557639864",
+    "package.json": "dfec19b1b9b719b51648a7f85333bd90b96673482317c5eb0daf421bc547bd68",
+    "strategies/cnl-core/index.mjs": "a20001b28cc5ddfacb9561b680e0874a390537d61a75b3862d4395c25529ddbb",
+    "strategies/cnl-core/src/cnl-core.mjs": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956",
+    "strategies/cnl-core/task.mjs": "059a7b72f04b00d28227530c8f77245051811896ae185eee85d91f367b5ad08f",
+    "strategies/evl/index.mjs": "9ec34f7d0c9c42e969fb7811fb2d35887806de35ee727c2fcf7a62c1089b50d8",
+    "strategies/evl/package.json": "b9adccb74c92a791f8d1c4f31f171fbf30904024a4f6fcee35602aed65c25d0a",
+    "strategies/evl/spec/evl-spec.md": "a9c0e2d531916b2f24ead0d167b9a30bbd208da3786a8196763865b99bea1f84",
+    "strategies/evl/spec/prompts.json": "a8d6bf6a91ccb1e0f4eee231e340ffe9ad19dfe74be6446498d3c61bc1921d8b",
+    "strategies/evl/src/check.mjs": "dd226dae1245efa9acf7416ca2282d712470477f836a4f4a2e67bf0b27d6a425",
+    "strategies/evl/src/english.mjs": "b74d71651adaebb4d9ca94fc9168583c6a6fe396ca072429e51ed1abadddc93f",
+    "strategies/evl/src/kb.mjs": "54413455ce1742be358b1ff2407195217ac00a79bb77d75ccddc4babd5b3ad23",
+    "strategies/evl/src/loop.mjs": "563c5b1e546321580600e9e59bb3633a9e47d0e5b51e51393be8026d93471f89",
+    "strategies/evl/src/morph.mjs": "d522dc1644a101015d7cdf1ffda4f1d1244d6d92c59d54a0221bd313fe622512",
+    "strategies/evl/src/qa.mjs": "c89adef086656686ce724ddc68d94e21532ebb94afb13c1ccf2327254b2d0d7c",
+    "strategies/evl/src/terms.mjs": "48bc97cdc9a2ffe24447284656598d6d49f84708fa4fc6f007891e57b44a0b97",
+    "strategies/evl/src/util.mjs": "8967887f01aa805bf60a42d09ecbe3ab2bada7efed31d8a0887ca5bbe27ae512",
+    "strategies/evl/task.mjs": "310c2405c043939ab867e18458b52d3375a30d6312e6d5c2aab9c5a08ee4dcdc",
+    "strategies/evl/test/fixtures.json": "d2163ca20c468994c9a9a6a16b0cf39621c1bac35584359be8d405852b0e13e6",
+    "strategies/evl/test/parity.test.mjs": "edbc78ff6e872558f4f932b369d5660a47af61a202a51f411b938f4cbfab4d45",
+    "strategies/lab-direct/index.mjs": "cb6ddb77e68ebbc16b7636275a210e1c4f1493f7686276ed882cefa725baec6a",
+    "strategies/lab-direct/task.mjs": "d29b7dba5d92356a58e3ca824383f61449a4afa6bbf7eb365fe6e55a32b94389",
+    "strategies/lab-heuristic/index.mjs": "2f7c1e71615f58a453532c2f2ff33aaca1734c8d383a903cb9f77bd47c21cdbd",
+    "strategies/lab-proto/index.mjs": "76d685489f8039b1ff9d428f3e4a12c232d5d6f770ad8edb24f4669dd4505bb0",
+    "strategies/lab-proto/task.mjs": "52b88678260e42c34810e6c928e49df01d47eb570951abd28690fcfb495af6d6",
+    "strategies/lab-shared/adapter.mjs": "0b5dced6936320cd2b443cf66c2f93bb3a2dcd13750ae77a49f3121c13e5bf37",
+    "strategies/lab-shared/src/ir.mjs": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e",
+    "strategies/lab-shared/src/protoir.mjs": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483",
+    "strategies/lab-shared/src/reasoner.mjs": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f",
+    "strategies/lab-shared/src/strategies/direct-llm.mjs": "02cbcb85b78ca182d6abcd126d287cc08e5ed578f89637a2d1e47537a88f1f6b",
+    "strategies/lab-shared/src/strategies/heuristic.mjs": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7",
+    "strategies/lab-shared/src/strategies/proto-llm.mjs": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852",
+    "strategies/lab-shared/src/strategy.mjs": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac",
+    "strategies/lab-shared/src/util.mjs": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6",
+    "strategies/microir/index.mjs": "7e3cc2563b7a124d2c682745d7300abc21c65756b7cf5ec306d9767afe795f1f",
+    "strategies/microir/reasoner.mjs": "937ef5d106a8fe82d930b69596be6987c70ea28f33da788f591f3384d883ed52",
+    "strategies/microir/src/cnl.mjs": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3",
+    "strategies/microir/src/ir.mjs": "827f4b1a4e706899e09447c5af39a216d0937ba03a183bc67ef85a8a5f780596",
+    "strategies/microir/src/prompts.mjs": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0",
+    "strategies/microir/src/wire.mjs": "92887fa06fbc71dcb91f91ba095a5f260a97821fc571a2ac5108714c49f7a201",
+    "strategies/microir/task.mjs": "d803788fdb67cfabf347290ee75c6c145c7b3469d5fd0240577187e0a50d2bbf",
+    "strategies/symbolic/index.mjs": "2d418262a98717392bebba52af182b37194f9e116f39815342af1a7683766ed0",
+    "strategies/symbolic/src/formalizer.mjs": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb",
+    "tasks/judge-bidirectional.mjs": "58e77d927deb6ca73eb1be99f2cb47e78fead2971944cdd92f184bc6a94d7680",
+    "tasks/judge-direct.mjs": "05b327d973dfcdc4c0d024a6dc5353640d631461587ae8aaf72faacae785101d",
+    "test/pipeline.test.mjs": "e58bf4933a63d9a45b2f186694194cd16efccd3e62c7261f0caf48db611fc731",
+    "test/reasoning.test.mjs": "c868628d1288e5012da1e4d6d4ff0cdbdc7506854ad66a5f5a1209bf48cbab70",
+    "tools/calibrate-judge.mjs": "77904cad0eb672af03737fd909e3a7ea0c623feb1eea13393cae0fb30e47b177",
+    "tools/formalize.mjs": "821f21fcf985ff085455bdbab4ae4218d6b5679bdd2c1e6840acb916f78201b9",
+    "tools/judge.mjs": "823e9868f0ac4edf0fa924f1ff198938925f0c8f481777586b6b1ec9b471b3b9",
+    "tools/lib/audit.mjs": "3ba3ef3ba3a3d27fd96285d5978aaf1351724ea8d572b95eb08f3757d5b03b3e",
+    "tools/lib/cli.mjs": "347c08ff5e8f5e6de4812a4481efcf84cf8975ee08953f6f8d7543feb735d342",
+    "tools/lib/evalset.mjs": "2a8c16d602a4d30eb56f36eea61d8c82d2bc16504f214fd29cfe6d3795b873c4",
+    "tools/lib/judge.mjs": "1dabbbbd65530c2e6170a23673927fee3443e7967f38ae96db6f6c3a4ec56f8b",
+    "tools/lib/llm.mjs": "89d60b76e92d345f272a3a42bfd7734e9ddc8a414184ed2e052d045491675623",
+    "tools/lib/pworker.mjs": "0da0d9536a0f68012119b03485831839cf1f04455d9bb4fd995eb4a216619612",
+    "tools/lib/strategies.mjs": "a58e1d1d87ce2ecae9e12cca725a701bd12f48c3d68ef97e1adf4007f020bb9c",
+    "tools/lib/task-spec.mjs": "cf5f1fc973ff3e926ad0fd86477415c205abab1c907bb55b82a3daaaa8174040",
+    "tools/run-eval.mjs": "d431b94a19193fc49eab54dd4ab40292e0feec41d293dd4841013fcea1a24d07",
+    "../Ploinky-Worker/lib/agent/agent-skills.mjs": "06ee4ef3a66dcadf302d8d30b7d411436e12a0dea0bbfdff45f5d00e2e07ba7f",
+    "../Ploinky-Worker/lib/agent/bm25.mjs": "aa68d407ba34dac220e59ddb315879d232902788f74e24d0b06715eea63d22fb",
+    "../Ploinky-Worker/lib/agent/frontmatter.mjs": "224c1a8690160c70b2c59f797e9ab56d3c3676bba84f58fd5137fec88c42457e",
+    "../Ploinky-Worker/lib/agent/index.mjs": "99cd318de56cc76a23ce78c651432d559d38f612a0c8b5eee3280a53a39243c7",
+    "../Ploinky-Worker/lib/agent/lambda-cache.mjs": "05f7f0edb25ac2d8f655a5f910c292bacd119d0bcbac24058a278a5c3f8f487b",
+    "../Ploinky-Worker/lib/agent/lambda-code.mjs": "777f69714d279b9dbf75baab2ba074a26b957a9e7db2a35433aab25d31ed2f7d",
+    "../Ploinky-Worker/lib/agent/match.mjs": "a98a37ecb12f1ec20479a5dd242b2faf2a6b17ceb4e4b40af9aa931c94d2d97e",
+    "../Ploinky-Worker/lib/agent/run.mjs": "a708a146fcdb59b085b4a1798e9144e85a28470d0a3e8bfd90b6254c736c4303",
+    "../Ploinky-Worker/lib/agent/workspace.mjs": "7e08a694ed7877953ce8e110872deadf4162bae738f6d3529e2a7cf36b80937b",
+    "../Ploinky-Worker/lib/audit.mjs": "2cea8ab31a5d0d2dda301be886d9a90123182a6ee402282132efd6b4a84980ed",
+    "../Ploinky-Worker/lib/cache.mjs": "3072fc86be43feb908cc33d2da99ce6ef325f847a631f8075b691a99398a25ac",
+    "../Ploinky-Worker/lib/client.mjs": "1f476003fc44d2bee2307aee9f14f4ffda9d0df87e9f7c1d8af20260061b1a66",
+    "../Ploinky-Worker/lib/config.mjs": "df279e71295b726d6a6c9323df1fccf51ccb27dd8002e58b2d6dc4085b2c60e5",
+    "../Ploinky-Worker/lib/core.mjs": "7745c417a96e54b4df024da41a28c02685ca1e08b242b7a4baea4fa169de84ad",
+    "../Ploinky-Worker/lib/dashboard.mjs": "9e95bc187768eccff1605bfd41a70117973e93cf14f2f1d71a96b59184e92df7",
+    "../Ploinky-Worker/lib/guard.mjs": "fe530c38bf00385f3c794f360151ec831fb056f1c0c3c4966270552a4ce7f89d",
+    "../Ploinky-Worker/lib/http-fetch.mjs": "f4b6b38232887e5758e283560e3c9cbf1fcd8370b722443126ee4b47c0b18663",
+    "../Ploinky-Worker/lib/inproc.mjs": "9585917cc639b12fa0e36c830cd6cf94b39e1949a6f82a0a7d60c5625a6b2a82",
+    "../Ploinky-Worker/lib/jobs/client.mjs": "4a2ea6a481e698957eb429131e0bc571b07a891fc696ba43970fbebcb1d9b9d4",
+    "../Ploinky-Worker/lib/jobs/config.mjs": "dd16e58f50beacd6ebe70c41b5c0c430ae8fdf17bce588665c7ebe9bbe02619d",
+    "../Ploinky-Worker/lib/jobs/index.mjs": "77622009c9d208d6df2ace816d38237cc33499cf2bca1cedf35b07513b6579d2",
+    "../Ploinky-Worker/lib/jobs/inputs.mjs": "1285e046eda23cd958177827e728d51ea40ec3a9635159438f3384b24d46d175",
+    "../Ploinky-Worker/lib/jobs/outputs.mjs": "f206ccedf2b84ebef565b315ac1eebe7b0bb98c6ef4801e07c4c4d2caada086d",
+    "../Ploinky-Worker/lib/jobs/planner.mjs": "c2da9810387a45017be726882b9c42c7a5de1574388b04acf63367097e2623c2",
+    "../Ploinky-Worker/lib/jobs/review.mjs": "760a6cc058acbc51c66684a509df33fc872dfec15d3ed3b3eb6957188e57148f",
+    "../Ploinky-Worker/lib/jobs/runner.mjs": "dbd1920cb1f4ba22c58df50db2d1424c936ec3554a9867a23f6d74ea474995e4",
+    "../Ploinky-Worker/lib/jobs/spec.mjs": "333183676d755c7e888796d81bf2bbe42edc8f01e4ef489770aede5efe13ac40",
+    "../Ploinky-Worker/lib/jobs/store.mjs": "165acd12cbee1afc61fe462ef808a93997ee9155fdcb70b5f95cc567f5f07754",
+    "../Ploinky-Worker/lib/jobs/task.mjs": "c228e6e5892a5baff8c96267abfb0d2bb480bee8828267ab27adc450058be08b",
+    "../Ploinky-Worker/lib/jobs/tiers.mjs": "631db148d05d751c741072e907f8f1b72e5598735ecfd39acfb1d818d406a40c",
+    "../Ploinky-Worker/lib/jobs/util.mjs": "18e06a51b388a89dcb1e781cbde04212cb1a22f23ceac3baa7f434c1704ac88e",
+    "../Ploinky-Worker/lib/lambda/calls.mjs": "3205c4a9c9f0d523fb8b8879bb9294397cd0fdbba0a48c7e8cf3f3d576f494df",
+    "../Ploinky-Worker/lib/lambda/effects.mjs": "8c664037108787801ff9baa7baa3ecc45bae04be8a41381cbb2d2d7d5f907f63",
+    "../Ploinky-Worker/lib/lambda/import.mjs": "986e7c7b53d46d2dc4ec258909ad6c982472f2681fea06cf3104e765a012098a",
+    "../Ploinky-Worker/lib/lambda/index.mjs": "b94522c4f3416b7921717958cb9a2a580bc45d580b764a920fb8175b7eede7f0",
+    "../Ploinky-Worker/lib/lambda/registry.mjs": "7debee2b2cb0c6c5fcb9d80bb9e35a7fe94f726c4ba5ac1a177c64d219ea22aa",
+    "../Ploinky-Worker/lib/limiter.mjs": "55789f5a2549d8726b79421b77c2f51be0589748855a9a2ce031082af5380b73",
+    "../Ploinky-Worker/lib/local.mjs": "95540b77f86b5a4f0b332768bec3f64ad8cde8cf3513f6415df534ac25a7701f",
+    "../Ploinky-Worker/lib/monitor.mjs": "efe2659b6924855ed811b14a05832437c5773245279182122e67b92b3b181b36",
+    "../Ploinky-Worker/lib/plan.mjs": "b9c35a01ab6aaff9ebe17521666f7f524ba1ad1eb41ad129d370c495a4aa5262",
+    "../Ploinky-Worker/lib/prompted.mjs": "b25bf6134d5a5ee97cba6f8b6f921a284c88fb03a94ff744168376287dbc2a66",
+    "../Ploinky-Worker/lib/pworker/help.mjs": "c90e40b20db4283f6243ed0113c57b102e910afdf8b0e8434ef3261245fd04d0",
+    "../Ploinky-Worker/lib/pworker/jobs.mjs": "f9355864a7d8befef083094a26048879d380da6756e26541675292ade6ca67e9",
+    "../Ploinky-Worker/lib/pworker/menu.mjs": "87b8c344e29fc718c26e9f7281ed770412d0b86356eb6f8c6c6dee9d996bd60b",
+    "../Ploinky-Worker/lib/pworker/providers.mjs": "60d105d664801e7a922d64775bc13101b2f58a3ba1585d9567e3a74f98d2194d",
+    "../Ploinky-Worker/lib/pworker/task.mjs": "412ba931f61fbc31563b11ab61be91e3803261f339eb797848813635da809a01",
+    "../Ploinky-Worker/lib/sandbox.mjs": "257abc79d291c62cc4d2453127f2397d4cff43ff0f43a7ecc81848b7cea36d19",
+    "../Ploinky-Worker/lib/server.mjs": "949ccb8fe4294d346b3ae7eed4489eb1c02c753135b3b6d2c2b0b2e6afd7bbf6",
+    "../Ploinky-Worker/lib/settings.mjs": "fbe6b8c768bd83a33e8ec7fc6ca33fc63f5ae794eb5c3b03518119134e7543ba",
+    "../Ploinky-Worker/lib/worker.mjs": "3f120e219de8c39d632e16f98b3d5d68caaeedd79e46bb707487231ce10e9f5f"
+  },
+  "node": "v24.9.0",
+  "argv": [
+    "--strategy",
+    "symbolic",
+    "--strategy",
+    "lab-heuristic",
+    "--stage",
+    "full",
+    "--offline",
+    "--id",
+    "009-deterministic-full-coverage"
+  ],
+  "rejudgeOf": null
+}

@@ -1,0 +1,1 @@
+A developer may merge a change into main only if two reviewers have approved it. Kim merged change C4 into main after two reviewers approved it. Was C4 approved by two reviewers?

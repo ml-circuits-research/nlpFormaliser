@@ -1,0 +1,1 @@
+The robot has permission to move but no obligation to do so.

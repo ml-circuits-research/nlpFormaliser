@@ -1,0 +1,589 @@
+{
+  "note": "Source archives remain authoritative. No direct model transports are imported.",
+  "files": [
+    {
+      "source": "nl-formalizer-lab/src/cnl.mjs",
+      "destination": "strategies/_archive/lab/src/cnl.mjs",
+      "sourceSha256": "a56a9c7c2db237ac092d29379ef43087c464bcc82950fa28ae6112a4358535e6",
+      "changes": [],
+      "installedSha256": "a56a9c7c2db237ac092d29379ef43087c464bcc82950fa28ae6112a4358535e6"
+    },
+    {
+      "source": "nl-formalizer-lab/src/compiler.mjs",
+      "destination": "strategies/_archive/lab/src/compiler.mjs",
+      "sourceSha256": "5a75ef2fdefab1b7e92bff537aea7830a5349c445aa1502c6629304c16ea9d38",
+      "changes": [],
+      "installedSha256": "5a75ef2fdefab1b7e92bff537aea7830a5349c445aa1502c6629304c16ea9d38"
+    },
+    {
+      "source": "nl-formalizer-lab/src/corruptions.mjs",
+      "destination": "strategies/_archive/lab/src/corruptions.mjs",
+      "sourceSha256": "6ee5ca7f0f56db2960aa2b72020cd364099729eb7a1d2dab62bd4b79a418faf1",
+      "changes": [],
+      "installedSha256": "6ee5ca7f0f56db2960aa2b72020cd364099729eb7a1d2dab62bd4b79a418faf1"
+    },
+    {
+      "source": "nl-formalizer-lab/src/evaluator.mjs",
+      "destination": "strategies/_archive/lab/src/evaluator.mjs",
+      "sourceSha256": "69930b649a5af6b2d92879469fa5edaa5b12de433c16f44a6118eb37916bc1d7",
+      "changes": [],
+      "installedSha256": "69930b649a5af6b2d92879469fa5edaa5b12de433c16f44a6118eb37916bc1d7"
+    },
+    {
+      "source": "nl-formalizer-lab/src/index.mjs",
+      "destination": "strategies/_archive/lab/src/index.mjs",
+      "sourceSha256": "c31600df946e16452a16d651ca466dfcea8477885f5f70e3e5536b22f6c49a32",
+      "changes": [
+        "Provider export removed; Ploinky Workers is the only transport."
+      ],
+      "installedSha256": "126ede2b3463f5b19ef8e1e9c3030b1dbe4e251ec9fdb01398d5558bbf2edd00"
+    },
+    {
+      "source": "nl-formalizer-lab/src/ir.mjs",
+      "destination": "strategies/_archive/lab/src/ir.mjs",
+      "sourceSha256": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e",
+      "changes": [],
+      "installedSha256": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e"
+    },
+    {
+      "source": "nl-formalizer-lab/src/judge.mjs",
+      "destination": "strategies/_archive/lab/src/judge.mjs",
+      "sourceSha256": "a45ff25954760b9e93405a718183e526c4312d0cdebec980e32bd30a98df7d5c",
+      "changes": [],
+      "installedSha256": "a45ff25954760b9e93405a718183e526c4312d0cdebec980e32bd30a98df7d5c"
+    },
+    {
+      "source": "nl-formalizer-lab/src/protoir.mjs",
+      "destination": "strategies/_archive/lab/src/protoir.mjs",
+      "sourceSha256": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483",
+      "changes": [],
+      "installedSha256": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483"
+    },
+    {
+      "source": "nl-formalizer-lab/src/reasoner.mjs",
+      "destination": "strategies/_archive/lab/src/reasoner.mjs",
+      "sourceSha256": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f",
+      "changes": [],
+      "installedSha256": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f"
+    },
+    {
+      "source": "nl-formalizer-lab/src/repairer.mjs",
+      "destination": "strategies/_archive/lab/src/repairer.mjs",
+      "sourceSha256": "0cf247bfe1a00a6bfca7c7039596473359a00ba2b3ae46341ca98d86244cd3f5",
+      "changes": [],
+      "installedSha256": "0cf247bfe1a00a6bfca7c7039596473359a00ba2b3ae46341ca98d86244cd3f5"
+    },
+    {
+      "source": "nl-formalizer-lab/src/strategies/direct-llm.mjs",
+      "destination": "strategies/_archive/lab/src/strategies/direct-llm.mjs",
+      "sourceSha256": "02cbcb85b78ca182d6abcd126d287cc08e5ed578f89637a2d1e47537a88f1f6b",
+      "changes": [],
+      "installedSha256": "02cbcb85b78ca182d6abcd126d287cc08e5ed578f89637a2d1e47537a88f1f6b"
+    },
+    {
+      "source": "nl-formalizer-lab/src/strategies/heuristic.mjs",
+      "destination": "strategies/_archive/lab/src/strategies/heuristic.mjs",
+      "sourceSha256": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7",
+      "changes": [],
+      "installedSha256": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7"
+    },
+    {
+      "source": "nl-formalizer-lab/src/strategies/proto-llm.mjs",
+      "destination": "strategies/_archive/lab/src/strategies/proto-llm.mjs",
+      "sourceSha256": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852",
+      "changes": [],
+      "installedSha256": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852"
+    },
+    {
+      "source": "nl-formalizer-lab/src/strategies/repair-llm.mjs",
+      "destination": "strategies/_archive/lab/src/strategies/repair-llm.mjs",
+      "sourceSha256": "286204cc915820e1a1093e2c1979c7426270a780056032f6c333d264c2e3be0b",
+      "changes": [],
+      "installedSha256": "286204cc915820e1a1093e2c1979c7426270a780056032f6c333d264c2e3be0b"
+    },
+    {
+      "source": "nl-formalizer-lab/src/strategy.mjs",
+      "destination": "strategies/_archive/lab/src/strategy.mjs",
+      "sourceSha256": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac",
+      "changes": [],
+      "installedSha256": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac"
+    },
+    {
+      "source": "nl-formalizer-lab/src/util.mjs",
+      "destination": "strategies/_archive/lab/src/util.mjs",
+      "sourceSha256": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6",
+      "changes": [],
+      "installedSha256": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/cnl.test.mjs",
+      "destination": "strategies/_archive/lab/tests/cnl.test.mjs",
+      "sourceSha256": "fdf152164ed0edfc8fecabd02f0da8d98495c4d6f73c9992e804693393b0de21",
+      "changes": [],
+      "installedSha256": "fdf152164ed0edfc8fecabd02f0da8d98495c4d6f73c9992e804693393b0de21"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/compiler.test.mjs",
+      "destination": "strategies/_archive/lab/tests/compiler.test.mjs",
+      "sourceSha256": "3ee6bc1e44a01280a9bd12a4769e5e400c08e0364584721e6f6f5c0a1decd149",
+      "changes": [],
+      "installedSha256": "3ee6bc1e44a01280a9bd12a4769e5e400c08e0364584721e6f6f5c0a1decd149"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/corruptions.test.mjs",
+      "destination": "strategies/_archive/lab/tests/corruptions.test.mjs",
+      "sourceSha256": "463602f7b7135c1b10fecfdacc90aff1889614e24411f4f87bb6f2119afb4184",
+      "changes": [],
+      "installedSha256": "463602f7b7135c1b10fecfdacc90aff1889614e24411f4f87bb6f2119afb4184"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/evaluator.test.mjs",
+      "destination": "strategies/_archive/lab/tests/evaluator.test.mjs",
+      "sourceSha256": "9459ffade2f0d73ed65586f04de91908d5b7583c74c3f6030f4d6c61099a027f",
+      "changes": [],
+      "installedSha256": "9459ffade2f0d73ed65586f04de91908d5b7583c74c3f6030f4d6c61099a027f"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/heuristic.test.mjs",
+      "destination": "strategies/_archive/lab/tests/heuristic.test.mjs",
+      "sourceSha256": "6b6baef691a139b63ba33c68e17f065b522d5892faa4a2f71b8feb16c483897b",
+      "changes": [],
+      "installedSha256": "6b6baef691a139b63ba33c68e17f065b522d5892faa4a2f71b8feb16c483897b"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/ir.test.mjs",
+      "destination": "strategies/_archive/lab/tests/ir.test.mjs",
+      "sourceSha256": "ee77c3ff187d968955e0de9d998b9a7ff62393ec9ec1180ef04dec73e7c0ad52",
+      "changes": [],
+      "installedSha256": "ee77c3ff187d968955e0de9d998b9a7ff62393ec9ec1180ef04dec73e7c0ad52"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/judge.test.mjs",
+      "destination": "strategies/_archive/lab/tests/judge.test.mjs",
+      "sourceSha256": "47702f338329fb158141c48ac25e539a99ed16180a465e91ed9177d00a753cd4",
+      "changes": [],
+      "installedSha256": "47702f338329fb158141c48ac25e539a99ed16180a465e91ed9177d00a753cd4"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/proto-strategy.test.mjs",
+      "destination": "strategies/_archive/lab/tests/proto-strategy.test.mjs",
+      "sourceSha256": "9e50d9df04523ffd99df6c218cb271f8077c69cd2cf19b7033f0142fdca9e244",
+      "changes": [],
+      "installedSha256": "9e50d9df04523ffd99df6c218cb271f8077c69cd2cf19b7033f0142fdca9e244"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/protoir.test.mjs",
+      "destination": "strategies/_archive/lab/tests/protoir.test.mjs",
+      "sourceSha256": "1f247c28814b149e1ae06eb4cd34708ee213c73843564c3137bc2da4b53fe1cf",
+      "changes": [],
+      "installedSha256": "1f247c28814b149e1ae06eb4cd34708ee213c73843564c3137bc2da4b53fe1cf"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/reasoner.test.mjs",
+      "destination": "strategies/_archive/lab/tests/reasoner.test.mjs",
+      "sourceSha256": "d4e7ba10ff0f7dd185f01049c2355e8358ae35185952d1621f414394fd1a8630",
+      "changes": [],
+      "installedSha256": "d4e7ba10ff0f7dd185f01049c2355e8358ae35185952d1621f414394fd1a8630"
+    },
+    {
+      "source": "nl-formalizer-lab/tests/repair.test.mjs",
+      "destination": "strategies/_archive/lab/tests/repair.test.mjs",
+      "sourceSha256": "5288e181e3402bbcd67ddb281d11b97838439b1c8c750874b8665492b5317381",
+      "changes": [],
+      "installedSha256": "5288e181e3402bbcd67ddb281d11b97838439b1c8c750874b8665492b5317381"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/ADDING_STRATEGY.md",
+      "destination": "strategies/_archive/lab/docs/ADDING_STRATEGY.md",
+      "sourceSha256": "0565b7755f59d68f45510491622b1db20c9b571f6294589bb31254cb04cda534",
+      "changes": [],
+      "installedSha256": "0565b7755f59d68f45510491622b1db20c9b571f6294589bb31254cb04cda534"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/ARCHITECTURE.md",
+      "destination": "strategies/_archive/lab/docs/ARCHITECTURE.md",
+      "sourceSha256": "9af1571ff92f701b92fea5ba92c37e820a26cdc9810b2c2fc97337fc9f1dfde6",
+      "changes": [],
+      "installedSha256": "9af1571ff92f701b92fea5ba92c37e820a26cdc9810b2c2fc97337fc9f1dfde6"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/BENCHMARK_FORMAT.md",
+      "destination": "strategies/_archive/lab/docs/BENCHMARK_FORMAT.md",
+      "sourceSha256": "6baeb929e101937a62f506ea0e0e121dccab910af1197bb6dc61080e8f39d7e9",
+      "changes": [],
+      "installedSha256": "6baeb929e101937a62f506ea0e0e121dccab910af1197bb6dc61080e8f39d7e9"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/EVALUATION.md",
+      "destination": "strategies/_archive/lab/docs/EVALUATION.md",
+      "sourceSha256": "8149ae8f8f2a8e54c931ddba1d018de3c331f276c50f3fd561702c1fed5fe476",
+      "changes": [],
+      "installedSha256": "8149ae8f8f2a8e54c931ddba1d018de3c331f276c50f3fd561702c1fed5fe476"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/EXPERIMENT_PLAN.md",
+      "destination": "strategies/_archive/lab/docs/EXPERIMENT_PLAN.md",
+      "sourceSha256": "aca571a61a023d9314e57b6f0bea6c40fd80b03c7f28e815475c23d292e0717f",
+      "changes": [],
+      "installedSha256": "aca571a61a023d9314e57b6f0bea6c40fd80b03c7f28e815475c23d292e0717f"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/INTEGRATION.md",
+      "destination": "strategies/_archive/lab/docs/INTEGRATION.md",
+      "sourceSha256": "8ba3419880c0d794203cbb84fd7a69496c6c7c686e92f83dabbd4e83038731ab",
+      "changes": [],
+      "installedSha256": "8ba3419880c0d794203cbb84fd7a69496c6c7c686e92f83dabbd4e83038731ab"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/IR.md",
+      "destination": "strategies/_archive/lab/docs/IR.md",
+      "sourceSha256": "441d09743ff8334e54f3944874e33c993c2754172b7170ce85dca0ea9cf2d3ba",
+      "changes": [],
+      "installedSha256": "441d09743ff8334e54f3944874e33c993c2754172b7170ce85dca0ea9cf2d3ba"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/LIMITATIONS.md",
+      "destination": "strategies/_archive/lab/docs/LIMITATIONS.md",
+      "sourceSha256": "666e9b12794e1511c74eb16bd1a76274809115f90b3bd6e9b72c4b58099af992",
+      "changes": [],
+      "installedSha256": "666e9b12794e1511c74eb16bd1a76274809115f90b3bd6e9b72c4b58099af992"
+    },
+    {
+      "source": "nl-formalizer-lab/docs/SECURITY.md",
+      "destination": "strategies/_archive/lab/docs/SECURITY.md",
+      "sourceSha256": "05d1903e29101774d41eabab705ca6fa4f69ccc5b90e9d491562ac07e3876381",
+      "changes": [],
+      "installedSha256": "05d1903e29101774d41eabab705ca6fa4f69ccc5b90e9d491562ac07e3876381"
+    },
+    {
+      "source": "nl-formalizer-lab/benchmarks/pilot-development.json",
+      "destination": "strategies/_archive/lab/benchmarks/pilot-development.json",
+      "sourceSha256": "3e26528345e3aa4688ced0406f37a32105bc11e01357aadfc77b88eaf6eb22ac",
+      "changes": [
+        "End-of-file whitespace normalized during import; parsed content unchanged."
+      ],
+      "installedSha256": "39c96bd82dd4715ec52957bbc6d73a84cd47ebeeca59e673e281c1a192b2a254"
+    },
+    {
+      "source": "nl-formalizer-lab/benchmarks/pilot-heldout.json",
+      "destination": "strategies/_archive/lab/benchmarks/pilot-heldout.json",
+      "sourceSha256": "ddfbe9d73809fa9b0004c3497f5ac20c9ef5d855a4398cd4c9458d081fefe7c1",
+      "changes": [
+        "End-of-file whitespace normalized during import; parsed content unchanged."
+      ],
+      "installedSha256": "21b83c6b5fbb2bf7bac53c9389e1f875f512cda15e170fdb1ba1d17f55359bd3"
+    },
+    {
+      "source": "nl-formalizer-lab/README.md",
+      "destination": "strategies/_archive/lab/README.md",
+      "sourceSha256": "522f532c85ec80c4d7b552f21736111b24a3e729bb092987b175b70de580b92f",
+      "changes": [],
+      "installedSha256": "522f532c85ec80c4d7b552f21736111b24a3e729bb092987b175b70de580b92f"
+    },
+    {
+      "source": "microir-formalizer-mjs/src/cnl.mjs",
+      "destination": "strategies/_archive/microir/src/cnl.mjs",
+      "sourceSha256": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3",
+      "changes": [],
+      "installedSha256": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3"
+    },
+    {
+      "source": "microir-formalizer-mjs/src/index.mjs",
+      "destination": "strategies/_archive/microir/src/index.mjs",
+      "sourceSha256": "2b7064cf3eca46078038bf1d39a401b6079da9f44e7909e365ae2265b2f4f4b6",
+      "changes": [
+        "Provider export removed; Ploinky Workers is the only transport."
+      ],
+      "installedSha256": "5fdab2191d36414d535d8beb022b3bccbd3c311aa019bbe32f6fab98ac66be94"
+    },
+    {
+      "source": "microir-formalizer-mjs/src/ir.mjs",
+      "destination": "strategies/_archive/microir/src/ir.mjs",
+      "sourceSha256": "f49d9825c329b921b87a554fbc3773f56eb30a78f3cbb751253b03deca344feb",
+      "changes": [],
+      "installedSha256": "f49d9825c329b921b87a554fbc3773f56eb30a78f3cbb751253b03deca344feb"
+    },
+    {
+      "source": "microir-formalizer-mjs/src/pipeline.mjs",
+      "destination": "strategies/_archive/microir/src/pipeline.mjs",
+      "sourceSha256": "580633980716bb0a8ba6028bcf6422cb790bb87f2a42eadf8e7a0a2a6c61d0d2",
+      "changes": [],
+      "installedSha256": "580633980716bb0a8ba6028bcf6422cb790bb87f2a42eadf8e7a0a2a6c61d0d2"
+    },
+    {
+      "source": "microir-formalizer-mjs/src/prompts.mjs",
+      "destination": "strategies/_archive/microir/src/prompts.mjs",
+      "sourceSha256": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0",
+      "changes": [],
+      "installedSha256": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0"
+    },
+    {
+      "source": "microir-formalizer-mjs/src/wire.mjs",
+      "destination": "strategies/_archive/microir/src/wire.mjs",
+      "sourceSha256": "6e96d78d3c76293d200d50402f0f6ce7fa09a1ff8bc8841042dfd36523dd3dc8",
+      "changes": [],
+      "installedSha256": "6e96d78d3c76293d200d50402f0f6ce7fa09a1ff8bc8841042dfd36523dd3dc8"
+    },
+    {
+      "source": "microir-formalizer-mjs/test/run.mjs",
+      "destination": "strategies/_archive/microir/test/run.mjs",
+      "sourceSha256": "07d1f3a3ac5de190804e5d777d5a715d217683a6fdd6973eeb3ac6bf89fdcba4",
+      "changes": [],
+      "installedSha256": "07d1f3a3ac5de190804e5d777d5a715d217683a6fdd6973eeb3ac6bf89fdcba4"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/ARCHITECTURE.md",
+      "destination": "strategies/_archive/microir/docs/ARCHITECTURE.md",
+      "sourceSha256": "2b27376f9187d92e355c24d168f7c42d9e9695757502a2655e78228e20353acd",
+      "changes": [],
+      "installedSha256": "2b27376f9187d92e355c24d168f7c42d9e9695757502a2655e78228e20353acd"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/CNL.md",
+      "destination": "strategies/_archive/microir/docs/CNL.md",
+      "sourceSha256": "1e28a1ab40ccfde240c5c3cc465421515f971a5684aadce251fb3d6ef317f447",
+      "changes": [],
+      "installedSha256": "1e28a1ab40ccfde240c5c3cc465421515f971a5684aadce251fb3d6ef317f447"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/EVALUATION.md",
+      "destination": "strategies/_archive/microir/docs/EVALUATION.md",
+      "sourceSha256": "4b9740f52645be914bd2a966bb1b75c21e1a0cee43ea456e6d4dd768215946b6",
+      "changes": [],
+      "installedSha256": "4b9740f52645be914bd2a966bb1b75c21e1a0cee43ea456e6d4dd768215946b6"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/IR.md",
+      "destination": "strategies/_archive/microir/docs/IR.md",
+      "sourceSha256": "78f01050cb50cab3bcc8bafdc82595200e127dcabe2739841acc3d4231987a7b",
+      "changes": [],
+      "installedSha256": "78f01050cb50cab3bcc8bafdc82595200e127dcabe2739841acc3d4231987a7b"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/LIMITATIONS.md",
+      "destination": "strategies/_archive/microir/docs/LIMITATIONS.md",
+      "sourceSha256": "0de73691823c89cef13652a3411b010b3ecec653c793f66a25248e11581c0b74",
+      "changes": [],
+      "installedSha256": "0de73691823c89cef13652a3411b010b3ecec653c793f66a25248e11581c0b74"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/LLM_PROTOCOL.md",
+      "destination": "strategies/_archive/microir/docs/LLM_PROTOCOL.md",
+      "sourceSha256": "a5e6ecf7a0c1b0dba08e78c523218c310961c35fca0f4376213a8977f4179fe5",
+      "changes": [],
+      "installedSha256": "a5e6ecf7a0c1b0dba08e78c523218c310961c35fca0f4376213a8977f4179fe5"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/ROADMAP.md",
+      "destination": "strategies/_archive/microir/docs/ROADMAP.md",
+      "sourceSha256": "acc725e0db268c4e25724cf64dd2d5757e42c8a0065ee3dcae78b784309679f8",
+      "changes": [],
+      "installedSha256": "acc725e0db268c4e25724cf64dd2d5757e42c8a0065ee3dcae78b784309679f8"
+    },
+    {
+      "source": "microir-formalizer-mjs/docs/STATUS.md",
+      "destination": "strategies/_archive/microir/docs/STATUS.md",
+      "sourceSha256": "deab07d864c9f0bd08fbb9a75875075c0ab5290e67b5fb197004f21ab9c3a1d2",
+      "changes": [],
+      "installedSha256": "deab07d864c9f0bd08fbb9a75875075c0ab5290e67b5fb197004f21ab9c3a1d2"
+    },
+    {
+      "source": "microir-formalizer-mjs/eval/data/README.md",
+      "destination": "strategies/_archive/microir/eval/data/README.md",
+      "sourceSha256": "8592cc4e4ef4e30cc9abfcd7e7a6ce744bd423b688c170a77ca2473a8ca5a108",
+      "changes": [],
+      "installedSha256": "8592cc4e4ef4e30cc9abfcd7e7a6ce744bd423b688c170a77ca2473a8ca5a108"
+    },
+    {
+      "source": "microir-formalizer-mjs/eval/data/judge_pairs.jsonl",
+      "destination": "strategies/_archive/microir/eval/data/judge_pairs.jsonl",
+      "sourceSha256": "ddbc971162396863e6fc363d3812d2f1f19a824319dae25bc96664ed9fb586dd",
+      "changes": [],
+      "installedSha256": "ddbc971162396863e6fc363d3812d2f1f19a824319dae25bc96664ed9fb586dd"
+    },
+    {
+      "source": "microir-formalizer-mjs/eval/data/semantic_cases.jsonl",
+      "destination": "strategies/_archive/microir/eval/data/semantic_cases.jsonl",
+      "sourceSha256": "f7132f9601d8f725ca892a3102d7cdd8a7707981dd0dfc72b42b2f8c4f297eb2",
+      "changes": [],
+      "installedSha256": "f7132f9601d8f725ca892a3102d7cdd8a7707981dd0dfc72b42b2f8c4f297eb2"
+    },
+    {
+      "source": "microir-formalizer-mjs/README.md",
+      "destination": "strategies/_archive/microir/README.md",
+      "sourceSha256": "55612873bbba946522920ece580e9cd0940f46adc198aaca42e7dd69cf55398a",
+      "changes": [],
+      "installedSha256": "55612873bbba946522920ece580e9cd0940f46adc198aaca42e7dd69cf55398a"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/src/formalizer.mjs",
+      "destination": "strategies/_archive/discourse/src/formalizer.mjs",
+      "sourceSha256": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb",
+      "changes": [],
+      "installedSha256": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/src/index.mjs",
+      "destination": "strategies/_archive/discourse/src/index.mjs",
+      "sourceSha256": "0ebee23e13f705d4b111ec0fd364aca39849093abaf142a1a8ac02f59c783311",
+      "changes": [],
+      "installedSha256": "0ebee23e13f705d4b111ec0fd364aca39849093abaf142a1a8ac02f59c783311"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/src/judge.mjs",
+      "destination": "strategies/_archive/discourse/src/judge.mjs",
+      "sourceSha256": "d8b4dd1a91322aa56c213c0bcdf585c2fe64ddcc039b06ff3f21620ad10763fb",
+      "changes": [
+        "Direct HTTP caller removed; provider-independent callback protocol preserved."
+      ],
+      "installedSha256": "eecbd7fed4937620cdacb539901c08e08db75f7f70a16ff3c204c406ea905cf1"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/test/formalizer.test.mjs",
+      "destination": "strategies/_archive/discourse/test/formalizer.test.mjs",
+      "sourceSha256": "c892717025f6e6151e85cfb472dcbb9fcc4c8985c4f1b38d5d31198f8013c20f",
+      "changes": [],
+      "installedSha256": "c892717025f6e6151e85cfb472dcbb9fcc4c8985c4f1b38d5d31198f8013c20f"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/test/judge.test.mjs",
+      "destination": "strategies/_archive/discourse/test/judge.test.mjs",
+      "sourceSha256": "e0842eed7a557073a0a25047f4bb22b5cdecac999645962db15c7ec8ced442f0",
+      "changes": [],
+      "installedSha256": "e0842eed7a557073a0a25047f4bb22b5cdecac999645962db15c7ec8ced442f0"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/test/prompt.test.mjs",
+      "destination": "strategies/_archive/discourse/test/prompt.test.mjs",
+      "sourceSha256": "93d4ac69c72840e81365587dc476deb6c7e040557ea7c10104c61115acfdff33",
+      "changes": [],
+      "installedSha256": "93d4ac69c72840e81365587dc476deb6c7e040557ea7c10104c61115acfdff33"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/docs/ARCHITECTURE.md",
+      "destination": "strategies/_archive/discourse/docs/ARCHITECTURE.md",
+      "sourceSha256": "9b1e717e1822fd542730e0e43cc75b6f033484d0d602fae540f44cb53883fd3e",
+      "changes": [],
+      "installedSha256": "9b1e717e1822fd542730e0e43cc75b6f033484d0d602fae540f44cb53883fd3e"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/docs/CNL.md",
+      "destination": "strategies/_archive/discourse/docs/CNL.md",
+      "sourceSha256": "6493464b5d8dfbe1646057310d1d04b1ee25ea01b7d5bad12134b40ffe912f5b",
+      "changes": [],
+      "installedSha256": "6493464b5d8dfbe1646057310d1d04b1ee25ea01b7d5bad12134b40ffe912f5b"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/docs/EVALUATION.md",
+      "destination": "strategies/_archive/discourse/docs/EVALUATION.md",
+      "sourceSha256": "180bb0b373aea232753ada4d73283be9eec5e2b3e2ea8e52794b80f0c930dcce",
+      "changes": [],
+      "installedSha256": "180bb0b373aea232753ada4d73283be9eec5e2b3e2ea8e52794b80f0c930dcce"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/docs/JUDGE_PROTOCOL.md",
+      "destination": "strategies/_archive/discourse/docs/JUDGE_PROTOCOL.md",
+      "sourceSha256": "62e859d26aa64c4cc5f4eab2a7e3f758f752f92cfc43a36d7244cddbe4034eb1",
+      "changes": [],
+      "installedSha256": "62e859d26aa64c4cc5f4eab2a7e3f758f752f92cfc43a36d7244cddbe4034eb1"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/examples/connected-chat.json",
+      "destination": "strategies/_archive/discourse/examples/connected-chat.json",
+      "sourceSha256": "75cb34e9d73694e03f33403fe99dc57dfad79018c14669a6fb9cfb6e4760ebae",
+      "changes": [],
+      "installedSha256": "75cb34e9d73694e03f33403fe99dc57dfad79018c14669a6fb9cfb6e4760ebae"
+    },
+    {
+      "source": "nl2cnl-judge-strategy-v1/README.md",
+      "destination": "strategies/_archive/discourse/README.md",
+      "sourceSha256": "fbb5c314fb84fc1c5b7c5c0ceb723fc8255735c892e9f2846292e07643ce5c4a",
+      "changes": [],
+      "installedSha256": "fbb5c314fb84fc1c5b7c5c0ceb723fc8255735c892e9f2846292e07643ce5c4a"
+    },
+    {
+      "source": "cnl-core-baseline/cnl-core.mjs",
+      "destination": "strategies/_archive/cnl/cnl-core.mjs",
+      "sourceSha256": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956",
+      "changes": [],
+      "installedSha256": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956"
+    },
+    {
+      "source": "cnl-core-baseline/tests.mjs",
+      "destination": "strategies/_archive/cnl/tests.mjs",
+      "sourceSha256": "1bf13f6de253459052d72bbc6f6d7f0fed474aad26f8c7d485cf7b7e6fa9ed81",
+      "changes": [],
+      "installedSha256": "1bf13f6de253459052d72bbc6f6d7f0fed474aad26f8c7d485cf7b7e6fa9ed81"
+    },
+    {
+      "source": "cnl-core-baseline/docs/DESIGN.md",
+      "destination": "strategies/_archive/cnl/docs/DESIGN.md",
+      "sourceSha256": "7e4a45efbe3b80fd5e510a84e82656b4e254f041c73da20ee47cf54c82b56734",
+      "changes": [],
+      "installedSha256": "7e4a45efbe3b80fd5e510a84e82656b4e254f041c73da20ee47cf54c82b56734"
+    },
+    {
+      "source": "cnl-core-baseline/docs/EXPERIMENT_PROTOCOL.md",
+      "destination": "strategies/_archive/cnl/docs/EXPERIMENT_PROTOCOL.md",
+      "sourceSha256": "d899a26950e33958f17e78466693aa88d972b35552100e7bc2dedcc9ab29e0a9",
+      "changes": [],
+      "installedSha256": "d899a26950e33958f17e78466693aa88d972b35552100e7bc2dedcc9ab29e0a9"
+    },
+    {
+      "source": "cnl-core-baseline/docs/FORMALIZATION_RULES.md",
+      "destination": "strategies/_archive/cnl/docs/FORMALIZATION_RULES.md",
+      "sourceSha256": "808dd6d3b8c23808f7fc4226a76386423b7e2fbd14843b95f04d85a8d72a877b",
+      "changes": [],
+      "installedSha256": "808dd6d3b8c23808f7fc4226a76386423b7e2fbd14843b95f04d85a8d72a877b"
+    },
+    {
+      "source": "cnl-core-baseline/docs/IMPROVEMENT_TARGETS.md",
+      "destination": "strategies/_archive/cnl/docs/IMPROVEMENT_TARGETS.md",
+      "sourceSha256": "0a9ea88608f734d3d071aa5521dcb9f339a2e02a810f9d1bfc5417990d996f3b",
+      "changes": [],
+      "installedSha256": "0a9ea88608f734d3d071aa5521dcb9f339a2e02a810f9d1bfc5417990d996f3b"
+    },
+    {
+      "source": "cnl-core-baseline/docs/SEMANTIC_EVAL.md",
+      "destination": "strategies/_archive/cnl/docs/SEMANTIC_EVAL.md",
+      "sourceSha256": "79bf675c5af865ee619cbca210fad28976792708e5e49b400ecf7ac92b7a9224",
+      "changes": [],
+      "installedSha256": "79bf675c5af865ee619cbca210fad28976792708e5e49b400ecf7ac92b7a9224"
+    },
+    {
+      "source": "cnl-core-baseline/examples/predictions-template.jsonl",
+      "destination": "strategies/_archive/cnl/examples/predictions-template.jsonl",
+      "sourceSha256": "94bdab09418ef3815180c77af875e7d6c3b3a3ff97ef2b5115a859d025e0429c",
+      "changes": [],
+      "installedSha256": "94bdab09418ef3815180c77af875e7d6c3b3a3ff97ef2b5115a859d025e0429c"
+    },
+    {
+      "source": "cnl-core-baseline/examples/regression.jsonl",
+      "destination": "strategies/_archive/cnl/examples/regression.jsonl",
+      "sourceSha256": "7310f4ca9bd1aa6cc8055ad65ceb6af2bd17934a6c4d85334aea81b1a12bb4c2",
+      "changes": [],
+      "installedSha256": "7310f4ca9bd1aa6cc8055ad65ceb6af2bd17934a6c4d85334aea81b1a12bb4c2"
+    },
+    {
+      "source": "cnl-core-baseline/examples/sample-input.txt",
+      "destination": "strategies/_archive/cnl/examples/sample-input.txt",
+      "sourceSha256": "a72bc00f50f42029503887c42415df3922cbc1f22b5142cbb05fd61207af9687",
+      "changes": [],
+      "installedSha256": "a72bc00f50f42029503887c42415df3922cbc1f22b5142cbb05fd61207af9687"
+    },
+    {
+      "source": "cnl-core-baseline/examples/sample-output.cnl",
+      "destination": "strategies/_archive/cnl/examples/sample-output.cnl",
+      "sourceSha256": "7b347a329e8902bff7ff0dcbc72d588c82cacc9249658d2fc2b0764d9a70e79a",
+      "changes": [],
+      "installedSha256": "7b347a329e8902bff7ff0dcbc72d588c82cacc9249658d2fc2b0764d9a70e79a"
+    },
+    {
+      "source": "cnl-core-baseline/README.md",
+      "destination": "strategies/_archive/cnl/README.md",
+      "sourceSha256": "a1eed0acd938087a48aea9f161d1b20ee20a8eced7fe5f896e9369d13e87e7b1",
+      "changes": [],
+      "installedSha256": "a1eed0acd938087a48aea9f161d1b20ee20a8eced7fe5f896e9369d13e87e7b1"
+    }
+  ]
+}

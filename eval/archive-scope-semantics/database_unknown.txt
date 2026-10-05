@@ -1,0 +1,1 @@
+If either database A or database B is unavailable, requests are routed to the cache. Database A is available, and database B’s status is unknown. Are requests definitely routed to the cache?

@@ -1,0 +1,15 @@
+{
+  "id": "006-judge-best-bidirectional",
+  "n": 10,
+  "correct": 5,
+  "falseAccepts": [],
+  "falseRejects": [],
+  "errors": [
+    "modal",
+    "condition",
+    "question",
+    "attribution",
+    "conjunction-order"
+  ],
+  "requests": 2
+}

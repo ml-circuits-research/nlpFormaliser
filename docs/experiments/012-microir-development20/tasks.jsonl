@@ -1,0 +1,40 @@
+{"role":"microir","id":"t-060822819a99834fe36d7c00","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-95166680d933d82551ec50a0","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-c6f675e058e2c7da62bde2b3","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-b0a64fe97f93bc6e0a6e3830","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-c993993aa3910b3297ce3b66","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-060822819a99834fe36d7c00","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-95166680d933d82551ec50a0","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-c6f675e058e2c7da62bde2b3","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-b0a64fe97f93bc6e0a6e3830","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-c993993aa3910b3297ce3b66","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-060822819a99834fe36d7c00","status":"completed","phase":null,"steps":1,"result":{"id":"t-060822819a99834fe36d7c00","ok":true,"value":"A(since(March, working(she, migration)), expects(she, before(finish(she, migration), end_of_quarter)))","state":{"input":"She has been working on the migration since March and expects to finish before the end of the quarter."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-95166680d933d82551ec50a0","status":"completed","phase":null,"steps":1,"result":{"id":"t-95166680d933d82551ec50a0","ok":true,"value":"W(o, A(E(A, A(amount(o, A), greater_than(A, 500), currency(A, dollars))), time(o, last_month), N(shipped(o))))","state":{"input":"Show me all orders over 500 dollars from last month that haven't shipped yet."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-c6f675e058e2c7da62bde2b3","status":"completed","phase":null,"steps":1,"result":{"id":"t-c6f675e058e2c7da62bde2b3","ok":true,"value":"A(already(E(amount, A(half_of(amount, budget), spent(budget, amount)))), only(month(now, April)))","state":{"input":"About half of the budget has already been spent, and it's only April."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-b0a64fe97f93bc6e0a6e3830","status":"completed","phase":null,"steps":1,"result":{"id":"t-b0a64fe97f93bc6e0a6e3830","ok":true,"value":"I(A(launched(we), earlier_by_one_week(launched(we))), would_have(beaten(we, competition)))","state":{"input":"Had we launched a week earlier, we would have beaten the competition."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-c993993aa3910b3297ce3b66","status":"completed","phase":null,"steps":1,"result":{"id":"t-c993993aa3910b3297ce3b66","ok":true,"value":"most(customers, A(tried_trial(c), upgraded_within_two_weeks(c)))","state":{"input":"Most customers who tried the trial upgraded within two weeks."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-7e7afdd3acd7febc443733be","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-a3b5492ec89cbf49ed089894","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-8be11ded909d625dc535438d","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-1b05a77e6ee09424f5f1c7af","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-1692b8af1c7bebc64d950ba1","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-7e7afdd3acd7febc443733be","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-a3b5492ec89cbf49ed089894","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-8be11ded909d625dc535438d","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-1b05a77e6ee09424f5f1c7af","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-1692b8af1c7bebc64d950ba1","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-7e7afdd3acd7febc443733be","status":"completed","phase":null,"steps":1,"result":{"id":"t-7e7afdd3acd7febc443733be","ok":true,"value":"U(x, I(employee(x), I(E(h, A(work_hours_per_week(x, h), greater_than(h, 40))), entitle(x, overtime_pay))))","state":{"input":"Employees who work more than forty hours per week are entitled to overtime pay."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-a3b5492ec89cbf49ed089894","status":"completed","phase":null,"steps":1,"result":{"id":"t-a3b5492ec89cbf49ed089894","ok":true,"value":"E(t, A(tomorrow(t), A(at_9am(t), A(remind(Me, call(Me, dentist), t), E(t', A(one_hour_later(t', t), I(N(marked_done(call(Me, dentist))), remind(Me, call(Me, dentist), t'))))))))","state":{"input":"Remind me to call the dentist tomorrow at 9 a.m., and again an hour later if I haven't marked it done."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-8be11ded909d625dc535438d","status":"completed","phase":null,"steps":1,"result":{"id":"t-8be11ded909d625dc535438d","ok":true,"value":"A(with(meeting, Daniel), N(with(meeting, Daniela)))","state":{"input":"No, the meeting is with Daniel, not Daniela."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-1b05a77e6ee09424f5f1c7af","status":"completed","phase":null,"steps":1,"result":{"id":"t-1b05a77e6ee09424f5f1c7af","ok":true,"value":"[good_morning, hope(speaker, nice_weekend(you))]","state":{"input":"Good morning! Hope you had a nice weekend."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-1692b8af1c7bebc64d950ba1","status":"completed","phase":null,"steps":1,"result":{"id":"t-1692b8af1c7bebc64d950ba1","ok":true,"value":"I(increase(prices), cancel(I, subscription))","state":{"input":"Prices went up, which is why I'm cancelling my subscription."},"error":null,"steps":1},"error":null}
+{"role":"microir","id":"t-582d3e15aa7e8cefd834a227","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-b05f1143bc32b39aa2932a3d","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-818d4e4a496dc082cd79c855","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-d2fdc09a9a81876c64641fc7","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-fe9acf095ca456e8af5a1a38","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-582d3e15aa7e8cefd834a227","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-b05f1143bc32b39aa2932a3d","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-818d4e4a496dc082cd79c855","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-d2fdc09a9a81876c64641fc7","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-fe9acf095ca456e8af5a1a38","status":"running","phase":"begin","steps":1}

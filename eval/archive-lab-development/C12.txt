@@ -1,0 +1,1 @@
+Only administrators can delete accounts. Kim deleted account42, which is an account.

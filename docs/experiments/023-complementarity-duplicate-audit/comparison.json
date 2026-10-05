@@ -1,0 +1,1328 @@
+{
+  "schema": "strategy-complementarity/1",
+  "cases": 8,
+  "strategies": [
+    "compact-scope-logic",
+    "direct-context-logic",
+    "evidence-guided-logic",
+    "explicit-scope-logic"
+  ],
+  "pairs": [
+    {
+      "left": "compact-scope-logic",
+      "right": "direct-context-logic",
+      "shared": 8,
+      "labeled": 0,
+      "unknown": 8,
+      "bothCorrect": 0,
+      "leftOnly": 0,
+      "rightOnly": 0,
+      "bothWrong": 0,
+      "leftAccuracy": null,
+      "rightAccuracy": null,
+      "oracleAccuracy": null,
+      "oracleGainOverBestSingle": null,
+      "disagreementRate": null,
+      "disagreements": [],
+      "byCategory": {
+        "conditional/rule": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "contrast/simple": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/sequence": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/simple": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "counterfactual": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "disjunction/uncertainty": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "modality/distinction": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "passive/temporal": {
+          "left": "compact-scope-logic",
+          "right": "direct-context-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        }
+      }
+    },
+    {
+      "left": "compact-scope-logic",
+      "right": "evidence-guided-logic",
+      "shared": 8,
+      "labeled": 0,
+      "unknown": 8,
+      "bothCorrect": 0,
+      "leftOnly": 0,
+      "rightOnly": 0,
+      "bothWrong": 0,
+      "leftAccuracy": null,
+      "rightAccuracy": null,
+      "oracleAccuracy": null,
+      "oracleGainOverBestSingle": null,
+      "disagreementRate": null,
+      "disagreements": [],
+      "byCategory": {
+        "conditional/rule": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "contrast/simple": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/sequence": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/simple": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "counterfactual": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "disjunction/uncertainty": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "modality/distinction": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "passive/temporal": {
+          "left": "compact-scope-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        }
+      }
+    },
+    {
+      "left": "compact-scope-logic",
+      "right": "explicit-scope-logic",
+      "shared": 8,
+      "labeled": 0,
+      "unknown": 8,
+      "bothCorrect": 0,
+      "leftOnly": 0,
+      "rightOnly": 0,
+      "bothWrong": 0,
+      "leftAccuracy": null,
+      "rightAccuracy": null,
+      "oracleAccuracy": null,
+      "oracleGainOverBestSingle": null,
+      "disagreementRate": null,
+      "disagreements": [],
+      "byCategory": {
+        "conditional/rule": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "contrast/simple": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/sequence": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/simple": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "counterfactual": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "disjunction/uncertainty": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "modality/distinction": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "passive/temporal": {
+          "left": "compact-scope-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        }
+      }
+    },
+    {
+      "left": "direct-context-logic",
+      "right": "evidence-guided-logic",
+      "shared": 8,
+      "labeled": 4,
+      "unknown": 4,
+      "bothCorrect": 3,
+      "leftOnly": 1,
+      "rightOnly": 0,
+      "bothWrong": 0,
+      "leftAccuracy": 1,
+      "rightAccuracy": 0.75,
+      "oracleAccuracy": 1,
+      "oracleGainOverBestSingle": 0,
+      "disagreementRate": 0.25,
+      "disagreements": [
+        {
+          "id": "archive-lab-development/C10",
+          "category": "contrast/simple",
+          "judgedBetter": "direct-context-logic"
+        }
+      ],
+      "byCategory": {
+        "conditional/rule": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "contrast/simple": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 0,
+          "leftOnly": 1,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 0,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 1,
+          "disagreements": [
+            {
+              "id": "archive-lab-development/C10",
+              "category": "contrast/simple",
+              "judgedBetter": "direct-context-logic"
+            }
+          ]
+        },
+        "coreference/sequence": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/simple": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "counterfactual": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "disjunction/uncertainty": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "modality/distinction": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "passive/temporal": {
+          "left": "direct-context-logic",
+          "right": "evidence-guided-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        }
+      }
+    },
+    {
+      "left": "direct-context-logic",
+      "right": "explicit-scope-logic",
+      "shared": 8,
+      "labeled": 6,
+      "unknown": 2,
+      "bothCorrect": 5,
+      "leftOnly": 0,
+      "rightOnly": 0,
+      "bothWrong": 1,
+      "leftAccuracy": 0.8333333333333334,
+      "rightAccuracy": 0.8333333333333334,
+      "oracleAccuracy": 0.8333333333333334,
+      "oracleGainOverBestSingle": 0,
+      "disagreementRate": 0,
+      "disagreements": [],
+      "byCategory": {
+        "conditional/rule": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "contrast/simple": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "coreference/sequence": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/simple": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "counterfactual": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 1,
+          "leftAccuracy": 0,
+          "rightAccuracy": 0,
+          "oracleAccuracy": 0,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "disjunction/uncertainty": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "modality/distinction": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "passive/temporal": {
+          "left": "direct-context-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        }
+      }
+    },
+    {
+      "left": "evidence-guided-logic",
+      "right": "explicit-scope-logic",
+      "shared": 8,
+      "labeled": 4,
+      "unknown": 4,
+      "bothCorrect": 3,
+      "leftOnly": 0,
+      "rightOnly": 1,
+      "bothWrong": 0,
+      "leftAccuracy": 0.75,
+      "rightAccuracy": 1,
+      "oracleAccuracy": 1,
+      "oracleGainOverBestSingle": 0,
+      "disagreementRate": 0.25,
+      "disagreements": [
+        {
+          "id": "archive-lab-development/C10",
+          "category": "contrast/simple",
+          "judgedBetter": "explicit-scope-logic"
+        }
+      ],
+      "byCategory": {
+        "conditional/rule": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "contrast/simple": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 1,
+          "bothWrong": 0,
+          "leftAccuracy": 0,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 1,
+          "disagreements": [
+            {
+              "id": "archive-lab-development/C10",
+              "category": "contrast/simple",
+              "judgedBetter": "explicit-scope-logic"
+            }
+          ]
+        },
+        "coreference/sequence": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "coreference/simple": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "counterfactual": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "disjunction/uncertainty": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 0,
+          "unknown": 1,
+          "bothCorrect": 0,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": null,
+          "rightAccuracy": null,
+          "oracleAccuracy": null,
+          "oracleGainOverBestSingle": null,
+          "disagreementRate": null,
+          "disagreements": []
+        },
+        "modality/distinction": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        },
+        "passive/temporal": {
+          "left": "evidence-guided-logic",
+          "right": "explicit-scope-logic",
+          "shared": 1,
+          "labeled": 1,
+          "unknown": 0,
+          "bothCorrect": 1,
+          "leftOnly": 0,
+          "rightOnly": 0,
+          "bothWrong": 0,
+          "leftAccuracy": 1,
+          "rightAccuracy": 1,
+          "oracleAccuracy": 1,
+          "oracleGainOverBestSingle": 0,
+          "disagreementRate": 0,
+          "disagreements": []
+        }
+      }
+    }
+  ],
+  "competence": {
+    "compact-scope-logic": {
+      "conditional/rule": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "contrast/simple": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "coreference/sequence": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "coreference/simple": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "counterfactual": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "disjunction/uncertainty": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "modality/distinction": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "passive/temporal": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      }
+    },
+    "direct-context-logic": {
+      "conditional/rule": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "contrast/simple": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "coreference/sequence": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "coreference/simple": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "counterfactual": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 0,
+        "accuracy": 0,
+        "wilson95": [
+          0,
+          0.7934506856227626
+        ]
+      },
+      "disjunction/uncertainty": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 0,
+        "accuracy": 0,
+        "wilson95": [
+          0,
+          0.7934506856227626
+        ]
+      },
+      "modality/distinction": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "passive/temporal": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      }
+    },
+    "evidence-guided-logic": {
+      "conditional/rule": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "contrast/simple": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 0,
+        "accuracy": 0,
+        "wilson95": [
+          0,
+          0.7934506856227626
+        ]
+      },
+      "coreference/sequence": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "coreference/simple": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "counterfactual": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "disjunction/uncertainty": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "modality/distinction": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "passive/temporal": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      }
+    },
+    "explicit-scope-logic": {
+      "conditional/rule": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "contrast/simple": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "coreference/sequence": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "coreference/simple": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "counterfactual": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 0,
+        "accuracy": 0,
+        "wilson95": [
+          0,
+          0.7934506856227626
+        ]
+      },
+      "disjunction/uncertainty": {
+        "cases": 1,
+        "labeled": 0,
+        "unknown": 1,
+        "passed": 0,
+        "accuracy": null,
+        "wilson95": null
+      },
+      "modality/distinction": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      },
+      "passive/temporal": {
+        "cases": 1,
+        "labeled": 1,
+        "unknown": 0,
+        "passed": 1,
+        "accuracy": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      }
+    }
+  },
+  "families": {
+    "compact-scope-logic": "scoped-logic",
+    "direct-context-logic": "context-logic",
+    "evidence-guided-logic": "context-logic",
+    "explicit-scope-logic": "scoped-logic"
+  },
+  "identicalJudgeInputs": [
+    {
+      "hash": "26b04afc979c2bb6cafbc861d3f6e324f3cefccd2a5d630d553532f199f73336",
+      "rows": [
+        {
+          "id": "archive-lab-development/C10",
+          "strategy": "direct-context-logic",
+          "label": true
+        },
+        {
+          "id": "archive-lab-development/C10",
+          "strategy": "evidence-guided-logic",
+          "label": false
+        }
+      ],
+      "contradictoryLabels": true
+    }
+  ],
+  "limitations": [
+    "Labels are model judgments, not independently established semantic truth.",
+    "Oracle selects using the evaluation label: it is an optimistic diagnostic, not a deployable selector.",
+    "Unknown/unpaired outcomes are reported, not converted into semantic failures or successes.",
+    "Intervals assume independent cases; corpus duplicates and correlated judgments weaken that assumption.",
+    "Do not learn routing rules on heldout data or treat related strategies as independent votes."
+  ],
+  "inputs": [
+    {
+      "dir": "/home/salboaie/work/nlp/nlpFormaliser/docs/experiments/017-restored-matched-development",
+      "id": "017-restored-matched-development",
+      "stage": "source",
+      "itemsSha256": "c338346edd017f3528e6fbd8beeb51cf8e398a036c53b5b5f1ddee4835abca14"
+    },
+    {
+      "dir": "/home/salboaie/work/nlp/nlpFormaliser/docs/experiments/018-explicit-grammar-development",
+      "id": "018-explicit-grammar-development",
+      "stage": "source",
+      "itemsSha256": "09eb45aac0d5a4dc7e54bb4d2bc50d0bbc710d45cff811cab0ed4a75d14785be"
+    }
+  ]
+}

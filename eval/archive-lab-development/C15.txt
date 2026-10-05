@@ -1,0 +1,1 @@
+Robot R1 may pick up box B only if its gripper is empty. R1 is permitted to pick up B.

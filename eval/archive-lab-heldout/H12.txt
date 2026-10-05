@@ -1,0 +1,1 @@
+Anyone who deletes an account must be an administrator. Kim deleted account42.

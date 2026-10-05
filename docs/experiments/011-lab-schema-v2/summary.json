@@ -1,0 +1,36 @@
+{
+  "id": "011-lab-schema-v2",
+  "stage": "calibration",
+  "repairs": 0,
+  "finished": "2026-10-05T14:31:03.249Z",
+  "strategies": {
+    "lab-direct": {
+      "n": 5,
+      "valid": 4,
+      "reasoningEligible": 4,
+      "judged": 4,
+      "equivalent": 2,
+      "eligibleEquivalent": 2,
+      "judgeErrors": 0
+    },
+    "lab-proto": {
+      "n": 5,
+      "valid": 4,
+      "reasoningEligible": 4,
+      "judged": 4,
+      "equivalent": 2,
+      "eligibleEquivalent": 2,
+      "judgeErrors": 0
+    }
+  },
+  "calls": {
+    "requests": 4,
+    "uncached": 4,
+    "inputTokens": 4513,
+    "outputTokens": 13623,
+    "knownCredits": 0.4,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 4
+  }
+}

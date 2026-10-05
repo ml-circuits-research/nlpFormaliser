@@ -1,0 +1,1 @@
+If the red switch is on, the pump runs. If the pump runs, the alarm is armed. The red switch is on. Is the alarm armed?

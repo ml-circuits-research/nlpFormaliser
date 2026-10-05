@@ -1,0 +1,1 @@
+Exactly three workers are active.

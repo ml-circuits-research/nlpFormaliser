@@ -1,0 +1,1 @@
+Sample3 is uncontaminated, whereas sample4 is contaminated.

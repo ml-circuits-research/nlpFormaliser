@@ -1,0 +1,84 @@
+{"role":"cnl-core","id":"t-e5bf43acce7ecf75ff265820","status":"running","phase":"begin","steps":0}
+{"role":"cnl-core","id":"t-0f9da209d36d5f2e836c96e1","status":"running","phase":"begin","steps":0}
+{"role":"cnl-core","id":"t-6509b0bebe402fe49c2c9455","status":"running","phase":"begin","steps":0}
+{"role":"cnl-core","id":"t-4bddb5b073b9c6dc49c100f4","status":"running","phase":"begin","steps":0}
+{"role":"cnl-core","id":"t-54870276299d89e1f7097807","status":"running","phase":"begin","steps":0}
+{"role":"cnl-core","id":"t-e5bf43acce7ecf75ff265820","status":"running","phase":"begin","steps":1}
+{"role":"cnl-core","id":"t-0f9da209d36d5f2e836c96e1","status":"running","phase":"begin","steps":1}
+{"role":"cnl-core","id":"t-6509b0bebe402fe49c2c9455","status":"running","phase":"begin","steps":1}
+{"role":"cnl-core","id":"t-4bddb5b073b9c6dc49c100f4","status":"running","phase":"begin","steps":1}
+{"role":"cnl-core","id":"t-54870276299d89e1f7097807","status":"running","phase":"begin","steps":1}
+{"role":"cnl-core","id":"t-e5bf43acce7ecf75ff265820","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"cnl-core","id":"t-0f9da209d36d5f2e836c96e1","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"cnl-core","id":"t-6509b0bebe402fe49c2c9455","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"cnl-core","id":"t-4bddb5b073b9c6dc49c100f4","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"cnl-core","id":"t-54870276299d89e1f7097807","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"evl","id":"t-4d1159eb73ca8e1fdd0d0f49","status":"running","phase":"begin","steps":0}
+{"role":"evl","id":"t-d2183e2c7590b65fe18ed242","status":"running","phase":"begin","steps":0}
+{"role":"evl","id":"t-47fe904c925cd64b2ef6ebe9","status":"running","phase":"begin","steps":0}
+{"role":"evl","id":"t-f4f43788f197fdbccdf250aa","status":"running","phase":"begin","steps":0}
+{"role":"evl","id":"t-f40e7df80c3d3c1f381108c3","status":"running","phase":"begin","steps":0}
+{"role":"evl","id":"t-4d1159eb73ca8e1fdd0d0f49","status":"running","phase":"begin","steps":1}
+{"role":"evl","id":"t-d2183e2c7590b65fe18ed242","status":"running","phase":"begin","steps":1}
+{"role":"evl","id":"t-47fe904c925cd64b2ef6ebe9","status":"running","phase":"begin","steps":1}
+{"role":"evl","id":"t-f4f43788f197fdbccdf250aa","status":"running","phase":"begin","steps":1}
+{"role":"evl","id":"t-f40e7df80c3d3c1f381108c3","status":"running","phase":"begin","steps":1}
+{"role":"evl","id":"t-4d1159eb73ca8e1fdd0d0f49","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"evl","id":"t-d2183e2c7590b65fe18ed242","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"evl","id":"t-47fe904c925cd64b2ef6ebe9","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"evl","id":"t-f4f43788f197fdbccdf250aa","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"evl","id":"t-f40e7df80c3d3c1f381108c3","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-direct","id":"t-1ce9e34e027d19be02968dc6","status":"running","phase":"begin","steps":0}
+{"role":"lab-direct","id":"t-44fe9dc54fd60293bcf97c8b","status":"running","phase":"begin","steps":0}
+{"role":"lab-direct","id":"t-6c643356b4a4034cb64cb04c","status":"running","phase":"begin","steps":0}
+{"role":"lab-direct","id":"t-72483e92ab12afc94f280bce","status":"running","phase":"begin","steps":0}
+{"role":"lab-direct","id":"t-199c5fd76c70489fcd38e491","status":"running","phase":"begin","steps":0}
+{"role":"lab-direct","id":"t-1ce9e34e027d19be02968dc6","status":"running","phase":"begin","steps":1}
+{"role":"lab-direct","id":"t-44fe9dc54fd60293bcf97c8b","status":"running","phase":"begin","steps":1}
+{"role":"lab-direct","id":"t-6c643356b4a4034cb64cb04c","status":"running","phase":"begin","steps":1}
+{"role":"lab-direct","id":"t-72483e92ab12afc94f280bce","status":"running","phase":"begin","steps":1}
+{"role":"lab-direct","id":"t-199c5fd76c70489fcd38e491","status":"running","phase":"begin","steps":1}
+{"role":"lab-direct","id":"t-1ce9e34e027d19be02968dc6","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-direct","id":"t-44fe9dc54fd60293bcf97c8b","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-direct","id":"t-6c643356b4a4034cb64cb04c","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-direct","id":"t-72483e92ab12afc94f280bce","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-direct","id":"t-199c5fd76c70489fcd38e491","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"judge","id":"t-961418780c7da21041faac38","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-961418780c7da21041faac38","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-961418780c7da21041faac38","status":"completed","phase":null,"steps":1,"result":{"id":"t-961418780c7da21041faac38","ok":true,"value":"{\n  \"nl_entails_cnl\": false,\n  \"cnl_entails_nl\": false,\n  \"lost\": [\"question force\", \"request for identity\"],\n  \"added\": [\"existential assertion\"],\n  \"changed\": [],\n  \"reason\": \"Original is a question asking who approved; CNL is a declarative statement (possibly existential) that does not carry interrogative force, so neither entails the other.\"\n}","state":{"input":"{\"ORIGINAL\":\"Who approved the budget increase for the marketing department?\",\"CNL\":\"the predicate “approved” holds with ordered arguments [\\\"who\\\"; \\\"budget increase for the marketing department\\\"].\"}"},"error":null,"steps":1},"error":null}
+{"role":"lab-proto","id":"t-351afb9ddf39c736e3596827","status":"running","phase":"begin","steps":0}
+{"role":"lab-proto","id":"t-af95f8785559402f6f13882d","status":"running","phase":"begin","steps":0}
+{"role":"lab-proto","id":"t-dcae1d4c9fe8c60ccdb70453","status":"running","phase":"begin","steps":0}
+{"role":"lab-proto","id":"t-2b8ca6d9595775402908c8f5","status":"running","phase":"begin","steps":0}
+{"role":"lab-proto","id":"t-b8c48cc141adb0df3411bd41","status":"running","phase":"begin","steps":0}
+{"role":"lab-proto","id":"t-351afb9ddf39c736e3596827","status":"running","phase":"begin","steps":1}
+{"role":"lab-proto","id":"t-af95f8785559402f6f13882d","status":"running","phase":"begin","steps":1}
+{"role":"lab-proto","id":"t-dcae1d4c9fe8c60ccdb70453","status":"running","phase":"begin","steps":1}
+{"role":"lab-proto","id":"t-2b8ca6d9595775402908c8f5","status":"running","phase":"begin","steps":1}
+{"role":"lab-proto","id":"t-b8c48cc141adb0df3411bd41","status":"running","phase":"begin","steps":1}
+{"role":"lab-proto","id":"t-351afb9ddf39c736e3596827","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-proto","id":"t-af95f8785559402f6f13882d","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-proto","id":"t-dcae1d4c9fe8c60ccdb70453","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-proto","id":"t-2b8ca6d9595775402908c8f5","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"lab-proto","id":"t-b8c48cc141adb0df3411bd41","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"microir","id":"t-9091eb2c5ed1b84244768a88","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-3ae0bdd00115c5662024e3f9","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-04549ec51c16c41e4671b1ad","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-90551868cb9c32c746026224","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-bf1b94b96935fcd72e00fb5e","status":"running","phase":"begin","steps":0}
+{"role":"microir","id":"t-9091eb2c5ed1b84244768a88","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-3ae0bdd00115c5662024e3f9","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-04549ec51c16c41e4671b1ad","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-90551868cb9c32c746026224","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-bf1b94b96935fcd72e00fb5e","status":"running","phase":"begin","steps":1}
+{"role":"microir","id":"t-9091eb2c5ed1b84244768a88","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"microir","id":"t-3ae0bdd00115c5662024e3f9","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"microir","id":"t-04549ec51c16c41e4671b1ad","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"microir","id":"t-90551868cb9c32c746026224","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"microir","id":"t-bf1b94b96935fcd72e00fb5e","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 529: server_error: We're experiencing heavy usage right now, which may cause increased latency or temporary unavailability. We're working on adding more capacity — please try again in a moment."}
+{"role":"judge","id":"t-1ffcb0bc296499ccc893d2a6","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-7399ceddbd68c7b72aa85ea5","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-1ffcb0bc296499ccc893d2a6","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-7399ceddbd68c7b72aa85ea5","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-1ffcb0bc296499ccc893d2a6","status":"completed","phase":null,"steps":1,"result":{"id":"t-1ffcb0bc296499ccc893d2a6","ok":true,"value":"{\"nl_entails_cnl\":true,\"cnl_entails_nl\":true,\"lost\":[],\"added\":[],\"changed\":[],\"reason\":\"Both express that it is not the case that every email you flagged is spam; negation scopes over universal quantifier identically.\"}","state":{"input":"{\"ORIGINAL\":\"Not every email you flagged was spam.\",\"CNL\":\"Speech act: ASSERT\\nNOT:\\n  FOR_EVERY email x2:\\n    EVENT ev4 be:\\n      THEME e3:\\\"x2 you flagged\\\"\\n      PROPERTY \\\"spam\\\"\"}"},"error":null,"steps":1},"error":null}
+{"role":"judge","id":"t-7399ceddbd68c7b72aa85ea5","status":"completed","phase":null,"steps":1,"result":{"id":"t-7399ceddbd68c7b72aa85ea5","ok":true,"value":"{\"nl_entails_cnl\":true,\"cnl_entails_nl\":true,\"lost\":[],\"added\":[],\"changed\":[],\"reason\":\"Both ask for the person who approved the budget increase for the marketing department; same question force and content.\"}","state":{"input":"{\"ORIGINAL\":\"Who approved the budget increase for the marketing department?\",\"CNL\":\"Speech act: ASK\\nASK WHO person x2:\\n  EVENT ev4 approve:\\n    AGENT x2:person\\n    THEME e3:\\\"budget increase\\\"\\n    FOR \\\"the marketing department\\\"\"}"},"error":null,"steps":1},"error":null}

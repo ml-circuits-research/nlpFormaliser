@@ -1,0 +1,27 @@
+{
+  "id": "004-microir-nano-good",
+  "stage": "calibration",
+  "repairs": 0,
+  "finished": "2026-10-05T14:23:32.726Z",
+  "strategies": {
+    "microir": {
+      "n": 5,
+      "valid": 0,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    }
+  },
+  "calls": {
+    "requests": 1,
+    "uncached": 1,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "knownCredits": 0,
+    "unknownCreditRequests": 1,
+    "knownUsd": 0,
+    "unknownUsdRequests": 1
+  }
+}

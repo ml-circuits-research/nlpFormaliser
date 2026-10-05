@@ -9,9 +9,8 @@
     "formalize": "node tools/formalize.mjs",
     "judge": "node tools/judge.mjs",
     "eval": "node tools/run-eval.mjs",
-    "test": "npm test --workspaces --if-present"
+    "test": "node --test test/*.test.mjs strategies/_archive/lab/tests/*.test.mjs strategies/_archive/discourse/test/*.test.mjs && node strategies/_archive/microir/test/run.mjs && node strategies/_archive/cnl/tests.mjs && npm test --workspaces --if-present"
   },
-  "optionalDependencies": { "@anthropic-ai/sdk": "^0.131.0" },
-  "engines": { "node": ">=18" },
+  "engines": { "node": ">=22.13" },
   "license": "MIT"
 }

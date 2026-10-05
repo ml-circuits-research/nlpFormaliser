@@ -1,0 +1,201 @@
+{
+  "id": "003-judge-medium-bidirectional",
+  "options": {
+    "tier": "medium",
+    "mode": "bidirectional",
+    "id": "003-judge-medium-bidirectional",
+    "batch-size": "5"
+  },
+  "pairs": [
+    [
+      "identity",
+      "Ada owns the red car.",
+      "Ada owns the red car.",
+      true
+    ],
+    [
+      "synonym",
+      "Ada bought a book.",
+      "Ada purchased a book.",
+      true
+    ],
+    [
+      "negation",
+      "Ada did not approve the report.",
+      "Ada approved the report.",
+      false
+    ],
+    [
+      "scope",
+      "Not every reviewer approved the report.",
+      "No reviewer approved the report.",
+      false
+    ],
+    [
+      "roles",
+      "Ada sent the report to Bob.",
+      "Bob sent the report to Ada.",
+      false
+    ],
+    [
+      "modal",
+      "Ada may leave.",
+      "Ada must leave.",
+      false
+    ],
+    [
+      "condition",
+      "If it rains, Ada stays home.",
+      "Ada stays home.",
+      false
+    ],
+    [
+      "question",
+      "Who approved the report?",
+      "Someone approved the report.",
+      false
+    ],
+    [
+      "attribution",
+      "Bob believes the door is open.",
+      "The door is open.",
+      false
+    ],
+    [
+      "conjunction-order",
+      "Ada reads and Bob writes.",
+      "Bob writes and Ada reads.",
+      true
+    ]
+  ],
+  "proxy": {
+    "ok": true,
+    "uptime_s": 630,
+    "fallback": null,
+    "tiers": [
+      {
+        "id": "tiny",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/GLM-4.7-Flash",
+          "fallback": []
+        }
+      },
+      {
+        "id": "small",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Gemma 4 26B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "medium",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Nemotron-3-120B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "good",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/GLM-5.1",
+          "fallback": [
+            "openference/GLM-5.3-Flash"
+          ]
+        }
+      },
+      {
+        "id": "best",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/GLM-5.3",
+          "fallback": []
+        }
+      },
+      {
+        "id": "nano",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Qwen3.8 27b",
+          "fallback": []
+        }
+      },
+      {
+        "id": "micro",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Llama 3.2 3B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "supertiny",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Llama 3.2 3B",
+          "fallback": []
+        }
+      }
+    ],
+    "upstreams": {
+      "openference": {
+        "base_url": "https://api.openference.com",
+        "key_configured": true,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "openrouter": {
+        "base_url": "https://openrouter.ai/api",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "deepseek": {
+        "base_url": "https://api.deepseek.com",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "local": {
+        "base_url": "http://127.0.0.1:19611",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "localsuper": {
+        "base_url": "http://127.0.0.1:19613",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "localnano": {
+        "base_url": "http://127.0.0.1:19614",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "openai": {
+        "base_url": "https://api.openai.com",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "zai": {
+        "base_url": "https://api.z.ai/api/paas/v4",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "grok": {
+        "base_url": "https://api.x.ai",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      }
+    }
+  },
+  "task": "judge-bidirectional"
+}

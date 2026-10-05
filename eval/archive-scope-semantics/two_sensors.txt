@@ -1,0 +1,1 @@
+Two sensors failed during the test, but neither was replaced. Did any failed sensor get replaced?

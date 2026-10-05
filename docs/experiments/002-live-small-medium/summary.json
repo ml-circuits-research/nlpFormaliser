@@ -1,0 +1,81 @@
+{
+  "id": "002-live-small-medium",
+  "stage": "calibration",
+  "repairs": 0,
+  "finished": "2026-10-05T14:19:53.105Z",
+  "strategies": {
+    "cnl-core": {
+      "n": 5,
+      "valid": 0,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "evl": {
+      "n": 5,
+      "valid": 0,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "lab-direct": {
+      "n": 5,
+      "valid": 0,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "lab-heuristic": {
+      "n": 5,
+      "valid": 1,
+      "reasoningEligible": 1,
+      "judged": 1,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "lab-proto": {
+      "n": 5,
+      "valid": 0,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "microir": {
+      "n": 5,
+      "valid": 0,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "symbolic": {
+      "n": 5,
+      "valid": 2,
+      "reasoningEligible": 0,
+      "judged": 2,
+      "equivalent": 2,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    }
+  },
+  "calls": {
+    "requests": 7,
+    "uncached": 7,
+    "inputTokens": 726,
+    "outputTokens": 2406,
+    "knownCredits": 0.7,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 7
+  }
+}

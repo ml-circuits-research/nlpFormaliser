@@ -1,0 +1,15 @@
+{"role":"judge","id":"t-1c4d5649ee6a919bd7320d73","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-e17b0bdcc1f38f1dbd9b6899","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-d194fd4b03c4f23c25349317","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-ab7d4a3696a2ae52f64329f0","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-be4a24b551e5a26f0eb32204","status":"running","phase":"begin","steps":0}
+{"role":"judge","id":"t-1c4d5649ee6a919bd7320d73","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-e17b0bdcc1f38f1dbd9b6899","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-d194fd4b03c4f23c25349317","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-ab7d4a3696a2ae52f64329f0","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-be4a24b551e5a26f0eb32204","status":"running","phase":"begin","steps":1}
+{"role":"judge","id":"t-1c4d5649ee6a919bd7320d73","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 402: {\"error\":\"This model is billed from your credit balance. Maintain a balance of at least $1.00 to use it, and top up to continue.\",\"code\":\"insufficient_credits\"}"}
+{"role":"judge","id":"t-e17b0bdcc1f38f1dbd9b6899","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 402: {\"error\":\"This model is billed from your credit balance. Maintain a balance of at least $1.00 to use it, and top up to continue.\",\"code\":\"insufficient_credits\"}"}
+{"role":"judge","id":"t-d194fd4b03c4f23c25349317","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 402: {\"error\":\"This model is billed from your credit balance. Maintain a balance of at least $1.00 to use it, and top up to continue.\",\"code\":\"insufficient_credits\"}"}
+{"role":"judge","id":"t-ab7d4a3696a2ae52f64329f0","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 402: {\"error\":\"This model is billed from your credit balance. Maintain a balance of at least $1.00 to use it, and top up to continue.\",\"code\":\"insufficient_credits\"}"}
+{"role":"judge","id":"t-be4a24b551e5a26f0eb32204","status":"failed","phase":null,"steps":1,"result":null,"error":"Invalid batch response: status 402: {\"error\":\"This model is billed from your credit balance. Maintain a balance of at least $1.00 to use it, and top up to continue.\",\"code\":\"insufficient_credits\"}"}

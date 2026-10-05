@@ -1,0 +1,1 @@
+The application allows a user to download the dataset only if that user is registered. It allowed Niko to download the dataset. Is Niko registered?

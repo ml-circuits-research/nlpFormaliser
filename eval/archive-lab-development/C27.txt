@@ -1,0 +1,1 @@
+Either sensor A or sensor B is faulty; the log does not say which.

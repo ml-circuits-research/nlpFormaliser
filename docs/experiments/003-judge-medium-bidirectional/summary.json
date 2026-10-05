@@ -1,0 +1,11 @@
+{
+  "id": "003-judge-medium-bidirectional",
+  "n": 10,
+  "correct": 9,
+  "falseAccepts": [],
+  "falseRejects": [],
+  "errors": [
+    "conjunction-order"
+  ],
+  "requests": 2
+}

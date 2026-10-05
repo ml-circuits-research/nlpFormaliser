@@ -1,0 +1,1 @@
+Every room has a temperature sensor. Room 12’s sensor reported 31°C, but the dashboard displayed 28°C. What temperature did the sensor report?

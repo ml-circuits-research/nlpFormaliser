@@ -1,0 +1,1586 @@
+{
+  "id": "013-microir-good-rejudge",
+  "started": "2026-10-05T14:29:23.518Z",
+  "stage": "calibration",
+  "options": {
+    "strategy": [
+      "microir"
+    ],
+    "rejudge": "docs/experiments/005-live-medium/items.jsonl",
+    "judge-tier": "good",
+    "judge-mode": "direct",
+    "batch-size": "5",
+    "cache": "off",
+    "id": "013-microir-good-rejudge",
+    "set": "base",
+    "tier": "small",
+    "max-tokens": "8000",
+    "stage": "calibration",
+    "concurrency": "5"
+  },
+  "repairs": 0,
+  "cases": [
+    {
+      "id": "conditionals-rules/01-if-the-temperature-drops-below.txt",
+      "text": "If the temperature drops below zero, turn on the heating in the garage.",
+      "category": "conditionals-rules"
+    },
+    {
+      "id": "discourse-coreference/01-i-met-a-developer-at.txt",
+      "text": "I met a developer at the conference. She works on compilers and offered to review our parser.",
+      "category": "discourse-coreference"
+    },
+    {
+      "id": "modality-obligation/01-you-must-not-share-the.txt",
+      "text": "You must not share the access token with anyone outside the company.",
+      "category": "modality-obligation"
+    },
+    {
+      "id": "negation-scope/01-not-every-email-you-flagged.txt",
+      "text": "Not every email you flagged was spam.",
+      "category": "negation-scope"
+    },
+    {
+      "id": "questions-wh/01-who-approved-the-budget-increase.txt",
+      "text": "Who approved the budget increase for the marketing department?",
+      "category": "questions-wh"
+    }
+  ],
+  "strategies": [
+    "microir"
+  ],
+  "sourceHashes": {
+    "README.md": "30237ce54cb8ecbe501eb4221b7f1a124a3288fdf7ffefb349546fdacdad576e",
+    "package-lock.json": "71cdae9b8e281d346ec00a8d5b625625c26a229da80cee7e63a0e2a557639864",
+    "package.json": "dfec19b1b9b719b51648a7f85333bd90b96673482317c5eb0daf421bc547bd68",
+    "strategies/cnl-core/index.mjs": "a20001b28cc5ddfacb9561b680e0874a390537d61a75b3862d4395c25529ddbb",
+    "strategies/cnl-core/src/cnl-core.mjs": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956",
+    "strategies/cnl-core/task.mjs": "059a7b72f04b00d28227530c8f77245051811896ae185eee85d91f367b5ad08f",
+    "strategies/evl/index.mjs": "9ec34f7d0c9c42e969fb7811fb2d35887806de35ee727c2fcf7a62c1089b50d8",
+    "strategies/evl/package.json": "b9adccb74c92a791f8d1c4f31f171fbf30904024a4f6fcee35602aed65c25d0a",
+    "strategies/evl/spec/evl-spec.md": "a9c0e2d531916b2f24ead0d167b9a30bbd208da3786a8196763865b99bea1f84",
+    "strategies/evl/spec/prompts.json": "a8d6bf6a91ccb1e0f4eee231e340ffe9ad19dfe74be6446498d3c61bc1921d8b",
+    "strategies/evl/src/check.mjs": "dd226dae1245efa9acf7416ca2282d712470477f836a4f4a2e67bf0b27d6a425",
+    "strategies/evl/src/english.mjs": "b74d71651adaebb4d9ca94fc9168583c6a6fe396ca072429e51ed1abadddc93f",
+    "strategies/evl/src/kb.mjs": "54413455ce1742be358b1ff2407195217ac00a79bb77d75ccddc4babd5b3ad23",
+    "strategies/evl/src/loop.mjs": "563c5b1e546321580600e9e59bb3633a9e47d0e5b51e51393be8026d93471f89",
+    "strategies/evl/src/morph.mjs": "d522dc1644a101015d7cdf1ffda4f1d1244d6d92c59d54a0221bd313fe622512",
+    "strategies/evl/src/qa.mjs": "c89adef086656686ce724ddc68d94e21532ebb94afb13c1ccf2327254b2d0d7c",
+    "strategies/evl/src/terms.mjs": "48bc97cdc9a2ffe24447284656598d6d49f84708fa4fc6f007891e57b44a0b97",
+    "strategies/evl/src/util.mjs": "8967887f01aa805bf60a42d09ecbe3ab2bada7efed31d8a0887ca5bbe27ae512",
+    "strategies/evl/task.mjs": "310c2405c043939ab867e18458b52d3375a30d6312e6d5c2aab9c5a08ee4dcdc",
+    "strategies/evl/test/fixtures.json": "d2163ca20c468994c9a9a6a16b0cf39621c1bac35584359be8d405852b0e13e6",
+    "strategies/evl/test/parity.test.mjs": "edbc78ff6e872558f4f932b369d5660a47af61a202a51f411b938f4cbfab4d45",
+    "strategies/lab-direct/index.mjs": "cb6ddb77e68ebbc16b7636275a210e1c4f1493f7686276ed882cefa725baec6a",
+    "strategies/lab-direct/task.mjs": "d29b7dba5d92356a58e3ca824383f61449a4afa6bbf7eb365fe6e55a32b94389",
+    "strategies/lab-heuristic/index.mjs": "2f7c1e71615f58a453532c2f2ff33aaca1734c8d383a903cb9f77bd47c21cdbd",
+    "strategies/lab-proto/index.mjs": "76d685489f8039b1ff9d428f3e4a12c232d5d6f770ad8edb24f4669dd4505bb0",
+    "strategies/lab-proto/task.mjs": "52b88678260e42c34810e6c928e49df01d47eb570951abd28690fcfb495af6d6",
+    "strategies/lab-shared/adapter.mjs": "1050ea9accc983c169bfcd3be1cdd32f94f37eca65b01219858b816ea4eafc97",
+    "strategies/lab-shared/src/ir.mjs": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e",
+    "strategies/lab-shared/src/protoir.mjs": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483",
+    "strategies/lab-shared/src/reasoner.mjs": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f",
+    "strategies/lab-shared/src/strategies/direct-llm.mjs": "62e86af71afd487640e0551170d309557bdc0805b3e3633a25e2acc98b98aca4",
+    "strategies/lab-shared/src/strategies/heuristic.mjs": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7",
+    "strategies/lab-shared/src/strategies/proto-llm.mjs": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852",
+    "strategies/lab-shared/src/strategy.mjs": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac",
+    "strategies/lab-shared/src/util.mjs": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6",
+    "strategies/microir/index.mjs": "7e3cc2563b7a124d2c682745d7300abc21c65756b7cf5ec306d9767afe795f1f",
+    "strategies/microir/reasoner.mjs": "937ef5d106a8fe82d930b69596be6987c70ea28f33da788f591f3384d883ed52",
+    "strategies/microir/src/cnl.mjs": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3",
+    "strategies/microir/src/ir.mjs": "827f4b1a4e706899e09447c5af39a216d0937ba03a183bc67ef85a8a5f780596",
+    "strategies/microir/src/prompts.mjs": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0",
+    "strategies/microir/src/wire.mjs": "92887fa06fbc71dcb91f91ba095a5f260a97821fc571a2ac5108714c49f7a201",
+    "strategies/microir/task.mjs": "d803788fdb67cfabf347290ee75c6c145c7b3469d5fd0240577187e0a50d2bbf",
+    "strategies/symbolic/index.mjs": "2d418262a98717392bebba52af182b37194f9e116f39815342af1a7683766ed0",
+    "strategies/symbolic/src/formalizer.mjs": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb",
+    "tasks/judge-bidirectional.mjs": "58e77d927deb6ca73eb1be99f2cb47e78fead2971944cdd92f184bc6a94d7680",
+    "tasks/judge-direct.mjs": "05b327d973dfcdc4c0d024a6dc5353640d631461587ae8aaf72faacae785101d",
+    "test/pipeline.test.mjs": "e58bf4933a63d9a45b2f186694194cd16efccd3e62c7261f0caf48db611fc731",
+    "test/reasoning.test.mjs": "c868628d1288e5012da1e4d6d4ff0cdbdc7506854ad66a5f5a1209bf48cbab70",
+    "tools/calibrate-judge.mjs": "77904cad0eb672af03737fd909e3a7ea0c623feb1eea13393cae0fb30e47b177",
+    "tools/formalize.mjs": "821f21fcf985ff085455bdbab4ae4218d6b5679bdd2c1e6840acb916f78201b9",
+    "tools/judge.mjs": "823e9868f0ac4edf0fa924f1ff198938925f0c8f481777586b6b1ec9b471b3b9",
+    "tools/lib/audit.mjs": "3ba3ef3ba3a3d27fd96285d5978aaf1351724ea8d572b95eb08f3757d5b03b3e",
+    "tools/lib/cli.mjs": "347c08ff5e8f5e6de4812a4481efcf84cf8975ee08953f6f8d7543feb735d342",
+    "tools/lib/evalset.mjs": "2a8c16d602a4d30eb56f36eea61d8c82d2bc16504f214fd29cfe6d3795b873c4",
+    "tools/lib/judge.mjs": "1dabbbbd65530c2e6170a23673927fee3443e7967f38ae96db6f6c3a4ec56f8b",
+    "tools/lib/llm.mjs": "89d60b76e92d345f272a3a42bfd7734e9ddc8a414184ed2e052d045491675623",
+    "tools/lib/pworker.mjs": "f556a7b611bc2e92e3af4aeb905286ee7c759947de5b3af07144ed8736a7c142",
+    "tools/lib/strategies.mjs": "a58e1d1d87ce2ecae9e12cca725a701bd12f48c3d68ef97e1adf4007f020bb9c",
+    "tools/lib/task-spec.mjs": "cf5f1fc973ff3e926ad0fd86477415c205abab1c907bb55b82a3daaaa8174040",
+    "tools/run-eval.mjs": "4bb7d39d68042c3c2c4bcaa5aa3e915025fc0879b043f8d0f63b0fcd5e64c02a",
+    "../Ploinky-Worker/lib/agent/agent-skills.mjs": "06ee4ef3a66dcadf302d8d30b7d411436e12a0dea0bbfdff45f5d00e2e07ba7f",
+    "../Ploinky-Worker/lib/agent/bm25.mjs": "aa68d407ba34dac220e59ddb315879d232902788f74e24d0b06715eea63d22fb",
+    "../Ploinky-Worker/lib/agent/frontmatter.mjs": "224c1a8690160c70b2c59f797e9ab56d3c3676bba84f58fd5137fec88c42457e",
+    "../Ploinky-Worker/lib/agent/index.mjs": "99cd318de56cc76a23ce78c651432d559d38f612a0c8b5eee3280a53a39243c7",
+    "../Ploinky-Worker/lib/agent/lambda-cache.mjs": "05f7f0edb25ac2d8f655a5f910c292bacd119d0bcbac24058a278a5c3f8f487b",
+    "../Ploinky-Worker/lib/agent/lambda-code.mjs": "777f69714d279b9dbf75baab2ba074a26b957a9e7db2a35433aab25d31ed2f7d",
+    "../Ploinky-Worker/lib/agent/match.mjs": "a98a37ecb12f1ec20479a5dd242b2faf2a6b17ceb4e4b40af9aa931c94d2d97e",
+    "../Ploinky-Worker/lib/agent/run.mjs": "a708a146fcdb59b085b4a1798e9144e85a28470d0a3e8bfd90b6254c736c4303",
+    "../Ploinky-Worker/lib/agent/workspace.mjs": "7e08a694ed7877953ce8e110872deadf4162bae738f6d3529e2a7cf36b80937b",
+    "../Ploinky-Worker/lib/audit.mjs": "2cea8ab31a5d0d2dda301be886d9a90123182a6ee402282132efd6b4a84980ed",
+    "../Ploinky-Worker/lib/cache.mjs": "3072fc86be43feb908cc33d2da99ce6ef325f847a631f8075b691a99398a25ac",
+    "../Ploinky-Worker/lib/client.mjs": "1f476003fc44d2bee2307aee9f14f4ffda9d0df87e9f7c1d8af20260061b1a66",
+    "../Ploinky-Worker/lib/config.mjs": "df279e71295b726d6a6c9323df1fccf51ccb27dd8002e58b2d6dc4085b2c60e5",
+    "../Ploinky-Worker/lib/core.mjs": "7745c417a96e54b4df024da41a28c02685ca1e08b242b7a4baea4fa169de84ad",
+    "../Ploinky-Worker/lib/dashboard.mjs": "9e95bc187768eccff1605bfd41a70117973e93cf14f2f1d71a96b59184e92df7",
+    "../Ploinky-Worker/lib/guard.mjs": "fe530c38bf00385f3c794f360151ec831fb056f1c0c3c4966270552a4ce7f89d",
+    "../Ploinky-Worker/lib/http-fetch.mjs": "f4b6b38232887e5758e283560e3c9cbf1fcd8370b722443126ee4b47c0b18663",
+    "../Ploinky-Worker/lib/inproc.mjs": "9585917cc639b12fa0e36c830cd6cf94b39e1949a6f82a0a7d60c5625a6b2a82",
+    "../Ploinky-Worker/lib/jobs/client.mjs": "4a2ea6a481e698957eb429131e0bc571b07a891fc696ba43970fbebcb1d9b9d4",
+    "../Ploinky-Worker/lib/jobs/config.mjs": "dd16e58f50beacd6ebe70c41b5c0c430ae8fdf17bce588665c7ebe9bbe02619d",
+    "../Ploinky-Worker/lib/jobs/index.mjs": "77622009c9d208d6df2ace816d38237cc33499cf2bca1cedf35b07513b6579d2",
+    "../Ploinky-Worker/lib/jobs/inputs.mjs": "1285e046eda23cd958177827e728d51ea40ec3a9635159438f3384b24d46d175",
+    "../Ploinky-Worker/lib/jobs/outputs.mjs": "f206ccedf2b84ebef565b315ac1eebe7b0bb98c6ef4801e07c4c4d2caada086d",
+    "../Ploinky-Worker/lib/jobs/planner.mjs": "c2da9810387a45017be726882b9c42c7a5de1574388b04acf63367097e2623c2",
+    "../Ploinky-Worker/lib/jobs/review.mjs": "760a6cc058acbc51c66684a509df33fc872dfec15d3ed3b3eb6957188e57148f",
+    "../Ploinky-Worker/lib/jobs/runner.mjs": "dbd1920cb1f4ba22c58df50db2d1424c936ec3554a9867a23f6d74ea474995e4",
+    "../Ploinky-Worker/lib/jobs/spec.mjs": "333183676d755c7e888796d81bf2bbe42edc8f01e4ef489770aede5efe13ac40",
+    "../Ploinky-Worker/lib/jobs/store.mjs": "165acd12cbee1afc61fe462ef808a93997ee9155fdcb70b5f95cc567f5f07754",
+    "../Ploinky-Worker/lib/jobs/task.mjs": "c228e6e5892a5baff8c96267abfb0d2bb480bee8828267ab27adc450058be08b",
+    "../Ploinky-Worker/lib/jobs/tiers.mjs": "631db148d05d751c741072e907f8f1b72e5598735ecfd39acfb1d818d406a40c",
+    "../Ploinky-Worker/lib/jobs/util.mjs": "18e06a51b388a89dcb1e781cbde04212cb1a22f23ceac3baa7f434c1704ac88e",
+    "../Ploinky-Worker/lib/lambda/calls.mjs": "3205c4a9c9f0d523fb8b8879bb9294397cd0fdbba0a48c7e8cf3f3d576f494df",
+    "../Ploinky-Worker/lib/lambda/effects.mjs": "8c664037108787801ff9baa7baa3ecc45bae04be8a41381cbb2d2d7d5f907f63",
+    "../Ploinky-Worker/lib/lambda/import.mjs": "986e7c7b53d46d2dc4ec258909ad6c982472f2681fea06cf3104e765a012098a",
+    "../Ploinky-Worker/lib/lambda/index.mjs": "b94522c4f3416b7921717958cb9a2a580bc45d580b764a920fb8175b7eede7f0",
+    "../Ploinky-Worker/lib/lambda/registry.mjs": "7debee2b2cb0c6c5fcb9d80bb9e35a7fe94f726c4ba5ac1a177c64d219ea22aa",
+    "../Ploinky-Worker/lib/limiter.mjs": "55789f5a2549d8726b79421b77c2f51be0589748855a9a2ce031082af5380b73",
+    "../Ploinky-Worker/lib/local.mjs": "95540b77f86b5a4f0b332768bec3f64ad8cde8cf3513f6415df534ac25a7701f",
+    "../Ploinky-Worker/lib/monitor.mjs": "efe2659b6924855ed811b14a05832437c5773245279182122e67b92b3b181b36",
+    "../Ploinky-Worker/lib/plan.mjs": "b9c35a01ab6aaff9ebe17521666f7f524ba1ad1eb41ad129d370c495a4aa5262",
+    "../Ploinky-Worker/lib/prompted.mjs": "b25bf6134d5a5ee97cba6f8b6f921a284c88fb03a94ff744168376287dbc2a66",
+    "../Ploinky-Worker/lib/pworker/help.mjs": "c90e40b20db4283f6243ed0113c57b102e910afdf8b0e8434ef3261245fd04d0",
+    "../Ploinky-Worker/lib/pworker/jobs.mjs": "f9355864a7d8befef083094a26048879d380da6756e26541675292ade6ca67e9",
+    "../Ploinky-Worker/lib/pworker/menu.mjs": "87b8c344e29fc718c26e9f7281ed770412d0b86356eb6f8c6c6dee9d996bd60b",
+    "../Ploinky-Worker/lib/pworker/providers.mjs": "60d105d664801e7a922d64775bc13101b2f58a3ba1585d9567e3a74f98d2194d",
+    "../Ploinky-Worker/lib/pworker/task.mjs": "412ba931f61fbc31563b11ab61be91e3803261f339eb797848813635da809a01",
+    "../Ploinky-Worker/lib/sandbox.mjs": "257abc79d291c62cc4d2453127f2397d4cff43ff0f43a7ecc81848b7cea36d19",
+    "../Ploinky-Worker/lib/server.mjs": "949ccb8fe4294d346b3ae7eed4489eb1c02c753135b3b6d2c2b0b2e6afd7bbf6",
+    "../Ploinky-Worker/lib/settings.mjs": "fbe6b8c768bd83a33e8ec7fc6ca33fc63f5ae794eb5c3b03518119134e7543ba",
+    "../Ploinky-Worker/lib/worker.mjs": "3f120e219de8c39d632e16f98b3d5d68caaeedd79e46bb707487231ce10e9f5f"
+  },
+  "node": "v24.9.0",
+  "argv": [
+    "--strategy",
+    "microir",
+    "--rejudge",
+    "docs/experiments/005-live-medium/items.jsonl",
+    "--judge-tier",
+    "good",
+    "--judge-mode",
+    "direct",
+    "--batch-size",
+    "5",
+    "--cache",
+    "off",
+    "--id",
+    "013-microir-good-rejudge"
+  ],
+  "rejudgeOf": "docs/experiments/005-live-medium/items.jsonl",
+  "proxy": {
+    "ok": true,
+    "uptime_s": 1178,
+    "fallback": null,
+    "tiers": [
+      {
+        "id": "tiny",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/GLM-4.7-Flash",
+          "fallback": []
+        }
+      },
+      {
+        "id": "small",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Gemma 4 26B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "medium",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Nemotron-3-120B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "good",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/GLM-5.1",
+          "fallback": [
+            "openference/GLM-5.3-Flash"
+          ]
+        }
+      },
+      {
+        "id": "best",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/GLM-5.3",
+          "fallback": []
+        }
+      },
+      {
+        "id": "nano",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Qwen3.8 27b",
+          "fallback": []
+        }
+      },
+      {
+        "id": "micro",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Llama 3.2 3B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "supertiny",
+        "object": "model",
+        "x_tier": {
+          "serves": "openference/Llama 3.2 3B",
+          "fallback": []
+        }
+      }
+    ],
+    "upstreams": {
+      "openference": {
+        "base_url": "https://api.openference.com",
+        "key_configured": true,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "openrouter": {
+        "base_url": "https://openrouter.ai/api",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "deepseek": {
+        "base_url": "https://api.deepseek.com",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "local": {
+        "base_url": "http://127.0.0.1:19611",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "localsuper": {
+        "base_url": "http://127.0.0.1:19613",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "localnano": {
+        "base_url": "http://127.0.0.1:19614",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "openai": {
+        "base_url": "https://api.openai.com",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "zai": {
+        "base_url": "https://api.z.ai/api/paas/v4",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "grok": {
+        "base_url": "https://api.x.ai",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      }
+    }
+  },
+  "catalog": {
+    "object": "list",
+    "data": [
+      {
+        "id": "GLM-5.2",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "GLM-5.2",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000014",
+          "completion": "0.0000044",
+          "cache_read": "0.00000026"
+        },
+        "context_length": 262144,
+        "max_output_tokens": 128000,
+        "quota_multiplier": 2,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "GLM-5.3",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "GLM-5.3",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000014",
+          "completion": "0.0000044",
+          "cache_read": "0.00000026"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 128000,
+        "quota_multiplier": 2,
+        "quota_context_surcharge": {
+          "threshold_input_tokens": 262144,
+          "factor": 2
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "max",
+            "high",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "GLM-5.3-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "GLM-5.3-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000005",
+          "cache_read": "0.00000003"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 128000,
+        "quota_multiplier": 1,
+        "architecture": {
+          "modality": "text+image+video->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "The first natively multimodal model in the GLM-5 series. 320B total parameters, 18B active. Outperforms GLM-5.2 at one-tenth the price on benchmarks and real-world workloads, with a 1M-token context window and native text, image, and video input.",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "max",
+            "high",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "DeepSeek-V4.1-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "DeepSeek-V4.1-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "cache_read": "0.000000006"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 384000,
+        "quota_multiplier": 1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "display_name": "DeepSeek V4.1 Flash",
+        "description": "DeepSeek V4.1 Flash — official on-demand model with scheduled peak and off-peak pricing.",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "max",
+            "high",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "DeepSeek-V4-Flash-0731",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "DeepSeek-V4-Flash-0731",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000014",
+          "completion": "0.00000028",
+          "cache_read": "0.000000014"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 384000,
+        "quota_multiplier": 0.75,
+        "quota_multiplier_standard": 1,
+        "promo_quota_ends_at": "2026-09-30",
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "DeepSeek V4 Flash — 1M context, vision input, tool calls, and thinking mode.",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "max",
+            "high",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "MiniMax M3",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "MiniMax M3",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "cache_read": "0.00000006"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "quota_multiplier": 1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "adaptive"
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "DeepSeek-V4-Pro-0813",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "DeepSeek-V4-Pro-0813",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000132",
+          "completion": "0.00000396",
+          "cache_read": "0.000000044"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 384000,
+        "quota_multiplier": 1.7,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "display_name": "DeepSeek V4 Pro",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "max",
+            "high"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "SenseNova 6.8 Flash-Lite",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "SenseNova 6.8 Flash-Lite",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.00000015"
+        },
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "quota_multiplier": 0.5,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "Lightweight multimodal agent model for real-world workflows and image understanding.",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "SenseNova 6.7 Flash-Lite",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "SenseNova 6.7 Flash-Lite",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.00000015"
+        },
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "quota_multiplier": 0.5,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "Lightweight multimodal agent model for real-world workflows, supporting text conversation and image understanding.",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "GLM-5",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "GLM-5",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.0000032",
+          "cache_read": "0.0000002"
+        },
+        "context_length": 202752,
+        "max_output_tokens": 128000,
+        "quota_multiplier": 1.5,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "quantization": "BF16",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "GLM-5.1",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "GLM-5.1",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000014",
+          "completion": "0.0000044",
+          "cache_read": "0.00000026"
+        },
+        "context_length": 202752,
+        "max_output_tokens": 128000,
+        "quota_multiplier": 2,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "quantization": "BF16",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Kimi K2.6",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Kimi K2.6",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000095",
+          "completion": "0.000004",
+          "cache_read": "0.00000016"
+        },
+        "context_length": 262144,
+        "max_output_tokens": 131072,
+        "quota_multiplier": 1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "toggle"
+        },
+        "x_billing": "credit"
+      },
+      {
+        "id": "SDXL Lightning",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "SDXL Lightning",
+        "parent": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0.0000014"
+        },
+        "context_length": 4096,
+        "quota_multiplier": 25,
+        "architecture": {
+          "modality": "text->image",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "image"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "image"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "description": "Fast text-to-image generation. Costs 25 plan requests per image.",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "SDXL Base 1.0",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "SDXL Base 1.0",
+        "parent": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0.0000019"
+        },
+        "context_length": 4096,
+        "quota_multiplier": 25,
+        "architecture": {
+          "modality": "text->image",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "image"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "image"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "description": "High-quality text-to-image generation. Costs 25 plan requests per image.",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Agnes-3.0-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Agnes-3.0-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.00000015"
+        },
+        "context_length": 524288,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "512K-context text and vision-language model with coding, tool calling, reasoning, and agent workflows.",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Agnes-2.5-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Agnes-2.5-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.00000015"
+        },
+        "context_length": 524288,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "512K-context text and vision-language model with coding, tool calling, reasoning, and agent workflows.",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Agnes-Image-2.5-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Agnes-Image-2.5-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0.000003"
+        },
+        "context_length": 4096,
+        "quota_multiplier": 25,
+        "architecture": {
+          "modality": "text->image",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "image"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "image"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "description": "Latest-generation text-to-image and image editing. Set size to a tier (1K–4K) and ratio (e.g. 16:9) for predictable output dimensions. Costs 25 plan requests per image.",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Agnes-Video-2.5-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Agnes-Video-2.5-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0.000000025"
+        },
+        "context_length": 4096,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text->video",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "video"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "video"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "description": "Text-to-video and image-reference video generation via OpenAI Videos-compatible API.",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Qwen3.8 27b",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Qwen3.8 27b",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000045",
+          "completion": "0.0000032"
+        },
+        "context_length": 262144,
+        "max_output_tokens": 65536,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "xhigh",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Llama 3.2 3B",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Llama 3.2 3B",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.000000051",
+          "completion": "0.000000335"
+        },
+        "context_length": 131072,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "quantization": "FP8",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "GLM-4.7-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "GLM-4.7-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.0000004"
+        },
+        "context_length": 131072,
+        "max_output_tokens": 128000,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Gemma 4 26B",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Gemma 4 26B",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000003"
+        },
+        "context_length": 256000,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "quantization": "FP8",
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Nemotron-3-120B",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Nemotron-3-120B",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000015"
+        },
+        "context_length": 256000,
+        "max_output_tokens": 131072,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "GPT-OSS-120B",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "GPT-OSS-120B",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000003"
+        },
+        "context_length": 131072,
+        "quota_multiplier": 0.1,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "display_name": "GPT-OSS 120B",
+        "description": "OpenAI open-weight 120B model for high reasoning, agentic tasks, and production use.",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "MiMo-V2.6-Flash",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "MiMo-V2.6-Flash",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000014",
+          "completion": "0.00000028",
+          "cache_read": "0.0000000028"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "quota_multiplier": 1,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "MiMo V2.6 Flash — 1M context, vision, tools, deep thinking, and streaming.",
+        "quantization": "BF16",
+        "reasoning": {
+          "supported": true,
+          "control": "toggle"
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "MiMo-V2.6-Pro",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "MiMo-V2.6-Pro",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.000000435",
+          "completion": "0.00000087",
+          "cache_read": "0.0000000036"
+        },
+        "context_length": 1048576,
+        "max_output_tokens": 131072,
+        "quota_multiplier": 2,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "MiMo V2.6 Pro — 1M context, vision, tools, deep thinking, and streaming.",
+        "quantization": "BF16",
+        "reasoning": {
+          "supported": true,
+          "control": "toggle"
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Step-5 Preview",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Step-5 Preview",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.0000027",
+          "cache_read": "0.00000005"
+        },
+        "context_length": 1048576,
+        "quota_multiplier": 2,
+        "architecture": {
+          "modality": "text+image+video->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": true,
+          "attachment": true
+        },
+        "description": "StepFun flagship agentic model — 1M context, vision, video, tools, reasoning_effort, and prompt caching.",
+        "quantization": "FP8",
+        "reasoning": {
+          "supported": true,
+          "control": "effort",
+          "supported_efforts": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "x_billing": "plan_or_unknown"
+      },
+      {
+        "id": "Auto",
+        "object": "model",
+        "created": 0,
+        "owned_by": "openference",
+        "permission": [],
+        "root": "Auto",
+        "parent": null,
+        "pricing": {
+          "prompt": "0.00000035",
+          "completion": "0.000001"
+        },
+        "context_length": 131072,
+        "max_output_tokens": 131072,
+        "quota_multiplier": 1,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "capabilities": {
+          "tool_calling": true,
+          "vision": false,
+          "attachment": false
+        },
+        "description": "Automatically selects the optimal model based on performance and speed.",
+        "reasoning": {
+          "supported": true,
+          "control": "toggle"
+        },
+        "x_billing": "plan_or_unknown"
+      }
+    ]
+  }
+}

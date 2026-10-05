@@ -1,0 +1,1 @@
+Robot R2 must not move while the door is open. The door is open.

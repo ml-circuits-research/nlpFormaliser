@@ -1,0 +1,1272 @@
+{
+  "id": "022-restored-deterministic-full",
+  "stage": "full",
+  "repairs": 0,
+  "finished": "2026-10-05T15:21:58.552Z",
+  "strategies": {
+    "deterministic-rule-draft": {
+      "n": 138,
+      "valid": 3,
+      "reasoningEligible": 2,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0,
+      "behavioral": {
+        "tested": 0,
+        "annotated": 0,
+        "coverage": null,
+        "passed": 0,
+        "accuracy": null,
+        "accuracyAllAnnotated": null,
+        "semantic": {
+          "tested": 0,
+          "passed": 0
+        },
+        "controls": {
+          "tested": 0,
+          "passed": 0
+        },
+        "unsupportedCases": 0
+      },
+      "byCategory": {
+        "agent-requests": {
+          "n": 7,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "beliefs-reported-speech": {
+          "n": 6,
+          "valid": 1,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "causal-explanations": {
+          "n": 5,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "comparisons": {
+          "n": 5,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "conditionals-rules": {
+          "n": 7,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "constraints-preferences": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "corrections-repairs": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "data-queries": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "discourse-coreference": {
+          "n": 6,
+          "valid": 1,
+          "reasoningEligible": 1,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "figurative-idioms": {
+          "n": 5,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "generics-knowledge": {
+          "n": 5,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "hypothetical-counterfactual": {
+          "n": 5,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "indirect-speech-acts": {
+          "n": 7,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "modality-obligation": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "multi-intent": {
+          "n": 5,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "negation-scope": {
+          "n": 7,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "policy-legal": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "quantifiers-numbers": {
+          "n": 7,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "questions-wh": {
+          "n": 7,
+          "valid": 1,
+          "reasoningEligible": 1,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "questions-yes-no": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "social": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "technical-instructions": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "time-scheduling": {
+          "n": 6,
+          "valid": 0,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        }
+      },
+      "byTag": {}
+    },
+    "discourse-semantic-graph": {
+      "n": 138,
+      "valid": 138,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0,
+      "behavioral": {
+        "tested": 0,
+        "annotated": 0,
+        "coverage": null,
+        "passed": 0,
+        "accuracy": null,
+        "accuracyAllAnnotated": null,
+        "semantic": {
+          "tested": 0,
+          "passed": 0
+        },
+        "controls": {
+          "tested": 0,
+          "passed": 0
+        },
+        "unsupportedCases": 0
+      },
+      "byCategory": {
+        "agent-requests": {
+          "n": 7,
+          "valid": 7,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "beliefs-reported-speech": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "causal-explanations": {
+          "n": 5,
+          "valid": 5,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "comparisons": {
+          "n": 5,
+          "valid": 5,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "conditionals-rules": {
+          "n": 7,
+          "valid": 7,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "constraints-preferences": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "corrections-repairs": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "data-queries": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "discourse-coreference": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "figurative-idioms": {
+          "n": 5,
+          "valid": 5,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "generics-knowledge": {
+          "n": 5,
+          "valid": 5,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "hypothetical-counterfactual": {
+          "n": 5,
+          "valid": 5,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "indirect-speech-acts": {
+          "n": 7,
+          "valid": 7,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "modality-obligation": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "multi-intent": {
+          "n": 5,
+          "valid": 5,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "negation-scope": {
+          "n": 7,
+          "valid": 7,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "policy-legal": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "quantifiers-numbers": {
+          "n": 7,
+          "valid": 7,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "questions-wh": {
+          "n": 7,
+          "valid": 7,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "questions-yes-no": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "social": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "technical-instructions": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "time-scheduling": {
+          "n": 6,
+          "valid": 6,
+          "reasoningEligible": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "behavioral": {
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        }
+      },
+      "byTag": {}
+    }
+  },
+  "calls": {
+    "requests": 0,
+    "uncached": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "knownCredits": 0,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 0
+  }
+}

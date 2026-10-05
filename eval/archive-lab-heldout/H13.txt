@@ -1,0 +1,1 @@
+Deployment is forbidden if the backup has not succeeded. The backup has not succeeded.

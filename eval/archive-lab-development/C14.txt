@@ -1,0 +1,1 @@
+A file is considered stale when its checksum differs from the recorded checksum. FileA is a file and its checksum differs.

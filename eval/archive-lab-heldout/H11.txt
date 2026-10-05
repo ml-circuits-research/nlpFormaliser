@@ -1,0 +1,1 @@
+Authentication is unnecessary for public status requests. R17 is one such public status request.

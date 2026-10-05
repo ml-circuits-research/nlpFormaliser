@@ -1,0 +1,1 @@
+Deploy the model only if all tests pass.

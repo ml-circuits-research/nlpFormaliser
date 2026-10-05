@@ -1,0 +1,1 @@
+Whenever a server becomes overloaded, the scheduler redirects new jobs elsewhere. Node7 is an overloaded server.

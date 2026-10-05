@@ -1,0 +1,1 @@
+Users may cancel a job before execution starts.

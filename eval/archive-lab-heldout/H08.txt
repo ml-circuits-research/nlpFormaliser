@@ -1,0 +1,1 @@
+Researchers who have a GPU available can execute a local model. Ana is a researcher, GPU1 is a GPU, and Ana owns GPU1.

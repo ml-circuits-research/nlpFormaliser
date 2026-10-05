@@ -1,0 +1,1 @@
+The device shut down, but that does not establish that the battery was empty.

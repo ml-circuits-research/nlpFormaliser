@@ -1,0 +1,1 @@
+Eva said that Noah had deleted the file, but the audit log shows that Noah only renamed it. Did the audit log show that Noah deleted the file?

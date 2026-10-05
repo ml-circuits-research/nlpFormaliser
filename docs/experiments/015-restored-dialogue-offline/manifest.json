@@ -1,0 +1,554 @@
+{
+  "id": "015-restored-dialogue-offline",
+  "started": "2026-10-05T14:50:35.143Z",
+  "stage": "source",
+  "options": {
+    "strategy": [
+      "discourse-semantic-graph"
+    ],
+    "set": "archive-discourse-dialogue",
+    "stage": "source",
+    "offline": true,
+    "id": "015-restored-dialogue-offline",
+    "tier": "small",
+    "judge-tier": "good",
+    "judge-mode": "bidirectional",
+    "batch-size": "5",
+    "max-tokens": "8000",
+    "concurrency": "5",
+    "cache": "use"
+  },
+  "repairs": 0,
+  "cases": [
+    {
+      "schema": "nlp-eval/2",
+      "id": "archive-discourse-dialogue/connected-chat",
+      "kind": "conversation",
+      "text": "user: We want a formalizer that converts English requests into a canonical controlled language.\nuser: Every candidate formalization must preserve negation, modality, quantifiers, temporal order, and references.\nuser: If the symbolic parser is uncertain, mark the ambiguity instead of guessing.\nuser: Find three difficult examples involving pronouns and modal scope.\nuser: Do not include examples that require specialist medical knowledge.\nuser: Bob told Alan that he should review the report.\nuser: I mean Alan.\nuser: Not every reviewer must accept a paper.\nuser: Does that mean some reviewer is not required to accept a paper?\nuser: Before Ada approves the report, Bob must review it.\nuser: If Bob rejects it, Ada should not publish it.\nuser: Which report is being discussed?\nuser: Use the report from the previous example.\nuser: The evaluator may accept a candidate only if no material meaning is missing.\nuser: It may reject a candidate because the CNL invents a condition that is not present in the source.\nuser: If the source is ambiguous and the context does not resolve it, the evaluator must return uncertain.\nuser: Show me which candidates were rejected and why.\nuser: Keep the explanation short, but preserve the exact evidence spans.\nuser: We prefer one batched LLM call over one call per sentence.\nuser: When ten candidates are ready, validate them together.\nuser: Do not wait for ten if the user explicitly asks for an immediate verdict.\nuser: A candidate that passes the symbolic audit can still be wrong.\nuser: Therefore sample some apparently safe candidates for LLM review.\nuser: How many of the last twenty candidates were judged equivalent?\nuser: If fewer than eighteen were equivalent, report the failure rate.\nuser: The judge must not use world knowledge to fill missing information.\nuser: Only information licensed by the source or the conversation may be used.\nuser: Can the formalizer distinguish 'does not have to submit' from 'must not submit'?\nuser: Test both readings and mark any scope error.\nuser: Finally, return the CNL, the symbolic warnings, and the LLM verdict for each tested turn.",
+      "category": "discourse/connected-dialogue",
+      "tags": [],
+      "turns": [
+        {
+          "id": "t01",
+          "speaker": "user",
+          "text": "We want a formalizer that converts English requests into a canonical controlled language."
+        },
+        {
+          "id": "t02",
+          "speaker": "user",
+          "text": "Every candidate formalization must preserve negation, modality, quantifiers, temporal order, and references."
+        },
+        {
+          "id": "t03",
+          "speaker": "user",
+          "text": "If the symbolic parser is uncertain, mark the ambiguity instead of guessing."
+        },
+        {
+          "id": "t04",
+          "speaker": "user",
+          "text": "Find three difficult examples involving pronouns and modal scope."
+        },
+        {
+          "id": "t05",
+          "speaker": "user",
+          "text": "Do not include examples that require specialist medical knowledge."
+        },
+        {
+          "id": "t06",
+          "speaker": "user",
+          "text": "Bob told Alan that he should review the report."
+        },
+        {
+          "id": "t07",
+          "speaker": "user",
+          "text": "I mean Alan."
+        },
+        {
+          "id": "t08",
+          "speaker": "user",
+          "text": "Not every reviewer must accept a paper."
+        },
+        {
+          "id": "t09",
+          "speaker": "user",
+          "text": "Does that mean some reviewer is not required to accept a paper?"
+        },
+        {
+          "id": "t10",
+          "speaker": "user",
+          "text": "Before Ada approves the report, Bob must review it."
+        },
+        {
+          "id": "t11",
+          "speaker": "user",
+          "text": "If Bob rejects it, Ada should not publish it."
+        },
+        {
+          "id": "t12",
+          "speaker": "user",
+          "text": "Which report is being discussed?"
+        },
+        {
+          "id": "t13",
+          "speaker": "user",
+          "text": "Use the report from the previous example."
+        },
+        {
+          "id": "t14",
+          "speaker": "user",
+          "text": "The evaluator may accept a candidate only if no material meaning is missing."
+        },
+        {
+          "id": "t15",
+          "speaker": "user",
+          "text": "It may reject a candidate because the CNL invents a condition that is not present in the source."
+        },
+        {
+          "id": "t16",
+          "speaker": "user",
+          "text": "If the source is ambiguous and the context does not resolve it, the evaluator must return uncertain."
+        },
+        {
+          "id": "t17",
+          "speaker": "user",
+          "text": "Show me which candidates were rejected and why."
+        },
+        {
+          "id": "t18",
+          "speaker": "user",
+          "text": "Keep the explanation short, but preserve the exact evidence spans."
+        },
+        {
+          "id": "t19",
+          "speaker": "user",
+          "text": "We prefer one batched LLM call over one call per sentence."
+        },
+        {
+          "id": "t20",
+          "speaker": "user",
+          "text": "When ten candidates are ready, validate them together."
+        },
+        {
+          "id": "t21",
+          "speaker": "user",
+          "text": "Do not wait for ten if the user explicitly asks for an immediate verdict."
+        },
+        {
+          "id": "t22",
+          "speaker": "user",
+          "text": "A candidate that passes the symbolic audit can still be wrong."
+        },
+        {
+          "id": "t23",
+          "speaker": "user",
+          "text": "Therefore sample some apparently safe candidates for LLM review."
+        },
+        {
+          "id": "t24",
+          "speaker": "user",
+          "text": "How many of the last twenty candidates were judged equivalent?"
+        },
+        {
+          "id": "t25",
+          "speaker": "user",
+          "text": "If fewer than eighteen were equivalent, report the failure rate."
+        },
+        {
+          "id": "t26",
+          "speaker": "user",
+          "text": "The judge must not use world knowledge to fill missing information."
+        },
+        {
+          "id": "t27",
+          "speaker": "user",
+          "text": "Only information licensed by the source or the conversation may be used."
+        },
+        {
+          "id": "t28",
+          "speaker": "user",
+          "text": "Can the formalizer distinguish 'does not have to submit' from 'must not submit'?"
+        },
+        {
+          "id": "t29",
+          "speaker": "user",
+          "text": "Test both readings and mark any scope error."
+        },
+        {
+          "id": "t30",
+          "speaker": "user",
+          "text": "Finally, return the CNL, the symbolic warnings, and the LLM verdict for each tested turn."
+        }
+      ],
+      "reference": {},
+      "sourceRecord": {
+        "id": "connected-chat",
+        "turns": [
+          {
+            "id": "t01",
+            "speaker": "user",
+            "text": "We want a formalizer that converts English requests into a canonical controlled language."
+          },
+          {
+            "id": "t02",
+            "speaker": "user",
+            "text": "Every candidate formalization must preserve negation, modality, quantifiers, temporal order, and references."
+          },
+          {
+            "id": "t03",
+            "speaker": "user",
+            "text": "If the symbolic parser is uncertain, mark the ambiguity instead of guessing."
+          },
+          {
+            "id": "t04",
+            "speaker": "user",
+            "text": "Find three difficult examples involving pronouns and modal scope."
+          },
+          {
+            "id": "t05",
+            "speaker": "user",
+            "text": "Do not include examples that require specialist medical knowledge."
+          },
+          {
+            "id": "t06",
+            "speaker": "user",
+            "text": "Bob told Alan that he should review the report."
+          },
+          {
+            "id": "t07",
+            "speaker": "user",
+            "text": "I mean Alan."
+          },
+          {
+            "id": "t08",
+            "speaker": "user",
+            "text": "Not every reviewer must accept a paper."
+          },
+          {
+            "id": "t09",
+            "speaker": "user",
+            "text": "Does that mean some reviewer is not required to accept a paper?"
+          },
+          {
+            "id": "t10",
+            "speaker": "user",
+            "text": "Before Ada approves the report, Bob must review it."
+          },
+          {
+            "id": "t11",
+            "speaker": "user",
+            "text": "If Bob rejects it, Ada should not publish it."
+          },
+          {
+            "id": "t12",
+            "speaker": "user",
+            "text": "Which report is being discussed?"
+          },
+          {
+            "id": "t13",
+            "speaker": "user",
+            "text": "Use the report from the previous example."
+          },
+          {
+            "id": "t14",
+            "speaker": "user",
+            "text": "The evaluator may accept a candidate only if no material meaning is missing."
+          },
+          {
+            "id": "t15",
+            "speaker": "user",
+            "text": "It may reject a candidate because the CNL invents a condition that is not present in the source."
+          },
+          {
+            "id": "t16",
+            "speaker": "user",
+            "text": "If the source is ambiguous and the context does not resolve it, the evaluator must return uncertain."
+          },
+          {
+            "id": "t17",
+            "speaker": "user",
+            "text": "Show me which candidates were rejected and why."
+          },
+          {
+            "id": "t18",
+            "speaker": "user",
+            "text": "Keep the explanation short, but preserve the exact evidence spans."
+          },
+          {
+            "id": "t19",
+            "speaker": "user",
+            "text": "We prefer one batched LLM call over one call per sentence."
+          },
+          {
+            "id": "t20",
+            "speaker": "user",
+            "text": "When ten candidates are ready, validate them together."
+          },
+          {
+            "id": "t21",
+            "speaker": "user",
+            "text": "Do not wait for ten if the user explicitly asks for an immediate verdict."
+          },
+          {
+            "id": "t22",
+            "speaker": "user",
+            "text": "A candidate that passes the symbolic audit can still be wrong."
+          },
+          {
+            "id": "t23",
+            "speaker": "user",
+            "text": "Therefore sample some apparently safe candidates for LLM review."
+          },
+          {
+            "id": "t24",
+            "speaker": "user",
+            "text": "How many of the last twenty candidates were judged equivalent?"
+          },
+          {
+            "id": "t25",
+            "speaker": "user",
+            "text": "If fewer than eighteen were equivalent, report the failure rate."
+          },
+          {
+            "id": "t26",
+            "speaker": "user",
+            "text": "The judge must not use world knowledge to fill missing information."
+          },
+          {
+            "id": "t27",
+            "speaker": "user",
+            "text": "Only information licensed by the source or the conversation may be used."
+          },
+          {
+            "id": "t28",
+            "speaker": "user",
+            "text": "Can the formalizer distinguish 'does not have to submit' from 'must not submit'?"
+          },
+          {
+            "id": "t29",
+            "speaker": "user",
+            "text": "Test both readings and mark any scope error."
+          },
+          {
+            "id": "t30",
+            "speaker": "user",
+            "text": "Finally, return the CNL, the symbolic warnings, and the LLM verdict for each tested turn."
+          }
+        ]
+      },
+      "provenance": {
+        "archive": "nl2cnl-judge-strategy-v1.zip",
+        "archiveSha256": "8c066264fdf0a79a6b1eef9a3c14d8d9576c63dced172a501744028319f466f0",
+        "member": "examples/connected-chat.json",
+        "memberSha256": "75cb34e9d73694e03f33403fe99dc57dfad79018c14669a6fb9cfb6e4760ebae",
+        "partition": "development",
+        "trust": "Archive-provided reference, not independently adjudicated gold"
+      },
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/archive-discourse-dialogue/cases.jsonl"
+    }
+  ],
+  "strategies": [
+    "discourse-semantic-graph"
+  ],
+  "sourceHashes": {
+    "README.md": "f02fad8e6a08565feabf8c2ab72170012b72fc1fc2af9f5623b6caa20d5a8436",
+    "package-lock.json": "71cdae9b8e281d346ec00a8d5b625625c26a229da80cee7e63a0e2a557639864",
+    "package.json": "ff5a5a0b5b3134b0ae6afe6ce8be892ce6ae03c1705ae061728cd5569c94a1d1",
+    "strategies/_archive/cnl/README.md": "a1eed0acd938087a48aea9f161d1b20ee20a8eced7fe5f896e9369d13e87e7b1",
+    "strategies/_archive/cnl/cnl-core.mjs": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956",
+    "strategies/_archive/cnl/tests.mjs": "1bf13f6de253459052d72bbc6f6d7f0fed474aad26f8c7d485cf7b7e6fa9ed81",
+    "strategies/_archive/discourse/README.md": "fbb5c314fb84fc1c5b7c5c0ceb723fc8255735c892e9f2846292e07643ce5c4a",
+    "strategies/_archive/discourse/examples/connected-chat.json": "75cb34e9d73694e03f33403fe99dc57dfad79018c14669a6fb9cfb6e4760ebae",
+    "strategies/_archive/discourse/index.mjs": "eef4ba25c397b99132cb2a47489a592846b6e2f86e15e188eaa4be3dec4889f2",
+    "strategies/_archive/discourse/src/formalizer.mjs": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb",
+    "strategies/_archive/discourse/src/index.mjs": "0ebee23e13f705d4b111ec0fd364aca39849093abaf142a1a8ac02f59c783311",
+    "strategies/_archive/discourse/src/judge.mjs": "eecbd7fed4937620cdacb539901c08e08db75f7f70a16ff3c204c406ea905cf1",
+    "strategies/_archive/discourse/test/formalizer.test.mjs": "c892717025f6e6151e85cfb472dcbb9fcc4c8985c4f1b38d5d31198f8013c20f",
+    "strategies/_archive/discourse/test/judge.test.mjs": "e0842eed7a557073a0a25047f4bb22b5cdecac999645962db15c7ec8ced442f0",
+    "strategies/_archive/discourse/test/prompt.test.mjs": "93d4ac69c72840e81365587dc476deb6c7e040557ea7c10104c61115acfdff33",
+    "strategies/_archive/lab/README.md": "522f532c85ec80c4d7b552f21736111b24a3e729bb092987b175b70de580b92f",
+    "strategies/_archive/lab/benchmarks/pilot-development.json": "39c96bd82dd4715ec52957bbc6d73a84cd47ebeeca59e673e281c1a192b2a254",
+    "strategies/_archive/lab/benchmarks/pilot-heldout.json": "21b83c6b5fbb2bf7bac53c9389e1f875f512cda15e170fdb1ba1d17f55359bd3",
+    "strategies/_archive/lab/src/cnl.mjs": "a56a9c7c2db237ac092d29379ef43087c464bcc82950fa28ae6112a4358535e6",
+    "strategies/_archive/lab/src/compiler.mjs": "5a75ef2fdefab1b7e92bff537aea7830a5349c445aa1502c6629304c16ea9d38",
+    "strategies/_archive/lab/src/corruptions.mjs": "6ee5ca7f0f56db2960aa2b72020cd364099729eb7a1d2dab62bd4b79a418faf1",
+    "strategies/_archive/lab/src/evaluator.mjs": "69930b649a5af6b2d92879469fa5edaa5b12de433c16f44a6118eb37916bc1d7",
+    "strategies/_archive/lab/src/index.mjs": "126ede2b3463f5b19ef8e1e9c3030b1dbe4e251ec9fdb01398d5558bbf2edd00",
+    "strategies/_archive/lab/src/ir.mjs": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e",
+    "strategies/_archive/lab/src/judge.mjs": "a45ff25954760b9e93405a718183e526c4312d0cdebec980e32bd30a98df7d5c",
+    "strategies/_archive/lab/src/protoir.mjs": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483",
+    "strategies/_archive/lab/src/reasoner.mjs": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f",
+    "strategies/_archive/lab/src/repairer.mjs": "0cf247bfe1a00a6bfca7c7039596473359a00ba2b3ae46341ca98d86244cd3f5",
+    "strategies/_archive/lab/src/strategies/direct-llm.mjs": "02cbcb85b78ca182d6abcd126d287cc08e5ed578f89637a2d1e47537a88f1f6b",
+    "strategies/_archive/lab/src/strategies/heuristic.mjs": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7",
+    "strategies/_archive/lab/src/strategies/proto-llm.mjs": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852",
+    "strategies/_archive/lab/src/strategies/repair-llm.mjs": "286204cc915820e1a1093e2c1979c7426270a780056032f6c333d264c2e3be0b",
+    "strategies/_archive/lab/src/strategy.mjs": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac",
+    "strategies/_archive/lab/src/util.mjs": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6",
+    "strategies/_archive/lab/tests/cnl.test.mjs": "fdf152164ed0edfc8fecabd02f0da8d98495c4d6f73c9992e804693393b0de21",
+    "strategies/_archive/lab/tests/compiler.test.mjs": "3ee6bc1e44a01280a9bd12a4769e5e400c08e0364584721e6f6f5c0a1decd149",
+    "strategies/_archive/lab/tests/corruptions.test.mjs": "463602f7b7135c1b10fecfdacc90aff1889614e24411f4f87bb6f2119afb4184",
+    "strategies/_archive/lab/tests/evaluator.test.mjs": "9459ffade2f0d73ed65586f04de91908d5b7583c74c3f6030f4d6c61099a027f",
+    "strategies/_archive/lab/tests/heuristic.test.mjs": "6b6baef691a139b63ba33c68e17f065b522d5892faa4a2f71b8feb16c483897b",
+    "strategies/_archive/lab/tests/ir.test.mjs": "ee77c3ff187d968955e0de9d998b9a7ff62393ec9ec1180ef04dec73e7c0ad52",
+    "strategies/_archive/lab/tests/judge.test.mjs": "47702f338329fb158141c48ac25e539a99ed16180a465e91ed9177d00a753cd4",
+    "strategies/_archive/lab/tests/proto-strategy.test.mjs": "9e50d9df04523ffd99df6c218cb271f8077c69cd2cf19b7033f0142fdca9e244",
+    "strategies/_archive/lab/tests/protoir.test.mjs": "1f247c28814b149e1ae06eb4cd34708ee213c73843564c3137bc2da4b53fe1cf",
+    "strategies/_archive/lab/tests/reasoner.test.mjs": "d4e7ba10ff0f7dd185f01049c2355e8358ae35185952d1621f414394fd1a8630",
+    "strategies/_archive/lab/tests/repair.test.mjs": "5288e181e3402bbcd67ddb281d11b97838439b1c8c750874b8665492b5317381",
+    "strategies/_archive/microir/README.md": "55612873bbba946522920ece580e9cd0940f46adc198aaca42e7dd69cf55398a",
+    "strategies/_archive/microir/src/cnl.mjs": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3",
+    "strategies/_archive/microir/src/index.mjs": "5fdab2191d36414d535d8beb022b3bccbd3c311aa019bbe32f6fab98ac66be94",
+    "strategies/_archive/microir/src/ir.mjs": "f49d9825c329b921b87a554fbc3773f56eb30a78f3cbb751253b03deca344feb",
+    "strategies/_archive/microir/src/pipeline.mjs": "580633980716bb0a8ba6028bcf6422cb790bb87f2a42eadf8e7a0a2a6c61d0d2",
+    "strategies/_archive/microir/src/prompts.mjs": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0",
+    "strategies/_archive/microir/src/wire.mjs": "6e96d78d3c76293d200d50402f0f6ce7fa09a1ff8bc8841042dfd36523dd3dc8",
+    "strategies/_archive/microir/test/run.mjs": "07d1f3a3ac5de190804e5d777d5a715d217683a6fdd6973eeb3ac6bf89fdcba4",
+    "strategies/_superseded/closed-grammar.mjs": "65e68ae14fd52f50fa8d62e126f524ed905372604e1fa8e4fe53d033b279eae0",
+    "strategies/_superseded/horn-restriction.mjs": "1050ea9accc983c169bfcd3be1cdd32f94f37eca65b01219858b816ea4eafc97",
+    "strategies/cnl-core/index.mjs": "a20001b28cc5ddfacb9561b680e0874a390537d61a75b3862d4395c25529ddbb",
+    "strategies/cnl-core/src/cnl-core.mjs": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956",
+    "strategies/cnl-core/task.mjs": "059a7b72f04b00d28227530c8f77245051811896ae185eee85d91f367b5ad08f",
+    "strategies/draft-repair/index.mjs": "0faba4733a1861dcc06b5a71c8f01d2091542ac5a8d593437c2a4b21784f76cc",
+    "strategies/draft-repair/task.mjs": "589d0a483e2beeca6ea7020237264a316eedacced6e8d6562597ef956b9bc3d9",
+    "strategies/evl/index.mjs": "9ec34f7d0c9c42e969fb7811fb2d35887806de35ee727c2fcf7a62c1089b50d8",
+    "strategies/evl/package.json": "b9adccb74c92a791f8d1c4f31f171fbf30904024a4f6fcee35602aed65c25d0a",
+    "strategies/evl/spec/evl-spec.md": "a9c0e2d531916b2f24ead0d167b9a30bbd208da3786a8196763865b99bea1f84",
+    "strategies/evl/spec/prompts.json": "a8d6bf6a91ccb1e0f4eee231e340ffe9ad19dfe74be6446498d3c61bc1921d8b",
+    "strategies/evl/src/check.mjs": "dd226dae1245efa9acf7416ca2282d712470477f836a4f4a2e67bf0b27d6a425",
+    "strategies/evl/src/english.mjs": "b74d71651adaebb4d9ca94fc9168583c6a6fe396ca072429e51ed1abadddc93f",
+    "strategies/evl/src/kb.mjs": "54413455ce1742be358b1ff2407195217ac00a79bb77d75ccddc4babd5b3ad23",
+    "strategies/evl/src/loop.mjs": "563c5b1e546321580600e9e59bb3633a9e47d0e5b51e51393be8026d93471f89",
+    "strategies/evl/src/morph.mjs": "d522dc1644a101015d7cdf1ffda4f1d1244d6d92c59d54a0221bd313fe622512",
+    "strategies/evl/src/qa.mjs": "c89adef086656686ce724ddc68d94e21532ebb94afb13c1ccf2327254b2d0d7c",
+    "strategies/evl/src/terms.mjs": "48bc97cdc9a2ffe24447284656598d6d49f84708fa4fc6f007891e57b44a0b97",
+    "strategies/evl/src/util.mjs": "8967887f01aa805bf60a42d09ecbe3ab2bada7efed31d8a0887ca5bbe27ae512",
+    "strategies/evl/task.mjs": "310c2405c043939ab867e18458b52d3375a30d6312e6d5c2aab9c5a08ee4dcdc",
+    "strategies/evl/test/fixtures.json": "d2163ca20c468994c9a9a6a16b0cf39621c1bac35584359be8d405852b0e13e6",
+    "strategies/evl/test/parity.test.mjs": "edbc78ff6e872558f4f932b369d5660a47af61a202a51f411b938f4cbfab4d45",
+    "strategies/lab-direct/index.mjs": "cb6ddb77e68ebbc16b7636275a210e1c4f1493f7686276ed882cefa725baec6a",
+    "strategies/lab-direct/task.mjs": "5a61d5f1ac845aebd9592fc900977a53805fae5c49bfa9d4e414a956d71cf135",
+    "strategies/lab-heuristic/index.mjs": "2f7c1e71615f58a453532c2f2ff33aaca1734c8d383a903cb9f77bd47c21cdbd",
+    "strategies/lab-proto/index.mjs": "76d685489f8039b1ff9d428f3e4a12c232d5d6f770ad8edb24f4669dd4505bb0",
+    "strategies/lab-proto/task.mjs": "346a9ee3a452c126a5f8efa6c6816b392544e85b922dd43d95f5b59384aa9a92",
+    "strategies/lab-shared/adapter.mjs": "58977f80180e3e3c8f9cfbf1bfbd25ba338f869497697f89a4518ddf322c0d34",
+    "strategies/lab-shared/coverage.mjs": "698e3331e4a73ab1f6bf068b99f57877627dc297621e86f5fa613a0f72926de2",
+    "strategies/lab-shared/src/cnl.mjs": "a56a9c7c2db237ac092d29379ef43087c464bcc82950fa28ae6112a4358535e6",
+    "strategies/lab-shared/src/compiler.mjs": "5a75ef2fdefab1b7e92bff537aea7830a5349c445aa1502c6629304c16ea9d38",
+    "strategies/lab-shared/src/corruptions.mjs": "6ee5ca7f0f56db2960aa2b72020cd364099729eb7a1d2dab62bd4b79a418faf1",
+    "strategies/lab-shared/src/evaluator.mjs": "69930b649a5af6b2d92879469fa5edaa5b12de433c16f44a6118eb37916bc1d7",
+    "strategies/lab-shared/src/index.mjs": "126ede2b3463f5b19ef8e1e9c3030b1dbe4e251ec9fdb01398d5558bbf2edd00",
+    "strategies/lab-shared/src/ir.mjs": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e",
+    "strategies/lab-shared/src/judge.mjs": "a45ff25954760b9e93405a718183e526c4312d0cdebec980e32bd30a98df7d5c",
+    "strategies/lab-shared/src/protoir.mjs": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483",
+    "strategies/lab-shared/src/reasoner.mjs": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f",
+    "strategies/lab-shared/src/repairer.mjs": "0cf247bfe1a00a6bfca7c7039596473359a00ba2b3ae46341ca98d86244cd3f5",
+    "strategies/lab-shared/src/strategies/direct-llm.mjs": "02cbcb85b78ca182d6abcd126d287cc08e5ed578f89637a2d1e47537a88f1f6b",
+    "strategies/lab-shared/src/strategies/heuristic.mjs": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7",
+    "strategies/lab-shared/src/strategies/proto-llm.mjs": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852",
+    "strategies/lab-shared/src/strategies/repair-llm.mjs": "286204cc915820e1a1093e2c1979c7426270a780056032f6c333d264c2e3be0b",
+    "strategies/lab-shared/src/strategy.mjs": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac",
+    "strategies/lab-shared/src/util.mjs": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6",
+    "strategies/microir/index.mjs": "a578125b600a4806e9610eaf76ef0e190962e1b402540789640da12e74ef7b1b",
+    "strategies/microir/judge-task.mjs": "e84ae8583e2a2d984c612a4fc09f0fc11772bf1d2301184df8426b4192437642",
+    "strategies/microir/pipeline.mjs": "8f0ce4c58b165259b70e16fd150612e1ba3100aef666c208a8500e4c0650bd2a",
+    "strategies/microir/reasoner.mjs": "937ef5d106a8fe82d930b69596be6987c70ea28f33da788f591f3384d883ed52",
+    "strategies/microir/repair-task.mjs": "94cf692bc25d60e1bb3003f93b1778da1888198cc127c6a8127f4f6788987fc4",
+    "strategies/microir/src/cnl.mjs": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3",
+    "strategies/microir/src/ir.mjs": "827f4b1a4e706899e09447c5af39a216d0937ba03a183bc67ef85a8a5f780596",
+    "strategies/microir/src/pipeline.mjs": "580633980716bb0a8ba6028bcf6422cb790bb87f2a42eadf8e7a0a2a6c61d0d2",
+    "strategies/microir/src/prompts.mjs": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0",
+    "strategies/microir/src/wire.mjs": "92887fa06fbc71dcb91f91ba095a5f260a97821fc571a2ac5108714c49f7a201",
+    "strategies/microir/task.mjs": "d803788fdb67cfabf347290ee75c6c145c7b3469d5fd0240577187e0a50d2bbf",
+    "strategies/microir-hybrid/index.mjs": "65e68ae14fd52f50fa8d62e126f524ed905372604e1fa8e4fe53d033b279eae0",
+    "strategies/microir-hybrid/task.mjs": "bd0c2500b6e7a7a6946fcec02a6d2ee081e8be5e42330e11c52e48f0b33af5e5",
+    "strategies/symbolic/index.mjs": "1d348ad5b5f28a736fcee0e3a4079c16ea44203c369280fc8b96c45dd8ec2360",
+    "strategies/symbolic/judge-task.mjs": "b9e8004548684b64d4a6069283df885bca2bda5d4a01d82512be09b2eb69b0cc",
+    "strategies/symbolic/src/formalizer.mjs": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb",
+    "strategies/symbolic/src/judge.mjs": "eecbd7fed4937620cdacb539901c08e08db75f7f70a16ff3c204c406ea905cf1",
+    "tasks/judge-bidirectional.mjs": "58e77d927deb6ca73eb1be99f2cb47e78fead2971944cdd92f184bc6a94d7680",
+    "tasks/judge-direct.mjs": "05b327d973dfcdc4c0d024a6dc5353640d631461587ae8aaf72faacae785101d",
+    "test/archive-parity.test.mjs": "145d9d526148427e84774e7f845da6266a0df0b33986d8033dadb5fd30056b49",
+    "test/corpus-metrics.test.mjs": "b930b74793ad67fb2f229080f7639b45d98ab78eea389ede52425c4a680faccf",
+    "test/pipeline.test.mjs": "949e5c0683f29121c0845b008e5291411f29e262b9f323b28620b1e4a85b7986",
+    "test/reasoning.test.mjs": "c868628d1288e5012da1e4d6d4ff0cdbdc7506854ad66a5f5a1209bf48cbab70",
+    "tools/calibrate-judge.mjs": "77904cad0eb672af03737fd909e3a7ea0c623feb1eea13393cae0fb30e47b177",
+    "tools/formalize.mjs": "2abddd6b1a2dad05d7312050571cf77420a3c51e6b013469cfbcb70dda5f0e5f",
+    "tools/inspect-corpus.mjs": "d7effea479f13c71aeace8634972fe71801b1d10463f1aff21ede3d642ac28cb",
+    "tools/judge.mjs": "823e9868f0ac4edf0fa924f1ff198938925f0c8f481777586b6b1ec9b471b3b9",
+    "tools/lib/audit.mjs": "aee0fcbd69c1663e860030ca575ff971228ea3595aca83da1c5a3682ff19897f",
+    "tools/lib/cli.mjs": "347c08ff5e8f5e6de4812a4481efcf84cf8975ee08953f6f8d7543feb735d342",
+    "tools/lib/evalset.mjs": "8200faa21ea117d2a4f5939d5a69e8381047c5a9ad5f31e80a36967840783f08",
+    "tools/lib/judge.mjs": "1dabbbbd65530c2e6170a23673927fee3443e7967f38ae96db6f6c3a4ec56f8b",
+    "tools/lib/llm.mjs": "89d60b76e92d345f272a3a42bfd7734e9ddc8a414184ed2e052d045491675623",
+    "tools/lib/metrics.mjs": "12ba6b9c4e9e8019c2a60854051653ccf367fd9d4ca33f628e5fc40e93182da5",
+    "tools/lib/pworker.mjs": "f556a7b611bc2e92e3af4aeb905286ee7c759947de5b3af07144ed8736a7c142",
+    "tools/lib/registry.mjs": "3d2da2ffd7537140880c113287135c945aab7a18716626d6d0a55d68d850a660",
+    "tools/lib/strategies.mjs": "b6490acc713fbb4198cc45c48da46b982966f67c4d1bbc2dbca95071ca4034a4",
+    "tools/lib/task-spec.mjs": "cf5f1fc973ff3e926ad0fd86477415c205abab1c907bb55b82a3daaaa8174040",
+    "tools/run-eval.mjs": "dff6cefdeaf6d5eca40142df8f3235b7a1472ba05af10f1c7684b8e7c3c6c338",
+    "tools/summarize-experiments.mjs": "54022d0e14bb6bac896e933173f6a36dd74d9165aff9358705c302e65f8616b0",
+    "../Ploinky-Worker/lib/agent/agent-skills.mjs": "06ee4ef3a66dcadf302d8d30b7d411436e12a0dea0bbfdff45f5d00e2e07ba7f",
+    "../Ploinky-Worker/lib/agent/bm25.mjs": "aa68d407ba34dac220e59ddb315879d232902788f74e24d0b06715eea63d22fb",
+    "../Ploinky-Worker/lib/agent/frontmatter.mjs": "224c1a8690160c70b2c59f797e9ab56d3c3676bba84f58fd5137fec88c42457e",
+    "../Ploinky-Worker/lib/agent/index.mjs": "99cd318de56cc76a23ce78c651432d559d38f612a0c8b5eee3280a53a39243c7",
+    "../Ploinky-Worker/lib/agent/lambda-cache.mjs": "05f7f0edb25ac2d8f655a5f910c292bacd119d0bcbac24058a278a5c3f8f487b",
+    "../Ploinky-Worker/lib/agent/lambda-code.mjs": "777f69714d279b9dbf75baab2ba074a26b957a9e7db2a35433aab25d31ed2f7d",
+    "../Ploinky-Worker/lib/agent/match.mjs": "a98a37ecb12f1ec20479a5dd242b2faf2a6b17ceb4e4b40af9aa931c94d2d97e",
+    "../Ploinky-Worker/lib/agent/run.mjs": "a708a146fcdb59b085b4a1798e9144e85a28470d0a3e8bfd90b6254c736c4303",
+    "../Ploinky-Worker/lib/agent/workspace.mjs": "7e08a694ed7877953ce8e110872deadf4162bae738f6d3529e2a7cf36b80937b",
+    "../Ploinky-Worker/lib/audit.mjs": "2cea8ab31a5d0d2dda301be886d9a90123182a6ee402282132efd6b4a84980ed",
+    "../Ploinky-Worker/lib/cache.mjs": "3072fc86be43feb908cc33d2da99ce6ef325f847a631f8075b691a99398a25ac",
+    "../Ploinky-Worker/lib/client.mjs": "1f476003fc44d2bee2307aee9f14f4ffda9d0df87e9f7c1d8af20260061b1a66",
+    "../Ploinky-Worker/lib/config.mjs": "df279e71295b726d6a6c9323df1fccf51ccb27dd8002e58b2d6dc4085b2c60e5",
+    "../Ploinky-Worker/lib/core.mjs": "7745c417a96e54b4df024da41a28c02685ca1e08b242b7a4baea4fa169de84ad",
+    "../Ploinky-Worker/lib/dashboard.mjs": "9e95bc187768eccff1605bfd41a70117973e93cf14f2f1d71a96b59184e92df7",
+    "../Ploinky-Worker/lib/guard.mjs": "fe530c38bf00385f3c794f360151ec831fb056f1c0c3c4966270552a4ce7f89d",
+    "../Ploinky-Worker/lib/http-fetch.mjs": "f4b6b38232887e5758e283560e3c9cbf1fcd8370b722443126ee4b47c0b18663",
+    "../Ploinky-Worker/lib/inproc.mjs": "9585917cc639b12fa0e36c830cd6cf94b39e1949a6f82a0a7d60c5625a6b2a82",
+    "../Ploinky-Worker/lib/jobs/client.mjs": "4a2ea6a481e698957eb429131e0bc571b07a891fc696ba43970fbebcb1d9b9d4",
+    "../Ploinky-Worker/lib/jobs/config.mjs": "dd16e58f50beacd6ebe70c41b5c0c430ae8fdf17bce588665c7ebe9bbe02619d",
+    "../Ploinky-Worker/lib/jobs/index.mjs": "77622009c9d208d6df2ace816d38237cc33499cf2bca1cedf35b07513b6579d2",
+    "../Ploinky-Worker/lib/jobs/inputs.mjs": "1285e046eda23cd958177827e728d51ea40ec3a9635159438f3384b24d46d175",
+    "../Ploinky-Worker/lib/jobs/outputs.mjs": "f206ccedf2b84ebef565b315ac1eebe7b0bb98c6ef4801e07c4c4d2caada086d",
+    "../Ploinky-Worker/lib/jobs/planner.mjs": "c2da9810387a45017be726882b9c42c7a5de1574388b04acf63367097e2623c2",
+    "../Ploinky-Worker/lib/jobs/review.mjs": "760a6cc058acbc51c66684a509df33fc872dfec15d3ed3b3eb6957188e57148f",
+    "../Ploinky-Worker/lib/jobs/runner.mjs": "dbd1920cb1f4ba22c58df50db2d1424c936ec3554a9867a23f6d74ea474995e4",
+    "../Ploinky-Worker/lib/jobs/spec.mjs": "333183676d755c7e888796d81bf2bbe42edc8f01e4ef489770aede5efe13ac40",
+    "../Ploinky-Worker/lib/jobs/store.mjs": "165acd12cbee1afc61fe462ef808a93997ee9155fdcb70b5f95cc567f5f07754",
+    "../Ploinky-Worker/lib/jobs/task.mjs": "c228e6e5892a5baff8c96267abfb0d2bb480bee8828267ab27adc450058be08b",
+    "../Ploinky-Worker/lib/jobs/tiers.mjs": "631db148d05d751c741072e907f8f1b72e5598735ecfd39acfb1d818d406a40c",
+    "../Ploinky-Worker/lib/jobs/util.mjs": "18e06a51b388a89dcb1e781cbde04212cb1a22f23ceac3baa7f434c1704ac88e",
+    "../Ploinky-Worker/lib/lambda/calls.mjs": "3205c4a9c9f0d523fb8b8879bb9294397cd0fdbba0a48c7e8cf3f3d576f494df",
+    "../Ploinky-Worker/lib/lambda/effects.mjs": "8c664037108787801ff9baa7baa3ecc45bae04be8a41381cbb2d2d7d5f907f63",
+    "../Ploinky-Worker/lib/lambda/import.mjs": "986e7c7b53d46d2dc4ec258909ad6c982472f2681fea06cf3104e765a012098a",
+    "../Ploinky-Worker/lib/lambda/index.mjs": "b94522c4f3416b7921717958cb9a2a580bc45d580b764a920fb8175b7eede7f0",
+    "../Ploinky-Worker/lib/lambda/registry.mjs": "7debee2b2cb0c6c5fcb9d80bb9e35a7fe94f726c4ba5ac1a177c64d219ea22aa",
+    "../Ploinky-Worker/lib/limiter.mjs": "55789f5a2549d8726b79421b77c2f51be0589748855a9a2ce031082af5380b73",
+    "../Ploinky-Worker/lib/local.mjs": "95540b77f86b5a4f0b332768bec3f64ad8cde8cf3513f6415df534ac25a7701f",
+    "../Ploinky-Worker/lib/monitor.mjs": "efe2659b6924855ed811b14a05832437c5773245279182122e67b92b3b181b36",
+    "../Ploinky-Worker/lib/plan.mjs": "b9c35a01ab6aaff9ebe17521666f7f524ba1ad1eb41ad129d370c495a4aa5262",
+    "../Ploinky-Worker/lib/prompted.mjs": "b25bf6134d5a5ee97cba6f8b6f921a284c88fb03a94ff744168376287dbc2a66",
+    "../Ploinky-Worker/lib/pworker/help.mjs": "c90e40b20db4283f6243ed0113c57b102e910afdf8b0e8434ef3261245fd04d0",
+    "../Ploinky-Worker/lib/pworker/jobs.mjs": "f9355864a7d8befef083094a26048879d380da6756e26541675292ade6ca67e9",
+    "../Ploinky-Worker/lib/pworker/menu.mjs": "87b8c344e29fc718c26e9f7281ed770412d0b86356eb6f8c6c6dee9d996bd60b",
+    "../Ploinky-Worker/lib/pworker/providers.mjs": "60d105d664801e7a922d64775bc13101b2f58a3ba1585d9567e3a74f98d2194d",
+    "../Ploinky-Worker/lib/pworker/task.mjs": "412ba931f61fbc31563b11ab61be91e3803261f339eb797848813635da809a01",
+    "../Ploinky-Worker/lib/sandbox.mjs": "257abc79d291c62cc4d2453127f2397d4cff43ff0f43a7ecc81848b7cea36d19",
+    "../Ploinky-Worker/lib/server.mjs": "949ccb8fe4294d346b3ae7eed4489eb1c02c753135b3b6d2c2b0b2e6afd7bbf6",
+    "../Ploinky-Worker/lib/settings.mjs": "fbe6b8c768bd83a33e8ec7fc6ca33fc63f5ae794eb5c3b03518119134e7543ba",
+    "../Ploinky-Worker/lib/worker.mjs": "3f120e219de8c39d632e16f98b3d5d68caaeedd79e46bb707487231ce10e9f5f"
+  },
+  "node": "v24.9.0",
+  "argv": [
+    "--strategy",
+    "discourse-semantic-graph",
+    "--set",
+    "archive-discourse-dialogue",
+    "--stage",
+    "source",
+    "--offline",
+    "--id",
+    "015-restored-dialogue-offline"
+  ],
+  "rejudgeOf": null
+}

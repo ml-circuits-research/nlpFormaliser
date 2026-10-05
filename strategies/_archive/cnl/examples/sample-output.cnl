@@ -1,0 +1,6 @@
+PROPOSE: We should use Luna because Luna should be cheaper.
+REQUEST: You do not change anything yet.
+REQUEST: You determine whether Luna gets at least 95% on the previous dataset.
+REQUEST: If Luna gets at least 95% on the previous dataset, then you use Luna for the next experiment.
+REQUEST: If Luna gets less than 95% on the previous dataset, then you continue to use Sol.
+ASK: How much slower is Sol than Luna?

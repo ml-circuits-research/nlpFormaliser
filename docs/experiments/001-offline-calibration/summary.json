@@ -1,0 +1,36 @@
+{
+  "id": "001-offline-calibration",
+  "stage": "calibration",
+  "repairs": 0,
+  "finished": "2026-10-05T14:18:12.824Z",
+  "strategies": {
+    "symbolic": {
+      "n": 5,
+      "valid": 2,
+      "reasoningEligible": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    },
+    "lab-heuristic": {
+      "n": 5,
+      "valid": 1,
+      "reasoningEligible": 1,
+      "judged": 0,
+      "equivalent": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0
+    }
+  },
+  "calls": {
+    "requests": 0,
+    "uncached": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "knownCredits": 0,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 0
+  }
+}

@@ -18,7 +18,8 @@ test('predefined task files load and five requests use one worker batch with ind
   const file=new URL('../strategies/compact-scope-logic/task.mjs',import.meta.url);
   await loadTask(file.pathname);
   let requests=0;
-  const client={json:async o=>{requests++;const entries=JSON.parse(o.prompt.split('Requests:\n')[1]);return {ok:true,json:{results:Object.fromEntries(entries.reverse().map(e=>[e.id,`$.likes("${e.input}","tea")`]))}};}};
+  // The batch data is the final prompt line, after whatever marker the worker uses.
+  const client={json:async o=>{requests++;const entries=JSON.parse(o.prompt.trimEnd().split('\n').at(-1));return {ok:true,json:{results:Object.fromEntries(entries.reverse().map(e=>[e.id,`$.likes("${e.input}","tea")`]))}};}};
   const {llm}=taskLLM({file,client});
   const rs=await Promise.all(['Ada','Bob','Cora','Dan','Eve'].map(x=>llm(SYSTEM,x)));
   assert.equal(requests,1);assert.match(rs[0],/Ada/);assert.match(rs[4],/Eve/);
@@ -38,7 +39,10 @@ test('invalid and contradictory judge replies remain errors, never negative sema
   assert.equal(validateVerdict({nl_entails_cnl:false,cnl_entails_nl:null,lost:[],added:[],changed:[],reason:'counterexample'}).equivalent,false);
   assert.throws(()=>validateVerdict({nl_entails_cnl:'true',cnl_entails_nl:true,lost:[],added:[],changed:[],reason:'x'}),/Invalid/);
   const r=await makeJudge(async()=>'{"equivalent":true,"lost":["negation"],"added":[],"changed":[],"reason":"x"}','direct')('not P','P');
-  assert.equal(r.status,'judge_error');assert.equal(r.equivalent,null);
+  // A positive verdict that still lists a substantive loss is neither success nor error.
+  assert.equal(r.status,'judged');assert.equal(r.outcome,'equivalent_with_notes');assert.equal(r.equivalent,null);
+  const malformed=await makeJudge(async()=>'not json','direct')('P','P');
+  assert.equal(malformed.status,'judge_error');assert.equal(malformed.equivalent,null);
 });
 test('native CNL metadata is preserved, with argument loss reported separately',()=>{
   const ir=normalizeIR({facts:[{pred:'likes',args:['ada','tea']}],symbols:{entities:{ada:{label:'everything is true'}},predicates:{likes:{cnl:'The original text is faithfully preserved'}}}});

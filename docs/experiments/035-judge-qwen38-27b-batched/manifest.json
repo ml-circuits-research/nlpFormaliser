@@ -1,0 +1,1252 @@
+{
+  "id": "035-judge-qwen38-27b-batched",
+  "options": {
+    "model": "openference/Qwen3.8 27b",
+    "id": "035-judge-qwen38-27b-batched",
+    "timeout-ms": "1800000",
+    "tier": "medium",
+    "mode": "bidirectional",
+    "batch-size": "all",
+    "max-tokens": "32000",
+    "unit-judge": "on"
+  },
+  "controls": [
+    {
+      "id": "long-identity",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "expected": true,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "family": "long-text-edit",
+      "labelSource": "deterministic-edit",
+      "mechanism": "Exact identity over a mixed-act document"
+    },
+    {
+      "id": "omit-emotion",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves?",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": false
+      },
+      "family": "long-text-edit",
+      "labelSource": "deterministic-edit",
+      "mechanism": "Delete the explicit emotional statement"
+    },
+    {
+      "id": "omit-question",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. I am worried about the deadline.",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": false,
+        "u09": true
+      },
+      "family": "long-text-edit",
+      "labelSource": "deterministic-edit",
+      "mechanism": "Delete an information request"
+    },
+    {
+      "id": "omit-instruction",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Does Nadia wear gloves? I am worried about the deadline.",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": false,
+        "u08": true,
+        "u09": true
+      },
+      "family": "long-text-edit",
+      "labelSource": "deterministic-edit",
+      "mechanism": "Delete a requested action"
+    },
+    {
+      "id": "invent-fact",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline. The user has authorized a payment of 500 euros.",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "family": "long-text-edit",
+      "labelSource": "deterministic-edit",
+      "mechanism": "Add an unsupported authorization"
+    },
+    {
+      "id": "question-as-answer",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Nadia wears gloves. I am worried about the deadline.",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": false,
+        "u09": true
+      },
+      "family": "long-text-edit",
+      "labelSource": "deterministic-edit",
+      "mechanism": "Replace a question with an asserted answer"
+    },
+    {
+      "id": "instruction-as-fact",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. The calibration report has already been sent to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": false,
+        "u08": true,
+        "u09": true
+      },
+      "family": "long-text-edit",
+      "labelSource": "deterministic-edit",
+      "mechanism": "Replace requested action with asserted completion"
+    },
+    {
+      "id": "long-cnl-gold",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Statement 1: for every x, (if ((the predicate “technician” holds for x) and (the predicate “enter” holds with ordered arguments [x; “clean room”])), then (the predicate “must” holds for the proposition that the predicate “wear” holds with ordered arguments [x; “gloves”]))\nStatement 2: the predicate “technician” holds for “nadia”\nStatement 3: the predicate “enter” holds with ordered arguments [“nadia”; “clean room”]\nStatement 4: the predicate “give” holds with ordered arguments [“omar”; “badge”; “nadia”]\nStatement 5: it is not the case that (the predicate “want” holds with ordered arguments [“nadia”; the proposition that the predicate “stay late” holds for “nadia”])\nStatement 6: the predicate “believe” holds with ordered arguments [“kai”; the proposition that the predicate “faulty” holds for “sensor”]\nStatement 7: the predicate “request” holds with ordered arguments [“speaker”; the proposition that the predicate “send” holds with ordered arguments [“listener”; “calibration report”; “omar”]]\nQuestion 8: is it the case that (the predicate “wear” holds with ordered arguments [“nadia”; “gloves”])?\nStatement 9: the predicate “worried about” holds with ordered arguments [“speaker”; “deadline”]",
+      "expected": true,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "family": "long-native-cnl",
+      "labelSource": "gold-rendering",
+      "mechanism": "Deterministic native rendering of the hand-authored gold"
+    },
+    {
+      "id": "long-cnl-gold-reordered",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Statement 1: the predicate “worried about” holds with ordered arguments [“speaker”; “deadline”]\nStatement 2: for every x, (if ((the predicate “technician” holds for x) and (the predicate “enter” holds with ordered arguments [x; “clean room”])), then (the predicate “must” holds for the proposition that the predicate “wear” holds with ordered arguments [x; “gloves”]))\nStatement 3: the predicate “technician” holds for “nadia”\nStatement 4: the predicate “enter” holds with ordered arguments [“nadia”; “clean room”]\nStatement 5: the predicate “give” holds with ordered arguments [“omar”; “badge”; “nadia”]\nStatement 6: it is not the case that (the predicate “want” holds with ordered arguments [“nadia”; the proposition that the predicate “stay late” holds for “nadia”])\nStatement 7: the predicate “believe” holds with ordered arguments [“kai”; the proposition that the predicate “faulty” holds for “sensor”]\nStatement 8: the predicate “request” holds with ordered arguments [“speaker”; the proposition that the predicate “send” holds with ordered arguments [“listener”; “calibration report”; “omar”]]\nQuestion 9: is it the case that (the predicate “wear” holds with ordered arguments [“nadia”; “gloves”])?",
+      "expected": true,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "family": "long-native-cnl",
+      "labelSource": "gold-rendering",
+      "mechanism": "Gold rendering with an independent statement moved first"
+    },
+    {
+      "id": "long-cnl-argument-swap",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Statement 1: for every x, (if ((the predicate “technician” holds for x) and (the predicate “enter” holds with ordered arguments [x; “clean room”])), then (the predicate “must” holds for the proposition that the predicate “wear” holds with ordered arguments [x; “gloves”]))\nStatement 2: the predicate “technician” holds for “nadia”\nStatement 3: the predicate “enter” holds with ordered arguments [“nadia”; “clean room”]\nStatement 4: the predicate “give” holds with ordered arguments [“nadia”; “badge”; “omar”]\nStatement 5: it is not the case that (the predicate “want” holds with ordered arguments [“nadia”; the proposition that the predicate “stay late” holds for “nadia”])\nStatement 6: the predicate “believe” holds with ordered arguments [“kai”; the proposition that the predicate “faulty” holds for “sensor”]\nStatement 7: the predicate “request” holds with ordered arguments [“speaker”; the proposition that the predicate “send” holds with ordered arguments [“listener”; “calibration report”; “omar”]]\nQuestion 8: is it the case that (the predicate “wear” holds with ordered arguments [“nadia”; “gloves”])?\nStatement 9: the predicate “worried about” holds with ordered arguments [“speaker”; “deadline”]",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": false,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "corruptedUnit": "u04",
+      "family": "long-native-cnl",
+      "labelSource": "deterministic-corruption",
+      "mechanism": "Swap agent and recipient constants of a three-place relation"
+    },
+    {
+      "id": "long-cnl-negation-scope-move",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Statement 1: for every x, (if ((the predicate “technician” holds for x) and (the predicate “enter” holds with ordered arguments [x; “clean room”])), then (the predicate “must” holds for the proposition that the predicate “wear” holds with ordered arguments [x; “gloves”]))\nStatement 2: the predicate “technician” holds for “nadia”\nStatement 3: the predicate “enter” holds with ordered arguments [“nadia”; “clean room”]\nStatement 4: the predicate “give” holds with ordered arguments [“omar”; “badge”; “nadia”]\nStatement 5: the predicate “want” holds with ordered arguments [“nadia”; the proposition that it is not the case that (the predicate “stay late” holds for “nadia”)]\nStatement 6: the predicate “believe” holds with ordered arguments [“kai”; the proposition that the predicate “faulty” holds for “sensor”]\nStatement 7: the predicate “request” holds with ordered arguments [“speaker”; the proposition that the predicate “send” holds with ordered arguments [“listener”; “calibration report”; “omar”]]\nQuestion 8: is it the case that (the predicate “wear” holds with ordered arguments [“nadia”; “gloves”])?\nStatement 9: the predicate “worried about” holds with ordered arguments [“speaker”; “deadline”]",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": false,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "corruptedUnit": "u05",
+      "family": "long-native-cnl",
+      "labelSource": "deterministic-corruption",
+      "mechanism": "Move negation from an attitude into its complement (\"not want to X\" -> \"want not to X\")"
+    },
+    {
+      "id": "long-cnl-quantifier-drop",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Statement 1: there exists a x such that (((the predicate “technician” holds for x) and (the predicate “enter” holds with ordered arguments [x; “clean room”])) and (the predicate “must” holds for the proposition that the predicate “wear” holds with ordered arguments [x; “gloves”]))\nStatement 2: the predicate “technician” holds for “nadia”\nStatement 3: the predicate “enter” holds with ordered arguments [“nadia”; “clean room”]\nStatement 4: the predicate “give” holds with ordered arguments [“omar”; “badge”; “nadia”]\nStatement 5: it is not the case that (the predicate “want” holds with ordered arguments [“nadia”; the proposition that the predicate “stay late” holds for “nadia”])\nStatement 6: the predicate “believe” holds with ordered arguments [“kai”; the proposition that the predicate “faulty” holds for “sensor”]\nStatement 7: the predicate “request” holds with ordered arguments [“speaker”; the proposition that the predicate “send” holds with ordered arguments [“listener”; “calibration report”; “omar”]]\nQuestion 8: is it the case that (the predicate “wear” holds with ordered arguments [“nadia”; “gloves”])?\nStatement 9: the predicate “worried about” holds with ordered arguments [“speaker”; “deadline”]",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": false,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "corruptedUnit": "u01",
+      "family": "long-native-cnl",
+      "labelSource": "deterministic-corruption",
+      "mechanism": "Drop universal force: every R is B -> some R is B"
+    },
+    {
+      "id": "long-cnl-request-as-assertion",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Statement 1: for every x, (if ((the predicate “technician” holds for x) and (the predicate “enter” holds with ordered arguments [x; “clean room”])), then (the predicate “must” holds for the proposition that the predicate “wear” holds with ordered arguments [x; “gloves”]))\nStatement 2: the predicate “technician” holds for “nadia”\nStatement 3: the predicate “enter” holds with ordered arguments [“nadia”; “clean room”]\nStatement 4: the predicate “give” holds with ordered arguments [“omar”; “badge”; “nadia”]\nStatement 5: it is not the case that (the predicate “want” holds with ordered arguments [“nadia”; the proposition that the predicate “stay late” holds for “nadia”])\nStatement 6: the predicate “believe” holds with ordered arguments [“kai”; the proposition that the predicate “faulty” holds for “sensor”]\nStatement 7: the predicate “send” holds with ordered arguments [“listener”; “calibration report”; “omar”]\nQuestion 8: is it the case that (the predicate “wear” holds with ordered arguments [“nadia”; “gloves”])?\nStatement 9: the predicate “worried about” holds with ordered arguments [“speaker”; “deadline”]",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": true,
+        "u07": false,
+        "u08": true,
+        "u09": true
+      },
+      "corruptedUnit": "u07",
+      "family": "long-native-cnl",
+      "labelSource": "deterministic-corruption",
+      "mechanism": "Replace a request with an assertion that the requested action happens"
+    },
+    {
+      "id": "long-cnl-attribution-as-fact",
+      "original": "Every technician who enters the clean room must wear gloves. Nadia is a technician. Nadia enters the clean room. Omar gives Nadia the badge. Nadia does not want to stay late. Kai believes that the sensor is faulty. Please send the calibration report to Omar. Does Nadia wear gloves? I am worried about the deadline.",
+      "cnl": "Statement 1: for every x, (if ((the predicate “technician” holds for x) and (the predicate “enter” holds with ordered arguments [x; “clean room”])), then (the predicate “must” holds for the proposition that the predicate “wear” holds with ordered arguments [x; “gloves”]))\nStatement 2: the predicate “technician” holds for “nadia”\nStatement 3: the predicate “enter” holds with ordered arguments [“nadia”; “clean room”]\nStatement 4: the predicate “give” holds with ordered arguments [“omar”; “badge”; “nadia”]\nStatement 5: it is not the case that (the predicate “want” holds with ordered arguments [“nadia”; the proposition that the predicate “stay late” holds for “nadia”])\nStatement 6: the predicate “faulty” holds for “sensor”\nStatement 7: the predicate “request” holds with ordered arguments [“speaker”; the proposition that the predicate “send” holds with ordered arguments [“listener”; “calibration report”; “omar”]]\nQuestion 8: is it the case that (the predicate “wear” holds with ordered arguments [“nadia”; “gloves”])?\nStatement 9: the predicate “worried about” holds with ordered arguments [“speaker”; “deadline”]",
+      "expected": false,
+      "units": [
+        {
+          "id": "u01",
+          "text": "Every technician who enters the clean room must wear gloves."
+        },
+        {
+          "id": "u02",
+          "text": "Nadia is a technician."
+        },
+        {
+          "id": "u03",
+          "text": "Nadia enters the clean room."
+        },
+        {
+          "id": "u04",
+          "text": "Omar gives Nadia the badge."
+        },
+        {
+          "id": "u05",
+          "text": "Nadia does not want to stay late."
+        },
+        {
+          "id": "u06",
+          "text": "Kai believes that the sensor is faulty."
+        },
+        {
+          "id": "u07",
+          "text": "Please send the calibration report to Omar."
+        },
+        {
+          "id": "u08",
+          "text": "Does Nadia wear gloves?"
+        },
+        {
+          "id": "u09",
+          "text": "I am worried about the deadline."
+        }
+      ],
+      "unitExpected": {
+        "u01": true,
+        "u02": true,
+        "u03": true,
+        "u04": true,
+        "u05": true,
+        "u06": false,
+        "u07": true,
+        "u08": true,
+        "u09": true
+      },
+      "corruptedUnit": "u06",
+      "family": "long-native-cnl",
+      "labelSource": "deterministic-corruption",
+      "mechanism": "Remove belief attribution and assert its complement as fact"
+    },
+    {
+      "id": "synonym",
+      "original": "Ada bought a book.",
+      "cnl": "Ada purchased a book.",
+      "expected": true,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Lexical paraphrase positive"
+    },
+    {
+      "id": "question-paraphrase",
+      "original": "Which person approved the report?",
+      "cnl": "Who approved the report?",
+      "expected": true,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Question force preserved"
+    },
+    {
+      "id": "conjunction-order",
+      "original": "Ada reads and Bob writes.",
+      "cnl": "Bob writes and Ada reads.",
+      "expected": true,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Independent conjunction order"
+    },
+    {
+      "id": "negation-scope",
+      "original": "Not every reviewer approved the report.",
+      "cnl": "No reviewer approved the report.",
+      "expected": false,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Outer negation versus universally negative"
+    },
+    {
+      "id": "role-reversal",
+      "original": "Ada sent the report to Bob.",
+      "cnl": "Bob sent the report to Ada.",
+      "expected": false,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Agent/recipient swapped"
+    },
+    {
+      "id": "modal-strength",
+      "original": "Ada may leave.",
+      "cnl": "Ada must leave.",
+      "expected": false,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Permission versus obligation"
+    },
+    {
+      "id": "belief-as-fact",
+      "original": "Bob believes the door is open.",
+      "cnl": "The door is open.",
+      "expected": false,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Remove attribution"
+    },
+    {
+      "id": "formal-ordered-arguments",
+      "original": "Ada owns a printer and Bob owns a scanner.",
+      "cnl": "Statement 1: there exists a x such that ((the predicate “printer” holds for x) and (the predicate “owns” holds with ordered arguments [“ada”; x]))\nStatement 2: there exists a y such that ((the predicate “scanner” holds for y) and (the predicate “owns” holds with ordered arguments [“bob”; y]))",
+      "expected": true,
+      "family": "short",
+      "labelSource": "gold-rendering",
+      "mechanism": "Positive deterministic native CNL with ordered arguments and existential indefinites"
+    },
+    {
+      "id": "constant-for-indefinite",
+      "original": "Ada owns a printer and Bob owns a scanner.",
+      "cnl": "Statement 1: the predicate “owns” holds with ordered arguments [“Ada”; “printer”]\nStatement 2: the predicate “owns” holds with ordered arguments [“Bob”; “scanner”]",
+      "expected": false,
+      "family": "short",
+      "labelSource": "rubric",
+      "mechanism": "Indefinite description rendered as an opaque constant (formerly mislabelled positive)"
+    },
+    {
+      "id": "archive-omit_time-good",
+      "original": "Ravi plans to buy a laptop next month. He has compared three models, but he has not placed an order. Has Ravi bought the laptop?",
+      "cnl": "Statement 1: the predicate “laptop” holds for “l1”\nStatement 2: the predicate “time” holds with ordered arguments [the proposition that the predicate “plan” holds with ordered arguments [“ravi”; the proposition that the predicate “buy” holds with ordered arguments [“ravi”; “l1”]]; “next month”]\nStatement 3: the predicate “model set” holds for “s1”\nStatement 4: the predicate “compare” holds with ordered arguments [“ravi”; “s1”]\nStatement 5: the predicate “cardinality” holds with ordered arguments [“s1”; 3]\nStatement 6: it is not the case that (the predicate “place order” holds for “ravi”)\nQuestion 7: is it the case that (the predicate “buy” holds with ordered arguments [“ravi”; “l1”])?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-omit_time-bad",
+      "original": "Ravi plans to buy a laptop next month. He has compared three models, but he has not placed an order. Has Ravi bought the laptop?",
+      "cnl": "Statement 1: the predicate “laptop” holds for “l1”\nStatement 2: the predicate “plan” holds with ordered arguments [“ravi”; the proposition that the predicate “buy” holds with ordered arguments [“ravi”; “l1”]]\nStatement 3: the predicate “model set” holds for “s1”\nStatement 4: the predicate “compare” holds with ordered arguments [“ravi”; “s1”]\nStatement 5: the predicate “cardinality” holds with ordered arguments [“s1”; 3]\nStatement 6: it is not the case that (the predicate “place order” holds for “ravi”)\nQuestion 7: is it the case that (the predicate “buy” holds with ordered arguments [“ravi”; “l1”])?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "missing next month"
+    },
+    {
+      "id": "archive-lose_modality-good",
+      "original": "Every employee who handles customer data must complete privacy training. Ana is an employee and handles customer data. Has Ana completed the training?",
+      "cnl": "Statement 1: for every x, (if ((the predicate “employee” holds for x) and (the predicate “handle” holds with ordered arguments [x; “customer data”])), then (the predicate “must” holds for the proposition that the predicate “complete” holds with ordered arguments [x; “privacy training”]))\nStatement 2: the predicate “employee” holds for “ana”\nStatement 3: the predicate “handle” holds with ordered arguments [“ana”; “customer data”]\nQuestion 4: is it the case that (the predicate “complete” holds with ordered arguments [“ana”; “privacy training”])?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-lose_modality-bad",
+      "original": "Every employee who handles customer data must complete privacy training. Ana is an employee and handles customer data. Has Ana completed the training?",
+      "cnl": "Statement 1: for every x, (if ((the predicate “employee” holds for x) and (the predicate “handle” holds with ordered arguments [x; “customer data”])), then (the predicate “complete” holds with ordered arguments [x; “privacy training”]))\nStatement 2: the predicate “employee” holds for “ana”\nStatement 3: the predicate “handle” holds with ordered arguments [“ana”; “customer data”]\nQuestion 4: is it the case that (the predicate “complete” holds with ordered arguments [“ana”; “privacy training”])?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "must became fact requirement"
+    },
+    {
+      "id": "archive-attribution_as_fact-good",
+      "original": "Lea told Omar that the server was offline. Omar did not verify the claim. Is the server definitely offline?",
+      "cnl": "Statement 1: the predicate “tell” holds with ordered arguments [“lea”; “omar”; the proposition that the predicate “offline” holds for “server”]\nStatement 2: it is not the case that (the predicate “verify” holds with ordered arguments [“omar”; the proposition that the predicate “offline” holds for “server”])\nQuestion 3: is it the case that (the predicate “offline” holds for “server”)?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-attribution_as_fact-bad",
+      "original": "Lea told Omar that the server was offline. Omar did not verify the claim. Is the server definitely offline?",
+      "cnl": "Statement 1: the predicate “offline” holds for “server”\nStatement 2: it is not the case that (the predicate “verify” holds with ordered arguments [“omar”; the proposition that the predicate “offline” holds for “server”])\nQuestion 3: is it the case that (the predicate “offline” holds for “server”)?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "reported claim turned into fact"
+    },
+    {
+      "id": "archive-unless_flip-good",
+      "original": "The backup runs every night unless maintenance mode is enabled. Maintenance mode was enabled last night. Did the backup run last night?",
+      "cnl": "Statement 1: for every x, (if (it is not the case that (the predicate “maintenance mode” holds for x)), then (the predicate “backup run” holds for x))\nStatement 2: the predicate “maintenance mode” holds for “last night”\nQuestion 3: is it the case that (the predicate “backup run” holds for “last night”)?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-unless_flip-bad",
+      "original": "The backup runs every night unless maintenance mode is enabled. Maintenance mode was enabled last night. Did the backup run last night?",
+      "cnl": "Statement 1: for every x, (if (the predicate “maintenance mode” holds for x), then (it is not the case that (the predicate “backup run” holds for x)))\nStatement 2: the predicate “maintenance mode” holds for “last night”\nQuestion 3: is it the case that (the predicate “backup run” holds for “last night”)?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "unless strengthened into prohibition"
+    },
+    {
+      "id": "archive-only_if_reverse-good",
+      "original": "The application allows a user to download the dataset only if that user is registered. It allowed Niko to download the dataset. Is Niko registered?",
+      "cnl": "Statement 1: for every x, (if (the predicate “allow download” holds with ordered arguments [“app”; x; “dataset”]), then (the predicate “registered” holds for x))\nStatement 2: the predicate “allow download” holds with ordered arguments [“app”; “niko”; “dataset”]\nQuestion 3: is it the case that (the predicate “registered” holds for “niko”)?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-only_if_reverse-bad",
+      "original": "The application allows a user to download the dataset only if that user is registered. It allowed Niko to download the dataset. Is Niko registered?",
+      "cnl": "Statement 1: for every x, (if (the predicate “registered” holds for x), then (the predicate “allow download” holds with ordered arguments [“app”; x; “dataset”]))\nStatement 2: the predicate “allow download” holds with ordered arguments [“app”; “niko”; “dataset”]\nQuestion 3: is it the case that (the predicate “registered” holds for “niko”)?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "only-if direction reversed"
+    },
+    {
+      "id": "archive-lose_order-good",
+      "original": "Maria submitted the revised proposal on Monday. Leo forwarded it to Iris on Tuesday, and Iris archived it after reading it. Who archived the proposal?",
+      "cnl": "Statement 1: the predicate “proposal” holds for “p1”\nStatement 2: the predicate “revised” holds for “p1”\nStatement 3: the predicate “time” holds with ordered arguments [the proposition that the predicate “submit” holds with ordered arguments [“maria”; “p1”]; “monday”]\nStatement 4: the predicate “time” holds with ordered arguments [the proposition that the predicate “forward” holds with ordered arguments [“leo”; “p1”; “iris”]; “tuesday”]\nStatement 5: the predicate “read” holds with ordered arguments [“iris”; “p1”]\nStatement 6: the predicate “after” holds with ordered arguments [the proposition that the predicate “archive” holds with ordered arguments [“iris”; “p1”]; the proposition that the predicate “read” holds with ordered arguments [“iris”; “p1”]]\nQuestion 7: which x satisfies that (the predicate “archive” holds with ordered arguments [x; “p1”])?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-lose_order-bad",
+      "original": "Maria submitted the revised proposal on Monday. Leo forwarded it to Iris on Tuesday, and Iris archived it after reading it. Who archived the proposal?",
+      "cnl": "Statement 1: the predicate “proposal” holds for “p1”\nStatement 2: the predicate “revised” holds for “p1”\nStatement 3: the predicate “submit” holds with ordered arguments [“maria”; “p1”]\nStatement 4: the predicate “forward” holds with ordered arguments [“leo”; “p1”; “iris”]\nStatement 5: the predicate “read” holds with ordered arguments [“iris”; “p1”]\nStatement 6: the predicate “archive” holds with ordered arguments [“iris”; “p1”]\nQuestion 7: which x satisfies that (the predicate “archive” holds with ordered arguments [x; “p1”])?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "days and after relation omitted"
+    },
+    {
+      "id": "archive-negation_scope-good",
+      "original": "Alice did not promise to attend the meeting. Bob thinks she promised not to attend it. Did Alice promise to attend?",
+      "cnl": "Statement 1: it is not the case that (the predicate “promise” holds with ordered arguments [“alice”; the proposition that the predicate “attend” holds with ordered arguments [“alice”; “meeting1”]])\nStatement 2: the predicate “believe” holds with ordered arguments [“bob”; the proposition that the predicate “promise” holds with ordered arguments [“alice”; the proposition that it is not the case that (the predicate “attend” holds with ordered arguments [“alice”; “meeting1”])]]\nQuestion 3: is it the case that (the predicate “promise” holds with ordered arguments [“alice”; the proposition that the predicate “attend” holds with ordered arguments [“alice”; “meeting1”]])?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-negation_scope-bad",
+      "original": "Alice did not promise to attend the meeting. Bob thinks she promised not to attend it. Did Alice promise to attend?",
+      "cnl": "Statement 1: the predicate “promise” holds with ordered arguments [“alice”; the proposition that it is not the case that (the predicate “attend” holds with ordered arguments [“alice”; “meeting1”])]\nStatement 2: the predicate “believe” holds with ordered arguments [“bob”; the proposition that the predicate “promise” holds with ordered arguments [“alice”; the proposition that it is not the case that (the predicate “attend” holds with ordered arguments [“alice”; “meeting1”])]]\nQuestion 3: is it the case that (the predicate “promise” holds with ordered arguments [“alice”; the proposition that the predicate “attend” holds with ordered arguments [“alice”; “meeting1”]])?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "not promise changed to promise not"
+    },
+    {
+      "id": "archive-belief_as_fact-good",
+      "original": "Sam believes the package arrived on Friday. Tracking data shows that it arrived on Saturday. Did the package arrive on Friday?",
+      "cnl": "Statement 1: the predicate “believe” holds with ordered arguments [“sam”; the proposition that the predicate “time” holds with ordered arguments [the proposition that the predicate “arrive” holds for “package1”; “friday”]]\nStatement 2: the predicate “show” holds with ordered arguments [“tracking data”; the proposition that the predicate “time” holds with ordered arguments [the proposition that the predicate “arrive” holds for “package1”; “saturday”]]\nQuestion 3: is it the case that (the predicate “time” holds with ordered arguments [the proposition that the predicate “arrive” holds for “package1”; “friday”])?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-belief_as_fact-bad",
+      "original": "Sam believes the package arrived on Friday. Tracking data shows that it arrived on Saturday. Did the package arrive on Friday?",
+      "cnl": "Statement 1: the predicate “time” holds with ordered arguments [the proposition that the predicate “arrive” holds for “package1”; “friday”]\nStatement 2: the predicate “show” holds with ordered arguments [“tracking data”; the proposition that the predicate “time” holds with ordered arguments [the proposition that the predicate “arrive” holds for “package1”; “saturday”]]\nQuestion 3: is it the case that (the predicate “time” holds with ordered arguments [the proposition that the predicate “arrive” holds for “package1”; “friday”])?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "belief promoted to fact"
+    },
+    {
+      "id": "archive-argument_swap-good",
+      "original": "Jules gave Pat the key because Pat had locked the door. Did Pat give Jules the key?",
+      "cnl": "Statement 1: the predicate “lock” holds with ordered arguments [“pat”; “door1”]\nStatement 2: the predicate “give” holds with ordered arguments [“jules”; “key1”; “pat”]\nStatement 3: the predicate “cause” holds with ordered arguments [the proposition that the predicate “lock” holds with ordered arguments [“pat”; “door1”]; the proposition that the predicate “give” holds with ordered arguments [“jules”; “key1”; “pat”]]\nQuestion 4: is it the case that (the predicate “give” holds with ordered arguments [“pat”; “key1”; “jules”])?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-argument_swap-bad",
+      "original": "Jules gave Pat the key because Pat had locked the door. Did Pat give Jules the key?",
+      "cnl": "Statement 1: the predicate “lock” holds with ordered arguments [“pat”; “door1”]\nStatement 2: the predicate “give” holds with ordered arguments [“pat”; “key1”; “jules”]\nStatement 3: the predicate “cause” holds with ordered arguments [the proposition that the predicate “lock” holds with ordered arguments [“pat”; “door1”]; the proposition that the predicate “give” holds with ordered arguments [“pat”; “key1”; “jules”]]\nQuestion 4: is it the case that (the predicate “give” holds with ordered arguments [“pat”; “key1”; “jules”])?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "giver and receiver swapped"
+    },
+    {
+      "id": "archive-converse_error-good",
+      "original": "Each approved expense has a receipt. Expense E3 has a receipt, but its approval status is unknown. Is E3 approved?",
+      "cnl": "Statement 1: for every x, (if (the predicate “approved” holds for x), then (the predicate “has receipt” holds for x))\nStatement 2: the predicate “expense” holds for “e3”\nStatement 3: the predicate “has receipt” holds for “e3”\nStatement 4: the predicate “unknown” holds for the proposition that the predicate “approved” holds for “e3”\nQuestion 5: is it the case that (the predicate “approved” holds for “e3”)?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-converse_error-bad",
+      "original": "Each approved expense has a receipt. Expense E3 has a receipt, but its approval status is unknown. Is E3 approved?",
+      "cnl": "Statement 1: for every x, (if (the predicate “has receipt” holds for x), then (the predicate “approved” holds for x))\nStatement 2: the predicate “expense” holds for “e3”\nStatement 3: the predicate “has receipt” holds for “e3”\nStatement 4: the predicate “unknown” holds for the proposition that the predicate “approved” holds for “e3”\nQuestion 5: is it the case that (the predicate “approved” holds for “e3”)?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "implication direction reversed"
+    },
+    {
+      "id": "archive-unknown_to_false-good",
+      "original": "If the service is overloaded, latency usually increases. Today latency increased, but we do not know whether the service was overloaded. Was the service definitely overloaded?",
+      "cnl": "Statement 1: the predicate “usually” holds for the proposition that if (the predicate “overloaded” holds for “service”), then (the predicate “increase” holds for “latency”)\nStatement 2: the predicate “time” holds with ordered arguments [the proposition that the predicate “increase” holds for “latency”; “today”]\nStatement 3: the predicate “unknown” holds for the proposition that the predicate “overloaded” holds for “service”\nQuestion 4: is it the case that (the predicate “overloaded” holds for “service”)?",
+      "expected": true,
+      "family": "archive-pair",
+      "labelSource": "archive-gold",
+      "mechanism": "Archive gold rendering (archive-provided, not independently adjudicated)"
+    },
+    {
+      "id": "archive-unknown_to_false-bad",
+      "original": "If the service is overloaded, latency usually increases. Today latency increased, but we do not know whether the service was overloaded. Was the service definitely overloaded?",
+      "cnl": "Statement 1: the predicate “usually” holds for the proposition that if (the predicate “overloaded” holds for “service”), then (the predicate “increase” holds for “latency”)\nStatement 2: the predicate “time” holds with ordered arguments [the proposition that the predicate “increase” holds for “latency”; “today”]\nStatement 3: it is not the case that (the predicate “overloaded” holds for “service”)\nQuestion 4: is it the case that (the predicate “overloaded” holds for “service”)?",
+      "expected": false,
+      "family": "archive-pair",
+      "labelSource": "archive-corruption",
+      "mechanism": "unknown replaced by false"
+    }
+  ],
+  "controlsSha256": "86310c1d8fb104954acc59be51f21e1751cf4a14af11e1e4202e74132eeacdba",
+  "rubricSha256": "85b657a943e7906f27db7ad14caff0d404ba0c31c2c298b596cdfb6413f2c4c5",
+  "unitRubricSha256": "f7e844a9c5779dd364fdba6b302c4168dc0f3f1d169cfecf907df4f7dd002622",
+  "proxy": {
+    "ok": true,
+    "uptime_s": 7,
+    "fallback": null,
+    "tiers": [
+      {
+        "id": "tiny",
+        "object": "model",
+        "x_tier": {
+          "serves": "local/Qwen3.6-35B-A3B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "small",
+        "object": "model",
+        "x_tier": {
+          "serves": "local/Qwen3.6-35B-A3B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "medium",
+        "object": "model",
+        "x_tier": {
+          "serves": "local/Qwen3.6-35B-A3B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "good",
+        "object": "model",
+        "x_tier": {
+          "serves": "local/Qwen3.6-35B-A3B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "best",
+        "object": "model",
+        "x_tier": {
+          "serves": "local/Qwen3.6-35B-A3B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "nano",
+        "object": "model",
+        "x_tier": {
+          "serves": "localnano/Qwen3-0.6B",
+          "fallback": []
+        }
+      },
+      {
+        "id": "micro",
+        "object": "model",
+        "x_tier": {
+          "serves": "localsuper/Qwen3-4B",
+          "fallback": [
+            "local/Qwen3.6-35B-A3B"
+          ]
+        }
+      },
+      {
+        "id": "supertiny",
+        "object": "model",
+        "x_tier": {
+          "serves": "localsuper/Qwen3-4B",
+          "fallback": [
+            "local/Qwen3.6-35B-A3B"
+          ]
+        }
+      }
+    ],
+    "upstreams": {
+      "openference": {
+        "base_url": "https://api.openference.com",
+        "key_configured": true,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "openrouter": {
+        "base_url": "https://openrouter.ai/api",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "deepseek": {
+        "base_url": "https://api.deepseek.com",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "local": {
+        "base_url": "http://127.0.0.1:19611",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "localsuper": {
+        "base_url": "http://127.0.0.1:19613",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "localnano": {
+        "base_url": "http://127.0.0.1:19614",
+        "key_configured": false,
+        "on_demand": true,
+        "queue_depth": 0
+      },
+      "openai": {
+        "base_url": "https://api.openai.com",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "zai": {
+        "base_url": "https://api.z.ai/api/paas/v4",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "grok": {
+        "base_url": "https://api.x.ai",
+        "key_configured": false,
+        "on_demand": false,
+        "queue_depth": 0
+      },
+      "openference-oss": {
+        "base_url": "https://api.openference.com",
+        "key_configured": true,
+        "on_demand": false,
+        "queue_depth": 0
+      }
+    }
+  },
+  "task": "judge-bidirectional"
+}

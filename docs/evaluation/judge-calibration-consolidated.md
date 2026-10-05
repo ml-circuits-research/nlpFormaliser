@@ -45,3 +45,22 @@ The control set has been rebuilt in `tools/lib/judge-controls.mjs` (45 controls,
 - the eleven archive scope-corruption pairs (`docs/evaluation/atomic/archive-scope-corruptions`), both gold (archive-provided, not independently adjudicated) and corrupted renderings.
 
 Judge choice must be re-established on this set, with a judge from a different model family than the formalizer, before any ranked run. `run-eval --controls` injects the same set into a run and reports sensitivity/specificity.
+
+## 033–038 — Batched calibration on the 45-control set
+
+Each judge task (document verdicts, unit verdicts) sends the whole control set as **one batched request** per model (`tools/calibrate-judge.mjs` default). A request is repeated only for items whose part of the reply was malformed: Pworker keeps every item that parses on its own. Cache off, no repairs. Only models with a low Openference quota multiplier were tried.
+
+| Run | Requested model | Quota × | Requests | Correct | Sensitivity (neg. rejected) | Specificity (pos. accepted) | False accepts | Unit level (126) | Credits |
+|---|---|---:|---:|---:|---:|---:|---|---|---:|
+| 035 | Qwen3.8 27b | 0.1 | 3 | 44/45 | 26/27 | 18/18 | `archive-unless_flip-bad` | 126/126 | 0.30 |
+| 036 | Nemotron-3-120B | 0.1 | 5 | 43/45 | 25/27 | 18/18 | `long-cnl-negation-scope-move`, `archive-omit_time-bad` | 126/126 | 0.50 |
+| 033 | GLM-4.7-Flash | 0.1 | 3 | 38/45 | 22/27 | 16/18 | 5 (incl. argument swap, request→assertion) | 125/126 (1 fp) | 0.30 |
+| 038 | DeepSeek-V4-Flash-0731 | 0.75 | 2 | 36/45 | 24/27 | 12/18 | 3 | 126/126 | 1.50 |
+
+Gemma 4 26B was stopped after repeated provider 529 (overloaded) responses; GPT-OSS-120B returned only provider 429 responses for over 20 minutes (a per-model capacity limit: `x-ratelimit-remaining` stayed above zero). Neither is accuracy evidence. Every model fails the strict control gate (any false accept). The unit-level judge, the primary endpoint, makes no error on the 126 units for three of four models; the document-level flag is where the models differ.
+
+**Choice:** Qwen3.8 27b is the provisional judge (cheapest tier, best document-level result). Its only false accept is a scope flip of `unless`; a second judge from another family (Nemotron-3-120B) is the cross-check. Strategies formalized by Qwen-family models must use another judge. Forty-five controls cannot rank judges whose results differ by one item.
+
+## Non-LLM similarity cannot replace the judge
+
+`tools/similarity-baseline.mjs` scores each control with a hyperdimensional (VSA/HDC) bundle of content words plus permuted bigrams. Small sentence-embedding models (all-MiniLM-L6-v2, bge-small-en-v1.5, nomic-embed-text-v1.5) were tried the same way, with cosine similarity of the two texts. No threshold does better than rejecting everything (27/45): HDC 28/45, MiniLM 29/45, bge 28/45, nomic 28/45. On the eleven archive pairs, the good rendering scores above its corrupted twin only 5–7 times out of 11, which is chance. The corruptions (argument swap, negation scope, `unless` flip, attribution as fact, question as answer) keep the same words, so synonym dictionaries cannot help either. Similarity can flag gross omissions or topic drift, not equivalence.

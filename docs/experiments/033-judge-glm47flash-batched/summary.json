@@ -1,0 +1,155 @@
+{
+  "id": "033-judge-glm47flash-batched",
+  "n": 45,
+  "correct": 38,
+  "sensitivity": {
+    "correct": 22,
+    "n": 27,
+    "rate": 0.8148148148148148,
+    "wilson95": [
+      0.6330131638145156,
+      0.9181929285702346
+    ]
+  },
+  "specificity": {
+    "correct": 16,
+    "n": 18,
+    "rate": 0.8888888888888888,
+    "wilson95": [
+      0.672002348698212,
+      0.9689804773543876
+    ]
+  },
+  "falseAccepts": [
+    "omit-instruction",
+    "long-cnl-argument-swap",
+    "long-cnl-negation-scope-move",
+    "long-cnl-request-as-assertion",
+    "archive-lose_modality-bad"
+  ],
+  "falseRejects": [
+    "archive-omit_time-good",
+    "archive-unless_flip-good"
+  ],
+  "uncertain": [],
+  "errors": [],
+  "unitLevel": {
+    "tp": 10,
+    "fn": 0,
+    "tn": 115,
+    "fp": 1,
+    "missing": 0,
+    "sensitivity": {
+      "correct": 10,
+      "n": 10,
+      "rate": 1,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "specificity": {
+      "correct": 115,
+      "n": 116,
+      "rate": 0.9913793103448276,
+      "wilson95": [
+        0.9527801658718213,
+        0.9984766122233615
+      ]
+    }
+  },
+  "byFamily": {
+    "archive-pair": {
+      "sensitivity": {
+        "correct": 10,
+        "n": 11,
+        "rate": 0.9090909090909091,
+        "wilson95": [
+          0.6226415635484043,
+          0.9837678271141151
+        ]
+      },
+      "specificity": {
+        "correct": 9,
+        "n": 11,
+        "rate": 0.8181818181818182,
+        "wilson95": [
+          0.523019438039156,
+          0.9486323102539149
+        ]
+      }
+    },
+    "long-native-cnl": {
+      "sensitivity": {
+        "correct": 2,
+        "n": 5,
+        "rate": 0.4,
+        "wilson95": [
+          0.11762077423264783,
+          0.769275718723987
+        ]
+      },
+      "specificity": {
+        "correct": 2,
+        "n": 2,
+        "rate": 1,
+        "wilson95": [
+          0.34238022750665303,
+          1
+        ]
+      }
+    },
+    "long-text-edit": {
+      "sensitivity": {
+        "correct": 5,
+        "n": 6,
+        "rate": 0.8333333333333334,
+        "wilson95": [
+          0.43649717781352987,
+          0.9699466302516935
+        ]
+      },
+      "specificity": {
+        "correct": 1,
+        "n": 1,
+        "rate": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      }
+    },
+    "short": {
+      "sensitivity": {
+        "correct": 5,
+        "n": 5,
+        "rate": 1,
+        "wilson95": [
+          0.5655175352168251,
+          1
+        ]
+      },
+      "specificity": {
+        "correct": 4,
+        "n": 4,
+        "rate": 1,
+        "wilson95": [
+          0.5101091635454027,
+          1
+        ]
+      }
+    }
+  },
+  "gate": {
+    "passed": false,
+    "reasons": [
+      "false accepts on negative controls: omit-instruction, long-cnl-argument-swap, long-cnl-negation-scope-move, long-cnl-request-as-assertion, archive-lose_modality-bad"
+    ],
+    "thresholds": {
+      "minSensitivity": 0.8,
+      "minSpecificity": 0.8,
+      "maxErrors": 0
+    }
+  },
+  "requests": 3
+}

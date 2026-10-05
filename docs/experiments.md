@@ -121,3 +121,11 @@ Deterministic Rule Draft and Discourse Semantic Graph on the same ten documents,
 ## Harness changes after 024–032
 
 Calibration cases are excluded from development/held-out partitions; judge controls use a dedicated document; self-judging is refused by default; `--controls` injects the control set and gates the run on sensitivity/specificity; judge prompts are unbatched by default; truncation and batch-envelope errors are budget/infrastructure failures retried on resume; resume compares the full protocol and lists Worker source differences; rejudge reuses the stored model input. The primary endpoint is now unit-level preservation with clustered intervals and paired tests (see [protocol](protocol.md#methodology)). Earlier runs are not re-scored in place.
+
+## 033–038 — Batched judge calibration and the symbolic baseline
+
+033, 035, 036 and 038 calibrate four low-quota judges on the 45 controls with one batched request per judge task; see [judge calibration](evaluation/judge-calibration-consolidated.md#033038--batched-calibration-on-the-45-control-set). Qwen3.8 27b is the provisional judge (44/45, one false accept), with Nemotron-3-120B as the cross-check. ID 034 was used by an aborted, uncommitted Gemma attempt.
+
+037 runs both deterministic strategies offline on all 29 consolidated cases with the current code. No model calls. Both are structurally valid on 29/29 and reasoning-eligible on 0/29:
+- **Deterministic Rule Draft** formalizes almost nothing: of 521 sentences, 478 are refused (223 generic clauses, 90 questions, 76 conditionals, 55 modal, 33 attitude reports). Only 28 CNL lines remain. Even "The device shut down." and "Is the contract valid?" are refused.
+- **Discourse Semantic Graph** parses more, but 67 turns stay raw, 95 carry structural residue (a clause collapsed into a string, e.g. the theme "landlord claims that the heating"), and there are 236 symbols over 3 words and 213 source echoes.

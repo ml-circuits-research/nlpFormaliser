@@ -1,0 +1,149 @@
+{
+  "id": "036-judge-nemotron3-120b-batched",
+  "n": 45,
+  "correct": 43,
+  "sensitivity": {
+    "correct": 25,
+    "n": 27,
+    "rate": 0.9259259259259259,
+    "wilson95": [
+      0.7663040731697686,
+      0.9794453459390113
+    ]
+  },
+  "specificity": {
+    "correct": 18,
+    "n": 18,
+    "rate": 1,
+    "wilson95": [
+      0.8241207763533425,
+      1
+    ]
+  },
+  "falseAccepts": [
+    "long-cnl-negation-scope-move",
+    "archive-omit_time-bad"
+  ],
+  "falseRejects": [],
+  "uncertain": [],
+  "errors": [],
+  "unitLevel": {
+    "tp": 10,
+    "fn": 0,
+    "tn": 116,
+    "fp": 0,
+    "missing": 0,
+    "sensitivity": {
+      "correct": 10,
+      "n": 10,
+      "rate": 1,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "specificity": {
+      "correct": 116,
+      "n": 116,
+      "rate": 1,
+      "wilson95": [
+        0.9679454935003613,
+        1
+      ]
+    }
+  },
+  "byFamily": {
+    "archive-pair": {
+      "sensitivity": {
+        "correct": 10,
+        "n": 11,
+        "rate": 0.9090909090909091,
+        "wilson95": [
+          0.6226415635484043,
+          0.9837678271141151
+        ]
+      },
+      "specificity": {
+        "correct": 11,
+        "n": 11,
+        "rate": 1,
+        "wilson95": [
+          0.7411670330319684,
+          1
+        ]
+      }
+    },
+    "long-native-cnl": {
+      "sensitivity": {
+        "correct": 4,
+        "n": 5,
+        "rate": 0.8,
+        "wilson95": [
+          0.37553462976252533,
+          0.9637758913675698
+        ]
+      },
+      "specificity": {
+        "correct": 2,
+        "n": 2,
+        "rate": 1,
+        "wilson95": [
+          0.34238022750665303,
+          1
+        ]
+      }
+    },
+    "long-text-edit": {
+      "sensitivity": {
+        "correct": 6,
+        "n": 6,
+        "rate": 1,
+        "wilson95": [
+          0.6096657120978346,
+          1
+        ]
+      },
+      "specificity": {
+        "correct": 1,
+        "n": 1,
+        "rate": 1,
+        "wilson95": [
+          0.20654931437723745,
+          1
+        ]
+      }
+    },
+    "short": {
+      "sensitivity": {
+        "correct": 5,
+        "n": 5,
+        "rate": 1,
+        "wilson95": [
+          0.5655175352168251,
+          1
+        ]
+      },
+      "specificity": {
+        "correct": 4,
+        "n": 4,
+        "rate": 1,
+        "wilson95": [
+          0.5101091635454027,
+          1
+        ]
+      }
+    }
+  },
+  "gate": {
+    "passed": false,
+    "reasons": [
+      "false accepts on negative controls: long-cnl-negation-scope-move, archive-omit_time-bad"
+    ],
+    "thresholds": {
+      "minSensitivity": 0.8,
+      "minSpecificity": 0.8,
+      "maxErrors": 0
+    }
+  },
+  "requests": 5
+}

@@ -3,6 +3,7 @@ import { readdirSync, existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import {REGISTRY,resolveStrategy} from './registry.mjs';
+import {classifyFailure} from './failures.mjs';
 
 export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 export const STRATEGIES_DIR = join(ROOT, "strategies");
@@ -53,7 +54,8 @@ export async function formalizeToCNL(strategy, text, ctx = {}) {
     }
   } catch (e) {
     out.ok = false;
-    out.failure = /status \d+|unreachable|unavailable|no answer within|ECONN|fetch failed/i.test(e.message) ? 'infrastructure' : /LLM disabled/.test(e.message) ? 'offline' : 'formalization';
+    // budget/infrastructure failures are retried on resume, never semantic evidence.
+    out.failure = classifyFailure(e.message);
     out.errors.push(`${e.name}: ${e.message}`);
   }
   out.seconds = (Date.now() - t0) / 1000;

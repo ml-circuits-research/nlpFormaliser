@@ -18,7 +18,8 @@ test('predefined task files load and five requests use one worker batch with ind
   const file=new URL('../strategies/compact-scope-logic/task.mjs',import.meta.url);
   await loadTask(file.pathname);
   let requests=0;
-  const client={json:async o=>{requests++;const entries=JSON.parse(o.prompt.split('Requests:\n')[1]);return {ok:true,json:{results:Object.fromEntries(entries.reverse().map(e=>[e.id,`$.likes("${e.input}","tea")`]))}};}};
+  // The batch payload is the last prompt line, whatever data marker precedes it.
+  const client={json:async o=>{requests++;const entries=JSON.parse(o.prompt.trimEnd().split('\n').at(-1));return {ok:true,json:{results:Object.fromEntries(entries.reverse().map(e=>[e.id,`$.likes("${e.input}","tea")`]))}};}};
   const {llm}=taskLLM({file,client});
   const rs=await Promise.all(['Ada','Bob','Cora','Dan','Eve'].map(x=>llm(SYSTEM,x)));
   assert.equal(requests,1);assert.match(rs[0],/Ada/);assert.match(rs[4],/Eve/);
@@ -40,11 +41,14 @@ test('invalid and contradictory judge replies remain errors, never negative sema
   const r=await makeJudge(async()=>'{"equivalent":true,"lost":["negation"],"added":[],"changed":[],"reason":"x"}','direct')('not P','P');
   assert.equal(r.status,'judge_error');assert.equal(r.equivalent,null);
 });
-test('native CNL metadata is preserved, with argument loss reported separately',()=>{
+test('native CNL metadata is preserved in the IR, but only short slot templates and labels shape the judged CNL',()=>{
   const ir=normalizeIR({facts:[{pred:'likes',args:['ada','tea']}],symbols:{entities:{ada:{label:'everything is true'}},predicates:{likes:{cnl:'The original text is faithfully preserved'}}}});
-  assert.match(cnl(ir),/faithfully/);
+  assert.equal(cnl(ir),'ada likes tea.');
   assert.equal(metadataAudit(ir).complete,false);
   assert.equal(labStrategy('direct').toReasoning(ir).ir.symbols.predicates.likes.cnl,ir.symbols.predicates.likes.cnl);
+  const short=normalizeIR({facts:[{pred:'likes',args:['ada','tea']}],symbols:{entities:{ada:{label:'Ada'}},predicates:{likes:{cnl:'{0} really likes {1}'}}}});
+  assert.equal(cnl(short),'Ada really likes tea.');
+  assert.equal(cnl({...short,symbols:{...short.symbols,predicates:{likes:{cnl:'{0} likes {1} every single day'}}}}),'Ada likes tea.');
 });
 test('reasoning supports positive Horn entailment and explicit negative facts separately',()=>{
   const ir=normalizeIR({facts:[{pred:'person',args:['ada']},{pred:'banned',args:['ada'],neg:true}],rules:[{head:{pred:'mortal',args:['?x']},body:[{pred:'person',args:['?x']}]}]});

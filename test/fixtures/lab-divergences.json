@@ -1,0 +1,2656 @@
+{
+ "note": "Recorded active outputs for archive lab cases whose deterministic draft intentionally diverges from strategies/_archive (see docs/restoration-audit.md).",
+ "cases": {
+  "archive-lab-development/C02": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       50
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 1,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C03": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       63
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 1,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C04": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       36
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 0,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C05": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       48
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 2,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C06": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "entered",
+      "args": [
+       "leo",
+       "lab"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       52
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "leo": {
+       "label": "leo"
+      },
+      "lab": {
+       "label": "lab"
+      }
+     },
+     "predicates": {
+      "entered": {
+       "label": "entered"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 1,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "leo entered lab.\nNOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C07": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "server",
+      "args": [
+       "node7"
+      ],
+      "neg": false
+     },
+     {
+      "pred": "overloaded",
+      "args": [
+       "node7"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       66
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "node7": {
+       "label": "node7"
+      }
+     },
+     "predicates": {
+      "server": {
+       "label": "server"
+      },
+      "overloaded": {
+       "label": "overloaded"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 7,
+      "markers": 4,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "node7 is server.\nnode7 is overloaded.\nNOTED AMBIGUITY #1 (u1, unsupported conditional)."
+  },
+  "archive-lab-development/C08": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "researcher",
+      "args": [
+       "ana"
+      ],
+      "neg": false
+     },
+     {
+      "pred": "owns",
+      "args": [
+       "ana",
+       "gpu1"
+      ],
+      "neg": false
+     },
+     {
+      "pred": "gpu",
+      "args": [
+       "gpu1"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [
+     {
+      "head": {
+       "pred": "can_run",
+       "args": [
+        "?x",
+        "local_model"
+       ],
+       "neg": false
+      },
+      "body": [
+       {
+        "pred": "researcher",
+        "args": [
+         "?x"
+        ],
+        "neg": false
+       },
+       {
+        "pred": "owns",
+        "args": [
+         "?x",
+         "?y"
+        ],
+        "neg": false
+       },
+       {
+        "pred": "gpu",
+        "args": [
+         "?y"
+        ],
+        "neg": false
+       }
+      ]
+     }
+    ],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [],
+    "symbols": {
+     "entities": {
+      "ana": {
+       "label": "ana"
+      },
+      "gpu1": {
+       "label": "gpu1"
+      }
+     },
+     "predicates": {
+      "researcher": {
+       "label": "researcher"
+      },
+      "owns": {
+       "label": "owns"
+      },
+      "gpu": {
+       "label": "gpu"
+      },
+      "can_run": {
+       "label": "can run"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 12,
+      "markers": 7,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "ana is researcher.\nana owns gpu1.\ngpu1 is gpu.\nFor all ?x, ?y, IF ?x is researcher AND ?x owns ?y AND ?y is gpu THEN ?x can run local model."
+  },
+  "archive-lab-development/C09": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "reviewer",
+      "args": [
+       "nina"
+      ],
+      "neg": false
+     },
+     {
+      "pred": "authored",
+      "args": [
+       "nina",
+       "paper7"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [
+     {
+      "head": {
+       "pred": "prohibited_approved",
+       "args": [
+        "?x",
+        "?y"
+       ],
+       "neg": false
+      },
+      "body": [
+       {
+        "pred": "reviewer",
+        "args": [
+         "?x"
+        ],
+        "neg": false
+       },
+       {
+        "pred": "paper",
+        "args": [
+         "?y"
+        ],
+        "neg": false
+       },
+       {
+        "pred": "authored",
+        "args": [
+         "?x",
+         "?y"
+        ],
+        "neg": false
+       }
+      ]
+     }
+    ],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [],
+    "symbols": {
+     "entities": {
+      "nina": {
+       "label": "nina"
+      },
+      "paper7": {
+       "label": "paper7"
+      }
+     },
+     "predicates": {
+      "reviewer": {
+       "label": "reviewer"
+      },
+      "authored": {
+       "label": "authored"
+      },
+      "prohibited_approved": {
+       "label": "prohibited approved"
+      },
+      "paper": {
+       "label": "paper"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 6,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "nina is reviewer.\nnina authored paper7.\nFor all ?x, ?y, IF ?x is reviewer AND ?y is paper AND ?x authored ?y THEN ?x prohibited approved ?y."
+  },
+  "archive-lab-development/C10": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       48
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 1,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C11": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       73
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       74,
+       105
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 4,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-development/C12": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "deleted",
+      "args": [
+       "kim",
+       "account42"
+      ],
+      "neg": false
+     },
+     {
+      "pred": "account",
+      "args": [
+       "account42"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       40
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "kim": {
+       "label": "kim"
+      },
+      "account42": {
+       "label": "account42"
+      }
+     },
+     "predicates": {
+      "deleted": {
+       "label": "deleted"
+      },
+      "account": {
+       "label": "account"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 3,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "kim deleted account42.\naccount42 is account.\nNOTED AMBIGUITY #1 (u1, unsupported modality)."
+  },
+  "archive-lab-development/C13": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       54
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       55,
+       82
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 4,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-development/C14": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "file",
+      "args": [
+       "file_a"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       80
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       81,
+       122
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "file_a": {
+       "label": "file a"
+      }
+     },
+     "predicates": {
+      "file": {
+       "label": "file"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 4,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "file a is file.\nNOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-development/C15": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       56
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_modality",
+      "span": [
+       57,
+       86
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 3,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported modality)."
+  },
+  "archive-lab-development/C16": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       53
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       54,
+       83
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 8,
+      "markers": 2,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-development/C17": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "west_of",
+      "args": [
+       "paris",
+       "berlin"
+      ],
+      "neg": false
+     },
+     {
+      "pred": "west_of",
+      "args": [
+       "berlin",
+       "warsaw"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [],
+    "symbols": {
+     "entities": {
+      "paris": {
+       "label": "paris"
+      },
+      "berlin": {
+       "label": "berlin"
+      },
+      "warsaw": {
+       "label": "warsaw"
+      }
+     },
+     "predicates": {
+      "west_of": {
+       "label": "west of"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 1,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "paris west of berlin.\nberlin west of warsaw."
+  },
+  "archive-lab-development/C18": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "belongs_to",
+      "args": [
+       "key",
+       "alice"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       48
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "key": {
+       "label": "key"
+      },
+      "alice": {
+       "label": "alice"
+      }
+     },
+     "predicates": {
+      "belongs_to": {
+       "label": "belongs to"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 1,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "key belongs to alice.\nNOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C19": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       50
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 2,
+      "markers": 1,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C20": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       51
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 1,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-development/C21": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       47
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 3,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported modality)."
+  },
+  "archive-lab-development/C22": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       63
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       64,
+       87
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 6,
+      "markers": 5,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-development/C23": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       36
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 0,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-development/C24": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       33
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 0,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-development/C25": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       59
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 2,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional)."
+  },
+  "archive-lab-development/C26": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       46
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       47,
+       64
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 3,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported modality).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-development/C27": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       66
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 4,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-development/C28": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       44
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 0,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-development/C29": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       47
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       48,
+       69
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 1,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-development/C30": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       48
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 1,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-development/C31": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       61
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 4,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported modality)."
+  },
+  "archive-lab-heldout/H02": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       49
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 1,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H03": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       62
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 2,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H04": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       43
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 6,
+      "markers": 0,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H05": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "approved",
+      "args": [
+       "dana",
+       "report"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unrepresented_modifier",
+      "span": [
+       0,
+       59
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "dana": {
+       "label": "dana"
+      },
+      "report": {
+       "label": "report"
+      }
+     },
+     "predicates": {
+      "approved": {
+       "label": "approved"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 2,
+      "markers": 3,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "dana approved report.\nNOTED AMBIGUITY #1 (u1, unrepresented modifier)."
+  },
+  "archive-lab-heldout/H06": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       56
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 2,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H07": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       81
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       82,
+       112
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 7,
+      "markers": 3,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H08": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "owns",
+      "args": [
+       "ana",
+       "gpu1"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       63
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       64,
+       118
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "ana": {
+       "label": "ana"
+      },
+      "gpu1": {
+       "label": "gpu1"
+      }
+     },
+     "predicates": {
+      "owns": {
+       "label": "owns"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 16,
+      "markers": 6,
+      "clauses": 4
+     }
+    }
+   },
+   "cnl": "ana owns gpu1.\nNOTED AMBIGUITY #1 (u1, unsupported modality).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H09": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "reviewer",
+      "args": [
+       "nina"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       68
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       69,
+       106
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "nina": {
+       "label": "nina"
+      }
+     },
+     "predicates": {
+      "reviewer": {
+       "label": "reviewer"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 1,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "nina is reviewer.\nNOTED AMBIGUITY #1 (u1, unsupported modality).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H10": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       59
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 0,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H11": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       57
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       58,
+       96
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 2,
+      "markers": 0,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H12": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "deleted",
+      "args": [
+       "kim",
+       "account42"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       55
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "kim": {
+       "label": "kim"
+      },
+      "account42": {
+       "label": "account42"
+      }
+     },
+     "predicates": {
+      "deleted": {
+       "label": "deleted"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 3,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "kim deleted account42.\nNOTED AMBIGUITY #1 (u1, unsupported modality)."
+  },
+  "archive-lab-heldout/H13": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       56
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       57,
+       86
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 3,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H14": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       72
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       73,
+       134
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 7,
+      "markers": 1,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H15": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       60
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       61,
+       92
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 2,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H16": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       56
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       57,
+       97
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 2,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H17": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       58
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 1,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H18": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [
+     {
+      "pred": "owns",
+      "args": [
+       "alice",
+       "key"
+      ],
+      "neg": false
+     }
+    ],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       20,
+       53
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {
+      "alice": {
+       "label": "alice"
+      },
+      "key": {
+       "label": "key"
+      }
+     },
+     "predicates": {
+      "owns": {
+       "label": "owns"
+      }
+     }
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 0,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "alice owns key.\nNOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H19": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       56
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 2,
+      "markers": 0,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H20": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       61
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 1,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-heldout/H21": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       49
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 0,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-heldout/H22": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_attitude",
+      "span": [
+       0,
+       36
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 4,
+      "markers": 0,
+      "clauses": 1
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported attitude)."
+  },
+  "archive-lab-heldout/H23": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       56
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 1,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported modality)."
+  },
+  "archive-lab-heldout/H24": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_modality",
+      "span": [
+       0,
+       49
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       50,
+       67
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 1,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported modality).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  },
+  "archive-lab-heldout/H25": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       74
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 5,
+      "markers": 4,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H26": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       46
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 3,
+      "markers": 0,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H27": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       77
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 6,
+      "markers": 2,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H28": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_clause",
+      "span": [
+       0,
+       60
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 2,
+      "markers": 4,
+      "clauses": 2
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported clause)."
+  },
+  "archive-lab-heldout/H29": {
+   "differs": [
+    "ir",
+    "cnl"
+   ],
+   "ir": {
+    "version": "0.2",
+    "facts": [],
+    "rules": [],
+    "contexts": [],
+    "queries": [],
+    "externals": [],
+    "ambiguities": [
+     {
+      "id": "u1",
+      "kind": "unsupported_conditional",
+      "span": [
+       0,
+       73
+      ]
+     },
+     {
+      "id": "u2",
+      "kind": "unsupported_clause",
+      "span": [
+       74,
+       102
+      ]
+     }
+    ],
+    "symbols": {
+     "entities": {},
+     "predicates": {}
+    },
+    "meta": {
+     "strategy": "heuristic",
+     "protoSummary": {
+      "mentions": 6,
+      "markers": 3,
+      "clauses": 3
+     }
+    }
+   },
+   "cnl": "NOTED AMBIGUITY #1 (u1, unsupported conditional).\nNOTED AMBIGUITY #2 (u2, unsupported clause)."
+  }
+ }
+}

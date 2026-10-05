@@ -1,0 +1,268 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS physicist x5:
+      EVENT ev6 be:
+        THEME e4:"Mira"
+        PROPERTY x5:physicist
+  CONFIDENCE 0.94
+
+TURN t3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS workstation x8:
+      EVENT ev9 own:
+        AGENT e4:"Mira"
+        THEME x8:workstation
+  CONFIDENCE 0.94
+
+TURN t4:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      EVENT ev13 be:
+        THEME e12:"Sensor S1"
+        PROPERTY "red"
+      EVENT ev16 mount:
+        AGENT e14:"is"
+        LOCATION e15:"north wall"
+  AMBIGUITIES:
+    - a11 MEDIUM coordination_scope: "and"
+  CONFIDENCE 0.85
+
+TURN t5:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "Catalyst C7 speeds up reaction R2 without being consumed by it"
+  AMBIGUITIES:
+    - a18 HIGH anaphora: "it"
+      OPTIONS: "Sensor S1" | is | "north wall" | workstation | physicist
+      ASK: "What does 'it' refer to?"
+    - a19 HIGH coverage_gap: "Catalyst C7 speeds up reaction R2 without being consumed by it"
+      ASK: "Formalize this unresolved fragment: Catalyst C7 speeds up reaction R2 without being consumed by it"
+  CONFIDENCE 0.46
+
+TURN t6:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev23 send:
+      AGENT e21:"Bob"
+      THEME e22:"Alice the report"
+      TIME "Monday"
+  CONFIDENCE 0.94
+
+TURN t7:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AFTER:
+      LEFT:
+        EVENT ev28 approve:
+          AGENT e27:"Dana"
+          THEME e26:"report"
+      RIGHT:
+        UNRESOLVED "the audit"
+  AMBIGUITIES:
+    - a25 MEDIUM temporal_attachment: "after"
+    - a29 HIGH coverage_gap: "the audit"
+      ASK: "Formalize this unresolved fragment: the audit"
+  CONFIDENCE 0.55
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev35 enter:
+      AGENT e33:"Leo"
+      THEME e34:"lab then he switched off the alarm"
+  AMBIGUITIES:
+    - a31 HIGH anaphora: "he"
+      OPTIONS: Dana | Bob
+      ASK: "What does 'he' refer to?"
+  CONFIDENCE 0.76
+
+TURN t9:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      THERE_EXISTS server x37:
+        EVENT ev38 be:
+          THEME x37:server
+          PROPERTY "overloaded"
+    THEN:
+      UNRESOLVED "the scheduler moves new jobs elsewhere"
+  AMBIGUITIES:
+    - a39 HIGH coverage_gap: "the scheduler moves new jobs elsewhere"
+      ASK: "Formalize this unresolved fragment: the scheduler moves new jobs elsewhere"
+  CONFIDENCE 0.64
+
+TURN t10:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      THERE_EXISTS server x43:
+        EVENT ev44 be:
+          THEME e42:"Node7"
+          PROPERTY x43:server
+      UNRESOLVED "is overloaded"
+  AMBIGUITIES:
+    - a41 MEDIUM coordination_scope: "and"
+    - a45 HIGH coverage_gap: "is overloaded"
+      ASK: "Formalize this unresolved fragment: is overloaded"
+  CONFIDENCE 0.55
+
+TURN t11:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FOR_EVERY researcher x48:
+      IF:
+        THERE_EXISTS GPU x49:
+          EVENT ev50 own:
+            AGENT x48:researcher
+            THEME x49:GPU
+      THEN:
+        POSSIBLE:
+          THERE_EXISTS local model x51:
+            EVENT ev52 run:
+              AGENT x48:researcher
+              THEME x51:"local model"
+  AMBIGUITIES:
+    - a47 MEDIUM quantifier_scope: "Every researcher who owns a GPU can run a"
+      OPTIONS: "forall > exists" | "exists > forall"
+  CONFIDENCE 0.85
+
+TURN t12:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      THERE_EXISTS researcher x56:
+        EVENT ev57 be:
+          THEME e55:"Ana"
+          PROPERTY x56:researcher
+      THERE_EXISTS GPU x59:
+        EVENT ev60 be:
+          THEME e58:"owns GPU1 which"
+          PROPERTY x59:GPU
+  AMBIGUITIES:
+    - a54 MEDIUM coordination_scope: "and"
+    - a61 HIGH structural_residue: "owns GPU1 which"
+      ASK: "Clarify the internal clause structure of: owns GPU1 which"
+  CONFIDENCE 0.67
+
+TURN t13:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FOR_NO reviewer x65:
+      PERMITTED:
+        THERE_EXISTS paper they authored x66:
+          EVENT ev67 approve:
+            AGENT x65:reviewer
+            THEME x66:"paper they authored"
+  AMBIGUITIES:
+    - a63 HIGH anaphora: "they"
+      ASK: "What does 'they' refer to?"
+  CONFIDENCE 0.76
+
+TURN t14:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS reviewer and authored paper7 x70:
+      EVENT ev71 be:
+        THEME e69:"Nina"
+        PROPERTY x70:"reviewer and authored paper7"
+  CONFIDENCE 0.94
+
+TURN t15:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev75 be:
+      THEME e74:"Sample3"
+      PROPERTY "clean while sample4 is contaminated"
+  AMBIGUITIES:
+    - a73 MEDIUM temporal_attachment: "while"
+    - a76 HIGH structural_residue: "clean while sample4 is contaminated"
+      ASK: "Clarify the internal clause structure of: clean while sample4 is contaminated"
+  CONFIDENCE 0.67
+
+TURN t16:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    NOT:
+      FOR_EVERY request x79:
+        EVENT ev81 require:
+          AGENT x79:request
+          THEME e80:"authentication public status requests do not"
+  AMBIGUITIES:
+    - a78 MEDIUM negation_scope: "not"
+  CONFIDENCE 0.85
+
+TURN t17:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS public status request x84:
+      EVENT ev85 be:
+        THEME e83:"R17"
+        PROPERTY x84:"public status request"
+  CONFIDENCE 0.94
+
+TURN t18:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "I am annoyed about the delay, not about the person helping me"
+  AMBIGUITIES:
+    - a87 HIGH coverage_gap: "I am annoyed about the delay, not about the person helping me"
+      ASK: "Formalize this unresolved fragment: I am annoyed about the delay, not about the person helping me"
+  CONFIDENCE 0.64
+
+TURN t19:
+  ACT REQUEST
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE DO TO assistant
+      BODY:
+        UNRESOLVED "assistant identify any conflicting requirements in these notes"
+  AMBIGUITIES:
+    - a89 HIGH coverage_gap: "assistant identify any conflicting requirements in these notes"
+      ASK: "Formalize this unresolved fragment: assistant identify any conflicting requirements in these notes"
+  CONFIDENCE 0.64
+
+TURN t20:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev95 resolve:
+      AGENT e93:"Point out contradictions rather than"
+      THEME UNRESOLVED_REF("them")
+      EXCLUSION "asking me"
+  AMBIGUITIES:
+    - a91 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+  CONFIDENCE 0.76

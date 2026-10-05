@@ -1,0 +1,61 @@
+[
+  {
+    "id": "consolidated/base/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/031-consolidated-capacity-wait/explicit-scope-logic/consolidated/base/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "the quantifier ‘how many’ expressing the amount of unrelated details",
+        "the activity ‘keep track of’ that is part of the frustration"
+      ],
+      "added": [],
+      "changed": [],
+      "reason": "All requests and statements in the original are represented in the CNL except for the quantitative phrase ‘how many’ and the ‘keep track of’ activity in the frustration sentence; these details are omitted, so the CNL does not fully entail the NL. No extra predicates beyond what the NL implies are introduced.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/04-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/031-consolidated-capacity-wait/explicit-scope-logic/consolidated/base/04-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them."
+      ],
+      "added": [],
+      "changed": [
+        "Scheduling restriction: NL says 'Don\\'t schedule anything before 10 a.m. on Mondays' (no scheduling before that time), CNL says 'it is not the case that for every scheduled item it is before 10:00 on Monday' (weaker).",
+        "Hotel requirement: NL refers to the required hotel ('must be within walking distance ... and cost less than 150 euros a night'), CNL quantifies universally over all hotels.",
+        "Budget and memory: NL says 'budget ... around 1,200 dollars' and 'needs at least 16 gigabytes', CNL states exact budget 1200 and exact memory 16."
+      ],
+      "reason": "Most statements match, but the note about separate situations is missing, the scheduling constraint has different logical scope, the hotel clause adds universal quantification, and the budget/memory details are more precise in CNL than in NL, preventing mutual entailment.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  }
+]

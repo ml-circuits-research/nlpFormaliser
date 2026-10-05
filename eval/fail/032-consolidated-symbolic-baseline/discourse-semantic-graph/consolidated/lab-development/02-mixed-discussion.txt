@@ -1,0 +1,273 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    ONLY e5:"administrators":
+      POSSIBLE:
+        EVENT ev7 delete:
+          AGENT e5:"administrators"
+          THEME e6:"accounts"
+  AMBIGUITIES:
+    - a4 HIGH only_scope: "only"
+      OPTIONS: "ONLY(entity)" | "ONLY(event/argument)" | "ONLY(condition)"
+      ASK: "What exactly does 'only' restrict?"
+  CONFIDENCE 0.76
+
+TURN t3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev11 delete:
+      AGENT e9:"Kim"
+      THEME e10:"account42 which is an account"
+  AMBIGUITIES:
+    - a12 HIGH structural_residue: "account42 which is an account"
+      ASK: "Clarify the internal clause structure of: account42 which is an account"
+  CONFIDENCE 0.76
+
+TURN t4:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      NOT:
+        UNRESOLVED "the backup succeeds"
+    THEN:
+      FORBIDDEN:
+        UNRESOLVED "deployment start"
+  AMBIGUITIES:
+    - a14 MEDIUM negation_scope: "not"
+    - a15 HIGH coverage_gap: "the backup succeeds"
+      ASK: "Formalize this unresolved fragment: the backup succeeds"
+    - a16 HIGH coverage_gap: "deployment start"
+      ASK: "Formalize this unresolved fragment: deployment start"
+  CONFIDENCE 0.25
+
+TURN t5:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    NOT:
+      UNRESOLVED "The backup succeed"
+  AMBIGUITIES:
+    - a18 HIGH coverage_gap: "The backup succeed"
+      ASK: "Formalize this unresolved fragment: The backup succeed"
+  CONFIDENCE 0.64
+
+TURN t6:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      UNRESOLVED "its checksum differs from the recorded checksum"
+    THEN:
+      THERE_EXISTS file x22:
+        EVENT ev23 consider:
+          THEME x22:file
+          COMPLEMENT "stale"
+  AMBIGUITIES:
+    - a20 MEDIUM temporal_attachment: "when"
+    - a21 HIGH possessive_anaphora: "its checksum"
+      ASK: "Whose checksum?"
+    - a24 HIGH coverage_gap: "its checksum differs from the recorded checksum"
+      ASK: "Formalize this unresolved fragment: its checksum differs from the recorded checksum"
+  CONFIDENCE 0.37
+
+TURN t7:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS file and its checksum differ x28:
+      EVENT ev29 be:
+        THEME e27:"FileA"
+        PROPERTY x28:"file and its checksum differ"
+  AMBIGUITIES:
+    - a26 HIGH possessive_anaphora: "its checksum"
+      ASK: "Whose checksum?"
+  CONFIDENCE 0.76
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev34 be:
+        THEME e33:"its gripper"
+        PROPERTY "empty"
+    THEN:
+      PERMITTED:
+        UNRESOLVED "Robot R1 pick up box B only"
+  AMBIGUITIES:
+    - a31 HIGH only_scope: "only"
+      OPTIONS: "ONLY(entity)" | "ONLY(event/argument)" | "ONLY(condition)"
+      ASK: "What exactly does 'only' restrict?"
+    - a32 HIGH possessive_anaphora: "its gripper"
+      ASK: "Whose gripper?"
+    - a35 HIGH coverage_gap: "Robot R1 pick up box B only"
+      ASK: "Formalize this unresolved fragment: Robot R1 pick up box B only"
+  CONFIDENCE 0.28
+
+TURN t9:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev39 permitt:
+      THEME e37:"R1"
+      TO "pick up B"
+  AMBIGUITIES:
+    - a38 MEDIUM semantic_role: "to pick up B"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to pick up B' have?"
+  CONFIDENCE 0.85
+
+TURN t10:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      UNRESOLVED "the temperature drops below 0°C"
+    THEN:
+      POSSIBLE:
+        UNRESOLVED "water freeze"
+  AMBIGUITIES:
+    - a41 HIGH coverage_gap: "the temperature drops below 0°C"
+      ASK: "Formalize this unresolved fragment: the temperature drops below 0°C"
+    - a42 HIGH coverage_gap: "water freeze"
+      ASK: "Formalize this unresolved fragment: water freeze"
+  CONFIDENCE 0.34
+
+TURN t11:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev45 be:
+      THEME e44:"temperature"
+      PROPERTY "below 0 C"
+  CONFIDENCE 0.94
+
+TURN t12:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      EVENT ev49 be:
+        THEME e48:"Paris"
+        PROPERTY "west of Berlin"
+      EVENT ev51 be:
+        THEME e50:"Berlin"
+        PROPERTY "west of Warsaw"
+  AMBIGUITIES:
+    - a47 MEDIUM coordination_scope: "and"
+  CONFIDENCE 0.85
+
+TURN t13:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev54 be:
+      THEME e53:"key belongs to Alice but Bob"
+      PROPERTY "holding it"
+  CONFIDENCE 0.94
+
+TURN t14:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    BECAUSE:
+      UNRESOLVED "the pump lost power"
+    THEREFORE:
+      EVENT ev57 fail:
+        AGENT e56:"experiment"
+  AMBIGUITIES:
+    - a58 HIGH coverage_gap: "the pump lost power"
+      ASK: "Formalize this unresolved fragment: the pump lost power"
+    - a59 MEDIUM operator_not_formalized: "because"
+  CONFIDENCE 0.55
+
+TURN t15:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    CONDITIONAL:
+      EVENT ev66 submit:
+        AGENT e64:"Alice promised Bob that she"
+        THEME e65:"draft"
+  AMBIGUITIES:
+    - a61 HIGH anaphora: "she"
+      OPTIONS: Paris | Berlin
+      ASK: "What does 'she' refer to?"
+    - a67 HIGH structural_residue: "Alice promised Bob that she"
+      ASK: "Clarify the internal clause structure of: Alice promised Bob that she"
+  CONFIDENCE 0.58
+
+TURN t16:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    BEFORE:
+      LEFT:
+        OBLIGATORY:
+          EVENT ev72 calibrat:
+            THEME e71:"Device D1"
+      RIGHT:
+        EVENT ev74 use:
+          AGENT e73:"it is"
+  AMBIGUITIES:
+    - a69 HIGH anaphora: "it"
+      OPTIONS: "Alice promised Bob that she" | draft | experiment | "key belongs to Alice but Bob"
+      ASK: "What does 'it' refer to?"
+    - a70 MEDIUM temporal_attachment: "before"
+  CONFIDENCE 0.67
+
+TURN t17:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev78 keep:
+      AGENT e76:"I am frustrated by how many unrelated details I have to"
+      THEME e77:"track of"
+  AMBIGUITIES:
+    - a79 HIGH structural_residue: "I am frustrated by how many unrelated details I have to"
+      ASK: "Clarify the internal clause structure of: I am frustrated by how many unrelated details I have to"
+  CONFIDENCE 0.76
+
+TURN t18:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHICH_FROM_SET request x82 FROM these:
+      POSSIBLE:
+        AND:
+          UNRESOLVED "x82 be handled now,"
+          EVENT ev85 need:
+            AGENT e83:"which"
+            THEME e84:"clarification"
+  AMBIGUITIES:
+    - a81 MEDIUM coordination_scope: "and"
+    - a86 HIGH coverage_gap: "x82 be handled now,"
+      ASK: "Formalize this unresolved fragment: x82 be handled now,"
+    - a87 HIGH structural_residue: "which"
+      ASK: "Clarify the internal clause structure of: which"
+  CONFIDENCE 0.37
+
+TURN t19:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE LIST TO assistant
+      BODY:
+        FIND the unresolved question x:
+  CONFIDENCE 0.94

@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-05T16:53:40.974Z",
+  "elapsedSeconds": 295,
+  "configuredUpstreamAttemptTimeoutMs": 240000,
+  "observedProvider429Responses": 10,
+  "latestProviderAttempt": 10,
+  "latestTaskState": "waiting",
+  "failedTasks": 0,
+  "interpretation": "Real provider capacity wait exceeds the former total deadline and retry limit without failing the task. This is evidence of deferred execution, not of evaluation completion."
+}

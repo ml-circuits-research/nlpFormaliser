@@ -1,0 +1,202 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      FOR_NO result x6:
+        EVENT ev7 be:
+          THEME e5:"there"
+          PROPERTY x6:result
+    THEN:
+      UNRESOLVED "Make sure the function returns an empty list instead of null"
+  AMBIGUITIES:
+    - a4 MEDIUM temporal_attachment: "when"
+    - a8 HIGH coverage_gap: "Make sure the function returns an empty list instead of null"
+      ASK: "Formalize this unresolved fragment: Make sure the function returns an empty list instead of null"
+  CONFIDENCE 0.55
+
+TURN t3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "Revert the last two commits on the feature branch, not on main"
+  AMBIGUITIES:
+    - a10 HIGH coverage_gap: "Revert the last two commits on the feature branch, not on main"
+      ASK: "Formalize this unresolved fragment: Revert the last two commits on the feature branch, not on main"
+  CONFIDENCE 0.64
+
+TURN t4:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev16 keep:
+      AGENT e13:"Disable the cache in development but"
+      THEME e14:"it enabled"
+      LOCATION e15:"production"
+  AMBIGUITIES:
+    - a12 HIGH anaphora: "it"
+      OPTIONS: there | result
+      ASK: "What does 'it' refer to?"
+  CONFIDENCE 0.76
+
+TURN t5:
+  ACT PROPOSE
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE DO TO assistant
+      BODY:
+        UNRESOLVED "assistant meet every other Thursday at 4 p"
+  AMBIGUITIES:
+    - a18 HIGH coverage_gap: "assistant meet every other Thursday at 4 p"
+      ASK: "Formalize this unresolved fragment: assistant meet every other Thursday at 4 p"
+  CONFIDENCE 0.64
+
+TURN t6:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "m"
+  AMBIGUITIES:
+    - a20 HIGH coverage_gap: "m"
+      ASK: "Formalize this unresolved fragment: m"
+  CONFIDENCE 0.64
+
+TURN t7:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED ", starting next week"
+  AMBIGUITIES:
+    - a22 HIGH coverage_gap: ", starting next week"
+      ASK: "Formalize this unresolved fragment: , starting next week"
+  CONFIDENCE 0.64
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev26 close:
+      THEME e25:"office"
+      SOURCE "December 24"
+      TIME_UNTIL "January 2"
+  AMBIGUITIES:
+    - a24 MEDIUM temporal_attachment: "until"
+  CONFIDENCE 0.85
+
+TURN t9:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev29 be:
+      THEME e28:"I'll"
+      PROPERTY "in Berlin from Monday to Wednesday so move our call to Thursday morning"
+  AMBIGUITIES:
+    - a30 HIGH structural_residue: "in Berlin from Monday to Wednesday so move our call to Thursday morning"
+      ASK: "Clarify the internal clause structure of: in Berlin from Monday to Wednesday so move our call to Thursday morning"
+  CONFIDENCE 0.76
+
+TURN t10:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AFTER:
+      LEFT:
+        UNRESOLVED "The contract expires thirty days"
+      RIGHT:
+        EVENT ev34 receive:
+          AGENT e33:"last payment is"
+  AMBIGUITIES:
+    - a32 MEDIUM temporal_attachment: "after"
+    - a35 HIGH coverage_gap: "The contract expires thirty days"
+      ASK: "Formalize this unresolved fragment: The contract expires thirty days"
+  CONFIDENCE 0.55
+
+TURN t11:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    BEFORE:
+      LEFT:
+        UNRESOLVED "She has been working on the migration since March and expects to finish"
+      RIGHT:
+        UNRESOLVED "the end of the quarter"
+  AMBIGUITIES:
+    - a37 HIGH anaphora: "She"
+      ASK: "What does 'She' refer to?"
+    - a38 MEDIUM coordination_scope: "and"
+    - a39 MEDIUM temporal_attachment: "before"
+    - a41 HIGH coverage_gap: "She has been working on the migration since March and expects to finish"
+      ASK: "Formalize this unresolved fragment: She has been working on the migration since March and expects to finish"
+    - a42 HIGH coverage_gap: "the end of the quarter"
+      ASK: "Formalize this unresolved fragment: the end of the quarter"
+  CONFIDENCE 0.05
+
+TURN t12:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EXPECTED:
+      EVENT ev48 read:
+        AGENT e46:"By the time you"
+        THEME e47:"I have already left"
+        FOR "the airport"
+  AMBIGUITIES:
+    - a44 HIGH anaphora: "this"
+      OPTIONS: "previous proposition p43" | "last payment is" | "I'll"
+      ASK: "What does 'this' refer to?"
+    - a45 MEDIUM for_attachment: "for"
+  CONFIDENCE 0.67
+
+TURN t13:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev51 be:
+      THEME e50:"I am relieved that we"
+      PROPERTY "finally making progress but I am still impatient"
+  AMBIGUITIES:
+    - a52 HIGH structural_residue: "I am relieved that we"
+      ASK: "Clarify the internal clause structure of: I am relieved that we"
+    - a53 HIGH structural_residue: "finally making progress but I am still impatient"
+      ASK: "Clarify the internal clause structure of: finally making progress but I am still impatient"
+  CONFIDENCE 0.58
+
+TURN t14:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK OPEN:
+      UNRESOLVED "What should be checked first, and why"
+  AMBIGUITIES:
+    - a55 MEDIUM coordination_scope: "and"
+    - a56 HIGH coverage_gap: "What should be checked first, and why"
+      ASK: "Formalize this unresolved fragment: What should be checked first, and why"
+  CONFIDENCE 0.55
+
+TURN t15:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      UNRESOLVED "Give me a short ordered checklist"
+      UNRESOLVED "leave unrelated tasks independent"
+  AMBIGUITIES:
+    - a58 MEDIUM coordination_scope: "and"
+    - a59 HIGH coverage_gap: "Give me a short ordered checklist"
+      ASK: "Formalize this unresolved fragment: Give me a short ordered checklist"
+    - a60 HIGH coverage_gap: "leave unrelated tasks independent"
+      ASK: "Formalize this unresolved fragment: leave unrelated tasks independent"
+  CONFIDENCE 0.25

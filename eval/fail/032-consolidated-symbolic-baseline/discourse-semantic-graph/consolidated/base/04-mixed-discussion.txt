@@ -1,0 +1,204 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT PREFERENCE
+  SPEAKER user
+  CONTENT:
+    PREFERENCE "aisle seats, but on night flights I'd rather sit by the window"
+  AMBIGUITIES:
+    - a4 HIGH coverage_gap: "aisle seats, but on night flights I'd rather sit by the window"
+      ASK: "Formalize this unresolved fragment: aisle seats, but on night flights I'd rather sit by the window"
+  CONFIDENCE 0.64
+
+TURN t3:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    NOT:
+      DIRECTIVE DO TO assistant
+        BODY:
+          UNRESOLVED "assistant schedule anything before 10 a"
+  AMBIGUITIES:
+    - a6 HIGH coverage_gap: "assistant schedule anything before 10 a"
+      ASK: "Formalize this unresolved fragment: assistant schedule anything before 10 a"
+  CONFIDENCE 0.64
+
+TURN t4:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "m"
+  AMBIGUITIES:
+    - a8 HIGH coverage_gap: "m"
+      ASK: "Formalize this unresolved fragment: m"
+  CONFIDENCE 0.64
+
+TURN t5:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "on Mondays"
+  AMBIGUITIES:
+    - a10 HIGH coverage_gap: "on Mondays"
+      ASK: "Formalize this unresolved fragment: on Mondays"
+  CONFIDENCE 0.64
+
+TURN t6:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IMPOSSIBLE:
+      EVENT ev13 avoid:
+        AGENT e12:"I'm allergic to peanuts so please"
+        THEME "any restaurant that guarantee a nut-free kitchen"
+  AMBIGUITIES:
+    - a14 HIGH structural_residue: "any restaurant that guarantee a nut-free kitchen"
+      ASK: "Clarify the internal clause structure of: any restaurant that guarantee a nut-free kitchen"
+  CONFIDENCE 0.76
+
+TURN t7:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    OBLIGATORY:
+      EVENT ev17 be:
+        THEME e16:"hotel"
+        PROPERTY "within walking distance of the conference centre and cost less than 150 euros a night"
+  AMBIGUITIES:
+    - a18 MEDIUM operator_not_formalized: "less than"
+  CONFIDENCE 0.85
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      EVENT ev24 be:
+        THEME e23:"My budget for the laptop"
+        PROPERTY "around 1 200 dollars"
+      EVENT ev26 need:
+        AGENT e23:"My budget for the laptop"
+        LOCATION e25:"least 16 gigabytes of memory"
+  AMBIGUITIES:
+    - a21 MEDIUM for_attachment: "for"
+    - a22 MEDIUM coordination_scope: "and"
+    - a27 MEDIUM operator_not_formalized: "at least"
+  CONFIDENCE 0.67
+
+TURN t9:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IMPOSSIBLE:
+      UNRESOLVED "I like spicy food, but my partner handle anything hotter than mild"
+  AMBIGUITIES:
+    - a29 HIGH coverage_gap: "I like spicy food, but my partner handle anything hotter than mild"
+      ASK: "Formalize this unresolved fragment: I like spicy food, but my partner handle anything hotter than mild"
+  CONFIDENCE 0.64
+
+TURN t10:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev33 make:
+      AGENT e31:"Actually"
+      THEME e32:"Thursday not Wednesday"
+  CONFIDENCE 0.94
+
+TURN t11:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev37 mean:
+      AGENT e35:"Sorry I"
+      THEME e36:"2023 report not the 2024 one"
+  AMBIGUITIES:
+    - a38 HIGH structural_residue: "2023 report not the 2024 one"
+      ASK: "Clarify the internal clause structure of: 2023 report not the 2024 one"
+  CONFIDENCE 0.76
+
+TURN t12:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev41 fix:
+      AGENT e40:"Ignore my last message the issue has been"
+  AMBIGUITIES:
+    - a42 HIGH structural_residue: "Ignore my last message the issue has been"
+      ASK: "Clarify the internal clause structure of: Ignore my last message the issue has been"
+  CONFIDENCE 0.76
+
+TURN t13:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "Wait, don't send it yet"
+  AMBIGUITIES:
+    - a44 HIGH anaphora: "it"
+      OPTIONS: "Ignore my last message the issue has been" | "Sorry I" | "2023 report not the 2024 one" | "Thursday not Wednesday"
+      ASK: "What does 'it' refer to?"
+    - a45 HIGH coverage_gap: "Wait, don't send it yet"
+      ASK: "Formalize this unresolved fragment: Wait, don't send it yet"
+  CONFIDENCE 0.46
+
+TURN t14:
+  ACT STATE_GOAL
+  SPEAKER user
+  CONTENT:
+    GOAL:
+      EVENT ev49 change:
+        AGENT e47:"user"
+        THEME e48:"second paragraph first"
+  CONFIDENCE 0.94
+
+TURN t15:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev52 be:
+      THEME e51:"I am relieved that we"
+      PROPERTY "finally making progress but I am still impatient"
+  AMBIGUITIES:
+    - a53 HIGH structural_residue: "I am relieved that we"
+      ASK: "Clarify the internal clause structure of: I am relieved that we"
+    - a54 HIGH structural_residue: "finally making progress but I am still impatient"
+      ASK: "Clarify the internal clause structure of: finally making progress but I am still impatient"
+  CONFIDENCE 0.58
+
+TURN t16:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK OPEN:
+      UNRESOLVED "What should be checked first, and why"
+  AMBIGUITIES:
+    - a56 MEDIUM coordination_scope: "and"
+    - a57 HIGH coverage_gap: "What should be checked first, and why"
+      ASK: "Formalize this unresolved fragment: What should be checked first, and why"
+  CONFIDENCE 0.55
+
+TURN t17:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      UNRESOLVED "Give me a short ordered checklist"
+      UNRESOLVED "leave unrelated tasks independent"
+  AMBIGUITIES:
+    - a59 MEDIUM coordination_scope: "and"
+    - a60 HIGH coverage_gap: "Give me a short ordered checklist"
+      ASK: "Formalize this unresolved fragment: Give me a short ordered checklist"
+    - a61 HIGH coverage_gap: "leave unrelated tasks independent"
+      ASK: "Formalize this unresolved fragment: leave unrelated tasks independent"
+  CONFIDENCE 0.25

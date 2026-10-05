@@ -1,0 +1,176 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev5 be:
+      THEME e4:"Whales"
+      PROPERTY "mammals not fish"
+  CONFIDENCE 0.94
+
+TURN t3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev7 be:
+        THEME e4:"Whales"
+        PROPERTY "heated"
+    THEN:
+      UNRESOLVED "Metals expand"
+  AMBIGUITIES:
+    - a8 HIGH coverage_gap: "Metals expand"
+      ASK: "Formalize this unresolved fragment: Metals expand"
+  CONFIDENCE 0.64
+
+TURN t4:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "Cats usually sleep during the day"
+  AMBIGUITIES:
+    - a10 HIGH coverage_gap: "Cats usually sleep during the day"
+      ASK: "Formalize this unresolved fragment: Cats usually sleep during the day"
+  CONFIDENCE 0.64
+
+TURN t5:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "Water boils at 100 degrees Celsius at sea level"
+  AMBIGUITIES:
+    - a12 HIGH coverage_gap: "Water boils at 100 degrees Celsius at sea level"
+      ASK: "Formalize this unresolved fragment: Water boils at 100 degrees Celsius at sea level"
+  CONFIDENCE 0.64
+
+TURN t6:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev15 know:
+        AGENT e14:"I had"
+        TOPIC "the traffic"
+    THEN:
+      CONDITIONAL:
+        UNRESOLVED "I have taken the train"
+  AMBIGUITIES:
+    - a16 HIGH coverage_gap: "I have taken the train"
+      ASK: "Formalize this unresolved fragment: I have taken the train"
+  CONFIDENCE 0.64
+
+TURN t7:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK OPEN:
+      UNRESOLVED "If you were in my position, would you accept the offer"
+  AMBIGUITIES:
+    - a18 HIGH coverage_gap: "If you were in my position, would you accept the offer"
+      ASK: "Formalize this unresolved fragment: If you were in my position, would you accept the offer"
+  CONFIDENCE 0.64
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    CONDITIONAL:
+      UNRESOLVED "Had we launched a week earlier, we have beaten the competition"
+  AMBIGUITIES:
+    - a20 HIGH coverage_gap: "Had we launched a week earlier, we have beaten the competition"
+      ASK: "Formalize this unresolved fragment: Had we launched a week earlier, we have beaten the competition"
+  CONFIDENCE 0.64
+
+TURN t9:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK OPEN:
+      UNRESOLVED "Suppose the budget is cut by 20 percent; which projects would we drop first"
+  AMBIGUITIES:
+    - a22 HIGH coverage_gap: "Suppose the budget is cut by 20 percent; which projects would we drop first"
+      ASK: "Formalize this unresolved fragment: Suppose the budget is cut by 20 percent; which projects would we drop first"
+  CONFIDENCE 0.64
+
+TURN t10:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      UNRESOLVED "I won the lottery"
+    THEN:
+      UNRESOLVED "I'd buy a house by the sea"
+  AMBIGUITIES:
+    - a24 HIGH coverage_gap: "I won the lottery"
+      ASK: "Formalize this unresolved fragment: I won the lottery"
+    - a25 HIGH coverage_gap: "I'd buy a house by the sea"
+      ASK: "Formalize this unresolved fragment: I'd buy a house by the sea"
+  CONFIDENCE 0.34
+
+TURN t11:
+  ACT REQUEST
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE DO TO assistant
+      BODY:
+        IF:
+          UNRESOLVED "you have a moment"
+        THEN:
+          UNRESOLVED "assistant possibly take a look at my resume"
+  AMBIGUITIES:
+    - a27 HIGH coverage_gap: "you have a moment"
+      ASK: "Formalize this unresolved fragment: you have a moment"
+    - a28 HIGH coverage_gap: "assistant possibly take a look at my resume"
+      ASK: "Formalize this unresolved fragment: assistant possibly take a look at my resume"
+  CONFIDENCE 0.34
+
+TURN t12:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EXPECTED:
+      UNRESOLVED "I am worried that an important restriction get lost in this discussion"
+  AMBIGUITIES:
+    - a30 HIGH coverage_gap: "I am worried that an important restriction get lost in this discussion"
+      ASK: "Formalize this unresolved fragment: I am worried that an important restriction get lost in this discussion"
+  CONFIDENCE 0.64
+
+TURN t13:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK OPEN:
+      UNRESOLVED "What information is still missing before we can decide what to do"
+  AMBIGUITIES:
+    - a32 MEDIUM temporal_attachment: "before"
+    - a33 HIGH coverage_gap: "What information is still missing before we can decide what to do"
+      ASK: "Formalize this unresolved fragment: What information is still missing before we can decide what to do"
+  CONFIDENCE 0.55
+
+TURN t14:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE KEEP TO assistant
+      BODY:
+        NOT:
+          EVENT ev38 keep:
+            AGENT e36:"assistant"
+            THEME e37:"separate requests separate and invent links between them"
+  AMBIGUITIES:
+    - a35 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+  CONFIDENCE 0.76

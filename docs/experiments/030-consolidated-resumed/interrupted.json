@@ -1,0 +1,7 @@
+{
+  "status": "interrupted",
+  "completedRows": 8,
+  "reason": "GPT-OSS still returned provider 429 despite lower concurrency. Stopped for the requested Worker capacity-waiting hardening. No semantic outcomes or syntax failures are discarded.",
+  "canonicalPriorEvidence": "028-consolidated-first10",
+  "note": "The eight saved rows reuse run 028 outcomes, apart from another judge error on base/10. They are not eight new independent samples."
+}

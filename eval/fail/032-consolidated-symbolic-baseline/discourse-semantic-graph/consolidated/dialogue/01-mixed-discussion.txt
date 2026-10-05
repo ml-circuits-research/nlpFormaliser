@@ -1,0 +1,506 @@
+TURN t01:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS formalizer x2:
+      AND:
+        EVENT ev5 want:
+          AGENT e1:"We"
+          THEME x2:formalizer
+        EVENT ev4 convert:
+          AGENT x2:formalizer
+          THEME e3:"English requests"
+          DESTINATION "a canonical controlled language"
+  CONFIDENCE 0.94
+
+TURN t02:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FOR_EVERY candidate formalization x7:
+      OBLIGATORY:
+        EVENT ev9 preserve:
+          AGENT x7:"candidate formalization"
+          THEME e8:"negation modality quantifiers temporal order and references"
+  CONFIDENCE 0.94
+
+TURN t03:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev12 be:
+        THEME e11:"symbolic parser"
+        PROPERTY "uncertain"
+    THEN:
+      DIRECTIVE DO TO assistant
+        BODY:
+          EVENT ev15 mark:
+            AGENT e13:"assistant"
+            THEME e14:"ambiguity instead of guessing"
+  CONFIDENCE 0.94
+
+TURN t04:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE FIND TO assistant
+      LIMIT three
+      BODY:
+        FIND difficult examples involving pronouns and modal scope x:
+  AMBIGUITIES:
+    - a17 MEDIUM coordination_scope: "and"
+  CONFIDENCE 0.85
+
+TURN t05:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    NOT:
+      DIRECTIVE INCLUDE TO assistant
+        BODY:
+          EVENT ev20 include:
+            AGENT e13:"assistant"
+            THEME e19:"examples that require specialist medical knowledge"
+  AMBIGUITIES:
+    - a21 HIGH structural_residue: "examples that require specialist medical knowledge"
+      ASK: "Clarify the internal clause structure of: examples that require specialist medical knowledge"
+  CONFIDENCE 0.76
+
+TURN t06:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    ATTITUDE tell:
+      AGENT e25:"Bob"
+      RECIPIENT e26:"Alan"
+      CONTENT:
+        RECOMMENDED:
+          EVENT ev29 review:
+            AGENT UNRESOLVED_REF("he")
+            THEME e28:"report"
+  AMBIGUITIES:
+    - a23 HIGH anaphora: "he"
+  CONFIDENCE 0.76
+
+TURN t07:
+  ACT REJECT_OR_CORRECT
+  SPEAKER user
+  CONTENT:
+    CORRECT:
+      RESOLVE_REFERENCE_AS "Alan"
+  CONFIDENCE 0.94
+
+TURN t08:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    NOT:
+      FOR_EVERY reviewer x34:
+        OBLIGATORY:
+          THERE_EXISTS paper x35:
+            EVENT ev36 accept:
+              AGENT x34:reviewer
+              THEME x35:paper
+  AMBIGUITIES:
+    - a32 MEDIUM quantifier_scope: "every reviewer must accept a"
+      OPTIONS: "forall > exists" | "exists > forall"
+    - a33 MEDIUM negation_scope: "not"
+  CONFIDENCE 0.76
+
+TURN t09:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      NOT:
+        EVENT ev40 require:
+          THEME e38:"mean some reviewer"
+          TO "accept a paper"
+  AMBIGUITIES:
+    - a39 MEDIUM semantic_role: "to accept a paper"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to accept a paper' have?"
+  CONFIDENCE 0.85
+
+TURN t10:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    BEFORE:
+      LEFT:
+        OBLIGATORY:
+          EVENT ev45 review:
+            AGENT e25:"Bob"
+            THEME e28:"report"
+      RIGHT:
+        EVENT ev44 approve:
+          AGENT e43:"Ada"
+          THEME e28:"report"
+  AMBIGUITIES:
+    - a42 MEDIUM temporal_attachment: "Before"
+  CONFIDENCE 0.85
+
+TURN t11:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev51 reject:
+        AGENT e25:"Bob"
+        THEME UNRESOLVED_REF("it")
+    THEN:
+      DISCOURAGED:
+        EVENT ev53 publish:
+          AGENT e43:"Ada"
+          THEME UNRESOLVED_REF("it")
+  AMBIGUITIES:
+    - a47 HIGH anaphora: "it"
+      OPTIONS: report | paper
+      ASK: "What does 'it' refer to?"
+    - a49 MEDIUM negation_scope: "not"
+  CONFIDENCE 0.67
+
+TURN t12:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHICH report x55:
+      EVENT ev57 discuss:
+        AGENT e56:"x55 is being"
+  CONFIDENCE 0.94
+
+TURN t13:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE USE TO assistant
+      BODY:
+        EVENT ev60 use:
+          AGENT e13:"assistant"
+          THEME e28:"report"
+          SOURCE e59:"previous example"
+  CONFIDENCE 0.94
+
+TURN t14:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      FOR_NO material x63:
+        EVENT ev65 mean:
+          AGENT x63:material
+          THEME e64:"is missing"
+    THEN:
+      PERMITTED:
+        THERE_EXISTS candidate x67:
+          EVENT ev68 accept:
+            AGENT e66:"evaluator"
+            THEME x67:candidate
+            MANNER "only"
+  AMBIGUITIES:
+    - a62 HIGH only_scope: "only"
+      OPTIONS: "ONLY(entity)" | "ONLY(event/argument)" | "ONLY(condition)"
+      ASK: "What exactly does 'only' restrict?"
+  CONFIDENCE 0.76
+
+TURN t15:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    BECAUSE:
+      NOT:
+        EVENT ev75 be:
+          THEME e74:"CNL invents a condition that"
+          PROPERTY "present in the source"
+    THEREFORE:
+      PERMITTED:
+        THERE_EXISTS candidate x72:
+          EVENT ev73 reject:
+            AGENT UNRESOLVED_REF("It")
+            THEME x72:candidate
+  AMBIGUITIES:
+    - a70 HIGH anaphora: "It"
+      OPTIONS: "is missing" | evaluator | candidate | report | "previous example"
+      ASK: "What does 'It' refer to?"
+    - a76 HIGH structural_residue: "CNL invents a condition that"
+      ASK: "Clarify the internal clause structure of: CNL invents a condition that"
+    - a77 MEDIUM operator_not_formalized: "because"
+  CONFIDENCE 0.49
+
+TURN t16:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      NOT:
+        AND:
+          EVENT ev82 be:
+            THEME e81:"source"
+            PROPERTY "ambiguous"
+          EVENT ev85 resolve:
+            AGENT e83:"context"
+            THEME UNRESOLVED_REF("it")
+    THEN:
+      OBLIGATORY:
+        EVENT ev87 return:
+          AGENT e66:"evaluator"
+          THEME e86:"uncertain"
+  AMBIGUITIES:
+    - a79 HIGH anaphora: "it"
+      OPTIONS: candidate | "CNL invents a condition that" | "is missing" | evaluator | candidate
+      ASK: "What does 'it' refer to?"
+    - a80 MEDIUM coordination_scope: "and"
+  CONFIDENCE 0.67
+
+TURN t17:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE SHOW TO assistant
+      BODY:
+        FIND me x:
+  AMBIGUITIES:
+    - a89 MEDIUM coordination_scope: "and"
+  CONFIDENCE 0.85
+
+TURN t18:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE KEEP TO assistant
+      BODY:
+        EVENT ev92 keep:
+          AGENT e13:"assistant"
+          THEME e91:"explanation short but preserve the exact evidence spans"
+  AMBIGUITIES:
+    - a93 HIGH structural_residue: "explanation short but preserve the exact evidence spans"
+      ASK: "Clarify the internal clause structure of: explanation short but preserve the exact evidence spans"
+  CONFIDENCE 0.76
+
+TURN t19:
+  ACT PREFERENCE
+  SPEAKER user
+  CONTENT:
+    PREFERENCE "We prefer one batched LLM call over one call per sentence"
+  AMBIGUITIES:
+    - a95 HIGH coverage_gap: "We prefer one batched LLM call over one call per sentence"
+      ASK: "Formalize this unresolved fragment: We prefer one batched LLM call over one call per sentence"
+  CONFIDENCE 0.64
+
+TURN t20:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev100 be:
+        THEME e99:"ten candidates"
+        PROPERTY "ready"
+    THEN:
+      UNRESOLVED "validate them together"
+  AMBIGUITIES:
+    - a97 MEDIUM temporal_attachment: "When"
+    - a98 HIGH anaphora: "them"
+    - a101 HIGH coverage_gap: "validate them together"
+      ASK: "Formalize this unresolved fragment: validate them together"
+  CONFIDENCE 0.37
+
+TURN t21:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    NOT:
+      DIRECTIVE DO TO assistant
+        BODY:
+          IF:
+            EVENT ev106 ask:
+              AGENT e105:"user"
+              MANNER "explicitly"
+              FOR "an immediate verdict"
+          THEN:
+            EVENT ev107 wait:
+              AGENT e13:"assistant"
+              FOR "ten"
+  AMBIGUITIES:
+    - a103 MEDIUM for_attachment: "for"
+  CONFIDENCE 0.85
+
+TURN t22:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FOR_EVERY candidate x109:
+      IF:
+        UNRESOLVED "x109 passes the symbolic audit"
+      THEN:
+        POSSIBLE:
+          EVENT ev111 be:
+            THEME e110:"x109 still"
+            PROPERTY "wrong"
+  AMBIGUITIES:
+    - a112 HIGH coverage_gap: "x109 passes the symbolic audit"
+      ASK: "Formalize this unresolved fragment: x109 passes the symbolic audit"
+  CONFIDENCE 0.64
+
+TURN t23:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev116 review:
+      AGENT e115:"Therefore sample some apparently safe candidates for LLM"
+  AMBIGUITIES:
+    - a114 MEDIUM for_attachment: "for"
+  CONFIDENCE 0.85
+
+TURN t24:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK COUNT of the last twenty candidate:
+      UNRESOLVED "judged equivalent"
+  AMBIGUITIES:
+    - a118 HIGH coverage_gap: "judged equivalent"
+      ASK: "Formalize this unresolved fragment: judged equivalent"
+  CONFIDENCE 0.64
+
+TURN t25:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev121 be:
+        THEME e120:"fewer than eighteen"
+        PROPERTY "equivalent"
+    THEN:
+      UNRESOLVED "report the failure rate"
+  AMBIGUITIES:
+    - a122 HIGH coverage_gap: "report the failure rate"
+      ASK: "Formalize this unresolved fragment: report the failure rate"
+  CONFIDENCE 0.64
+
+TURN t26:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FORBIDDEN:
+      EVENT ev128 use:
+        AGENT e125:"judge"
+        THEME e127:"world knowledge"
+        TO "fill missing information"
+  AMBIGUITIES:
+    - a124 MEDIUM negation_scope: "not"
+    - a126 MEDIUM semantic_role: "to fill missing information"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to fill missing information' have?"
+  CONFIDENCE 0.76
+
+TURN t27:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    ONLY e132:"information":
+      PERMITTED:
+        EVENT ev134 use:
+          THEME e133:"information licensed by the source or the conversation"
+  AMBIGUITIES:
+    - a130 HIGH only_scope: "only"
+      OPTIONS: "ONLY(entity)" | "ONLY(event/argument)" | "ONLY(condition)"
+      ASK: "What exactly does 'only' restrict?"
+    - a131 MEDIUM coordination_scope: "or"
+  CONFIDENCE 0.67
+
+TURN t28:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      FORBIDDEN:
+        POSSIBLE:
+          UNRESOLVED "the formalizer distinguish 'does not have to submit' from ' submit'"
+  AMBIGUITIES:
+    - a136 MEDIUM negation_scope: "not"
+    - a137 HIGH negation_scope: "not have to"
+      OPTIONS: "NOT(REQUIRED(...))" | "FORBIDDEN(...)"
+    - a138 HIGH coverage_gap: "the formalizer distinguish 'does not have to submit' from ' submit'"
+      ASK: "Formalize this unresolved fragment: the formalizer distinguish 'does not have to submit' from ' submit'"
+  CONFIDENCE 0.37
+
+TURN t29:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE TEST TO assistant
+      BODY:
+        AND:
+          EVENT ev142 test:
+            AGENT e13:"assistant"
+            THEME e141:"both readings"
+          DIRECTIVE DO TO assistant
+            BODY:
+              EVENT ev143 mark:
+                AGENT e13:"assistant"
+                THEME "any scope error"
+  AMBIGUITIES:
+    - a140 MEDIUM coordination_scope: "and"
+  CONFIDENCE 0.85
+
+TURN t30:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE RETURN TO assistant
+      BODY:
+        FIND the CNL, the symbolic warnings, and the LLM verdict for each tested turn x:
+  AMBIGUITIES:
+    - a145 MEDIUM for_attachment: "for"
+    - a146 MEDIUM coordination_scope: "and"
+  CONFIDENCE 0.76
+
+TURN added-1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev149 be:
+      THEME e148:"I am relieved that we"
+      PROPERTY "finally making progress but I am still impatient"
+  AMBIGUITIES:
+    - a150 HIGH structural_residue: "I am relieved that we"
+      ASK: "Clarify the internal clause structure of: I am relieved that we"
+    - a151 HIGH structural_residue: "finally making progress but I am still impatient"
+      ASK: "Clarify the internal clause structure of: finally making progress but I am still impatient"
+  CONFIDENCE 0.58
+
+TURN added-2:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK OPEN:
+      UNRESOLVED "What should be checked first, and why"
+  AMBIGUITIES:
+    - a153 MEDIUM coordination_scope: "and"
+    - a154 HIGH coverage_gap: "What should be checked first, and why"
+      ASK: "Formalize this unresolved fragment: What should be checked first, and why"
+  CONFIDENCE 0.55
+
+TURN added-3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      UNRESOLVED "Give me a short ordered checklist"
+      UNRESOLVED "leave unrelated tasks independent"
+  AMBIGUITIES:
+    - a156 MEDIUM coordination_scope: "and"
+    - a157 HIGH coverage_gap: "Give me a short ordered checklist"
+      ASK: "Formalize this unresolved fragment: Give me a short ordered checklist"
+    - a158 HIGH coverage_gap: "leave unrelated tasks independent"
+      ASK: "Formalize this unresolved fragment: leave unrelated tasks independent"
+  CONFIDENCE 0.25

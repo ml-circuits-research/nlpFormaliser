@@ -1,0 +1,1406 @@
+{
+  "id": "032-consolidated-symbolic-baseline",
+  "started": "2026-10-05T16:49:31.905Z",
+  "stage": "source",
+  "options": {
+    "strategy": [
+      "deterministic-rule-draft",
+      "discourse-semantic-graph"
+    ],
+    "set": "consolidated",
+    "stage": "source",
+    "selection": "docs/evaluation/selections/consolidated-first10.json",
+    "offline": true,
+    "mirrors": true,
+    "id": "032-consolidated-symbolic-baseline",
+    "tier": "small",
+    "judge-tier": "good",
+    "judge-mode": "bidirectional",
+    "batch-size": "5",
+    "cnl-view": "native",
+    "max-tokens": "8000",
+    "judge-max-tokens": "6000",
+    "timeout-ms": "180000",
+    "concurrency": "5",
+    "cache": "use"
+  },
+  "repairs": 0,
+  "cases": [
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/base/01-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nBook me a window seat on the earliest flight from Bucharest to Vienna next Tuesday.\n\nPlease rename every file in the reports folder that ends in .tmp so that it ends in .bak instead.\n\nSend Maria the slides from yesterday's meeting, but don't cc anyone from the sales team.\n\nRemind me to call the dentist tomorrow at 9 a.m., and again an hour later if I haven't marked it done.\n\nOrder two large pizzas, one vegetarian and one with extra cheese, and have them delivered to the office.\n\nCancel all my meetings on Friday afternoon except the one with the investors.\n\nArchive the emails from last quarter, but keep the ones that are flagged as important in the inbox.\n\nTom thinks the server crashed because of a memory leak, but I'm not convinced.\n\nMy manager told me that the project would be cancelled unless we found a sponsor.\n\nMaria asked whether anyone had seen her keys.\n\nI am frustrated by how many unrelated details I have to keep track of.\n\nWhich of these requests can be handled now, and which need clarification?\n\nList the unresolved questions before taking any action.",
+      "category": "base",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "21e6e5d312c486f552a12d83d660fd95f3a8ec457e4f90b04c1be7baf9c5e260"
+      },
+      "construction": {
+        "sentenceCount": 14,
+        "addedSentences": [
+          "I am frustrated by how many unrelated details I have to keep track of.",
+          "Which of these requests can be handled now, and which need clarification?",
+          "List the unresolved questions before taking any action."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "agent-requests/01-book-me-a-window-seat.txt",
+            "set": "base",
+            "file": "eval/base/agent-requests/01-book-me-a-window-seat.txt",
+            "archivedFile": "docs/evaluation/atomic/base/agent-requests/01-book-me-a-window-seat.txt",
+            "textSha256": "d2268b1ecf9ca0980c8c569a7dd4a55ff3a6ea0e65149c6ad80967ebb8c23c84"
+          },
+          {
+            "id": "agent-requests/02-please-rename-every-file-in.txt",
+            "set": "base",
+            "file": "eval/base/agent-requests/02-please-rename-every-file-in.txt",
+            "archivedFile": "docs/evaluation/atomic/base/agent-requests/02-please-rename-every-file-in.txt",
+            "textSha256": "542abac523e6982d5db812b5d9c8a360569cd98771d4109eb51af97828580244"
+          },
+          {
+            "id": "agent-requests/03-send-maria-the-slides-from.txt",
+            "set": "base",
+            "file": "eval/base/agent-requests/03-send-maria-the-slides-from.txt",
+            "archivedFile": "docs/evaluation/atomic/base/agent-requests/03-send-maria-the-slides-from.txt",
+            "textSha256": "766b8630b82a87f08dbaebb4ab38899a814214d4438e9c2e12f6ba410232528d"
+          },
+          {
+            "id": "agent-requests/04-remind-me-to-call-the.txt",
+            "set": "base",
+            "file": "eval/base/agent-requests/04-remind-me-to-call-the.txt",
+            "archivedFile": "docs/evaluation/atomic/base/agent-requests/04-remind-me-to-call-the.txt",
+            "textSha256": "3297d29cf786ea09a5867e41210f7b78799abb3d3daeda5816f85b50d377f952"
+          },
+          {
+            "id": "agent-requests/05-order-two-large-pizzas-one.txt",
+            "set": "base",
+            "file": "eval/base/agent-requests/05-order-two-large-pizzas-one.txt",
+            "archivedFile": "docs/evaluation/atomic/base/agent-requests/05-order-two-large-pizzas-one.txt",
+            "textSha256": "1299142fa200f29480ea394152b3305fb11ae152e13d1ca2b5f9b28793cd01fb"
+          },
+          {
+            "id": "agent-requests/06-cancel-all-my-meetings-on.txt",
+            "set": "base",
+            "file": "eval/base/agent-requests/06-cancel-all-my-meetings-on.txt",
+            "archivedFile": "docs/evaluation/atomic/base/agent-requests/06-cancel-all-my-meetings-on.txt",
+            "textSha256": "6368d769a0ef01ba4d468a31ea4e7f2d5581ebfd09d38a302204bddf15adca54"
+          },
+          {
+            "id": "agent-requests/07-archive-the-emails-from-last.txt",
+            "set": "base",
+            "file": "eval/base/agent-requests/07-archive-the-emails-from-last.txt",
+            "archivedFile": "docs/evaluation/atomic/base/agent-requests/07-archive-the-emails-from-last.txt",
+            "textSha256": "6c85b5039023a58a2c37af0f358da7b39dd35f98726c81c37d4b26abc1d03a52"
+          },
+          {
+            "id": "beliefs-reported-speech/01-tom-thinks-the-server-crashed.txt",
+            "set": "base",
+            "file": "eval/base/beliefs-reported-speech/01-tom-thinks-the-server-crashed.txt",
+            "archivedFile": "docs/evaluation/atomic/base/beliefs-reported-speech/01-tom-thinks-the-server-crashed.txt",
+            "textSha256": "711cc065a7068c447966ab7500d858aef656f20cef8a54a85b454e064cb29e54"
+          },
+          {
+            "id": "beliefs-reported-speech/02-my-manager-told-me-that.txt",
+            "set": "base",
+            "file": "eval/base/beliefs-reported-speech/02-my-manager-told-me-that.txt",
+            "archivedFile": "docs/evaluation/atomic/base/beliefs-reported-speech/02-my-manager-told-me-that.txt",
+            "textSha256": "6d365f314c1e1496ffe1c05c25dc15e6fb8ceecba17affe04e644fb1c3166074"
+          },
+          {
+            "id": "beliefs-reported-speech/03-maria-asked-whether-anyone-had.txt",
+            "set": "base",
+            "file": "eval/base/beliefs-reported-speech/03-maria-asked-whether-anyone-had.txt",
+            "archivedFile": "docs/evaluation/atomic/base/beliefs-reported-speech/03-maria-asked-whether-anyone-had.txt",
+            "textSha256": "a88e2bc90a64c1a4ea50224e78a38d8ce210f72d6d38ff95811aa10f98488a40"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/base/01-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/base/04-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nI prefer aisle seats, but on night flights I'd rather sit by the window.\n\nDon't schedule anything before 10 a.m. on Mondays.\n\nI'm allergic to peanuts, so please avoid any restaurant that can't guarantee a nut-free kitchen.\n\nThe hotel must be within walking distance of the conference centre and cost less than 150 euros a night.\n\nMy budget for the laptop is around 1,200 dollars, and it needs at least 16 gigabytes of memory.\n\nI like spicy food, but my partner can't handle anything hotter than mild.\n\nActually, make that Thursday, not Wednesday.\n\nSorry, I meant the 2023 report, not the 2024 one.\n\nIgnore my last message; the issue has been fixed.\n\nWait, don't send it yet. I need to change the second paragraph first.\n\nI am relieved that we are finally making progress, but I am still impatient.\n\nWhat should be checked first, and why?\n\nGive me a short ordered checklist and leave unrelated tasks independent.",
+      "category": "base",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "f030253eac74cd8daf5de627ca138bcf69d850cff565bbf89f2d3e5b555e5cad"
+      },
+      "construction": {
+        "sentenceCount": 15,
+        "addedSentences": [
+          "I am relieved that we are finally making progress, but I am still impatient.",
+          "What should be checked first, and why?",
+          "Give me a short ordered checklist and leave unrelated tasks independent."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "constraints-preferences/01-i-prefer-aisle-seats-but.txt",
+            "set": "base",
+            "file": "eval/base/constraints-preferences/01-i-prefer-aisle-seats-but.txt",
+            "archivedFile": "docs/evaluation/atomic/base/constraints-preferences/01-i-prefer-aisle-seats-but.txt",
+            "textSha256": "6cba87a08d9582e0ef8a12f8b67fcc7ceec61c61afe552450ab232f75fdf8370"
+          },
+          {
+            "id": "constraints-preferences/02-don-t-schedule-anything-before.txt",
+            "set": "base",
+            "file": "eval/base/constraints-preferences/02-don-t-schedule-anything-before.txt",
+            "archivedFile": "docs/evaluation/atomic/base/constraints-preferences/02-don-t-schedule-anything-before.txt",
+            "textSha256": "157993b2bbca61ea3610495b699864989f336cafaa4e26fb1215b176de1b419a"
+          },
+          {
+            "id": "constraints-preferences/03-i-m-allergic-to-peanuts.txt",
+            "set": "base",
+            "file": "eval/base/constraints-preferences/03-i-m-allergic-to-peanuts.txt",
+            "archivedFile": "docs/evaluation/atomic/base/constraints-preferences/03-i-m-allergic-to-peanuts.txt",
+            "textSha256": "ac527cdd223a196efb94707ce3c57d9f6170d5484ceb24ed32458c8f3c568897"
+          },
+          {
+            "id": "constraints-preferences/04-the-hotel-must-be-within.txt",
+            "set": "base",
+            "file": "eval/base/constraints-preferences/04-the-hotel-must-be-within.txt",
+            "archivedFile": "docs/evaluation/atomic/base/constraints-preferences/04-the-hotel-must-be-within.txt",
+            "textSha256": "490aa05de8b775b808550fad8db176dfcf25ef0ca48c1dae49a2bad15eba2ca0"
+          },
+          {
+            "id": "constraints-preferences/05-my-budget-for-the-laptop.txt",
+            "set": "base",
+            "file": "eval/base/constraints-preferences/05-my-budget-for-the-laptop.txt",
+            "archivedFile": "docs/evaluation/atomic/base/constraints-preferences/05-my-budget-for-the-laptop.txt",
+            "textSha256": "ad57c42384c3f9c25046eb31a7ac9e658a723220d2ff9c5474075063b025a08e"
+          },
+          {
+            "id": "constraints-preferences/06-i-like-spicy-food-but.txt",
+            "set": "base",
+            "file": "eval/base/constraints-preferences/06-i-like-spicy-food-but.txt",
+            "archivedFile": "docs/evaluation/atomic/base/constraints-preferences/06-i-like-spicy-food-but.txt",
+            "textSha256": "8486988b0a3c2b72715ca4dd1440bf9c7916c24831cc7c64d4db2deadffe7318"
+          },
+          {
+            "id": "corrections-repairs/01-actually-make-that-thursday-not.txt",
+            "set": "base",
+            "file": "eval/base/corrections-repairs/01-actually-make-that-thursday-not.txt",
+            "archivedFile": "docs/evaluation/atomic/base/corrections-repairs/01-actually-make-that-thursday-not.txt",
+            "textSha256": "452f29e8f4c95f1d4ee8ff42baccf13c41c84436a6f106e7f2c53af30fb3a6d3"
+          },
+          {
+            "id": "corrections-repairs/02-sorry-i-meant-the-2023.txt",
+            "set": "base",
+            "file": "eval/base/corrections-repairs/02-sorry-i-meant-the-2023.txt",
+            "archivedFile": "docs/evaluation/atomic/base/corrections-repairs/02-sorry-i-meant-the-2023.txt",
+            "textSha256": "091397e0555d91ae463d671900eccd633b65f56d8cb24c82686dbc643b5bc4b0"
+          },
+          {
+            "id": "corrections-repairs/03-ignore-my-last-message-the.txt",
+            "set": "base",
+            "file": "eval/base/corrections-repairs/03-ignore-my-last-message-the.txt",
+            "archivedFile": "docs/evaluation/atomic/base/corrections-repairs/03-ignore-my-last-message-the.txt",
+            "textSha256": "76c9a1f8a0c51414281dbe68eb9a0dca30380cc47c0ff20439e08fbebb478d18"
+          },
+          {
+            "id": "corrections-repairs/04-wait-don-t-send-it.txt",
+            "set": "base",
+            "file": "eval/base/corrections-repairs/04-wait-don-t-send-it.txt",
+            "archivedFile": "docs/evaluation/atomic/base/corrections-repairs/04-wait-don-t-send-it.txt",
+            "textSha256": "e2eb570c74f79ca89658ae750f17b575c891c946153863d21e2831863242bd0a"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/base/04-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/base/07-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nWhales are mammals, not fish.\n\nMetals expand when they are heated.\n\nCats usually sleep during the day.\n\nWater boils at 100 degrees Celsius at sea level.\n\nIf I had known about the traffic, I would have taken the train.\n\nIf you were in my position, would you accept the offer?\n\nHad we launched a week earlier, we would have beaten the competition.\n\nSuppose the budget is cut by 20 percent; which projects would we drop first?\n\nIf I won the lottery, I'd buy a house by the sea.\n\nCould you possibly take a look at my resume when you have a moment?\n\nI am worried that an important restriction will get lost in this discussion.\n\nWhat information is still missing before we can decide what to do?\n\nKeep the separate requests separate and do not invent links between them.",
+      "category": "base",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "a29d9525a3eeb2082ff7f237015060d7c712f399a883e4ea82b13d6153c9572e"
+      },
+      "construction": {
+        "sentenceCount": 14,
+        "addedSentences": [
+          "I am worried that an important restriction will get lost in this discussion.",
+          "What information is still missing before we can decide what to do?",
+          "Keep the separate requests separate and do not invent links between them."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "generics-knowledge/02-whales-are-mammals-not-fish.txt",
+            "set": "base",
+            "file": "eval/base/generics-knowledge/02-whales-are-mammals-not-fish.txt",
+            "archivedFile": "docs/evaluation/atomic/base/generics-knowledge/02-whales-are-mammals-not-fish.txt",
+            "textSha256": "d8d5f7591a37585472affbf3dc7bff64057117df62aefff4907c3ccb12780425"
+          },
+          {
+            "id": "generics-knowledge/03-metals-expand-when-they-are.txt",
+            "set": "base",
+            "file": "eval/base/generics-knowledge/03-metals-expand-when-they-are.txt",
+            "archivedFile": "docs/evaluation/atomic/base/generics-knowledge/03-metals-expand-when-they-are.txt",
+            "textSha256": "f6f43385928fd57c2e28541a03f64e3d1c26d31b25aaf97202faba9aa7e23d23"
+          },
+          {
+            "id": "generics-knowledge/04-cats-usually-sleep-during-the.txt",
+            "set": "base",
+            "file": "eval/base/generics-knowledge/04-cats-usually-sleep-during-the.txt",
+            "archivedFile": "docs/evaluation/atomic/base/generics-knowledge/04-cats-usually-sleep-during-the.txt",
+            "textSha256": "b9bb8f5ccbdd079586c8da0cdd385fda2677f6de606c3a4e4da7faa334e04ef2"
+          },
+          {
+            "id": "generics-knowledge/05-water-boils-at-100-degrees.txt",
+            "set": "base",
+            "file": "eval/base/generics-knowledge/05-water-boils-at-100-degrees.txt",
+            "archivedFile": "docs/evaluation/atomic/base/generics-knowledge/05-water-boils-at-100-degrees.txt",
+            "textSha256": "dabc3f821a47cfa826bdf66cee6237b19b119414bd464d8a4e1317f0574c0124"
+          },
+          {
+            "id": "hypothetical-counterfactual/01-if-i-had-known-about.txt",
+            "set": "base",
+            "file": "eval/base/hypothetical-counterfactual/01-if-i-had-known-about.txt",
+            "archivedFile": "docs/evaluation/atomic/base/hypothetical-counterfactual/01-if-i-had-known-about.txt",
+            "textSha256": "568f83d9c7cc072eb5107b6983a8da56b71fefccc48af9dc25f75d4ec1642b80"
+          },
+          {
+            "id": "hypothetical-counterfactual/02-if-you-were-in-my.txt",
+            "set": "base",
+            "file": "eval/base/hypothetical-counterfactual/02-if-you-were-in-my.txt",
+            "archivedFile": "docs/evaluation/atomic/base/hypothetical-counterfactual/02-if-you-were-in-my.txt",
+            "textSha256": "75bfb9aa0308699151c92737dcacb0bf541a7011445ad9db7482e4a194396fa9"
+          },
+          {
+            "id": "hypothetical-counterfactual/03-had-we-launched-a-week.txt",
+            "set": "base",
+            "file": "eval/base/hypothetical-counterfactual/03-had-we-launched-a-week.txt",
+            "archivedFile": "docs/evaluation/atomic/base/hypothetical-counterfactual/03-had-we-launched-a-week.txt",
+            "textSha256": "eea44dfebe9aeb9c7c921dd16037361f4d967e1bae3f5475c78371f01643c891"
+          },
+          {
+            "id": "hypothetical-counterfactual/04-suppose-the-budget-is-cut.txt",
+            "set": "base",
+            "file": "eval/base/hypothetical-counterfactual/04-suppose-the-budget-is-cut.txt",
+            "archivedFile": "docs/evaluation/atomic/base/hypothetical-counterfactual/04-suppose-the-budget-is-cut.txt",
+            "textSha256": "a5b3ec77f8ce38975ee1a6907ca1071878e4f356c2fd90561dc7fae621667cf3"
+          },
+          {
+            "id": "hypothetical-counterfactual/05-if-i-won-the-lottery.txt",
+            "set": "base",
+            "file": "eval/base/hypothetical-counterfactual/05-if-i-won-the-lottery.txt",
+            "archivedFile": "docs/evaluation/atomic/base/hypothetical-counterfactual/05-if-i-won-the-lottery.txt",
+            "textSha256": "bab01d667e703ea23b9f7a16c8d1cf3c8f00f8c38135594aff0b5ff8b2fae36b"
+          },
+          {
+            "id": "indirect-speech-acts/01-could-you-possibly-take-a.txt",
+            "set": "base",
+            "file": "eval/base/indirect-speech-acts/01-could-you-possibly-take-a.txt",
+            "archivedFile": "docs/evaluation/atomic/base/indirect-speech-acts/01-could-you-possibly-take-a.txt",
+            "textSha256": "8133e28bdcc8fbd4064f0eaf1afbf0f7a41176e1a3ef44a5f69b5f9ad5011a8d"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/base/07-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/base/10-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nNobody except Ana has access to the production database.\n\nThe report wasn't late because of the data team; it was late because of the holidays.\n\nI never said I wouldn't come.\n\nNot all of the guests have confirmed, but none have cancelled.\n\nA tenant may terminate the lease with thirty days' written notice.\n\nRefunds are available within 14 days of purchase, provided the item is unused.\n\nEmployees who work more than forty hours per week are entitled to overtime pay.\n\nNo personal data may be transferred outside the EU without the customer's explicit consent.\n\nThe warranty does not cover damage caused by water or by unauthorised repairs.\n\nChildren under twelve must be accompanied by an adult at all times.\n\nI am annoyed about the delay, not about the person helping me.\n\nCan you identify any conflicting requirements in these notes?\n\nPoint out contradictions rather than resolving them without asking me.",
+      "category": "base",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "e47a99c2cae080d323506076c44ff03d802096a1bbf606817ed46325b3ddd943"
+      },
+      "construction": {
+        "sentenceCount": 14,
+        "addedSentences": [
+          "I am annoyed about the delay, not about the person helping me.",
+          "Can you identify any conflicting requirements in these notes?",
+          "Point out contradictions rather than resolving them without asking me."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "negation-scope/04-nobody-except-ana-has-access.txt",
+            "set": "base",
+            "file": "eval/base/negation-scope/04-nobody-except-ana-has-access.txt",
+            "archivedFile": "docs/evaluation/atomic/base/negation-scope/04-nobody-except-ana-has-access.txt",
+            "textSha256": "9dcd3d0c69ff3bf3c2d1092ae8955525933b4f84c77ffbf1769137377697df6f"
+          },
+          {
+            "id": "negation-scope/05-the-report-wasn-t-late.txt",
+            "set": "base",
+            "file": "eval/base/negation-scope/05-the-report-wasn-t-late.txt",
+            "archivedFile": "docs/evaluation/atomic/base/negation-scope/05-the-report-wasn-t-late.txt",
+            "textSha256": "852efd02cef94a93afe6024a75338207a9e2f5faf152443f938c3f0b09322825"
+          },
+          {
+            "id": "negation-scope/06-i-never-said-i-wouldn.txt",
+            "set": "base",
+            "file": "eval/base/negation-scope/06-i-never-said-i-wouldn.txt",
+            "archivedFile": "docs/evaluation/atomic/base/negation-scope/06-i-never-said-i-wouldn.txt",
+            "textSha256": "90523418ee3508f588d61dde969819501b707be51c5c548c0ca7d24953ec4281"
+          },
+          {
+            "id": "negation-scope/07-not-all-of-the-guests.txt",
+            "set": "base",
+            "file": "eval/base/negation-scope/07-not-all-of-the-guests.txt",
+            "archivedFile": "docs/evaluation/atomic/base/negation-scope/07-not-all-of-the-guests.txt",
+            "textSha256": "be5dcb6eec44102d2f03df0d33cfae9a3f929d3a1ceaa956a79dab611dd3a151"
+          },
+          {
+            "id": "policy-legal/01-a-tenant-may-terminate-the.txt",
+            "set": "base",
+            "file": "eval/base/policy-legal/01-a-tenant-may-terminate-the.txt",
+            "archivedFile": "docs/evaluation/atomic/base/policy-legal/01-a-tenant-may-terminate-the.txt",
+            "textSha256": "4d684b191d7478374f9474a4a901723e32144bf605469aee6570f22ad27ca8d6"
+          },
+          {
+            "id": "policy-legal/02-refunds-are-available-within-14.txt",
+            "set": "base",
+            "file": "eval/base/policy-legal/02-refunds-are-available-within-14.txt",
+            "archivedFile": "docs/evaluation/atomic/base/policy-legal/02-refunds-are-available-within-14.txt",
+            "textSha256": "51a4b6ac0c78024c5ae346e47ef39f5ee8e65450fddf39e495a344764b530661"
+          },
+          {
+            "id": "policy-legal/03-employees-who-work-more-than.txt",
+            "set": "base",
+            "file": "eval/base/policy-legal/03-employees-who-work-more-than.txt",
+            "archivedFile": "docs/evaluation/atomic/base/policy-legal/03-employees-who-work-more-than.txt",
+            "textSha256": "6289c027d0f059f1f305f49d097140f8752d493e770fb8aceab7ae166cc12fe1"
+          },
+          {
+            "id": "policy-legal/04-no-personal-data-may-be.txt",
+            "set": "base",
+            "file": "eval/base/policy-legal/04-no-personal-data-may-be.txt",
+            "archivedFile": "docs/evaluation/atomic/base/policy-legal/04-no-personal-data-may-be.txt",
+            "textSha256": "194ce78fe9007efded923d4d909d1f94af7477a431703a38d798003076431eb8"
+          },
+          {
+            "id": "policy-legal/05-the-warranty-does-not-cover.txt",
+            "set": "base",
+            "file": "eval/base/policy-legal/05-the-warranty-does-not-cover.txt",
+            "archivedFile": "docs/evaluation/atomic/base/policy-legal/05-the-warranty-does-not-cover.txt",
+            "textSha256": "bf5bd8f43870df59361107e6cb2b1295a954b780dd5a8c3edd2126cc61eecd5c"
+          },
+          {
+            "id": "policy-legal/06-children-under-twelve-must-be.txt",
+            "set": "base",
+            "file": "eval/base/policy-legal/06-children-under-twelve-must-be.txt",
+            "archivedFile": "docs/evaluation/atomic/base/policy-legal/06-children-under-twelve-must-be.txt",
+            "textSha256": "adadbed6797b7ff174eacfc38fabd1c7b24e36c335251039f3a4bcd910b383ea"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/base/10-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/base/14-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nMake sure the function returns an empty list instead of null when there are no results.\n\nRevert the last two commits on the feature branch, not on main.\n\nDisable the cache in development but keep it enabled in production.\n\nLet's meet every other Thursday at 4 p.m., starting next week.\n\nThe office is closed from December 24 until January 2.\n\nI'll be in Berlin from Monday to Wednesday, so move our call to Thursday morning.\n\nThe contract expires thirty days after the last payment is received.\n\nShe has been working on the migration since March and expects to finish before the end of the quarter.\n\nBy the time you read this, I will have already left for the airport.\n\nI am relieved that we are finally making progress, but I am still impatient.\n\nWhat should be checked first, and why?\n\nGive me a short ordered checklist and leave unrelated tasks independent.",
+      "category": "base",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "67348ec0ff40a0de12f0ebf54b15c1d5c0cddfec0a0aef90548846585778e31f"
+      },
+      "construction": {
+        "sentenceCount": 13,
+        "addedSentences": [
+          "I am relieved that we are finally making progress, but I am still impatient.",
+          "What should be checked first, and why?",
+          "Give me a short ordered checklist and leave unrelated tasks independent."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "technical-instructions/04-make-sure-the-function-returns.txt",
+            "set": "base",
+            "file": "eval/base/technical-instructions/04-make-sure-the-function-returns.txt",
+            "archivedFile": "docs/evaluation/atomic/base/technical-instructions/04-make-sure-the-function-returns.txt",
+            "textSha256": "41f041da394f33f278d58d48741228f24d4638c2bfdcff121f6a5ee37f21b66d"
+          },
+          {
+            "id": "technical-instructions/05-revert-the-last-two-commits.txt",
+            "set": "base",
+            "file": "eval/base/technical-instructions/05-revert-the-last-two-commits.txt",
+            "archivedFile": "docs/evaluation/atomic/base/technical-instructions/05-revert-the-last-two-commits.txt",
+            "textSha256": "cc9c0e02740987dca70b85c036f73f730c169d161fb0b4a89066a11e13861801"
+          },
+          {
+            "id": "technical-instructions/06-disable-the-cache-in-development.txt",
+            "set": "base",
+            "file": "eval/base/technical-instructions/06-disable-the-cache-in-development.txt",
+            "archivedFile": "docs/evaluation/atomic/base/technical-instructions/06-disable-the-cache-in-development.txt",
+            "textSha256": "c37f03d6aba6ee87c6c0e6c37e3e6e7b2c9e9032b4fb7a6b2ce10e4c30154072"
+          },
+          {
+            "id": "time-scheduling/01-let-s-meet-every-other.txt",
+            "set": "base",
+            "file": "eval/base/time-scheduling/01-let-s-meet-every-other.txt",
+            "archivedFile": "docs/evaluation/atomic/base/time-scheduling/01-let-s-meet-every-other.txt",
+            "textSha256": "d743b3286b39d913b8bf11c0241f3d86d5313718c727f9147d3b3f5cf133c493"
+          },
+          {
+            "id": "time-scheduling/02-the-office-is-closed-from.txt",
+            "set": "base",
+            "file": "eval/base/time-scheduling/02-the-office-is-closed-from.txt",
+            "archivedFile": "docs/evaluation/atomic/base/time-scheduling/02-the-office-is-closed-from.txt",
+            "textSha256": "67f077082460463a87865d517f1ef9ea400a2bd57b57efc9f9e3074332c49464"
+          },
+          {
+            "id": "time-scheduling/03-i-ll-be-in-berlin.txt",
+            "set": "base",
+            "file": "eval/base/time-scheduling/03-i-ll-be-in-berlin.txt",
+            "archivedFile": "docs/evaluation/atomic/base/time-scheduling/03-i-ll-be-in-berlin.txt",
+            "textSha256": "ba1adc064bd57f7480758c672a946cc51fbd23d0b7652bd076e7a4898b049079"
+          },
+          {
+            "id": "time-scheduling/04-the-contract-expires-thirty-days.txt",
+            "set": "base",
+            "file": "eval/base/time-scheduling/04-the-contract-expires-thirty-days.txt",
+            "archivedFile": "docs/evaluation/atomic/base/time-scheduling/04-the-contract-expires-thirty-days.txt",
+            "textSha256": "1fbf61106eb180c33e570303a3cea11d89f65c8155fde666a4edfe406fd9c5d9"
+          },
+          {
+            "id": "time-scheduling/05-she-has-been-working-on.txt",
+            "set": "base",
+            "file": "eval/base/time-scheduling/05-she-has-been-working-on.txt",
+            "archivedFile": "docs/evaluation/atomic/base/time-scheduling/05-she-has-been-working-on.txt",
+            "textSha256": "ffb879afd52168860ff8717ee50c6bd75bf8f0541cc430cd14fdb9122e6f28da"
+          },
+          {
+            "id": "time-scheduling/06-by-the-time-you-read.txt",
+            "set": "base",
+            "file": "eval/base/time-scheduling/06-by-the-time-you-read.txt",
+            "archivedFile": "docs/evaluation/atomic/base/time-scheduling/06-by-the-time-you-read.txt",
+            "textSha256": "786b3f63a47b8f32e7c8fc4f9531f890961a46ab6a1f0a9e57e1dd38527ff3ac"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/base/14-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/lab-development/01-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nMira is a physicist. She owns a workstation.\n\nSensor S1 is red and is mounted on the north wall.\n\nCatalyst C7 speeds up reaction R2 without being consumed by it.\n\nBob sent Alice the report on Monday.\n\nThe report was approved by Dana after the audit.\n\nLeo entered the lab, then he switched off the alarm.\n\nIf a server is overloaded, the scheduler moves new jobs elsewhere. Node7 is a server and is overloaded.\n\nEvery researcher who owns a GPU can run a local model. Ana is a researcher and owns GPU1, which is a GPU.\n\nNo reviewer may approve a paper they authored. Nina is a reviewer and authored paper7.\n\nSample3 is clean, while sample4 is contaminated.\n\nNot every request requires authentication; public status requests do not. R17 is a public status request.\n\nI am annoyed about the delay, not about the person helping me.\n\nCan you identify any conflicting requirements in these notes?\n\nPoint out contradictions rather than resolving them without asking me.",
+      "category": "lab-development",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "d0086e97b7d05c2736347d737596a9b3d2da0f926e57b742e593bce96a82631f"
+      },
+      "construction": {
+        "sentenceCount": 20,
+        "addedSentences": [
+          "I am annoyed about the delay, not about the person helping me.",
+          "Can you identify any conflicting requirements in these notes?",
+          "Point out contradictions rather than resolving them without asking me."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "archive-lab-development/C01",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C01.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C01.txt",
+            "textSha256": "3738e8e5c9a1046c3ddf5429d963c3018756abc09e1e3614d56ff8c0097c99d1"
+          },
+          {
+            "id": "archive-lab-development/C02",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C02.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C02.txt",
+            "textSha256": "daab06dd7d73b1b5bc3eaff7bc44846fab4040c8cee4678652cc0c0cecf73257"
+          },
+          {
+            "id": "archive-lab-development/C03",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C03.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C03.txt",
+            "textSha256": "9ebd608394b25d1f96b82d9eb1e4d27083f376b915aed1786979968bb08a211f"
+          },
+          {
+            "id": "archive-lab-development/C04",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C04.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C04.txt",
+            "textSha256": "ebc12262d39af44fa5420d11be2a6af78ca3f4d0c7d3a8168af9045e3bc76748"
+          },
+          {
+            "id": "archive-lab-development/C05",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C05.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C05.txt",
+            "textSha256": "ab39aa078b7ebba05a69959fa0f606dc74442315a9d679a2e33e6d512d046969"
+          },
+          {
+            "id": "archive-lab-development/C06",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C06.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C06.txt",
+            "textSha256": "c43b77dfc0e5277a40ce14e5db460caccb857cacb5b4d15beef02023e41753a1"
+          },
+          {
+            "id": "archive-lab-development/C07",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C07.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C07.txt",
+            "textSha256": "9b2b052b251407efcd6109352942781fa9a8201e2860f43a42184a93eb886bd9"
+          },
+          {
+            "id": "archive-lab-development/C08",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C08.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C08.txt",
+            "textSha256": "3708dbc7cb3f43e25b143f0199d25fabee9b050f5913b3b3307acbc7b4994dc8"
+          },
+          {
+            "id": "archive-lab-development/C09",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C09.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C09.txt",
+            "textSha256": "1ffdad59e741484945cfdfcb323e134927a25726dde988a164ae094501ef1412"
+          },
+          {
+            "id": "archive-lab-development/C10",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C10.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C10.txt",
+            "textSha256": "1af2f66e6f9339bff09d6e761fa115327b21440b849cb01555ef08b621ec7419"
+          },
+          {
+            "id": "archive-lab-development/C11",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C11.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C11.txt",
+            "textSha256": "8c4f17de32065b189a0a1139e5c6537888cbf3892b221812f4a1549fa6dfda1b"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/lab-development/01-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/lab-development/02-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nOnly administrators can delete accounts. Kim deleted account42, which is an account.\n\nUnless the backup succeeds, deployment must not start. The backup did not succeed.\n\nA file is considered stale when its checksum differs from the recorded checksum. FileA is a file and its checksum differs.\n\nRobot R1 may pick up box B only if its gripper is empty. R1 is permitted to pick up B.\n\nIf the temperature drops below 0°C, water can freeze. The temperature is below 0°C.\n\nParis is west of Berlin, and Berlin is west of Warsaw.\n\nThe key belongs to Alice, but Bob is holding it.\n\nThe experiment failed because the pump lost power.\n\nAlice promised Bob that she would submit the draft.\n\nDevice D1 must be calibrated before it is used.\n\nI am frustrated by how many unrelated details I have to keep track of.\n\nWhich of these requests can be handled now, and which need clarification?\n\nList the unresolved questions before taking any action.",
+      "category": "lab-development",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "9cfaccf5a20aa924ae34c179ed3357c5e49de9da0b56f67d4d56591025b190f8"
+      },
+      "construction": {
+        "sentenceCount": 19,
+        "addedSentences": [
+          "I am frustrated by how many unrelated details I have to keep track of.",
+          "Which of these requests can be handled now, and which need clarification?",
+          "List the unresolved questions before taking any action."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "archive-lab-development/C12",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C12.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C12.txt",
+            "textSha256": "65c415803a7d2eda8b4ba73372c20c98ff58fd10b9295ab359b884fe6f406701"
+          },
+          {
+            "id": "archive-lab-development/C13",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C13.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C13.txt",
+            "textSha256": "17c3e3c18b186fff27963c779bd0bfa3320c247b5cfa7de933c7b8665763bce5"
+          },
+          {
+            "id": "archive-lab-development/C14",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C14.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C14.txt",
+            "textSha256": "adfe71cc014a9450071144c4fa3b13037406a180cc41db863a41d632e5c6f40e"
+          },
+          {
+            "id": "archive-lab-development/C15",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C15.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C15.txt",
+            "textSha256": "c9a4479d23c288b7bc5e2b428b58887e42b54b0dff9a3d60cbf041730da5e526"
+          },
+          {
+            "id": "archive-lab-development/C16",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C16.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C16.txt",
+            "textSha256": "3a0b35e60be08cca31de62900b124d7ec6134621662eab38e6a933943b7bf1c9"
+          },
+          {
+            "id": "archive-lab-development/C17",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C17.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C17.txt",
+            "textSha256": "62ddf2aee8d355d676c9e50ed695bd07d1adc25dc41d8d3d49b72f5e263bee49"
+          },
+          {
+            "id": "archive-lab-development/C18",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C18.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C18.txt",
+            "textSha256": "540f9ae71c6c84105b3bc6d0116dad05bf44b4e59737e6fd131c6e1370029733"
+          },
+          {
+            "id": "archive-lab-development/C19",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C19.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C19.txt",
+            "textSha256": "f34de1eaee7edaeb02c7d9c1de453de697409fba05ddca1b50ce7c79ae2c77c2"
+          },
+          {
+            "id": "archive-lab-development/C20",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C20.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C20.txt",
+            "textSha256": "0f7382de80795d7b2670013810606b6cbfefbf7fac07b4e116ba8d64c2c27be5"
+          },
+          {
+            "id": "archive-lab-development/C21",
+            "set": "archive-lab-development",
+            "file": "eval/archive-lab-development/C21.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-lab-development/C21.txt",
+            "textSha256": "20a040f0417e88d82ee4dae3ee46ec6d29aa88d477ecd78cb8368c5e3f95355d"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/lab-development/02-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/scope/01-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nRavi plans to buy a laptop next month. He has compared three models, but he has not placed an order. Has Ravi bought the laptop?\n\nEvery employee who handles customer data must complete privacy training. Ana is an employee and handles customer data. Has Ana completed the training?\n\nIf a payment exceeds 10,000 euros, a director must approve it before it is released. Payment P7 is for 12,500 euros and has been released. Was P7 necessarily approved by a director?\n\nLea told Omar that the server was offline. Omar did not verify the claim. Is the server definitely offline?\n\nThe backup runs every night unless maintenance mode is enabled. Maintenance mode was enabled last night. Did the backup run last night?\n\nThe application allows a user to download the dataset only if that user is registered. It allowed Niko to download the dataset. Is Niko registered?\n\nMaria submitted the revised proposal on Monday. Leo forwarded it to Iris on Tuesday, and Iris archived it after reading it. Who archived the proposal?\n\nTwo sensors failed during the test, but neither was replaced. Did any failed sensor get replaced?\n\nEvery paper has at least one author. There is an author who wrote three papers. Is there an author who wrote at least one paper?\n\nAlice did not promise to attend the meeting. Bob thinks she promised not to attend it. Did Alice promise to attend?\n\nI am frustrated by how many unrelated details I have to keep track of.\n\nWhich of these requests can be handled now, and which need clarification?\n\nList the unresolved questions before taking any action.",
+      "category": "scope",
+      "tags": [
+        "time",
+        "negation",
+        "question",
+        "quantity",
+        "coreference",
+        "forall",
+        "condition",
+        "modality",
+        "attribution",
+        "unless",
+        "only_if",
+        "wh_question",
+        "ordering",
+        "exists",
+        "negation_scope",
+        "belief",
+        "mixed-speech-acts",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "07071573051e9e5912bc8e0a20bd8f9375da9be4e064d712054ce1a383b4cc1d"
+      },
+      "construction": {
+        "sentenceCount": 33,
+        "addedSentences": [
+          "I am frustrated by how many unrelated details I have to keep track of.",
+          "Which of these requests can be handled now, and which need clarification?",
+          "List the unresolved questions before taking any action."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "archive-scope-semantics/ravi_plan",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/ravi_plan.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/ravi_plan.txt",
+            "textSha256": "dbd6f79fb11f82b2d9274084f72c29e1a31f78cded94968db7c647ac2e3fd1ad"
+          },
+          {
+            "id": "archive-scope-semantics/privacy_training",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/privacy_training.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/privacy_training.txt",
+            "textSha256": "231b187f280a9684d00fb23422c04bac0dc2573eb277ac5760534936f62d951a"
+          },
+          {
+            "id": "archive-scope-semantics/payment_approval",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/payment_approval.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/payment_approval.txt",
+            "textSha256": "69333c759957fde959313afd624b5def85251e68346c68e435b90baa10448e0c"
+          },
+          {
+            "id": "archive-scope-semantics/reported_offline",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/reported_offline.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/reported_offline.txt",
+            "textSha256": "7f482ec2e09960b00b45f2c157f567f8f24b18f83da76e30e2e43d78fb38fe5c"
+          },
+          {
+            "id": "archive-scope-semantics/unless_backup",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/unless_backup.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/unless_backup.txt",
+            "textSha256": "7ceb4e2750c19011045479ef39cf2da345b55122c66a481abb4ce7faf063bd83"
+          },
+          {
+            "id": "archive-scope-semantics/only_if_registered",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/only_if_registered.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/only_if_registered.txt",
+            "textSha256": "13a150038dbcf3c670b874ccd0a9c0296615f58fef26bafbd8aa031b93a1d0c0"
+          },
+          {
+            "id": "archive-scope-semantics/proposal_chain",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/proposal_chain.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/proposal_chain.txt",
+            "textSha256": "7130183076e2231d4cd8365c7f341ceba1faed8dc7879fb6163cd8e98d019eb4"
+          },
+          {
+            "id": "archive-scope-semantics/two_sensors",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/two_sensors.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/two_sensors.txt",
+            "textSha256": "335b9b17c49c7537d7b49887cc0f9dcffbf9d1adf1680dec295f83819a4e3070"
+          },
+          {
+            "id": "archive-scope-semantics/papers_authors",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/papers_authors.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/papers_authors.txt",
+            "textSha256": "4de8523293d0f015df401fbca1d152d7ec451a4072e19d5d972278d7611be709"
+          },
+          {
+            "id": "archive-scope-semantics/promise_scope",
+            "set": "archive-scope-semantics",
+            "file": "eval/archive-scope-semantics/promise_scope.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-scope-semantics/promise_scope.txt",
+            "textSha256": "deb23021781b8e799b480942adee509d971078bd39f8b9b53b2b454bce021722"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/scope/01-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/speech-acts/01-mixed-discussion",
+      "kind": "formalization",
+      "text": "These notes concern separate situations unless I explicitly connect them.\n\nWell, basically, the server is running now.\n\nI think the small model is probably enough.\n\nMaria says that the benchmark failed.\n\nNot every user has access.\n\nExactly three workers are active.\n\nIf the signature is valid, the system accepts the file.\n\nNormally reject the request unless an administrator approves it.\n\nWhich model has the lowest latency?\n\nDo we know whether the test passed?\n\nCould you check whether the tests pass?\n\nCan Luna run on this hardware?\n\nI am relieved that we are finally making progress, but I am still impatient.\n\nWhat should be checked first, and why?\n\nGive me a short ordered checklist and leave unrelated tasks independent.",
+      "category": "speech-acts",
+      "tags": [
+        "assertion",
+        "fluff",
+        "uncertainty",
+        "attribution",
+        "negation",
+        "quantifier",
+        "condition",
+        "exception",
+        "question",
+        "embedded",
+        "request",
+        "polite",
+        "ability",
+        "mixed-speech-acts",
+        "instruction",
+        "emotion"
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "3582e8adcce2c906b96fe5c5403f983b04116bde32a2dba2b02204055018f54d"
+      },
+      "construction": {
+        "sentenceCount": 15,
+        "addedSentences": [
+          "I am relieved that we are finally making progress, but I am still impatient.",
+          "What should be checked first, and why?",
+          "Give me a short ordered checklist and leave unrelated tasks independent."
+        ],
+        "preamble": "These notes concern separate situations unless I explicitly connect them.",
+        "sources": [
+          {
+            "id": "archive-speech-acts/a01",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/a01.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/a01.txt",
+            "textSha256": "77c2e322c5ad3409d7e7f43726ae68d72b995026b9581ec47fe43a3465f0dbcd"
+          },
+          {
+            "id": "archive-speech-acts/a02",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/a02.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/a02.txt",
+            "textSha256": "9c9cabc8e1b86d92d44f3dc9718f452e270b237018c0187eb4a2e21a234b0d63"
+          },
+          {
+            "id": "archive-speech-acts/a03",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/a03.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/a03.txt",
+            "textSha256": "e87fff9ae416d108146ab6a3e2d088dff76c19023fb159b3c7620000a147f270"
+          },
+          {
+            "id": "archive-speech-acts/a04",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/a04.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/a04.txt",
+            "textSha256": "c46dec296eac3dad275f36ec9ebb2f0c188a7740761ec75160450c9c64abd2ee"
+          },
+          {
+            "id": "archive-speech-acts/a05",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/a05.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/a05.txt",
+            "textSha256": "a4bcac9751f7afb5639a6f78f10882ef4c94c978e2244170716c447d6b0cacf3"
+          },
+          {
+            "id": "archive-speech-acts/a06",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/a06.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/a06.txt",
+            "textSha256": "e3020caf91edc901dc02c9247969b28c9da49b7a22bded7e5e93eba5001ec5cc"
+          },
+          {
+            "id": "archive-speech-acts/a07",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/a07.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/a07.txt",
+            "textSha256": "5fff7a20ca487a9f62e3acea668a62636a3b905e411068f13deab7ec30c5e338"
+          },
+          {
+            "id": "archive-speech-acts/q01",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/q01.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/q01.txt",
+            "textSha256": "fb5f42375a507ccf9509670c7aaa5de02a418e316c57a4b8cfeb7c494e5759af"
+          },
+          {
+            "id": "archive-speech-acts/q02",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/q02.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/q02.txt",
+            "textSha256": "2effa3cd9529a08cd74fce461160cb5c1c6c9b006e5eccd7cfe0e72115159fb6"
+          },
+          {
+            "id": "archive-speech-acts/q03",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/q03.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/q03.txt",
+            "textSha256": "6c52c1edec8b6a1ee93074a97d1ec25a5e9397ca6f0d671edc6eed0f18e49fa5"
+          },
+          {
+            "id": "archive-speech-acts/q04",
+            "set": "archive-speech-acts",
+            "file": "eval/archive-speech-acts/q04.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-speech-acts/q04.txt",
+            "textSha256": "202c9bbae1522caf0c7620d65fe409f7585fa093f7bb4063361cc5799ea4dc27"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/speech-acts/01-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    },
+    {
+      "schema": "nlp-eval/2",
+      "id": "consolidated/dialogue/01-mixed-discussion",
+      "kind": "conversation",
+      "text": "user: We want a formalizer that converts English requests into a canonical controlled language.\nuser: Every candidate formalization must preserve negation, modality, quantifiers, temporal order, and references.\nuser: If the symbolic parser is uncertain, mark the ambiguity instead of guessing.\nuser: Find three difficult examples involving pronouns and modal scope.\nuser: Do not include examples that require specialist medical knowledge.\nuser: Bob told Alan that he should review the report.\nuser: I mean Alan.\nuser: Not every reviewer must accept a paper.\nuser: Does that mean some reviewer is not required to accept a paper?\nuser: Before Ada approves the report, Bob must review it.\nuser: If Bob rejects it, Ada should not publish it.\nuser: Which report is being discussed?\nuser: Use the report from the previous example.\nuser: The evaluator may accept a candidate only if no material meaning is missing.\nuser: It may reject a candidate because the CNL invents a condition that is not present in the source.\nuser: If the source is ambiguous and the context does not resolve it, the evaluator must return uncertain.\nuser: Show me which candidates were rejected and why.\nuser: Keep the explanation short, but preserve the exact evidence spans.\nuser: We prefer one batched LLM call over one call per sentence.\nuser: When ten candidates are ready, validate them together.\nuser: Do not wait for ten if the user explicitly asks for an immediate verdict.\nuser: A candidate that passes the symbolic audit can still be wrong.\nuser: Therefore sample some apparently safe candidates for LLM review.\nuser: How many of the last twenty candidates were judged equivalent?\nuser: If fewer than eighteen were equivalent, report the failure rate.\nuser: The judge must not use world knowledge to fill missing information.\nuser: Only information licensed by the source or the conversation may be used.\nuser: Can the formalizer distinguish 'does not have to submit' from 'must not submit'?\nuser: Test both readings and mark any scope error.\nuser: Finally, return the CNL, the symbolic warnings, and the LLM verdict for each tested turn.\n\nI am relieved that we are finally making progress, but I am still impatient.\n\nWhat should be checked first, and why?\n\nGive me a short ordered checklist and leave unrelated tasks independent.",
+      "category": "dialogue",
+      "tags": [
+        "mixed-speech-acts",
+        "question",
+        "instruction",
+        "emotion"
+      ],
+      "turns": [
+        {
+          "id": "t01",
+          "speaker": "user",
+          "text": "We want a formalizer that converts English requests into a canonical controlled language."
+        },
+        {
+          "id": "t02",
+          "speaker": "user",
+          "text": "Every candidate formalization must preserve negation, modality, quantifiers, temporal order, and references."
+        },
+        {
+          "id": "t03",
+          "speaker": "user",
+          "text": "If the symbolic parser is uncertain, mark the ambiguity instead of guessing."
+        },
+        {
+          "id": "t04",
+          "speaker": "user",
+          "text": "Find three difficult examples involving pronouns and modal scope."
+        },
+        {
+          "id": "t05",
+          "speaker": "user",
+          "text": "Do not include examples that require specialist medical knowledge."
+        },
+        {
+          "id": "t06",
+          "speaker": "user",
+          "text": "Bob told Alan that he should review the report."
+        },
+        {
+          "id": "t07",
+          "speaker": "user",
+          "text": "I mean Alan."
+        },
+        {
+          "id": "t08",
+          "speaker": "user",
+          "text": "Not every reviewer must accept a paper."
+        },
+        {
+          "id": "t09",
+          "speaker": "user",
+          "text": "Does that mean some reviewer is not required to accept a paper?"
+        },
+        {
+          "id": "t10",
+          "speaker": "user",
+          "text": "Before Ada approves the report, Bob must review it."
+        },
+        {
+          "id": "t11",
+          "speaker": "user",
+          "text": "If Bob rejects it, Ada should not publish it."
+        },
+        {
+          "id": "t12",
+          "speaker": "user",
+          "text": "Which report is being discussed?"
+        },
+        {
+          "id": "t13",
+          "speaker": "user",
+          "text": "Use the report from the previous example."
+        },
+        {
+          "id": "t14",
+          "speaker": "user",
+          "text": "The evaluator may accept a candidate only if no material meaning is missing."
+        },
+        {
+          "id": "t15",
+          "speaker": "user",
+          "text": "It may reject a candidate because the CNL invents a condition that is not present in the source."
+        },
+        {
+          "id": "t16",
+          "speaker": "user",
+          "text": "If the source is ambiguous and the context does not resolve it, the evaluator must return uncertain."
+        },
+        {
+          "id": "t17",
+          "speaker": "user",
+          "text": "Show me which candidates were rejected and why."
+        },
+        {
+          "id": "t18",
+          "speaker": "user",
+          "text": "Keep the explanation short, but preserve the exact evidence spans."
+        },
+        {
+          "id": "t19",
+          "speaker": "user",
+          "text": "We prefer one batched LLM call over one call per sentence."
+        },
+        {
+          "id": "t20",
+          "speaker": "user",
+          "text": "When ten candidates are ready, validate them together."
+        },
+        {
+          "id": "t21",
+          "speaker": "user",
+          "text": "Do not wait for ten if the user explicitly asks for an immediate verdict."
+        },
+        {
+          "id": "t22",
+          "speaker": "user",
+          "text": "A candidate that passes the symbolic audit can still be wrong."
+        },
+        {
+          "id": "t23",
+          "speaker": "user",
+          "text": "Therefore sample some apparently safe candidates for LLM review."
+        },
+        {
+          "id": "t24",
+          "speaker": "user",
+          "text": "How many of the last twenty candidates were judged equivalent?"
+        },
+        {
+          "id": "t25",
+          "speaker": "user",
+          "text": "If fewer than eighteen were equivalent, report the failure rate."
+        },
+        {
+          "id": "t26",
+          "speaker": "user",
+          "text": "The judge must not use world knowledge to fill missing information."
+        },
+        {
+          "id": "t27",
+          "speaker": "user",
+          "text": "Only information licensed by the source or the conversation may be used."
+        },
+        {
+          "id": "t28",
+          "speaker": "user",
+          "text": "Can the formalizer distinguish 'does not have to submit' from 'must not submit'?"
+        },
+        {
+          "id": "t29",
+          "speaker": "user",
+          "text": "Test both readings and mark any scope error."
+        },
+        {
+          "id": "t30",
+          "speaker": "user",
+          "text": "Finally, return the CNL, the symbolic warnings, and the LLM verdict for each tested turn."
+        },
+        {
+          "id": "added-1",
+          "speaker": "user",
+          "text": "I am relieved that we are finally making progress, but I am still impatient."
+        },
+        {
+          "id": "added-2",
+          "speaker": "user",
+          "text": "What should be checked first, and why?"
+        },
+        {
+          "id": "added-3",
+          "speaker": "user",
+          "text": "Give me a short ordered checklist and leave unrelated tasks independent."
+        }
+      ],
+      "provenance": {
+        "partition": "development",
+        "construction": "Deterministic concatenation of preserved source texts with explicitly recorded additions",
+        "trust": "Synthetic mixed-topic development material; not a natural conversation or certified gold",
+        "textSha256": "64408e672d1bc4407595a36df4c7238935875543ce1b0241a663f47cf04a40bf"
+      },
+      "construction": {
+        "sentenceCount": 33,
+        "addedSentences": [
+          "I am relieved that we are finally making progress, but I am still impatient.",
+          "What should be checked first, and why?",
+          "Give me a short ordered checklist and leave unrelated tasks independent."
+        ],
+        "preamble": null,
+        "sources": [
+          {
+            "id": "archive-discourse-dialogue/connected-chat",
+            "set": "archive-discourse-dialogue",
+            "file": "eval/archive-discourse-dialogue/connected-chat.txt",
+            "archivedFile": "docs/evaluation/atomic/archive-discourse-dialogue/connected-chat.txt",
+            "textSha256": "f0275287f8de784affb00ded1e7a906a21d0d908cfd49cf9f23547302091fd80"
+          }
+        ]
+      },
+      "reference": {},
+      "file": "/home/salboaie/work/nlp/nlpFormaliser/eval/consolidated/dialogue/01-mixed-discussion.txt",
+      "metadataFile": "/home/salboaie/work/nlp/nlpFormaliser/docs/evaluation/metadata/consolidated.jsonl"
+    }
+  ],
+  "strategies": [
+    "deterministic-rule-draft",
+    "discourse-semantic-graph"
+  ],
+  "sourceHashes": {
+    "README.md": "f02fad8e6a08565feabf8c2ab72170012b72fc1fc2af9f5623b6caa20d5a8436",
+    "package-lock.json": "efcfa12cfcf09fa91383963d90853dfe321af20259dc19c5c3914977abd0a78f",
+    "package.json": "ff5a5a0b5b3134b0ae6afe6ce8be892ce6ae03c1705ae061728cd5569c94a1d1",
+    "strategies/_archive/cnl/README.md": "a1eed0acd938087a48aea9f161d1b20ee20a8eced7fe5f896e9369d13e87e7b1",
+    "strategies/_archive/cnl/cnl-core.mjs": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956",
+    "strategies/_archive/cnl/tests.mjs": "1bf13f6de253459052d72bbc6f6d7f0fed474aad26f8c7d485cf7b7e6fa9ed81",
+    "strategies/_archive/discourse/README.md": "fbb5c314fb84fc1c5b7c5c0ceb723fc8255735c892e9f2846292e07643ce5c4a",
+    "strategies/_archive/discourse/examples/connected-chat.json": "75cb34e9d73694e03f33403fe99dc57dfad79018c14669a6fb9cfb6e4760ebae",
+    "strategies/_archive/discourse/index.mjs": "eef4ba25c397b99132cb2a47489a592846b6e2f86e15e188eaa4be3dec4889f2",
+    "strategies/_archive/discourse/src/formalizer.mjs": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb",
+    "strategies/_archive/discourse/src/index.mjs": "0ebee23e13f705d4b111ec0fd364aca39849093abaf142a1a8ac02f59c783311",
+    "strategies/_archive/discourse/src/judge.mjs": "eecbd7fed4937620cdacb539901c08e08db75f7f70a16ff3c204c406ea905cf1",
+    "strategies/_archive/discourse/test/formalizer.test.mjs": "c892717025f6e6151e85cfb472dcbb9fcc4c8985c4f1b38d5d31198f8013c20f",
+    "strategies/_archive/discourse/test/judge.test.mjs": "e0842eed7a557073a0a25047f4bb22b5cdecac999645962db15c7ec8ced442f0",
+    "strategies/_archive/discourse/test/prompt.test.mjs": "93d4ac69c72840e81365587dc476deb6c7e040557ea7c10104c61115acfdff33",
+    "strategies/_archive/lab/README.md": "522f532c85ec80c4d7b552f21736111b24a3e729bb092987b175b70de580b92f",
+    "strategies/_archive/lab/benchmarks/pilot-development.json": "39c96bd82dd4715ec52957bbc6d73a84cd47ebeeca59e673e281c1a192b2a254",
+    "strategies/_archive/lab/benchmarks/pilot-heldout.json": "21b83c6b5fbb2bf7bac53c9389e1f875f512cda15e170fdb1ba1d17f55359bd3",
+    "strategies/_archive/lab/src/cnl.mjs": "a56a9c7c2db237ac092d29379ef43087c464bcc82950fa28ae6112a4358535e6",
+    "strategies/_archive/lab/src/compiler.mjs": "5a75ef2fdefab1b7e92bff537aea7830a5349c445aa1502c6629304c16ea9d38",
+    "strategies/_archive/lab/src/corruptions.mjs": "6ee5ca7f0f56db2960aa2b72020cd364099729eb7a1d2dab62bd4b79a418faf1",
+    "strategies/_archive/lab/src/evaluator.mjs": "69930b649a5af6b2d92879469fa5edaa5b12de433c16f44a6118eb37916bc1d7",
+    "strategies/_archive/lab/src/index.mjs": "126ede2b3463f5b19ef8e1e9c3030b1dbe4e251ec9fdb01398d5558bbf2edd00",
+    "strategies/_archive/lab/src/ir.mjs": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e",
+    "strategies/_archive/lab/src/judge.mjs": "a45ff25954760b9e93405a718183e526c4312d0cdebec980e32bd30a98df7d5c",
+    "strategies/_archive/lab/src/protoir.mjs": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483",
+    "strategies/_archive/lab/src/reasoner.mjs": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f",
+    "strategies/_archive/lab/src/repairer.mjs": "0cf247bfe1a00a6bfca7c7039596473359a00ba2b3ae46341ca98d86244cd3f5",
+    "strategies/_archive/lab/src/strategies/direct-llm.mjs": "02cbcb85b78ca182d6abcd126d287cc08e5ed578f89637a2d1e47537a88f1f6b",
+    "strategies/_archive/lab/src/strategies/heuristic.mjs": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7",
+    "strategies/_archive/lab/src/strategies/proto-llm.mjs": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852",
+    "strategies/_archive/lab/src/strategies/repair-llm.mjs": "286204cc915820e1a1093e2c1979c7426270a780056032f6c333d264c2e3be0b",
+    "strategies/_archive/lab/src/strategy.mjs": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac",
+    "strategies/_archive/lab/src/util.mjs": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6",
+    "strategies/_archive/lab/tests/cnl.test.mjs": "fdf152164ed0edfc8fecabd02f0da8d98495c4d6f73c9992e804693393b0de21",
+    "strategies/_archive/lab/tests/compiler.test.mjs": "3ee6bc1e44a01280a9bd12a4769e5e400c08e0364584721e6f6f5c0a1decd149",
+    "strategies/_archive/lab/tests/corruptions.test.mjs": "463602f7b7135c1b10fecfdacc90aff1889614e24411f4f87bb6f2119afb4184",
+    "strategies/_archive/lab/tests/evaluator.test.mjs": "9459ffade2f0d73ed65586f04de91908d5b7583c74c3f6030f4d6c61099a027f",
+    "strategies/_archive/lab/tests/heuristic.test.mjs": "6b6baef691a139b63ba33c68e17f065b522d5892faa4a2f71b8feb16c483897b",
+    "strategies/_archive/lab/tests/ir.test.mjs": "ee77c3ff187d968955e0de9d998b9a7ff62393ec9ec1180ef04dec73e7c0ad52",
+    "strategies/_archive/lab/tests/judge.test.mjs": "47702f338329fb158141c48ac25e539a99ed16180a465e91ed9177d00a753cd4",
+    "strategies/_archive/lab/tests/proto-strategy.test.mjs": "9e50d9df04523ffd99df6c218cb271f8077c69cd2cf19b7033f0142fdca9e244",
+    "strategies/_archive/lab/tests/protoir.test.mjs": "1f247c28814b149e1ae06eb4cd34708ee213c73843564c3137bc2da4b53fe1cf",
+    "strategies/_archive/lab/tests/reasoner.test.mjs": "d4e7ba10ff0f7dd185f01049c2355e8358ae35185952d1621f414394fd1a8630",
+    "strategies/_archive/lab/tests/repair.test.mjs": "5288e181e3402bbcd67ddb281d11b97838439b1c8c750874b8665492b5317381",
+    "strategies/_archive/microir/README.md": "55612873bbba946522920ece580e9cd0940f46adc198aaca42e7dd69cf55398a",
+    "strategies/_archive/microir/src/cnl.mjs": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3",
+    "strategies/_archive/microir/src/index.mjs": "5fdab2191d36414d535d8beb022b3bccbd3c311aa019bbe32f6fab98ac66be94",
+    "strategies/_archive/microir/src/ir.mjs": "f49d9825c329b921b87a554fbc3773f56eb30a78f3cbb751253b03deca344feb",
+    "strategies/_archive/microir/src/pipeline.mjs": "580633980716bb0a8ba6028bcf6422cb790bb87f2a42eadf8e7a0a2a6c61d0d2",
+    "strategies/_archive/microir/src/prompts.mjs": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0",
+    "strategies/_archive/microir/src/wire.mjs": "6e96d78d3c76293d200d50402f0f6ce7fa09a1ff8bc8841042dfd36523dd3dc8",
+    "strategies/_archive/microir/test/run.mjs": "07d1f3a3ac5de190804e5d777d5a715d217683a6fdd6973eeb3ac6bf89fdcba4",
+    "strategies/_superseded/closed-grammar.mjs": "65e68ae14fd52f50fa8d62e126f524ed905372604e1fa8e4fe53d033b279eae0",
+    "strategies/_superseded/horn-restriction.mjs": "1050ea9accc983c169bfcd3be1cdd32f94f37eca65b01219858b816ea4eafc97",
+    "strategies/compact-scope-logic/index.mjs": "a578125b600a4806e9610eaf76ef0e190962e1b402540789640da12e74ef7b1b",
+    "strategies/compact-scope-logic/judge-task.mjs": "b02de74e7f87f7ba2fd2041bad95970cc269813272ec0095257c9d68306d815a",
+    "strategies/compact-scope-logic/pipeline.mjs": "19ddb10a6d1770a4963d4e78a833eb0cd57d034bcb82c4fbf5813876e835665d",
+    "strategies/compact-scope-logic/reasoner.mjs": "937ef5d106a8fe82d930b69596be6987c70ea28f33da788f591f3384d883ed52",
+    "strategies/compact-scope-logic/repair-task.mjs": "96ce386ba813ede947362d4ee422f2894bb63d62dcb2a7875a26d7fbba3b6d3f",
+    "strategies/compact-scope-logic/src/cnl.mjs": "3fcd9752dce96acba5c52cc1c6ca69b54e6902c1f0a3fb027bf638c9bacac8e3",
+    "strategies/compact-scope-logic/src/ir.mjs": "827f4b1a4e706899e09447c5af39a216d0937ba03a183bc67ef85a8a5f780596",
+    "strategies/compact-scope-logic/src/pipeline.mjs": "580633980716bb0a8ba6028bcf6422cb790bb87f2a42eadf8e7a0a2a6c61d0d2",
+    "strategies/compact-scope-logic/src/prompts.mjs": "a83e6baa27ec92e64a53f22c106a597416c97a4c4ceadd251abf898691c38bc0",
+    "strategies/compact-scope-logic/src/wire.mjs": "92887fa06fbc71dcb91f91ba095a5f260a97821fc571a2ac5108714c49f7a201",
+    "strategies/compact-scope-logic/task.mjs": "1c5d154eec725474ef0e89418c5c26b95b27025bba8d7c1752ed87c18a187b54",
+    "strategies/deterministic-rule-draft/index.mjs": "2f7c1e71615f58a453532c2f2ff33aaca1734c8d383a903cb9f77bd47c21cdbd",
+    "strategies/direct-context-logic/index.mjs": "cb6ddb77e68ebbc16b7636275a210e1c4f1493f7686276ed882cefa725baec6a",
+    "strategies/direct-context-logic/task.mjs": "49fb0d55b6dfbbe31106543d4a694b468f32161cc76ea1dffbd37d8e3500698e",
+    "strategies/discourse-semantic-graph/index.mjs": "1d348ad5b5f28a736fcee0e3a4079c16ea44203c369280fc8b96c45dd8ec2360",
+    "strategies/discourse-semantic-graph/judge-task.mjs": "7f5bc4fe3cc3ffe4ceafc027ad5bd32b706f9d9010928396fa4588afbcba02c6",
+    "strategies/discourse-semantic-graph/review.mjs": "2f1e322df061ae7d2f3d81a88d587620d916e026294c22e13c1461d987b00b7b",
+    "strategies/discourse-semantic-graph/src/formalizer.mjs": "0a8c1e8ef56eb01f8861814c3dbcad5ab37bb09334f83006bd1c6ddd32e5aefb",
+    "strategies/discourse-semantic-graph/src/judge.mjs": "eecbd7fed4937620cdacb539901c08e08db75f7f70a16ff3c204c406ea905cf1",
+    "strategies/draft-guided-repair/index.mjs": "0faba4733a1861dcc06b5a71c8f01d2091542ac5a8d593437c2a4b21784f76cc",
+    "strategies/draft-guided-repair/task.mjs": "304b68c6bbe42e1eafb80a252591dff1ce741fe086e0423d2ae825ba96274a00",
+    "strategies/event-role-logic/index.mjs": "9ec34f7d0c9c42e969fb7811fb2d35887806de35ee727c2fcf7a62c1089b50d8",
+    "strategies/event-role-logic/judge-task.mjs": "8102f1bec95c9a71724d3e3026ae10c338873388fd566f1f2f4f0900d21efd7d",
+    "strategies/event-role-logic/package.json": "b9adccb74c92a791f8d1c4f31f171fbf30904024a4f6fcee35602aed65c25d0a",
+    "strategies/event-role-logic/pipeline.mjs": "5d3672ecc107d996de1ab9c363eb7d0db7ca148f427094c45566cb69c4a46dbb",
+    "strategies/event-role-logic/repair-task.mjs": "cd9f3dd89ec4c0f14ffed9c9ac1d01632ed41d4b909aa7336ce205134f69a39e",
+    "strategies/event-role-logic/spec/evl-spec.md": "a9c0e2d531916b2f24ead0d167b9a30bbd208da3786a8196763865b99bea1f84",
+    "strategies/event-role-logic/spec/prompts.json": "b4eecefcdded235e02ac055a080a2b7ce54855458b2a16fcce3e4e20ad77cead",
+    "strategies/event-role-logic/src/check.mjs": "dd226dae1245efa9acf7416ca2282d712470477f836a4f4a2e67bf0b27d6a425",
+    "strategies/event-role-logic/src/english.mjs": "b74d71651adaebb4d9ca94fc9168583c6a6fe396ca072429e51ed1abadddc93f",
+    "strategies/event-role-logic/src/kb.mjs": "54413455ce1742be358b1ff2407195217ac00a79bb77d75ccddc4babd5b3ad23",
+    "strategies/event-role-logic/src/loop.mjs": "563c5b1e546321580600e9e59bb3633a9e47d0e5b51e51393be8026d93471f89",
+    "strategies/event-role-logic/src/morph.mjs": "d522dc1644a101015d7cdf1ffda4f1d1244d6d92c59d54a0221bd313fe622512",
+    "strategies/event-role-logic/src/qa.mjs": "c89adef086656686ce724ddc68d94e21532ebb94afb13c1ccf2327254b2d0d7c",
+    "strategies/event-role-logic/src/terms.mjs": "48bc97cdc9a2ffe24447284656598d6d49f84708fa4fc6f007891e57b44a0b97",
+    "strategies/event-role-logic/src/util.mjs": "8967887f01aa805bf60a42d09ecbe3ab2bada7efed31d8a0887ca5bbe27ae512",
+    "strategies/event-role-logic/task.mjs": "cd9f3dd89ec4c0f14ffed9c9ac1d01632ed41d4b909aa7336ce205134f69a39e",
+    "strategies/event-role-logic/test/fixtures.json": "d74226846a466c12e2491c3bfe84a5f407789eab7939600f146010769445a999",
+    "strategies/event-role-logic/test/parity.test.mjs": "edbc78ff6e872558f4f932b369d5660a47af61a202a51f411b938f4cbfab4d45",
+    "strategies/evidence-guided-logic/index.mjs": "76d685489f8039b1ff9d428f3e4a12c232d5d6f770ad8edb24f4669dd4505bb0",
+    "strategies/evidence-guided-logic/task.mjs": "912d4f3bdb828020bc009d672a9934672bc42a552effdd96f5921c70719865cf",
+    "strategies/explicit-scope-logic/index.mjs": "2b3f5fa2d438e9aeafbb5577094454a6dc891a3d3a82750963159130620e292e",
+    "strategies/explicit-scope-logic/task.mjs": "11c7f8d713f8fafdb23f06a266f1acf6aaa74fdd077bdcc979a6caf61b22d21e",
+    "strategies/lab-shared/adapter.mjs": "2aaca593daed27f1b63576fa30015e5fb5141d7bc11e1dc0d8744144c03a5d5a",
+    "strategies/lab-shared/coverage.mjs": "698e3331e4a73ab1f6bf068b99f57877627dc297621e86f5fa613a0f72926de2",
+    "strategies/lab-shared/judge-task.mjs": "15d0f2c908a9f72fee5081db04153f507e51e70262a443703315cdc6c83d2a85",
+    "strategies/lab-shared/judge.mjs": "8fa9f0dfe2e790a9f63b06fbdea70637173866d611f877b71c9cafe8a6080f65",
+    "strategies/lab-shared/src/cnl.mjs": "a56a9c7c2db237ac092d29379ef43087c464bcc82950fa28ae6112a4358535e6",
+    "strategies/lab-shared/src/compiler.mjs": "5a75ef2fdefab1b7e92bff537aea7830a5349c445aa1502c6629304c16ea9d38",
+    "strategies/lab-shared/src/corruptions.mjs": "6ee5ca7f0f56db2960aa2b72020cd364099729eb7a1d2dab62bd4b79a418faf1",
+    "strategies/lab-shared/src/evaluator.mjs": "69930b649a5af6b2d92879469fa5edaa5b12de433c16f44a6118eb37916bc1d7",
+    "strategies/lab-shared/src/index.mjs": "126ede2b3463f5b19ef8e1e9c3030b1dbe4e251ec9fdb01398d5558bbf2edd00",
+    "strategies/lab-shared/src/ir.mjs": "7b06ec16efeb5c345ce72b9cf6fb45062d109b68cccc2014965d1196ebae629e",
+    "strategies/lab-shared/src/judge.mjs": "a45ff25954760b9e93405a718183e526c4312d0cdebec980e32bd30a98df7d5c",
+    "strategies/lab-shared/src/protoir.mjs": "9ae28acde1f91fc6bcaac96fed555511fa54e080f5c8cdf22e8b6bf514f81483",
+    "strategies/lab-shared/src/reasoner.mjs": "2707de2b53065959adc8365b536e9afcb507f7905d065a38b5cf771d5801d60f",
+    "strategies/lab-shared/src/repairer.mjs": "0cf247bfe1a00a6bfca7c7039596473359a00ba2b3ae46341ca98d86244cd3f5",
+    "strategies/lab-shared/src/strategies/direct-llm.mjs": "02cbcb85b78ca182d6abcd126d287cc08e5ed578f89637a2d1e47537a88f1f6b",
+    "strategies/lab-shared/src/strategies/heuristic.mjs": "e826d537a958f5e547b7b7ed89eabc7c69748ba9b5d6bcebc5bcf3ff4e2d36a7",
+    "strategies/lab-shared/src/strategies/proto-llm.mjs": "0a87f91b5691dca5e35e27042a0baf729ff1e38df643b5dacb85fab6077af852",
+    "strategies/lab-shared/src/strategies/repair-llm.mjs": "286204cc915820e1a1093e2c1979c7426270a780056032f6c333d264c2e3be0b",
+    "strategies/lab-shared/src/strategy.mjs": "4c5a03684bd2f555f21d0b632926e901ee9af0bc31dc72c73911913add30b3ac",
+    "strategies/lab-shared/src/util.mjs": "2c70976625a672069d11878c14780bd5a656af7035ce26f909e0dc42c424a8d6",
+    "strategies/microir-hybrid/index.mjs": "ee0cb83de07a0034f95df64157e3c52cf3c5416f6fa4b85be7713e91d8cfac92",
+    "strategies/microir-hybrid/task.mjs": "1c5d154eec725474ef0e89418c5c26b95b27025bba8d7c1752ed87c18a187b54",
+    "strategies/speech-act-normalization/index.mjs": "a20001b28cc5ddfacb9561b680e0874a390537d61a75b3862d4395c25529ddbb",
+    "strategies/speech-act-normalization/src/cnl-core.mjs": "816deb792d259a463da222b7a6387898191fd6f2f0570c7562295a54c690a956",
+    "strategies/speech-act-normalization/task.mjs": "4d373d6433840a870ef53244e4eb0ae4e74d2f336d8a74ef3012b19d8d1e30d9",
+    "tasks/judge-bidirectional.mjs": "22c320fb861e721c1de39ab1c135ea52ce33eabde81dc5e20b6368a4371fba08",
+    "tasks/judge-direct.mjs": "9eca9238a98c450ced6f720290b659867c8930bbb3d493072a626d219a5b1901",
+    "test/archive-parity.test.mjs": "67acf55b8224c7de357ef2c50f129bfc1e10438d1d9706383a2d00371e714804",
+    "test/common-cnl.test.mjs": "e007dbcb3094fb99fa34acea731fcf64fb5c661dbb2f33a1519021cc73571d4c",
+    "test/complementarity.test.mjs": "5499897ef92a756680632384bd7b262ed2ab21060368f9931d5ab3a38d89bf36",
+    "test/corpus-metrics.test.mjs": "b930b74793ad67fb2f229080f7639b45d98ab78eea389ede52425c4a680faccf",
+    "test/declarative-tasks.test.mjs": "59a10f6a07a8e29163746349d29df9b0378e348e0e69e3f144ddb40af6363911",
+    "test/eval-text-files.test.mjs": "de0e26809267da4dc259c1c7cfe5b128820adf02dd075b0118245fba72cf0dc0",
+    "test/explicit-scope.test.mjs": "91b69dd23ddb90d7d91dc384e750b2c2dec0ad2619a7d6dc1d83bde888035805",
+    "test/native-pipelines.test.mjs": "b4deceb7d2da98fbaf1e59385d3b3cdbc501373201efd2efa2594c3a96f36563",
+    "test/pipeline.test.mjs": "2b419722750cdd8ee1334f5044f776083e06b7d13b878f8140f5297dd7015f20",
+    "test/reasoning.test.mjs": "813c658c6929df0e978d44c8783d57b405719ab81d2f713bf9985fb845ca8719",
+    "test/result-mirrors.test.mjs": "f4bea0a84b994f747443004a1a783b6ed1100b620c3a595ba31737246c0bc528",
+    "test/resume-eval.test.mjs": "fc54647e54dfd59352dc1d2a4f6e60eabf995a33497774610042df0589058091",
+    "tools/calibrate-judge.mjs": "77904cad0eb672af03737fd909e3a7ea0c623feb1eea13393cae0fb30e47b177",
+    "tools/calibrate-models.mjs": "d866e499bc97697d6b2f8d946be893ab0cc391cb90b2ea62020efd3c2acb38a1",
+    "tools/compare-strategies.mjs": "924d5f99910700e002405a06aac514c277833c246b1af14899ecc5b5d3b4bc80",
+    "tools/consolidate-corpus.mjs": "710b7603bf818b728c3d53c12d83df75d76157a02511ae56bfe353a4b2ff4f8b",
+    "tools/formalize.mjs": "2abddd6b1a2dad05d7312050571cf77420a3c51e6b013469cfbcb70dda5f0e5f",
+    "tools/inspect-corpus.mjs": "c52058eeb34d2ef00e374d874a1e5cf9ccb355089c948271184092c021aaceee",
+    "tools/judge.mjs": "823e9868f0ac4edf0fa924f1ff198938925f0c8f481777586b6b1ec9b471b3b9",
+    "tools/lib/audit.mjs": "aee0fcbd69c1663e860030ca575ff971228ea3595aca83da1c5a3682ff19897f",
+    "tools/lib/cli.mjs": "347c08ff5e8f5e6de4812a4481efcf84cf8975ee08953f6f8d7543feb735d342",
+    "tools/lib/common-cnl.mjs": "3db9cf8bceb334d1179a0271c82326d6ff7326a927d65ad1b81afadf0d184fb7",
+    "tools/lib/complementarity.mjs": "257a9972b291d5b3a062750e576584e89ee13c51f2394f0705b70a8a941569e3",
+    "tools/lib/evalset.mjs": "cdad680bc085d20d14b9a9124002e114d00b9cb575c5db70cd9b188656e2a104",
+    "tools/lib/judge-controls.mjs": "55e3f3d3a300f57d8e7828426db73b6be71962d9cc1e81a231d73743d237ef61",
+    "tools/lib/judge.mjs": "1dabbbbd65530c2e6170a23673927fee3443e7967f38ae96db6f6c3a4ec56f8b",
+    "tools/lib/llm.mjs": "89d60b76e92d345f272a3a42bfd7734e9ddc8a414184ed2e052d045491675623",
+    "tools/lib/metrics.mjs": "c00fcb00e857d2fd98ce43f815f6927068b93128a8bfbe1c51a1a4f3f9594694",
+    "tools/lib/pworker.mjs": "a38ce8545bf18d4e449852b35060d48ff332beae9841b50c10d1fc5e4d36eb2d",
+    "tools/lib/registry.mjs": "10e7cc17c19d65691c2cbfaea7150aa94209464bba1d625adbf8695db796ac8f",
+    "tools/lib/result-mirrors.mjs": "ae728b87ddda7eb9b8c172c7245661069d0b56162469aed261e7e2ffe689a748",
+    "tools/lib/resume-eval.mjs": "a7eda8795eb69b2f8b2764fc3e75098a264e3296bffdb12f0832ca774b49855a",
+    "tools/lib/strategies.mjs": "b6490acc713fbb4198cc45c48da46b982966f67c4d1bbc2dbca95071ca4034a4",
+    "tools/lib/task-spec.mjs": "67675a1fe0cbd949cccd7a7d62475cedf149ad0008f712d8c1c409cbf7df571d",
+    "tools/run-eval.mjs": "2f9799947b0811e9c8280a98c714ad104629a50008543548997db3c17500fce8",
+    "tools/summarize-experiments.mjs": "54022d0e14bb6bac896e933173f6a36dd74d9165aff9358705c302e65f8616b0",
+    "../Ploinky-Worker/lib/audit.mjs": "2cea8ab31a5d0d2dda301be886d9a90123182a6ee402282132efd6b4a84980ed",
+    "../Ploinky-Worker/lib/cache.mjs": "3072fc86be43feb908cc33d2da99ce6ef325f847a631f8075b691a99398a25ac",
+    "../Ploinky-Worker/lib/client.mjs": "2a31d1ec0dae6a1f43cf9d4f3c57d073ccddadb02558c67e2c6c7f55185101b3",
+    "../Ploinky-Worker/lib/config.mjs": "217756921c6433782df24e84335bb013e96c6d3c6db93bd836416cf0692835c6",
+    "../Ploinky-Worker/lib/core.mjs": "5470bdac3c3ae4363dcfcacbd57e2bc221290b5a3e4123cf71663a6377c7717f",
+    "../Ploinky-Worker/lib/dashboard.mjs": "9e95bc187768eccff1605bfd41a70117973e93cf14f2f1d71a96b59184e92df7",
+    "../Ploinky-Worker/lib/guard.mjs": "fe530c38bf00385f3c794f360151ec831fb056f1c0c3c4966270552a4ce7f89d",
+    "../Ploinky-Worker/lib/http-fetch.mjs": "f4b6b38232887e5758e283560e3c9cbf1fcd8370b722443126ee4b47c0b18663",
+    "../Ploinky-Worker/lib/inproc.mjs": "f5faca5318ffb6a3317bbc7e7263b5d1d2a58fbf7a9773527fd5c7a11973ec9c",
+    "../Ploinky-Worker/lib/limiter.mjs": "9a121e59a5ac26e8e6835b71de4eea7b999edfdfaaf48bd0e9479700fa6bacec",
+    "../Ploinky-Worker/lib/local.mjs": "95540b77f86b5a4f0b332768bec3f64ad8cde8cf3513f6415df534ac25a7701f",
+    "../Ploinky-Worker/lib/monitor.mjs": "efe2659b6924855ed811b14a05832437c5773245279182122e67b92b3b181b36",
+    "../Ploinky-Worker/lib/plan.mjs": "b9c35a01ab6aaff9ebe17521666f7f524ba1ad1eb41ad129d370c495a4aa5262",
+    "../Ploinky-Worker/lib/prompted.mjs": "b25bf6134d5a5ee97cba6f8b6f921a284c88fb03a94ff744168376287dbc2a66",
+    "../Ploinky-Worker/lib/pworker/help.mjs": "f5305861ff478c5657b6015ed533dd3f6021fc58931c930ee640e5be460259ff",
+    "../Ploinky-Worker/lib/pworker/jobs.mjs": "327c98bc356bbe50d793a07ebb121275080b6fda7f28e17ae94a6a7a3797e22b",
+    "../Ploinky-Worker/lib/pworker/menu.mjs": "87b8c344e29fc718c26e9f7281ed770412d0b86356eb6f8c6c6dee9d996bd60b",
+    "../Ploinky-Worker/lib/pworker/providers.mjs": "60d105d664801e7a922d64775bc13101b2f58a3ba1585d9567e3a74f98d2194d",
+    "../Ploinky-Worker/lib/pworker/task.mjs": "32b387929a72026e3a146de428f769b158588dd4b731d7ceb773998bd1c167f8",
+    "../Ploinky-Worker/lib/pworker/workspace.mjs": "b45446e538b8dc5822a8bc003448311101ce4bd88c36b11034f4557d6def32e0",
+    "../Ploinky-Worker/lib/sandbox.mjs": "523c0fb5d607dbf11f2ac997a69f4554ae1b3808f93610f50aa6ac94388f3895",
+    "../Ploinky-Worker/lib/server.mjs": "55f3711ce94d8d32c202d668126d9336d41c4dbd73415ea5503f50e62e29be20",
+    "../Ploinky-Worker/lib/settings.mjs": "6bf31ca603b6326632974ab0310ce289fdecf64af6c0df54e5e862268498370b"
+  },
+  "node": "v24.9.0",
+  "argv": [
+    "--strategy",
+    "deterministic-rule-draft",
+    "--strategy",
+    "discourse-semantic-graph",
+    "--set",
+    "consolidated",
+    "--stage",
+    "source",
+    "--selection",
+    "docs/evaluation/selections/consolidated-first10.json",
+    "--offline",
+    "--mirrors",
+    "--id",
+    "032-consolidated-symbolic-baseline"
+  ],
+  "rejudgeOf": null
+}

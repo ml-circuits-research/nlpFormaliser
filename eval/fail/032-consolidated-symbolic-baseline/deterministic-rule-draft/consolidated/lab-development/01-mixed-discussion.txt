@@ -1,0 +1,9 @@
+mira is physicist.
+mira owns workstation.
+bob sent alice the report on monday.
+leo entered lab then he switched off the alarm.
+node7 is server.
+ana is researcher.
+nina is reviewer.
+For all ?x, ?y, IF ?x is researcher AND ?x owns ?y AND ?y is gpu THEN ?x can run local model.
+For all ?x, ?y, IF ?x is reviewer AND ?y is paper AND ?x authored ?y THEN ?x prohibited approved ?y.

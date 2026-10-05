@@ -1,0 +1,181 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev7 have:
+      AGENT e4:"Nobody except Ana"
+      THEME e6:"access"
+      TO "the production database"
+  AMBIGUITIES:
+    - a5 MEDIUM semantic_role: "to the production database"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to the production database' have?"
+  CONFIDENCE 0.85
+
+TURN t3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    BECAUSE:
+      BECAUSE:
+        UNRESOLVED "of the holidays"
+      THEREFORE:
+        EVENT ev14 be:
+          THEME e13:"of the data team it"
+          PROPERTY "late"
+    THEREFORE:
+      EVENT ev12 report:
+        AGENT e10:"The"
+        THEME e11:"wasn't late"
+  AMBIGUITIES:
+    - a9 HIGH anaphora: "it"
+      OPTIONS: "Nobody except Ana" | access
+      ASK: "What does 'it' refer to?"
+    - a15 HIGH coverage_gap: "of the holidays"
+      ASK: "Formalize this unresolved fragment: of the holidays"
+    - a16 MEDIUM operator_not_formalized: "because"
+  CONFIDENCE 0.37
+
+TURN t4:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev20 say:
+      AGENT e18:"I never"
+      THEME e19:"I wouldn't come"
+  CONFIDENCE 0.94
+
+TURN t5:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "Not all of the guests have confirmed, but none have cancelled"
+  AMBIGUITIES:
+    - a22 HIGH coverage_gap: "Not all of the guests have confirmed, but none have cancelled"
+      ASK: "Formalize this unresolved fragment: Not all of the guests have confirmed, but none have cancelled"
+  CONFIDENCE 0.64
+
+TURN t6:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS tenant x25:
+      PERMITTED:
+        EVENT ev28 write:
+          AGENT e26:"x25 terminate the lease with thirty days'"
+          THEME e27:"notice"
+  AMBIGUITIES:
+    - a24 MEDIUM pp_attachment: "with"
+      OPTIONS: "event/instrument-or-companion" | "preceding noun"
+      ASK: "What does the 'with ...' phrase modify?"
+  CONFIDENCE 0.85
+
+TURN t7:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev31 be:
+      THEME e30:"Refunds"
+      PROPERTY "available within 14 days of purchase provided the item is unused"
+  AMBIGUITIES:
+    - a32 HIGH structural_residue: "available within 14 days of purchase provided the item is unused"
+      ASK: "Clarify the internal clause structure of: available within 14 days of purchase provided the item is unused"
+  CONFIDENCE 0.76
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev36 entitl:
+      THEME e34:"Employees who work more than forty hours per week"
+      TO "overtime pay"
+  AMBIGUITIES:
+    - a35 MEDIUM semantic_role: "to overtime pay"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to overtime pay' have?"
+    - a37 HIGH structural_residue: "Employees who work more than forty hours per week"
+      ASK: "Clarify the internal clause structure of: Employees who work more than forty hours per week"
+    - a38 MEDIUM operator_not_formalized: "more than"
+  CONFIDENCE 0.58
+
+TURN t9:
+  ACT REJECT_OR_CORRECT
+  SPEAKER user
+  CONTENT:
+    CORRECT:
+      PERMITTED:
+        UNRESOLVED "personal data be transferred outside the EU without the customer's explicit consent"
+  AMBIGUITIES:
+    - a40 HIGH coverage_gap: "personal data be transferred outside the EU without the customer's explicit consent"
+      ASK: "Formalize this unresolved fragment: personal data be transferred outside the EU without the customer's explicit consent"
+  CONFIDENCE 0.64
+
+TURN t10:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    NOT:
+      EVENT ev44 repair:
+        AGENT e43:"warranty cover damage caused by water or by unauthorised"
+  AMBIGUITIES:
+    - a42 MEDIUM coordination_scope: "or"
+  CONFIDENCE 0.85
+
+TURN t11:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    OBLIGATORY:
+      UNRESOLVED "Children under twelve be accompanied by an adult at all times"
+  AMBIGUITIES:
+    - a46 HIGH coverage_gap: "Children under twelve be accompanied by an adult at all times"
+      ASK: "Formalize this unresolved fragment: Children under twelve be accompanied by an adult at all times"
+  CONFIDENCE 0.64
+
+TURN t12:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "I am annoyed about the delay, not about the person helping me"
+  AMBIGUITIES:
+    - a48 HIGH coverage_gap: "I am annoyed about the delay, not about the person helping me"
+      ASK: "Formalize this unresolved fragment: I am annoyed about the delay, not about the person helping me"
+  CONFIDENCE 0.64
+
+TURN t13:
+  ACT REQUEST
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE DO TO assistant
+      BODY:
+        UNRESOLVED "assistant identify any conflicting requirements in these notes"
+  AMBIGUITIES:
+    - a50 HIGH coverage_gap: "assistant identify any conflicting requirements in these notes"
+      ASK: "Formalize this unresolved fragment: assistant identify any conflicting requirements in these notes"
+  CONFIDENCE 0.64
+
+TURN t14:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev56 resolve:
+      AGENT e54:"Point out contradictions rather than"
+      THEME UNRESOLVED_REF("them")
+      EXCLUSION "asking me"
+  AMBIGUITIES:
+    - a52 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+  CONFIDENCE 0.76

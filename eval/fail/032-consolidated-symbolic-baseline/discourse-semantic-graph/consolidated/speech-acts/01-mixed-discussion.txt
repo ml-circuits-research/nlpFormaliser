@@ -1,0 +1,186 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev6 run:
+      AGENT e4:"Well basically the server is"
+      THEME e5:"now"
+  AMBIGUITIES:
+    - a7 HIGH structural_residue: "Well basically the server is"
+      ASK: "Clarify the internal clause structure of: Well basically the server is"
+  CONFIDENCE 0.76
+
+TURN t3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev11 be:
+      THEME e10:"I think the small model"
+      PROPERTY "probably enough"
+  AMBIGUITIES:
+    - a9 LOW vagueness: "small"
+  CONFIDENCE 0.91
+
+TURN t4:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    ATTITUDE say:
+      AGENT e13:"Maria"
+      CONTENT:
+        EVENT ev15 fail:
+          AGENT e14:"benchmark"
+  CONFIDENCE 0.94
+
+TURN t5:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    NOT:
+      FOR_EVERY user x18:
+        EVENT ev20 have:
+          AGENT x18:user
+          THEME e19:"access"
+  AMBIGUITIES:
+    - a17 MEDIUM negation_scope: "not"
+  CONFIDENCE 0.85
+
+TURN t6:
+  ACT CONFIRM
+  SPEAKER user
+  CONTENT:
+    CONFIRM p21
+  CONFIDENCE 0.94
+
+TURN t7:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev24 be:
+        THEME e23:"signature"
+        PROPERTY "valid"
+    THEN:
+      EVENT ev27 accept:
+        AGENT e25:"system"
+        THEME e26:"file"
+  CONFIDENCE 0.94
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev32 reject:
+      AGENT e30:"Normally"
+      THEME e31:"request unless an administrator approves it"
+  AMBIGUITIES:
+    - a29 HIGH anaphora: "it"
+      OPTIONS: signature | system | file | access
+      ASK: "What does 'it' refer to?"
+    - a33 HIGH structural_residue: "request unless an administrator approves it"
+      ASK: "Clarify the internal clause structure of: request unless an administrator approves it"
+  CONFIDENCE 0.58
+
+TURN t9:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHICH model x35:
+      EVENT ev37 have:
+        AGENT x35:model
+        THEME e36:"lowest latency"
+  CONFIDENCE 0.94
+
+TURN t10:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      EVENT ev41 know:
+        AGENT e39:"we"
+        THEME e40:"whether the test passed"
+  AMBIGUITIES:
+    - a42 HIGH structural_residue: "whether the test passed"
+      ASK: "Clarify the internal clause structure of: whether the test passed"
+    - a43 MEDIUM operator_not_formalized: "whether"
+  CONFIDENCE 0.67
+
+TURN t11:
+  ACT REQUEST
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE CHECK TO assistant
+      BODY:
+        EVENT ev47 check:
+          AGENT e45:"assistant"
+          THEME e46:"whether the tests pass"
+  AMBIGUITIES:
+    - a48 HIGH structural_residue: "whether the tests pass"
+      ASK: "Clarify the internal clause structure of: whether the tests pass"
+    - a49 MEDIUM operator_not_formalized: "whether"
+  CONFIDENCE 0.67
+
+TURN t12:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      POSSIBLE:
+        EVENT ev53 run:
+          AGENT e51:"Luna"
+          LOCATION e52:"hardware"
+  CONFIDENCE 0.94
+
+TURN t13:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev56 be:
+      THEME e55:"I am relieved that we"
+      PROPERTY "finally making progress but I am still impatient"
+  AMBIGUITIES:
+    - a57 HIGH structural_residue: "I am relieved that we"
+      ASK: "Clarify the internal clause structure of: I am relieved that we"
+    - a58 HIGH structural_residue: "finally making progress but I am still impatient"
+      ASK: "Clarify the internal clause structure of: finally making progress but I am still impatient"
+  CONFIDENCE 0.58
+
+TURN t14:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK OPEN:
+      UNRESOLVED "What should be checked first, and why"
+  AMBIGUITIES:
+    - a60 MEDIUM coordination_scope: "and"
+    - a61 HIGH coverage_gap: "What should be checked first, and why"
+      ASK: "Formalize this unresolved fragment: What should be checked first, and why"
+  CONFIDENCE 0.55
+
+TURN t15:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      UNRESOLVED "Give me a short ordered checklist"
+      UNRESOLVED "leave unrelated tasks independent"
+  AMBIGUITIES:
+    - a63 MEDIUM coordination_scope: "and"
+    - a64 HIGH coverage_gap: "Give me a short ordered checklist"
+      ASK: "Formalize this unresolved fragment: Give me a short ordered checklist"
+    - a65 HIGH coverage_gap: "leave unrelated tasks independent"
+      ASK: "Formalize this unresolved fragment: leave unrelated tasks independent"
+  CONFIDENCE 0.25

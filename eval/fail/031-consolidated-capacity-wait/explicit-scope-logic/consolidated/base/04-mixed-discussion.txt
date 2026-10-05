@@ -1,0 +1,13 @@
+Statement 1: (the predicate “prefer” holds with ordered arguments [“I”; “aisle seat”]) and (if (the predicate “nightFlight” holds for “f”), then (the predicate “prefer” holds with ordered arguments [“I”; “window seat”]))
+Statement 2: it is not the case that (for every x, (if (the predicate “schedule” holds for x), then ((the predicate “beforeTime” holds with ordered arguments [x; “10:00”]) and (the predicate “onMonday” holds for x))))
+Statement 3: (the predicate “allergic” holds with ordered arguments [“I”; “peanuts”]) and (for every y, (if ((the predicate “restaurant” holds for y) and (it is not the case that (the predicate “guaranteeNutFreeKitchen” holds for y))), then (the predicate “avoid” holds with ordered arguments [“I”; y])))
+Statement 4: for every z, (if (the predicate “hotel” holds for z), then ((the predicate “withinWalkingDistance” holds with ordered arguments [z; “conference centre”]) and (the predicate “costLessThan” holds with ordered arguments [z; 150])))
+Statement 5: (the predicate “budget” holds with ordered arguments [“laptop”; 1200]) and (the predicate “requiresMemory” holds with ordered arguments [“laptop”; 16])
+Statement 6: (the predicate “like” holds with ordered arguments [“I”; “spicy food”]) and (for every u, (if (the predicate “hotterThan” holds with ordered arguments [u; “mild”]), then (it is not the case that (the predicate “canHandle” holds with ordered arguments [“partner”; u]))))
+Statement 7: the predicate “correctDay” holds with ordered arguments [“Thursday”; “Wednesday”]
+Statement 8: the predicate “correctReportYear” holds with ordered arguments [2023; 2024]
+Statement 9: (the predicate “ignoreLastMessage” holds) and (the predicate “issueFixed” holds)
+Statement 10: (the predicate “doNotSend” holds) and (the predicate “needChange” holds for “second paragraph”)
+Statement 11: (the predicate “relieved” holds for “I”) and (the predicate “impatient” holds for “I”)
+Statement 12: (which v satisfies that (the predicate “shouldBeCheckedFirst” holds for v)?) and (which w satisfies that (the predicate “reasonFor” holds with ordered arguments [“x”; w])?)
+Statement 13: (the predicate “requestChecklist” holds with ordered arguments [“short”; “ordered”]) and (the predicate “independentTasks” holds)

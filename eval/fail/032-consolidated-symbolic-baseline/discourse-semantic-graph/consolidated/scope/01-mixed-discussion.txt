@@ -1,0 +1,430 @@
+TURN t1:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "These notes concern separate situations unless I explicitly connect them"
+  AMBIGUITIES:
+    - a1 HIGH anaphora: "them"
+      ASK: "What does 'them' refer to?"
+    - a2 HIGH coverage_gap: "These notes concern separate situations unless I explicitly connect them"
+      ASK: "Formalize this unresolved fragment: These notes concern separate situations unless I explicitly connect them"
+  CONFIDENCE 0.46
+
+TURN t2:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev6 plan:
+      AGENT e4:"Ravi"
+      TO "buy a laptop next month"
+  AMBIGUITIES:
+    - a5 MEDIUM semantic_role: "to buy a laptop next month"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to buy a laptop next month' have?"
+  CONFIDENCE 0.85
+
+TURN t3:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev10 compare:
+      AGENT e8:"He has"
+      THEME e9:"three models but he has not placed an order"
+  AMBIGUITIES:
+    - a11 HIGH structural_residue: "three models but he has not placed an order"
+      ASK: "Clarify the internal clause structure of: three models but he has not placed an order"
+  CONFIDENCE 0.76
+
+TURN t4:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      EVENT ev15 buy:
+        AGENT e13:"Ravi has"
+        THEME e14:"laptop"
+  CONFIDENCE 0.94
+
+TURN t5:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FOR_EVERY employee x17:
+      IF:
+        UNRESOLVED "x17 handles customer data"
+      THEN:
+        OBLIGATORY:
+          UNRESOLVED "x17 complete privacy training"
+  AMBIGUITIES:
+    - a18 HIGH coverage_gap: "x17 handles customer data"
+      ASK: "Formalize this unresolved fragment: x17 handles customer data"
+    - a19 HIGH coverage_gap: "x17 complete privacy training"
+      ASK: "Formalize this unresolved fragment: x17 complete privacy training"
+  CONFIDENCE 0.34
+
+TURN t6:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS employee and handles customer data x22:
+      EVENT ev23 be:
+        THEME e21:"Ana"
+        PROPERTY x22:"employee and handles customer data"
+  CONFIDENCE 0.94
+
+TURN t7:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      UNRESOLVED "Ana has completed the training"
+  AMBIGUITIES:
+    - a25 HIGH coverage_gap: "Ana has completed the training"
+      ASK: "Formalize this unresolved fragment: Ana has completed the training"
+  CONFIDENCE 0.64
+
+TURN t8:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      THERE_EXISTS payment x28:
+        EVENT ev30 exceed:
+          AGENT x28:payment
+          THEME e29:"10"
+    THEN:
+      BEFORE:
+        LEFT:
+          OBLIGATORY:
+            EVENT ev33 approve:
+              AGENT e31:"000 euros a director"
+              THEME UNRESOLVED_REF("it")
+        RIGHT:
+          EVENT ev35 be:
+            THEME UNRESOLVED_REF("it")
+            PROPERTY "released"
+  AMBIGUITIES:
+    - a27 MEDIUM temporal_attachment: "before"
+    - a32 HIGH anaphora: "it"
+      OPTIONS: "10" | "000 euros a director" | "employee and handles customer data"
+      ASK: "What does 'it' refer to?"
+  CONFIDENCE 0.67
+
+TURN t9:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AND:
+      EVENT ev40 be:
+        THEME e39:"Payment P7"
+        PROPERTY "for 12 500 euros"
+      UNRESOLVED "has been released"
+  AMBIGUITIES:
+    - a37 MEDIUM for_attachment: "for"
+    - a38 MEDIUM coordination_scope: "and"
+    - a41 HIGH coverage_gap: "has been released"
+      ASK: "Formalize this unresolved fragment: has been released"
+  CONFIDENCE 0.46
+
+TURN t10:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      EVENT ev44 be:
+        THEME e43:"P7"
+        PROPERTY "necessarily approved by a director"
+  AMBIGUITIES:
+    - a45 HIGH structural_residue: "necessarily approved by a director"
+      ASK: "Clarify the internal clause structure of: necessarily approved by a director"
+  CONFIDENCE 0.76
+
+TURN t11:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    ATTITUDE tell:
+      AGENT e47:"Lea"
+      RECIPIENT e48:"Omar"
+      CONTENT:
+        EVENT ev50 be:
+          THEME e49:"server"
+          PROPERTY "offline"
+  CONFIDENCE 0.94
+
+TURN t12:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    NOT:
+      EVENT ev53 verify:
+        AGENT e48:"Omar"
+        THEME e52:"claim"
+  CONFIDENCE 0.94
+
+TURN t13:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      EVENT ev56 be:
+        THEME e55:"the"
+        PROPERTY "server definitely offline"
+  CONFIDENCE 0.94
+
+TURN t14:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FOR_EVERY night unless maintenance mode is enabled x59:
+      EVENT ev60 run:
+        AGENT e58:"backup"
+        THEME x59:"night unless maintenance mode is enabled"
+  AMBIGUITIES:
+    - a61 HIGH structural_residue: "night unless maintenance mode is enabled"
+      ASK: "Clarify the internal clause structure of: night unless maintenance mode is enabled"
+  CONFIDENCE 0.76
+
+TURN t15:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev64 enabl:
+      THEME e63:"Maintenance mode"
+      COMPLEMENT "last night"
+  CONFIDENCE 0.94
+
+TURN t16:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      EVENT ev67 run:
+        AGENT e58:"backup"
+        THEME e66:"last night"
+  CONFIDENCE 0.94
+
+TURN t17:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    IF:
+      EVENT ev71 be:
+        THEME e70:"user"
+        PROPERTY "registered"
+    THEN:
+      THERE_EXISTS user x74:
+        EVENT ev75 allow:
+          AGENT e72:"application"
+          THEME x74:user
+          TO "download the dataset only"
+  AMBIGUITIES:
+    - a69 HIGH only_scope: "only"
+      OPTIONS: "ONLY(entity)" | "ONLY(event/argument)" | "ONLY(condition)"
+      ASK: "What exactly does 'only' restrict?"
+    - a73 MEDIUM semantic_role: "to download the dataset only"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to download the dataset only' have?"
+  CONFIDENCE 0.67
+
+TURN t18:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev81 allow:
+      AGENT UNRESOLVED_REF("It")
+      THEME e80:"Niko"
+      TO "download the dataset"
+  AMBIGUITIES:
+    - a77 HIGH anaphora: "It"
+      OPTIONS: application | backup | "last night" | "Maintenance mode"
+      ASK: "What does 'It' refer to?"
+    - a79 MEDIUM semantic_role: "to download the dataset"
+      OPTIONS: recipient | destination | "purpose/other"
+      ASK: "What role does 'to download the dataset' have?"
+  CONFIDENCE 0.67
+
+TURN t19:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      EVENT ev83 be:
+        THEME e80:"Niko"
+        PROPERTY "registered"
+  CONFIDENCE 0.94
+
+TURN t20:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev87 submit:
+      AGENT e85:"Maria"
+      THEME e86:"revised proposal"
+      TIME "Monday"
+  CONFIDENCE 0.94
+
+TURN t21:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    AFTER:
+      LEFT:
+        UNRESOLVED "Leo forwarded it to Iris on Tuesday, and Iris archived it"
+      RIGHT:
+        UNRESOLVED "reading it"
+  AMBIGUITIES:
+    - a89 HIGH coverage_gap: "Leo forwarded it to Iris on Tuesday, and Iris archived it"
+      ASK: "Formalize this unresolved fragment: Leo forwarded it to Iris on Tuesday, and Iris archived it"
+    - a90 HIGH coverage_gap: "reading it"
+      ASK: "Formalize this unresolved fragment: reading it"
+  CONFIDENCE 0.34
+
+TURN t22:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHO person x92:
+      UNRESOLVED "x92 archived the proposal"
+  AMBIGUITIES:
+    - a93 HIGH coverage_gap: "x92 archived the proposal"
+      ASK: "Formalize this unresolved fragment: x92 archived the proposal"
+  CONFIDENCE 0.64
+
+TURN t23:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev96 fail:
+      AGENT e95:"Two sensors"
+      TIME_DURING "the test but neither was replaced"
+  CONFIDENCE 0.94
+
+TURN t24:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      EVENT ev100 fail:
+        AGENT e98:"any"
+        THEME e99:"sensor get replaced"
+  CONFIDENCE 0.94
+
+TURN t25:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    FOR_EVERY paper x102:
+      EVENT ev104 have:
+        AGENT x102:paper
+        LOCATION e103:"least one author"
+  AMBIGUITIES:
+    - a105 MEDIUM operator_not_formalized: "at least"
+  CONFIDENCE 0.85
+
+TURN t26:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    THERE_EXISTS author x108:
+      AND:
+        EVENT ev111 be:
+          THEME e107:"There"
+          PROPERTY x108:author
+        EVENT ev110 write:
+          AGENT x108:author
+          THEME e109:"three papers"
+  CONFIDENCE 0.94
+
+TURN t27:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      THERE_EXISTS author x113:
+        AND:
+          EVENT ev116 be:
+            THEME e107:"There"
+            PROPERTY x113:author
+          EVENT ev115 write:
+            AGENT x113:author
+            LOCATION e114:"least one paper"
+  AMBIGUITIES:
+    - a117 MEDIUM operator_not_formalized: "at least"
+  CONFIDENCE 0.85
+
+TURN t28:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    NOT:
+      UNRESOLVED "Alice promise to attend the meeting"
+  AMBIGUITIES:
+    - a119 HIGH coverage_gap: "Alice promise to attend the meeting"
+      ASK: "Formalize this unresolved fragment: Alice promise to attend the meeting"
+  CONFIDENCE 0.64
+
+TURN t29:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    UNRESOLVED "Bob thinks she promised not to attend it"
+  AMBIGUITIES:
+    - a121 HIGH anaphora: "she"
+      OPTIONS: There | author | author
+      ASK: "What does 'she' refer to?"
+    - a123 HIGH coverage_gap: "Bob thinks she promised not to attend it"
+      ASK: "Formalize this unresolved fragment: Bob thinks she promised not to attend it"
+  CONFIDENCE 0.46
+
+TURN t30:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHETHER:
+      UNRESOLVED "Alice promise to attend"
+  AMBIGUITIES:
+    - a125 HIGH coverage_gap: "Alice promise to attend"
+      ASK: "Formalize this unresolved fragment: Alice promise to attend"
+  CONFIDENCE 0.64
+
+TURN t31:
+  ACT ASSERT
+  SPEAKER user
+  CONTENT:
+    EVENT ev129 keep:
+      AGENT e127:"I am frustrated by how many unrelated details I have to"
+      THEME e128:"track of"
+  AMBIGUITIES:
+    - a130 HIGH structural_residue: "I am frustrated by how many unrelated details I have to"
+      ASK: "Clarify the internal clause structure of: I am frustrated by how many unrelated details I have to"
+  CONFIDENCE 0.76
+
+TURN t32:
+  ACT ASK
+  SPEAKER user
+  CONTENT:
+    ASK WHICH_FROM_SET request x133 FROM these:
+      POSSIBLE:
+        AND:
+          UNRESOLVED "x133 be handled now,"
+          EVENT ev136 need:
+            AGENT e134:"which"
+            THEME e135:"clarification"
+  AMBIGUITIES:
+    - a132 MEDIUM coordination_scope: "and"
+    - a137 HIGH coverage_gap: "x133 be handled now,"
+      ASK: "Formalize this unresolved fragment: x133 be handled now,"
+    - a138 HIGH structural_residue: "which"
+      ASK: "Clarify the internal clause structure of: which"
+  CONFIDENCE 0.37
+
+TURN t33:
+  ACT INSTRUCT
+  SPEAKER user
+  ADDRESSEE assistant
+  CONTENT:
+    DIRECTIVE LIST TO assistant
+      BODY:
+        FIND the unresolved question x:
+  CONFIDENCE 0.94

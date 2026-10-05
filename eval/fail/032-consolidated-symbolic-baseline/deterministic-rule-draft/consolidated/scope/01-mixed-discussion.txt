@@ -1,0 +1,4 @@
+ana is employee.
+NOT (omar verify claim).
+maria submitted revised proposal on monday.
+NOT (alice promised to attend the meeting).

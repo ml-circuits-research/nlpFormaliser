@@ -5,6 +5,7 @@ import {relative} from 'node:path';
 import {createHash} from 'node:crypto';
 import {loadSet} from './lib/evalset.mjs';
 import {ROOT} from './lib/strategies.mjs';
+import {consolidatedReference} from './lib/consolidated-reference.mjs';
 
 const hash = value => createHash('sha256').update(value).digest('hex');
 const sources = ['base','archive-lab-development','archive-lab-heldout','archive-scope-semantics',
@@ -36,17 +37,19 @@ function addGroups(name,rows,count,partition='development') {
     if(sentenceCount<10)throw new Error(`Too short: ${name}/${i}`);
     const slug=`${name}/${String(i+1).padStart(2,'0')}-mixed-discussion`;
     const turns=dialogue?[...items[0].turns,...extra.map((text,j)=>({id:`added-${j+1}`,speaker:'user',text}))]:undefined;
-    groups.push({schema:'nlp-eval/2',id:`consolidated/${slug}`,kind:turns?'conversation':'formalization',
+    const group={schema:'nlp-eval/2',id:`consolidated/${slug}`,kind:turns?'conversation':'formalization',
       text,category:name,tags:[...new Set([...items.flatMap(r=>r.tags??[]),'mixed-speech-acts','question','instruction','emotion'])],
       ...(turns?{turns}:{}),
       provenance:{partition,construction:'Deterministic concatenation of preserved source texts with explicitly recorded additions',
         trust:'Synthetic mixed-topic development material; not a natural conversation or certified gold',textSha256:hash(text)},
       construction:{sentenceCount,addedSentences:extra,preamble:dialogue?null:preamble,
         sources:items.map(r=>({id:r.id,set:r.sourceSet,file:relative(ROOT,r.file),archivedFile:`docs/evaluation/atomic/${relative(ROOT,r.file).slice(5)}`,textSha256:hash(r.text)}))},
-      // Atomic answers are retained in the archive, never merged into global
-      // gold: concatenation may alter context, reference and consistency.
-      reference:{},
-    });
+    };
+    // Atomic probes and gold are carried with their source spans, never merged
+    // into whole-document gold: concatenation may alter context, reference and
+    // consistency. Lab/scoped/event probe runners can then test each span.
+    group.reference=consolidatedReference(group,(set,id)=>loaded[set]?.find(r=>r.id===id));
+    groups.push(group);
   }
 }
 addGroups('base',loaded.base,14);

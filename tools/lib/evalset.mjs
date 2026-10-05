@@ -2,6 +2,7 @@
 import { readdirSync, readFileSync, statSync, existsSync } from "node:fs";
 import { join, relative, resolve, sep, basename } from "node:path";
 import { ROOT } from "./strategies.mjs";
+import { consolidatedReference } from "./consolidated-reference.mjs";
 
 export function listSets() {
   const d = join(ROOT, "eval");
@@ -52,12 +53,36 @@ export function loadSet(nameOrPath) {
   // filesystem enumeration. User-added text files follow the original cases.
   const order = new Map([...metadata.values()].map((row,i)=>[row.id,i]));
   if(order.size)out.sort((a,b)=>(order.get(a.id)??Infinity)-(order.get(b.id)??Infinity)||a.id.localeCompare(b.id));
-  return out;
+  return attachAtomicReferences(out);
+}
+
+// Consolidated documents store `reference:{}`; their atomic probes and gold
+// live with the source records. Attach them (with spans) at load time.
+function attachAtomicReferences(rows) {
+  const cache=new Map();
+  const lookup=(set,id)=>{
+    if(!cache.has(set))cache.set(set,new Map(loadSet(set).map(r=>[r.id,r])));
+    return cache.get(set).get(id);
+  };
+  return rows.map(row=>row.construction?.sources?.length&&!Object.keys(row.reference??{}).length&&!row.provenance?.annotations?.startsWith('stale')
+    ?{...row,reference:consolidatedReference(row,lookup)}:row);
 }
 
 /** Only source/context can enter a task; references remain evaluator-private. */
 export function sourceForModel(sample) {
+  if(sample.modelInput!==undefined)throw new Error('Stored rows carry their model input; use modelInputFor');
   if(sample.turns)return JSON.stringify({turns:sample.turns});
   if(sample.context!==undefined)return JSON.stringify({context:sample.context,text:sample.text});
   return sample.text;
+}
+
+/**
+ * The exact string a formalizer received. Saved rows (rejudge/resume) carry it
+ * in `modelInput` (or legacy `text`, which formalizeToCNL stores verbatim) and
+ * must never be wrapped again; fresh cases are encoded once by sourceForModel.
+ */
+export function modelInputFor(item,{stored=false}={}) {
+  if(item.modelInput!==undefined)return item.modelInput;
+  if(stored){if(typeof item.text!=='string')throw new Error(`Stored row lacks its model input: ${item.id}`);return item.text;}
+  return sourceForModel(item);
 }

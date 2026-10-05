@@ -1,10 +1,14 @@
 {
   "name": "nlpformaliser",
-  "version": "0.2.0",
-  "description": "JS bindings for the EVL round-trip formaliser (spawns `python -m nlpformaliser serve`)",
+  "version": "0.3.0",
+  "description": "Round-trip formalisation of English into Prolog-style event logic (EVL): check, verbalise, query, LLM loop. Pure JavaScript.",
   "type": "module",
-  "main": "nlpformaliser.mjs",
-  "exports": { ".": "./nlpformaliser.mjs" },
+  "main": "index.mjs",
+  "exports": { ".": "./index.mjs" },
+  "bin": { "nlpf": "./bin/nlpf.mjs" },
   "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test test/" },
+  "dependencies": { "compromise": "^14.17.0" },
+  "optionalDependencies": { "@anthropic-ai/sdk": "^0.131.0" },
   "license": "MIT"
 }

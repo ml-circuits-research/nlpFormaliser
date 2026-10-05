@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Run the formaliser CLI from a checkout without installing it.
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PYTHONPATH="$DIR${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m nlpformaliser "$@"

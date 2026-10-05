@@ -95,45 +95,52 @@ acceptate cu verbalizatorul LLM și le-am executat cu interpretorul determinist:
   (Haiku a „smuggle-uit” `more_than(forty_hours_per_week)` la s35). Asta e singurul cod acceptat
   din rulare care ar fi respins acum.
 
-## Folosire ca unealtă separată (CLI și librărie JS)
+## Librăria JS (`js/`) — formalizatorul ca unealtă separată
 
-Fiecare pas al buclei se poate folosi separat. Pașii deterministici (verificare, verbalizare, execuția
-întrebărilor) nu folosesc niciun LLM. Pașii cu LLM folosesc implicit Haiku: prin `ANTHROPIC_API_KEY` +
-SDK, sau prin `claude -p` dacă nu există cheie.
-
-### CLI
-
-```bash
-bin/nlpf check fapte.pl                 # validare în SWI-Prolog → JSON {ok, errors, warnings}; exit 1 dacă e invalid
-bin/nlpf verbalize fapte.pl             # execuție deterministă → engleză
-bin/nlpf fol fapte.pl                   # citire în logică de ordinul I
-bin/nlpf formalize "Not every child likes chocolate."                 # LLM → cod EVL
-bin/nlpf judge "text original" "text reconstruit"                     # LLM → {equivalent, differences}
-bin/nlpf refine "text" --code fapte.pl --realization "..." --differences "..."   # LLM → cod reparat
-bin/nlpf roundtrip "Can you pass me the salt?" --rounds 4 [--trace]   # toată bucla → JSON
-bin/nlpf ask --context ctx.pl --question-code q.pl                    # execută întrebarea în Prolog
-bin/nlpf answer --context "Most birds can fly, but penguins cannot. Pingu is a penguin." --question "Can Pingu fly?"
-bin/nlpf prompts                        # prompturile + specificația DSL, pentru LLM-ul tău
-bin/nlpf serve                          # server JSON-lines pe stdin/stdout
-```
-Orice argument de tip text sau cod poate fi un fișier, codul literal sau `-` (stdin).
-După `pip install -e .`, comanda se numește direct `nlpf`.
-
-### Librărie JS (`js/nlpformaliser.mjs`, Node ≥ 18, fără dependențe)
+Librărie `.mjs` pură (Node ≥ 18). Singura dependență e [compromise](https://github.com/spencermountain/compromise),
+folosită pentru morfologie. Nu are nevoie de Python, Prolog sau server. LLM-ul se injectează: implicit
+`@anthropic-ai/sdk` (dependență opțională, cu `ANTHROPIC_API_KEY`) sau `claude -p` dacă nu există cheie.
 
 ```js
-import { Formaliser, customLoop } from "./js/nlpformaliser.mjs";
-const f = await Formaliser.start();                  // pornește o dată `nlpf serve`
-const code = await f.formalize("Mary bought a red car yesterday.");
-const { ok, errors } = await f.check(code);
-const back = await f.verbalize(code);                 // "Mary bought a red car yesterday."
-const v = await f.judge("Mary bought a red car yesterday.", back);
-const r = await f.roundtrip("Not every child likes chocolate.");          // bucla completă
-const a = await f.ask(code, "event(e1,buy). role(e1,agent,x1). wh(x1,who). act(a1,ask,e1).");
-await f.close();
+import { Formaliser, check, verbalize, fol, ask } from "nlpformaliser";   // sau "./js/index.mjs"
+
+// pași deterministici — fără LLM
+check(code)                 // { ok, facts, errors, warnings }  (verificatorul EVL)
+verbalize(code)             // EVL → engleză
+fol(code)                   // EVL → logică de ordinul I
+ask(contextCode, questionCode)   // execută întrebarea: { answer, mode, support }
+
+// pași cu LLM + bucla
+const f = new Formaliser();                         // sau new Formaliser({ llm: async (system, prompt) => "..." })
+await f.formalize(text, { context })                // → cod EVL
+await f.judge(original, candidate)                  // → { equivalent, differences }
+await f.refine(text, code, { errors, realization, differences })
+await f.roundtrip(text, { rounds: 4, onStep })      // toată bucla → { converged, code, realization, trace }
+await f.answer(contextText, question)               // formalizează ambele + execută
+f.prompts()                                         // prompturile + specificația, dacă vrei bucla cu LLM-ul tău
 ```
-`customLoop(f, text, {rounds, onStep})` din același fișier este bucla scrisă în JS din pașii separați, gata
-de modificat (alt judecător, altă regulă de oprire, om în buclă...). Exemplu rulabil: `node js/example.mjs [--llm]`.
+
+CLI-ul (`js/bin/nlpf.mjs`, sau `nlpf` după `npm i -g ./js`) folosește librăria în proces separat:
+
+```bash
+nlpf check fapte.pl            # exit 1 dacă e invalid
+nlpf verbalize fapte.pl
+nlpf fol fapte.pl
+nlpf formalize "Not every child likes chocolate."
+nlpf judge "original" "reconstruit"
+nlpf refine "text" --code fapte.pl --realization "..." --difference "..."
+nlpf roundtrip "Can you pass me the salt?" --rounds 4 --trace
+nlpf ask --context ctx.pl --question-code q.pl
+nlpf answer --context-text "Most birds can fly, but penguins cannot. Pingu is a penguin." --question "Can Pingu fly?"
+nlpf prompts
+```
+
+**Paritate.** Portul JS e verificat față de implementarea de referință Python + SWI-Prolog, cu care s-au
+făcut experimentele (`cd js && npm test`). Pe toate cele 324 de formalizări produse în experimente
+(din fiecare rundă), verificatorul, verbalizarea și citirea FOL dau același rezultat. Excepție fac doar
+variantele de ortografie legitime dintre cele două librării de morfologie: *canceled/cancelled*,
+*persons/people*. Pe 53 de perechi context-întrebare, răspunsurile sunt identice.
+Fixtures: `python experiments/make_js_fixtures.py`.
 
 ## Structura repo-ului
 
@@ -149,9 +156,8 @@ nlpformaliser/
   mutate.py            mutații semantice pentru testarea judecătorului
   llm.py               acces LLM: Anthropic SDK (dacă există ANTHROPIC_API_KEY) sau `claude -p`, cu cache pe disc
   kb.pl, qa.py         execuția întrebărilor ca interogări Prolog (taxonomie, generici cu excepții, reguli, praguri numerice)
-  cli.py               CLI `nlpf` + server JSON-lines
-bin/nlpf               rulează CLI-ul fără instalare
-js/nlpformaliser.mjs   librăria JS (+ js/example.mjs)
+js/                    librăria JS (index.mjs, src/, bin/nlpf.mjs, test/, example.mjs) — produsul
+nlpformaliser/         implementarea de referință Python + SWI-Prolog, folosită în experimente
 experiments/run.py     rulează experimentul + evaluare + raport (reia de unde a rămas)
 experiments/crosscheck.py
 data/sentences.jsonl

@@ -99,9 +99,12 @@ const CONTRACTIONS = [
   [/\b(do|does|did|is|are|was|were|has|have|had|could|would|should|must|might|need|may)n['’]t\b/gi, '$1 not'],
   [/\b(I|you|we|they|he|she|it)['’]ll\b/gi, '$1 will'], [/\b(I|you|we|they)['’]ve\b/gi, '$1 have'],
   [/\b(you|we|they)['’]re\b/gi, '$1 are'], [/\bI['’]m\b/g, 'I am'],
+  [/\b(I|you|we|they|he|she|it)['’]d\s+(better|rather)\b/gi, '$1 would $2'], [/\b(I|you|we|they|he|she|it)['’]d\b/gi, '$1 would'],
+  [/\b(it|that|there|what|who|here|where|how)['’]s\b/gi, '$1 is'], [/\b(he|she)['’]s\s+(?=(?:been|got|had|done|gone)\b)/gi, '$1 has '], [/\b(he|she)['’]s\b/gi, '$1 is'],
+  [/\blet['’]s\b/gi, 'let us'],
 ];
 function expandContractions(text) {
-  let s = String(text);
+  let s = String(text).replace(/(\w)[’‘](\w)/g, "$1'$2").replace(/(\ws)’(?=\s)/g, "$1'");
   for (const [re, to] of CONTRACTIONS) s = s.replace(re, to);
   return s;
 }
@@ -174,6 +177,16 @@ function parseNP(raw, state, ambiguities, role='entity') {
     return {kind:'unresolved_ref', text:raw, candidates:resolution.candidates.map(e=>e.id)};
   }
 
+  const amount = parseAmount(raw, state, ambiguities, role);
+  if (amount) return amount;
+  // Possessive: "the customer's explicit consent" is consent OF customer; "thirty days' notice" is notice OF thirty days.
+  const pm = raw.match(/^(?:the\s+)?(.+?)(?:'s|s')\s+(.+)$/i);
+  if (pm && !/^(?:it|that|there|what|who|he|she|let)$/i.test(pm[1]) && wordCount(pm[2])>=1) {
+    const owner = parseNP(/s'$/.test(raw.slice(0, pm.index + pm[0].length - pm[2].length).trim()) ? `${pm[1]}s` : pm[1], state, ambiguities, 'entity');
+    const head = parseNP(pm[2], state, ambiguities, role);
+    if (head.kind === 'ref') { head.rel = [...(head.rel ?? []), {prep:'of', ref:owner}]; return head; }
+  }
+
   // quantifier + noun phrase
   const m = raw.match(/^(every|each|all|some|any|no|a|an|one)\s+(.+)$/i);
   if (m) {
@@ -198,6 +211,32 @@ function parseNP(raw, state, ambiguities, role='entity') {
 // head. Phrases of at most 3 words are left as they are.
 const NP_PREPS=new Set(['of','for','from','with','without','in','on','at','to','about','over','under','between','except','including','by','into','within','across','during','per']);
 function wordCount(s) { return cleanSpace(String(s)).split(/\s+/).filter(Boolean).length; }
+// Amounts and proportions: "at least three of the five reviewers", "fewer than ten units", "not all of the guests", "half of the budget",
+// "neither Alex nor Priya". The operator is explicit; the counted set is a noun phrase.
+const AMOUNT_OPS=[['no more than','AT_MOST'],['at least','AT_LEAST'],['at most','AT_MOST'],['fewer than','FEWER_THAN'],['less than','LESS_THAN'],
+  ['more than','MORE_THAN'],['exactly','EXACTLY'],['about','ABOUT'],['around','ABOUT'],['roughly','ABOUT'],['approximately','ABOUT'],
+  ['nearly','NEARLY'],['almost','NEARLY'],['up to','AT_MOST'],['over','MORE_THAN'],['under','LESS_THAN']];
+const AMOUNT_VALUE=/^(\d[\d.,]*%?|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|fifteen|twenty|thirty|forty|fifty|hundred|a (?:third|quarter|half|few|dozen)|half|a third|two thirds)\b\s*(.*)$/i;
+function parseAmount(raw,state,ambiguities,role) {
+  const text=cleanSpace(raw);
+  let m=text.match(/^neither\s+(.+?)\s+nor\s+(.+)$/i);
+  if (m) return {kind:'group',op:'neither',items:[parseNP(m[1],state,ambiguities,role),parseNP(m[2],state,ambiguities,role)]};
+  m=text.match(/^(not all|most|half|none|few|many|several|all)\s+of\s+(.+)$/i);
+  if (m) return {kind:'amount',op:m[1].toUpperCase().replace(' ','_'),of:parseNP(m[2],state,ambiguities,role)};
+  m=text.match(/^most\s+(.+)$/i);
+  if (m && wordCount(text)>3) return {kind:'amount',op:'MOST',of:parseNP(m[1],state,ambiguities,role)};
+  for (const [phrase,op] of AMOUNT_OPS) {
+    if (!lower(text).startsWith(phrase+' ')) continue;
+    const v=text.slice(phrase.length+1).match(AMOUNT_VALUE);
+    if (!v||!v[2]) return null;
+    const rest=v[2].replace(/^of\s+/i,'');
+    return {kind:'amount',op,value:lower(v[1]),of:parseNP(rest,state,ambiguities,role)};
+  }
+  m=text.match(/^(a (?:third|quarter|half)|half|two thirds)\s+of\s+(.+)$/i);
+  if (m) return {kind:'amount',op:'PROPORTION',value:lower(m[1]),of:parseNP(m[2],state,ambiguities,role)};
+  return null;
+}
+
 const decomposing=new Set();
 function decomposeNP(raw,state,ambiguities,role) {
   const label=cleanSpace(raw.replace(/^(?:the|this|that|these|those)\s+/i,''));
@@ -258,6 +297,7 @@ function takeRestrictions(ref,out) {
   if (ref.restriction) { out.push(ref.restriction); delete ref.restriction; }
   for (const x of ref.rel??[]) takeRestrictions(x.ref,out);
   if (ref.kind==='group') for (const x of ref.items) takeRestrictions(x,out);
+  if (ref.kind==='amount') takeRestrictions(ref.of,out);
 }
 function hoistRestrictions(node) {
   const found=[];
@@ -265,7 +305,11 @@ function hoistRestrictions(node) {
     if (!n||typeof n!=='object') return;
     if (Array.isArray(n)) { n.forEach(visit); return; }
     if (n.kind) { takeRestrictions(n,found); return; }
-    for (const [k,v] of Object.entries(n)) { if (k==='roles') Object.values(v).forEach(r=>takeRestrictions(r,found)); else if (v&&typeof v==='object') visit(v); }
+    for (const [k,v] of Object.entries(n)) {
+      if (k==='roles') Object.values(v).forEach(r=>takeRestrictions(r,found));
+      else if (k==='modifiers') v.forEach(m=>takeRestrictions(m.ref,found));
+      else if (v&&typeof v==='object') visit(v);
+    }
   })(node);
   return found.length?{type:'and',items:[node,...found]}:node;
 }
@@ -331,6 +375,10 @@ function classifyAct(text) {
   const s=cleanSpace(text);
   const core=s.replace(/^(?:now|finally|then)[:,]?\s+/i,'');
   const l=lower(s);
+  if (/^(?:good (?:morning|afternoon|evening|night)|hello|hi|hey|goodbye|bye)\b/.test(l)) return 'GREET';
+  if (/^(?:thanks|thank you|many thanks)\b/.test(l)) return 'THANK';
+  if (/^(?:sorry|apologies|my apologies)\b/.test(l) && !/^sorry,?\s+(?:i meant|i mean)\b/.test(l)) return 'APOLOGIZE';
+  if (/^(?:congratulations|congrats)\b/.test(l)) return 'CONGRATULATE';
   if (/^(yes|correct|exactly|right)\b/.test(l)) return 'CONFIRM';
   if (/^(?:no|nope|incorrect|wrong)[,!.:]?(?:\s+|$)/.test(l) && !/^no\s+[a-z]+\s+(?:must|may|can|should|is|are|has|have|[a-z]+s)\b/.test(l) || /^i mean\b/.test(l)) return 'REJECT_OR_CORRECT';
   if (/^(?:when|before|after)\s+.+?,\s*.+/i.test(s) && !/\?$/.test(s)) return 'ASSERT';
@@ -594,10 +642,29 @@ const LINKS=[
   {re:/^(.+?),?\s+unless\s+(.+)$/i, make:(l,r)=>({type:'if',condition:{type:'not',body:r},consequence:l})},
   {re:/^(.+?),?\s+(?:provided(?: that)?|as long as)\s+(.+)$/i, make:(l,r)=>({type:'if',condition:r,consequence:l})},
 ];
+// The subject of a clause: the words before its first verb or auxiliary (null for an imperative or a verbless phrase).
+function clauseSubject(text) {
+  const toks=tokenize(text).filter(t=>![',',';'].includes(t));
+  const vi=toks.findIndex((t,i,a)=>i>0&&(AUX.has(lower(t))||looksVerb(t,i,a)));
+  return vi>0?toks.slice(0,vi).join(' '):null;
+}
+// "Node7 is a server and is overloaded", "Tom corrected the report but did not resubmit it": a right conjunct that starts with a verb or
+// auxiliary shares the left subject.
+function withSharedSubject(left,right) {
+  const rt=tokenize(right).filter(t=>/\w/.test(t));
+  if (rt.length<2 || !(AUX.has(lower(rt[0]))||looksVerb(rt[0],0,rt)||canBeVerb(rt[0]))) return null;
+  const subject=clauseSubject(left);
+  return subject&&!/^(?:if|when|unless|because|although|while)\b/i.test(subject)?`${subject} ${right}`:null;
+}
 function parseClauseLinks(s,state,ambiguities,opts) {
   for (const {re,make} of LINKS) {
     const m=s.match(re);
-    if (!m || !isClause(m[1]) || !isClause(m[2])) continue;
+    if (!m) continue;
+    if (/but|although|while/.test(re.source) && isClause(m[1]) && /^(?:did|does|do|is|are|was|were|has|have|had|can|could|will|would|should|must|may|[a-z]+ed)\b/i.test(m[2])) {
+      const shared=withSharedSubject(m[1],m[2]);
+      if (shared) return make(parseSentence(m[1],state,ambiguities,opts),parseSentence(shared,state,ambiguities,opts));
+    }
+    if (!isClause(m[1]) || !isClause(m[2])) continue;
     // Left to right, so referents of the first clause are available to pronouns in the second.
     return make(parseSentence(m[1],state,ambiguities,opts),parseSentence(m[2],state,ambiguities,opts));
   }
@@ -640,9 +707,11 @@ function parseComplementClause(s,state,ambiguities,opts) {
 }
 
 function findClauseCoordination(s) {
-  const re=/\s+(and|or)\s+/ig; let m;
+  const re=/,?\s+(and|or)\s+/ig; let m;
   while((m=re.exec(s))) {
     const left=s.slice(0,m.index), right=s.slice(m.index+m[0].length);
+    const shared=withSharedSubject(left,right);
+    if (shared && isClause(left)) return {word:lower(m[1]),left,right:shared};
     const lt=tokenize(left), rt=tokenize(right);
     const lv=lt.some((t,i,a)=>looksVerb(t,i,a)); const rv=rt.some((t,i,a)=>looksVerb(t,i,a));
     // A single word ("..., and references") is a list item, not a clause.
@@ -750,14 +819,16 @@ function parseAtomicCore(s,state,ambiguities,opts={}) {
     roles.theme=parseRefOrNP(rest,state,ambiguities,boundVars,'theme');
   }
 
+  // Long prepositional values are noun phrases too ("about the person helping me"): parse them so they decompose.
+  for (const mod of modifiers) if (!['manner','time','deadline','tolerance','time_relation'].includes(mod.kind) && wordCount(mod.value)>3 && !isClause(mod.value)) mod.ref=parseNP(mod.value,state,ambiguities,mod.kind);
   // Move recognized PP modifiers into roles when semantics are reasonably explicit.
   for (const mod of modifiers) {
-    if (mod.kind==='recipient') roles.recipient=parseRefOrNP(mod.value,state,ambiguities,boundVars,'recipient');
+    if (mod.kind==='recipient') roles.recipient=mod.ref??parseRefOrNP(mod.value,state,ambiguities,boundVars,'recipient');
     if (mod.kind==='destination') roles.destination=parseRefOrNP(mod.value,state,ambiguities,boundVars,'destination');
     if (mod.kind==='source') roles.source=parseRefOrNP(mod.value,state,ambiguities,boundVars,'source');
     if (mod.kind==='instrument') roles.instrument=parseRefOrNP(mod.value,state,ambiguities,boundVars,'instrument');
     if (mod.kind==='location') roles.location=parseRefOrNP(mod.value,state,ambiguities,boundVars,'location');
-    if (mod.kind==='topic') roles.topic={kind:'literal',text:mod.value};
+    if (mod.kind==='topic') roles.topic=mod.ref??{kind:'literal',text:mod.value};
   }
   return {type:'event',id:uid('ev'),predicate:pred,roles,modifiers:modifiers.filter(m=>!['recipient','destination','source','instrument','location','topic'].includes(m.kind))};
 }
@@ -826,7 +897,14 @@ function splitAdjuncts(rest,pred,ambiguities) {
 }
 
 function normalizeQuestion(text,state,ambiguities) {
-  let s=stripPunct(text);
+  let s=stripPunct(expandContractions(text));
+  // Several questions in one sentence: "Which X are certain, and which are possibilities?", "What should be checked first, and why?"
+  const multi=s.match(/^(.+?),\s*(?:and|or)\s+(which|what|who|why|how|when|where)\b(.*)$/i);
+  if (multi && /^(?:which|what|who|why|how|when|where|is|are|was|were|do|does|did|can|could|should|will|would)\b/i.test(multi[1])) {
+    const first=normalizeQuestion(multi[1],state,ambiguities);
+    const second=multi[3].trim()?normalizeQuestion(`${multi[2]}${multi[3]}`,state,ambiguities):{type:'query',queryKind:multi[2].toUpperCase(),context:'previous question'};
+    return {type:'and',items:[first,second]};
+  }
   let given=null;
   if (/^given that,?\s+/i.test(s)) { given=state.lastProposition?.id||null; s=s.replace(/^given that,?\s+/i,''); }
   let m=s.match(/^what\s+should\s+happen\s+if\s+(.+)$/i);
@@ -844,8 +922,19 @@ function normalizeQuestion(text,state,ambiguities) {
   if (m) { const v=uid('x'); return {type:'query',queryKind:'WHO',var:v,entityType:'person',body:parseSentence(`${v} ${m[1]} ${m[2]}`,state,ambiguities,{boundVars:{[v]:'person'}})}; }
   m=s.match(/^what\s+(?:did|does|do)\s+(.+?)\s+([A-Za-z'-]+)(?:\s+(.+))?$/i);
   if (m) { const v=uid('x'); const subj=m[1], pred=m[2], tail=m[3]||''; return {type:'query',queryKind:'WHAT',var:v,entityType:'entity',body:parseSentence(`${subj} ${pred} ${v} ${tail}`,state,ambiguities,{boundVars:{[v]:'entity'}})}; }
-  m=s.match(/^(when|where|why|how)\s+(?:did|does|do|will|should|can|could|must)\s+(.+)$/i);
-  if (m) return {type:'query',queryKind:m[1].toUpperCase(),body:{type:'raw',text:m[2]}};
+  m=s.match(/^(when|where|why|how)\s+(did|does|do|will|should|can|could|must|is|are|was|were|has|have)\s+(.+)$/i);
+  if (m) {
+    // "did the deployment fail last night" -> "the deployment fail last night"; other auxiliaries move after the subject.
+    const aux=lower(m[2]);
+    const sub=clauseSubject(m[3]);
+    const body=['did','does','do'].includes(aux)?m[3]:sub?`${sub} ${aux} ${m[3].slice(sub.length).trim()}`:`${m[3]} ${aux}`;
+    return {type:'query',queryKind:m[1].toUpperCase(),body:parseSentence(body,state,ambiguities)};
+  }
+  m=s.match(/^what\s+([A-Za-z-]+(?:\s+[A-Za-z-]+)?)\s+(did|does|do|will|should|can|could)\s+(.+)$/i);
+  if (m && !AUX.has(lower(m[1].split(' ')[0]))) {
+    const type=singularize(m[1]), v=uid('x');
+    return {type:'query',queryKind:'WHICH',var:v,entityType:type,body:parseSentence(`${m[3]} ${v}`,state,ambiguities,{boundVars:{[v]:type}})};
+  }
   // yes/no inversion -> retain explicit query wrapper, parse a normalized approximation.
   m=s.match(/^(is|are|was|were|do|does|did|can|could|should|would|will|must|may|has|have)\s+(.+)$/i);
   if (m) {
@@ -892,7 +981,7 @@ function normalizeDirective(text,act,state,ambiguities) {
   if (m) return {type:'directive',operator:'summarize',addressee:state.addressee,body:parseSentence(`${state.addressee} summarize ${m[1]}`,state,ambiguities),constraints:[{kind:'max_sentences',value:m[2]}]};
   m=s.match(/^(summarize|explain|evaluate|test|run|generate|create|write|translate|formalize|check|use|exclude|include|keep|remove|select|filter|clarify|define|apply|consider|infer|resolve)\s+(.+)$/i);
   if (m) return {type:'directive',operator:lemma(m[1]),addressee:state.addressee,body:parseSentence(`${state.addressee} ${m[1]} ${m[2]}`,state,ambiguities)};
-  return {type:'directive',operator:'do',addressee:state.addressee,body:parseSentence(`${state.addressee} ${s}`,state,ambiguities)};
+  return {type:'directive',operator:'do',addressee:state.addressee,body:parseSentence(`${state.addressee} ${s.charAt(0).toLowerCase()}${s.slice(1)}`,state,ambiguities)};
 }
 
 function parseSearchSpec(rest,state,ambiguities) {
@@ -940,6 +1029,23 @@ function postParseUncertainty(source,content) {
   return a;
 }
 
+// Greetings, thanks, apologies and congratulations are speech acts between speaker and addressee; what they are about ("for the update",
+// "on the promotion") is a topic, and a following clause ("you totally deserved it", "I was travelling") is parsed as a proposition.
+function socialAct(act,text,speaker,addressee,state,ambiguities) {
+  const predicate={GREET:'greet',THANK:'thank',APOLOGIZE:'apologize',CONGRATULATE:'congratulate'}[act];
+  const body=stripPunct(expandContractions(text)).replace(/^(?:good (?:morning|afternoon|evening|night)|hello|hi|hey|goodbye|bye|thanks(?: a lot| so much)?|thank you(?: very much| so much)?|many thanks|sorry|apologies|my apologies|congratulations|congrats)\b,?\s*/i,'');
+  const greeting=act==='GREET'?lower(stripPunct(text).match(/^(good (?:morning|afternoon|evening|night)|hello|hi|hey|goodbye|bye)/i)?.[1]??''):'';
+  const event={type:'event',id:uid('ev'),predicate,roles:{agent:{kind:'ref',id:speaker,text:speaker},recipient:{kind:'ref',id:addressee,text:addressee}},modifiers:greeting?[{kind:'manner',value:greeting}]:[]};
+  if (!body) return event;
+  const m=body.match(/^(?:for|on|about)\s+(.+?)(?:,\s*(.+))?$/i);
+  if (m) {
+    event.roles.topic=parseNP(m[1],state,ambiguities,'topic');
+    return hoistRestrictions(m[2]&&isClause(m[2])?{type:'and',items:[event,parseSentence(m[2],state,ambiguities)]}:event);
+  }
+  const clause=body.replace(/^,\s*/,'');
+  return isClause(clause)?{type:'and',items:[event,parseSentence(clause,state,ambiguities)]}:event;
+}
+
 // Sentence-initial discourse markers ("Therefore", "Well, basically", "Yeah, sorry") relate the turn to the conversation; they are kept as
 // turn markers instead of being parsed as a subject. now/finally/then/otherwise keep the archive's handling inside parseSentence.
 const DISCOURSE_MARKERS=/^(therefore|thus|hence|so|also|basically|well|actually|anyway|however|still|yeah|yes|ok|okay|sorry|right|oh|besides|moreover|furthermore|meanwhile|instead|honestly|frankly|unfortunately|fortunately|apparently)\b[,:]?\s+/i;
@@ -968,7 +1074,8 @@ function parseTurn(source,state,{speaker='user',addressee='assistant',turnId=nul
     const isMean=/^i mean\s+/i.test(stripPunct(text));
     const body=stripPunct(text).replace(/^(?:no|nope|incorrect|wrong)[,:]?\s*/i,'').replace(/^i mean\s+/i,'');
     content={type:'correction',body:body?(isMean?{type:'resolution_hint',value:body}:parseSentence(body,state,ambiguities)):null};
-  } else if (act==='CONFIRM') content={type:'confirm',target:state.lastProposition?.id||null};
+  } else if (['GREET','THANK','APOLOGIZE','CONGRATULATE'].includes(act)) content=socialAct(act,text,speaker,addressee,state,ambiguities);
+  else if (act==='CONFIRM') content={type:'confirm',target:state.lastProposition?.id||null};
   else content=parseSentence(text,state,ambiguities);
   content=hoistRestrictions(content);
 
@@ -1046,6 +1153,7 @@ function renderRef(r) {
   if (!r) return 'UNKNOWN';
   if (r.kind==='var') return `${r.id}:${quoteAtom(r.text)}`;
   if (r.kind==='group') return `${r.op.toUpperCase()}(${r.items.map(renderRef).join(', ')})`;
+  if (r.kind==='amount') return `AMOUNT(${r.op}${r.value?` ${quoteAtom(r.value)}`:''} OF ${renderRef(r.of)})`;
   if (r.kind==='ref') return `${r.id}:${JSON.stringify(r.text)}${(r.rel??[]).map(x=>` ${x.prep.toUpperCase()} ${renderRef(x.ref)}`).join('')}`;
   if (r.kind==='literal') return JSON.stringify(r.text);
   if (r.kind==='unresolved_ref') return `UNRESOLVED_REF(${JSON.stringify(r.text)})`;
@@ -1106,6 +1214,7 @@ function renderNode(node,indent=0,ctx={fragments:0}) {
 }
 function renderModifier(m) {
   if(m.kind==='time_relation')return `TIME_${m.relation.toUpperCase()} ${JSON.stringify(m.value)}`;
+  if(m.ref)return `${m.kind.toUpperCase()} ${renderRef(m.ref)}`;
   return `${m.kind.toUpperCase()} ${JSON.stringify(m.value)}`;
 }
 

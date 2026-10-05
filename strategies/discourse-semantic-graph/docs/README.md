@@ -28,5 +28,9 @@ Goal: more sentences represented as structure, purely symbolically (no model cal
 - **Noun phrases over 3 words**: a relative clause (full or reduced) becomes a restriction on the head entity, placed next to the event that mentions it; lists become `AND(...)` / `OR(...)` groups; a prepositional tail becomes a relation (`e1:"summary" OF e2:"article"`). A pronoun recipient is split from its object ("book me a window seat"). ONLY keeps its focus restriction inside its scope (`WHERE:`).
 - **Turn markers**: sentence-initial discourse markers ("Therefore", "Well, basically") are kept as `DISCOURSE …` instead of being parsed as a subject. Quoted material is a mention without a representation and stays unresolved.
 - **Because of NP** is `BECAUSE OF e1:"storm"`, not a clause.
+- **Amounts and possessives**: "at least three of the five reviewers", "fewer than ten units", "not all of the guests", "neither Alex nor Priya" carry an explicit operator (`AMOUNT(AT_LEAST three OF …)`); "the customer's consent" is consent OF customer. Long prepositional values are parsed as noun phrases.
+- **Shared subjects**: "Node7 is a server and is overloaded", "Tom corrected the report but did not resubmit it": a conjunct that starts with a verb reuses the left subject.
+- **Questions**: when/where/why/how and "what N did …" questions parse their clause; several questions in one sentence ("Which X…, and which Y?", "…, and why?") become an AND of queries.
+- **Social acts**: greetings, thanks, apologies and congratulations are events between speaker and addressee with their topic; a following clause is a proposition. Contractions 'd and 's after pronouns are expanded.
 
-The 30-turn archive dialogue changes in 11 turns, all recorded in `test/fixtures/discourse-divergences.json`. Most are corrections (embedded clause content, relative clauses, NOT scope). The other 19 turns equal the archive, ids aside.
+The 30-turn archive dialogue changes in 12 turns, all recorded in `test/fixtures/discourse-divergences.json`. Most are corrections (embedded clause content, relative clauses, NOT scope). The other 18 turns equal the archive, ids aside.

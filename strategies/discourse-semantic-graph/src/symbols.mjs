@@ -10,6 +10,7 @@ export function discourseSymbols(conversation) {
     if (!r || typeof r !== 'object') return;
     if (r.kind === 'ref' || r.kind === 'literal') add(`${path}.text`, r.text);
     if (r.kind === 'group') r.items.forEach((x, i) => ref(x, `${path}.items[${i}]`));
+    if (r.kind === 'amount') { if (r.value) add(`${path}.value`, r.value); ref(r.of, `${path}.of`); }
     (r.rel ?? []).forEach((x, i) => ref(x.ref, `${path}.rel[${i}]`));
     if (r.kind === 'var') add(`${path}.type`, r.text, 'symbol');
   }
@@ -20,7 +21,7 @@ export function discourseSymbols(conversation) {
     if (n.type === 'event') {
       add(`${path}.predicate`, n.predicate, 'symbol');
       for (const [k, v] of Object.entries(n.roles ?? {})) ref(v, `${path}.roles.${k}`);
-      (n.modifiers ?? []).forEach((m, i) => add(`${path}.modifiers[${i}]`, m.value));
+      (n.modifiers ?? []).forEach((m, i) => m.ref ? ref(m.ref, `${path}.modifiers[${i}].ref`) : add(`${path}.modifiers[${i}]`, m.value));
       return;
     }
     if (n.type === 'attitude') { add(`${path}.predicate`, n.predicate, 'symbol'); ref(n.agent, `${path}.agent`); ref(n.recipient, `${path}.recipient`); walk(n.content, `${path}.content`); return; }

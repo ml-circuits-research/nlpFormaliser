@@ -1,6 +1,10 @@
 import { $, A, O, N, I, Q, isVar, isNode, isDocument, _internal, validate } from './ir.mjs';
 
 const IDENT = /^[A-Za-z_][A-Za-z0-9_]*$/;
+// Bare identifiers that look like variables: single letters, v1/x2/y3 (the names
+// toWire and most models use for variables) and _-prefixed names. Archive
+// constants such as p7, s1 or d4 stay constants.
+export const VARIABLE_LIKE = /^(?:[A-Za-z]|[uvwxyzUVWXYZ]_?\d+|_\w*)$/;
 
 // Safe, compact wire format for LLM I/O. No eval.
 // Example: U(x,I($.student(x),E(y,A($.book(y),$.read(x,y)))))
@@ -68,8 +72,10 @@ class Parser {
   }
   number() {
     this.ws();
-    const m = this.s.slice(this.i).match(/^-?(?:0|[1-9]\d*)(?:\.\d+)?/);
+    // JSON number grammar, including exponents (String(1e21) === "1e+21").
+    const m = this.s.slice(this.i).match(/^-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?/);
     if (!m) throw new SyntaxError(`Expected number at ${this.i}`);
+    if (/^[A-Za-z0-9_.]/.test(this.s[this.i + m[0].length] ?? '')) throw new SyntaxError(`Malformed number at ${this.i}`);
     this.i += m[0].length;
     return Number(m[0]);
   }
@@ -84,9 +90,12 @@ class Parser {
       return out;
     }
   }
-  expr(env = new Map()) {
+  expr(env = new Map(), top = false) {
     this.ws();
     if (this.peek('[')) {
+      // Lists are only the top-level ordered discourse. A nested list such as
+      // ["A","x"] would otherwise be indistinguishable from the formula A("x").
+      if (!top) throw new SyntaxError(`List literals are only allowed as the top-level document (at ${this.i})`);
       const out = []; this.eat('[');
       if (this.peek(']')) { this.eat(']'); return out; }
       while (true) {
@@ -125,6 +134,9 @@ class Parser {
     }
 
     if (env.has(id)) return env.get(id);
+    // A free variable must not silently become a constant: I($.dog(x),$.barks(x))
+    // without U/E/W is rejected so that a repair round can bind or quote it.
+    if (VARIABLE_LIKE.test(id)) throw new SyntaxError(`Unbound variable '${id}': bind it with U(${id},...), E(${id},...) or W(${id},...), or write the constant as a quoted string "${id}"`);
     return id;
   }
 }
@@ -135,7 +147,7 @@ export function fromWire(src) {
     .replace(/\s*```$/,'')
     .trim();
   const p = new Parser(src);
-  const ir = p.expr(new Map());
+  const ir = p.expr(new Map(), true);
   p.ws();
   if (p.i !== p.s.length) throw new SyntaxError(`Unexpected trailing input at ${p.i}`);
   const check = validate(ir);

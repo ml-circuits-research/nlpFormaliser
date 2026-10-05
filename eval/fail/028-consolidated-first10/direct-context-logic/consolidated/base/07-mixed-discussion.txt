@@ -1,0 +1,15 @@
+whale is is mammal.
+NOT (whale is is fish).
+boils at(water, 100, sea level).
+restriction lost in discussion is worried about.
+For all ?x, IF ?x is is metal AND ?x is heated THEN ?x is expands.
+For all ?x, IF ?x is cat THEN ?x is sleeps during day.
+For all ?x, IF ?x is had known about traffic THEN ?x is would have taken train.
+IF we is had launched earlier THEN we is would have beaten competition.
+For all ?x, IF ?x is won lottery THEN ?x is would buy house by sea.
+AMBIGUOUS: {"text":"Cats usually sleep during the day.","issue":"The adverb \"usually\" indicates typical but not universal behavior; the exact frequency or exceptions are unspecified."}.
+AMBIGUOUS: {"text":"Suppose the budget is cut by 20 percent; which projects would we drop first?","issue":"The question does not specify the set of projects, criteria for dropping, or any ordering; the intended answer is underspecified."}.
+QUESTION: find truth value.
+QUESTION: find truth value.
+QUESTION: find truth value.
+QUESTION: find truth value.

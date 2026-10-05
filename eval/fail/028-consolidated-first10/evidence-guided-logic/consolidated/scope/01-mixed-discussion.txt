@@ -1,0 +1,37 @@
+plans to buy(ravi, laptop, next month).
+ravi is compared three models.
+NOT (ravi placed order laptop).
+ana is employee.
+ana handles customer data.
+p7 is payment.
+p7 amount 12500.
+p7 is released.
+told(lea, omar, offline server).
+offline server is claim.
+NOT (omar verified offline server).
+last night is maintenance enabled.
+niko allowed download dataset.
+submitted(maria, proposal, monday).
+forwarded(leo, proposal, iris, tuesday).
+iris archived proposal.
+sensor1 is failed.
+sensor2 is failed.
+NOT (sensor1 is replaced).
+NOT (sensor2 is replaced).
+author1 is author.
+paper1 is paper.
+paper2 is paper.
+paper3 is paper.
+author1 wrote paper1.
+author1 wrote paper2.
+author1 wrote paper3.
+NOT (alice promise attend meeting).
+bob thinks promised not attend meeting alice.
+For all ?x, IF ?x is employee AND ?x handles customer data THEN ?x is completed training.
+For all ?p, ?a, IF ?p amount ?a AND ?a greater than 10000 THEN ?p is exceeds 10000.
+For all ?p, IF ?p is payment AND ?p is exceeds 10000 AND ?p is released THEN ?p is approved by director.
+For all ?n, IF ?n is maintenance enabled THEN backup ran not ?n.
+For all ?u, IF ?u allowed download dataset THEN ?u is registered.
+For all ?a, ?p, IF ?p is paper AND ?a is author THEN ?a author of ?p.
+AMBIGUOUS: {"text":"The backup runs every night unless maintenance mode is enabled.","interpretation":"It is unclear whether the backup is guaranteed NOT to run when maintenance mode is enabled, or merely that it may be skipped."}.
+AMBIGUOUS: {"text":"Lea told Omar that the server was offline. Omar did not verify the claim.","interpretation":"The actual offline status of the server is uncertain; only a claim exists without verification."}.

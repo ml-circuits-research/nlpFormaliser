@@ -1,0 +1,8 @@
+{
+  "status": "interrupted",
+  "completedRows": 30,
+  "expectedRows": 80,
+  "reason": "Provider 429 throttling and client deadlines contaminated the last Direct Context wave. Cancelled retry jobs remained queued in Worker. The evaluator was deliberately terminated; partial artifacts and original errors are retained.",
+  "continuedIn": "030-consolidated-resumed",
+  "policy": "Do not report this partial run as an 80-case completed comparison. Continuation preserves semantic and syntax outcomes and retries only infrastructure/judge errors."
+}

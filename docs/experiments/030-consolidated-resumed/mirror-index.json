@@ -1,0 +1,236 @@
+[
+  {
+    "id": "consolidated/base/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/base/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "the quantifier ‘how many’ expressing the amount of unrelated details",
+        "the activity ‘keep track of’ that is part of the frustration"
+      ],
+      "added": [],
+      "changed": [],
+      "reason": "All requests and statements in the original are represented in the CNL except for the quantitative phrase ‘how many’ and the ‘keep track of’ activity in the frustration sentence; these details are omitted, so the CNL does not fully entail the NL. No extra predicates beyond what the NL implies are introduced.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/04-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/base/04-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them."
+      ],
+      "added": [],
+      "changed": [
+        "Scheduling restriction: NL says 'Don\\'t schedule anything before 10 a.m. on Mondays' (no scheduling before that time), CNL says 'it is not the case that for every scheduled item it is before 10:00 on Monday' (weaker).",
+        "Hotel requirement: NL refers to the required hotel ('must be within walking distance ... and cost less than 150 euros a night'), CNL quantifies universally over all hotels.",
+        "Budget and memory: NL says 'budget ... around 1,200 dollars' and 'needs at least 16 gigabytes', CNL states exact budget 1200 and exact memory 16."
+      ],
+      "reason": "Most statements match, but the note about separate situations is missing, the scheduling constraint has different logical scope, the hotel clause adds universal quantification, and the budget/memory details are more precise in CNL than in NL, preventing mutual entailment.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/07-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/base/07-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "the probabilistic qualifier \"usually\" in the claim about cats (Statement 3)",
+        "the counter‑factual past modality in \"If I had known about the traffic…\" (Statement 5)",
+        "the counter‑factual past modality in \"Had we launched a week earlier…\" (Statement 7)",
+        "the counter‑factual past modality in \"If I won the lottery…\" (Statement 9)",
+        "the polite request force and modal \"could you possibly\" in the resume question (Statement 10)",
+        "the type constraint that the queried items are \"projects\" in the budget‑cut question (Statement 8)"
+      ],
+      "added": [
+        "the universal quantifier (all cats) in the formal claim about cats sleeping during the day (Statement 3)"
+      ],
+      "changed": [
+        "Statement 3: changed from a probabilistic claim (cats usually sleep) to a universal claim (all cats sleep during the day)",
+        "Statements 5, 7, 9: changed from counter‑factual past conditionals to material conditionals without past or subjunctive mood",
+        "Statement 8: changed from asking which projects would be dropped to a generic query about any entity satisfying the conditional",
+        "Statement 10: changed from a polite request to a yes‑no question about the truth of a conditional"
+      ],
+      "reason": "Several items lose important modal, tense, or quantifier information (e.g., \"usually\" and counter‑factuals). The CNL adds a universal claim for cats and drops the request and project-type constraints. Because of these mismatches, neither the NL text entails the CNL nor vice‑versa.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/10-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/base/10-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "judge_error",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "judge_error",
+      "equivalent": null,
+      "reason": "status 429: rate_limit_error: Rate limit exceeded. Please try again later."
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/14-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/base/14-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them."
+      ],
+      "added": [],
+      "changed": [
+        "Meeting frequency: original specifies every other Thursday, CNL omits the biweekly aspect"
+      ],
+      "reason": "The NL includes a meta‑statement about note separation not represented in CNL (lost). All other NL sentences are captured, but the meeting instruction in NL says “every other Thursday” whereas CNL only encodes a Thursday 4 p.m. meeting, losing the biweekly frequency (changed). Consequently the NL fully entails the CNL (it contains at least the information asserted by CNL), but the CNL does not entail the NL because it lacks the meta‑statement and the frequency detail.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/lab-development/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/lab-development/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Leo entered the lab, then he switched off the alarm.",
+        "Point out contradictions rather than resolving them without asking me."
+      ],
+      "added": [],
+      "changed": [],
+      "reason": "All facts and rules in the original are represented in the CNL, so the original entails the CNL. However, the CNL omits the two original statements about Leo's actions and the instruction to point out contradictions, so the CNL does not entail the full original text.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/lab-development/02-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/lab-development/02-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "SyntaxError: Expected '(' at 403"
+    ]
+  },
+  {
+    "id": "consolidated/scope/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/030-consolidated-resumed/explicit-scope-logic/consolidated/scope/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Opening meta‑statement “These notes concern separate situations unless I explicitly connect them.”",
+        "The epistemic certainty in “Is the server definitely offline?” (CNL only asks if offline holds).",
+        "The necessity condition in the director‑approval rule: original says release requires prior director approval, which is not captured."
+      ],
+      "added": [
+        "No substantive predicates appear that are absent from the natural language; all CNL atoms correspond to some NL clause."
+      ],
+      "changed": [
+        "Statement 9 and Question 12: NL rule “If a payment exceeds 10,000 €, a director must approve it before it is released” is formalised as “if exceeds then (directorApproved → released)”, which weakens the original necessity to a sufficiency condition and thus changes its meaning.",
+        "Question 15 vs NL question “Is the server definitely offline?” – CNL asks only whether the offline predicate holds, omitting the “definitely” epistemic force.",
+        "Statement 9’s conditional direction differs from the NL implication (release → directorApproved)."
+      ],
+      "reason": "The CNL misses the opening contextual note and the epistemic certainty about the server’s status, and it misrepresents the director‑approval rule by reversing the logical direction (necessity vs sufficiency). Consequently neither representation fully entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  }
+]

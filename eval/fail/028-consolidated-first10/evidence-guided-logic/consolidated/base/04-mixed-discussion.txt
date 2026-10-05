@@ -1,0 +1,24 @@
+i prefer seat aisle.
+i allergic peanuts.
+hotel within walking distance conference centre.
+hotel cost per night 120.
+laptop budget 1200.
+laptop memory gb 16.
+i is likes spicy food.
+partner max spice allowed mild.
+last message is ignore.
+issue fixed.
+do not send.
+second paragraph is needs change.
+i is relieved.
+i is making progress.
+i is impatient.
+short request checklist ordered.
+what should be checked first is question.
+why is question.
+For all ?flight, IF ?flight flight time night THEN i prefer seat window.
+For all ?restaurant, IF NOT (?restaurant is guarantee nut free kitchen) THEN ?restaurant is avoid.
+For all ?amount, IF hotel cost per night ?amount AND ?amount less than 150 THEN hotel is acceptable cost.
+For all ?mem, IF laptop memory gb ?mem AND ?mem at least 16 THEN laptop is sufficient memory.
+AMBIGUOUS: {"id":"amb1","description":"The antecedent of \"make that Thursday, not Wednesday\" is unclear; it could refer to a meeting, a deadline, or another event."}.
+AMBIGUOUS: {"id":"amb2","description":"The antecedent of \"I meant the 2023 report, not the 2024 one\" is unclear; the specific report being referenced is not identified in the surrounding text."}.

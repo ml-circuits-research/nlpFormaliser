@@ -1,0 +1,995 @@
+[
+  {
+    "id": "consolidated/base/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/base/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "the quantifier ‘how many’ expressing the amount of unrelated details",
+        "the activity ‘keep track of’ that is part of the frustration"
+      ],
+      "added": [],
+      "changed": [],
+      "reason": "All requests and statements in the original are represented in the CNL except for the quantitative phrase ‘how many’ and the ‘keep track of’ activity in the frustration sentence; these details are omitted, so the CNL does not fully entail the NL. No extra predicates beyond what the NL implies are introduced.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/04-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/base/04-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them."
+      ],
+      "added": [],
+      "changed": [
+        "Scheduling restriction: NL says 'Don\\'t schedule anything before 10 a.m. on Mondays' (no scheduling before that time), CNL says 'it is not the case that for every scheduled item it is before 10:00 on Monday' (weaker).",
+        "Hotel requirement: NL refers to the required hotel ('must be within walking distance ... and cost less than 150 euros a night'), CNL quantifies universally over all hotels.",
+        "Budget and memory: NL says 'budget ... around 1,200 dollars' and 'needs at least 16 gigabytes', CNL states exact budget 1200 and exact memory 16."
+      ],
+      "reason": "Most statements match, but the note about separate situations is missing, the scheduling constraint has different logical scope, the hotel clause adds universal quantification, and the budget/memory details are more precise in CNL than in NL, preventing mutual entailment.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/07-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/base/07-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "the probabilistic qualifier \"usually\" in the claim about cats (Statement 3)",
+        "the counter‑factual past modality in \"If I had known about the traffic…\" (Statement 5)",
+        "the counter‑factual past modality in \"Had we launched a week earlier…\" (Statement 7)",
+        "the counter‑factual past modality in \"If I won the lottery…\" (Statement 9)",
+        "the polite request force and modal \"could you possibly\" in the resume question (Statement 10)",
+        "the type constraint that the queried items are \"projects\" in the budget‑cut question (Statement 8)"
+      ],
+      "added": [
+        "the universal quantifier (all cats) in the formal claim about cats sleeping during the day (Statement 3)"
+      ],
+      "changed": [
+        "Statement 3: changed from a probabilistic claim (cats usually sleep) to a universal claim (all cats sleep during the day)",
+        "Statements 5, 7, 9: changed from counter‑factual past conditionals to material conditionals without past or subjunctive mood",
+        "Statement 8: changed from asking which projects would be dropped to a generic query about any entity satisfying the conditional",
+        "Statement 10: changed from a polite request to a yes‑no question about the truth of a conditional"
+      ],
+      "reason": "Several items lose important modal, tense, or quantifier information (e.g., \"usually\" and counter‑factuals). The CNL adds a universal claim for cats and drops the request and project-type constraints. Because of these mismatches, neither the NL text entails the CNL nor vice‑versa.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/10-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/base/10-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "judge_error",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "judge_error",
+      "equivalent": null,
+      "reason": "no answer within 120 s"
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/14-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/base/14-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them."
+      ],
+      "added": [],
+      "changed": [
+        "Meeting frequency: original specifies every other Thursday, CNL omits the biweekly aspect"
+      ],
+      "reason": "The NL includes a meta‑statement about note separation not represented in CNL (lost). All other NL sentences are captured, but the meeting instruction in NL says “every other Thursday” whereas CNL only encodes a Thursday 4 p.m. meeting, losing the biweekly frequency (changed). Consequently the NL fully entails the CNL (it contains at least the information asserted by CNL), but the CNL does not entail the NL because it lacks the meta‑statement and the frequency detail.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/lab-development/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/lab-development/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Leo entered the lab, then he switched off the alarm.",
+        "Point out contradictions rather than resolving them without asking me."
+      ],
+      "added": [],
+      "changed": [],
+      "reason": "All facts and rules in the original are represented in the CNL, so the original entails the CNL. However, the CNL omits the two original statements about Leo's actions and the instruction to point out contradictions, so the CNL does not entail the full original text.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/lab-development/02-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/lab-development/02-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "SyntaxError: Expected '(' at 403"
+    ]
+  },
+  {
+    "id": "consolidated/scope/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/scope/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Opening meta‑statement “These notes concern separate situations unless I explicitly connect them.”",
+        "The epistemic certainty in “Is the server definitely offline?” (CNL only asks if offline holds).",
+        "The necessity condition in the director‑approval rule: original says release requires prior director approval, which is not captured."
+      ],
+      "added": [
+        "No substantive predicates appear that are absent from the natural language; all CNL atoms correspond to some NL clause."
+      ],
+      "changed": [
+        "Statement 9 and Question 12: NL rule “If a payment exceeds 10,000 €, a director must approve it before it is released” is formalised as “if exceeds then (directorApproved → released)”, which weakens the original necessity to a sufficiency condition and thus changes its meaning.",
+        "Question 15 vs NL question “Is the server definitely offline?” – CNL asks only whether the offline predicate holds, omitting the “definitely” epistemic force.",
+        "Statement 9’s conditional direction differs from the NL implication (release → directorApproved)."
+      ],
+      "reason": "The CNL misses the opening contextual note and the epistemic certainty about the server’s status, and it misrepresents the director‑approval rule by reversing the logical direction (necessity vs sufficiency). Consequently neither representation fully entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/speech-acts/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/speech-acts/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "temporal marker \"now\" in \"server is running now\"",
+        "modal qualifier \"probably\" in \"small model is probably enough\"",
+        "default/normality indicator \"Normally\" in the reject rule",
+        "\"finally\" in \"we are finally making progress\"",
+        "\"still\" nuance in \"I am still impatient\"",
+        "\"why\" clause in \"What should be checked first, and why?\"",
+        "\"ordered\" attribute in the checklist request"
+      ],
+      "added": [
+        "CNL treats the request \"Could you check whether the tests pass?\" as a yes‑no question about whether you check, adding an interrogative force not present in the NL request"
+      ],
+      "changed": [
+        "NL uses \"think\" with uncertainty (\"probably\") while CNL records a belief without uncertainty",
+        "NL includes the normality adverb \"Normally\" in the reject‑unless‑approve rule; CNL omits this, changing the rule’s default status",
+        "NL request \"Could you check whether the tests pass?\" is a request; CNL renders it as a question, altering the speech act",
+        "NL expresses \"relieved\" with the temporal nuance \"finally\" and impatience with \"still\"; CNL captures only the predicates relieved and impatient",
+        "NL checklist request specifies an \"ordered\" checklist; CNL only records it as short, losing the ordering requirement"
+      ],
+      "reason": "Several NL statements contain temporal, modal, or discourse nuances (now, probably, normally, finally, still, why, ordered) that are omitted in the CNL, so NL does not fully entail CNL. Conversely, the CNL changes the force of a request into a question and drops the normality marker, introducing information not present in NL; thus CNL does not entail NL.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/dialogue/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/028-consolidated-first10/explicit-scope-logic/consolidated/dialogue/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: no answer within 120 s"
+    ]
+  },
+  {
+    "id": "consolidated/base/01-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/base/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "lack of prohibition to cc anyone from the sales team in the send‑slides request",
+        "absence of the quantity “two” in the pizza order (original specifies two large pizzas)",
+        "missing time scope “from last quarter” in the archive‑emails request",
+        "the statement of frustration (“I am frustrated by how many unrelated details I have to keep track of.”)"
+      ],
+      "added": [],
+      "changed": [
+        "the CNL “request archive emails” is generic and does not preserve the original’s temporal restriction to “last quarter”"
+      ],
+      "reason": "The CNL omits several details present in the NL (cc restriction, pizza quantity, archive time frame, speaker’s frustration) so the NL does not entail the CNL. Conversely, the CNL makes a broader claim that all emails are to be archived, which is not supported by the NL’s specific “last quarter” scope, so the CNL does not entail the NL. Counterexample: CNL’s generic archive request could be satisfied by archiving emails from any period, but the NL only authorizes archiving last‑quarter emails.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0: Which specific flight qualifies as the \"earliest\" from Bucharest to Vienna on Tuesday?",
+        "possible opaque clause at root.ambiguities.1: Which files exactly are meant by \"every file in the reports folder that ends in .tmp\" (e.g., sub‑fol",
+        "possible opaque clause at root.ambiguities.2: What exact slides are referred to by \"the slides from yesterday's meeting\"?",
+        "possible opaque clause at root.ambiguities.3: Which meeting is \"the one with the investors\" that should be exempt from cancellation?",
+        "possible opaque clause at root.ambiguities.4: Which emails are included in \"the emails from last quarter\" (e.g., all folders, only inbox, etc.)?",
+        "possible opaque clause at root.ambiguities.5: Whether the memory leak is the sole cause of the server crash (causal claim may be uncertain).",
+        "possible opaque clause at root.ambiguities.6: The conditional nature of the manager's statement: \"project would be cancelled unless we found a spo"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/04-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/base/04-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them.",
+        "Don't schedule anything before 10 a.m. on Mondays.",
+        "Actually, make that Thursday, not Wednesday.",
+        "Sorry, I meant the 2023 report, not the 2024 one."
+      ],
+      "added": [
+        "hotel cost per night 120."
+      ],
+      "changed": [
+        "CNL states \"i is making progress\" whereas ORIGINAL says \"we are finally making progress\" (subject shift)."
+      ],
+      "reason": "Both texts miss several original statements and CNL adds a specific hotel cost not present in ORIGINAL; also CNL changes the agent of progress from \"we\" to \"i\", so neither direction entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0.description: The antecedent of \"make that Thursday, not Wednesday\" is unclear; it could refer to a meeting, a dea",
+        "possible opaque clause at root.ambiguities.1.description: The antecedent of \"I meant the 2023 report, not the 2024 one\" is unclear; the specific report being "
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/07-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/base/07-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: Invalid ProtoIR-normalized Formal IR: rules[3] head variable ?project is not bound in the body"
+    ]
+  },
+  {
+    "id": "consolidated/base/10-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/base/10-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Meta statement about notes being separate unless explicitly connected",
+        "Request: “Can you identify any conflicting requirements in these notes?”",
+        "Instruction: “Point out contradictions rather than resolving them without asking me.”",
+        "Prohibition clause in “No personal data may be transferred outside the EU without the customer's explicit consent.”"
+      ],
+      "added": [
+        "Clause asserting that if the customer gives explicit consent then personal data transfer outside the EU is allowed"
+      ],
+      "changed": [
+        "The data‑transfer rule: original states a prohibition without consent, CNL only states a permission with consent and omits the default prohibition"
+      ],
+      "reason": "The CNL omits the negative default for personal‑data transfer, adding only a positive permission, so the NL does not entail the CNL (nl_entails_cnl = false) and the CNL does not entail the NL (cnl_entails_nl = false). The request and meta‑note are missing, and the added permission changes the meaning of the data‑transfer rule.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0.text: Nobody except Ana has access to the production database.",
+        "possible opaque clause at root.ambiguities.0.issue: Interpretation of exclusive access (whether Ana is the only holder vs Ana definitely has access plus",
+        "possible opaque clause at root.ambiguities.1.text: Not all of the guests have confirmed",
+        "possible opaque clause at root.ambiguities.1.issue: Quantifier scope – could mean ‘some guests have not confirmed’ (existential) or ‘the set of guests i",
+        "possible opaque clause at root.ambiguities.2.issue: Ambiguity whether ‘none’ quantifies over all guests (no guest cancelled) or over a subset previously",
+        "possible opaque clause at root.ambiguities.3.text: Refunds are available within 14 days of purchase, provided the item is unused.",
+        "possible opaque clause at root.ambiguities.3.issue: Temporal condition “within 14 days of purchase” could be interpreted as a deadline for requesting a ",
+        "possible opaque clause at root.ambiguities.4.text: No personal data may be transferred outside the EU without the customer's explicit consent.",
+        "possible opaque clause at root.ambiguities.4.issue: Modal ‘may’ combined with a negative condition creates ambiguity about whether the default is prohib"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/14-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/base/14-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: Invalid ProtoIR-normalized Formal IR: rules[2] head variable ?speaker is not bound in the body"
+    ]
+  },
+  {
+    "id": "consolidated/lab-development/01-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/lab-development/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them.",
+        "Can you identify any conflicting requirements in these notes?",
+        "Point out contradictions rather than resolving them without asking me.",
+        "I am annoyed about the delay, not about the person helping me."
+      ],
+      "added": [
+        "AMBIGUOUS metadata about the interpretation of \\\"public status request\\\""
+      ],
+      "changed": [
+        "CNL states \"delay is annoyed about\" whereas ORIGINAL says \"I am annoyed about the delay\" (subject reversed)"
+      ],
+      "reason": "All factual statements and rules in the CNL are present in the original text, so NL entails CNL. However the CNL omits meta‑discourse sentences, the question and request, and misrepresents the annoyed‑about statement (subject swapped), and adds an ambiguity annotation not in the original, so CNL does not entail NL.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0.description: The phrase \"public status request\" could be interpreted as two separate predicates (public and statu"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/lab-development/02-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/lab-development/02-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": true,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them.",
+        "I am frustrated by how many unrelated details I have to keep track of.",
+        "Which of these requests can be handled now, and which need clarification?",
+        "List the unresolved questions before taking any action."
+      ],
+      "added": [
+        "key is key",
+        "pump is pump",
+        "0 is temperature below"
+      ],
+      "changed": [],
+      "reason": "All factual statements and universal rules in the NL appear in the CNL (or are logical consequences), so NL entails CNL. The CNL lacks the meta‑note, the speaker’s frustration, and the request/question, so it does not entail the NL. The CNL also introduces three trivial predicates (key is key, pump is pump, 0 is temperature below) that are not explicit in the NL. No statements differ in meaning.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0.text: Which of these requests can be handled now, and which need clarification? List the unresolved questi",
+        "possible opaque clause at root.ambiguities.0.issue: The specific requests and unresolved questions are not enumerated in the source, so the intended que"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/scope/01-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/scope/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Meta note about separate situations",
+        "Universal premise “Every paper has at least one author.”",
+        "Expression of frustration: “I am frustrated by how many unrelated details I have to keep track of.”",
+        "Request: “Which of these requests can be handled now, and which need clarification?”",
+        "Instruction: “List the unresolved questions before taking any action.”"
+      ],
+      "added": [
+        "Universal rule “For all ?n, IF ?n is maintenance enabled THEN backup ran not ?n.” (interprets backup‑maintenance relationship as a definite prohibition)",
+        "Universal rule “For all ?a, ?p, IF ?p is paper AND ?a is author THEN ?a author of ?p.” (different from original “Every paper has at least one author.”)",
+        "Explicit fact “author1 is author.”"
+      ],
+      "changed": [
+        "Backup rule changed from ambiguous “unless maintenance mode is enabled” to a definite negation of backup execution when maintenance is enabled.",
+        "Paper‑author rule changed from “Every paper has at least one author” to a conditional that only states that if something is a paper and someone is an author then that author is an author of the paper, which does not guarantee every paper has an author."
+      ],
+      "reason": "The CNL contains a definite “backup did not run when maintenance enabled” which is not entailed by the original’s ambiguous wording, and it replaces the original universal paper‑author premise with a different conditional, losing the original universal guarantee. Conversely, the original includes several statements (meta note, frustration, requests) absent from the CNL. Hence neither direction of entailment holds.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0.text: The backup runs every night unless maintenance mode is enabled.",
+        "possible opaque clause at root.ambiguities.0.interpretation: It is unclear whether the backup is guaranteed NOT to run when maintenance mode is enabled, or merel",
+        "possible opaque clause at root.ambiguities.1.text: Lea told Omar that the server was offline. Omar did not verify the claim.",
+        "possible opaque clause at root.ambiguities.1.interpretation: The actual offline status of the server is uncertain; only a claim exists without verification."
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/speech-acts/01-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/speech-acts/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them.",
+        "Not every user has access.",
+        "Which model has the lowest latency?",
+        "Do we know whether the test passed?",
+        "Could you check whether the tests pass?",
+        "Can Luna run on this hardware?",
+        "What should be checked first, and why?",
+        "Give me a short ordered checklist and leave unrelated tasks independent."
+      ],
+      "added": [
+        "benchmark is benchmark failed.",
+        "signature valid.",
+        "file is system accepts file.",
+        "request is admin approves.",
+        "request is reject request."
+      ],
+      "changed": [
+        "I think the small model is probably enough. -> i think small model enough. (modal 'probably' dropped)",
+        "Maria says that the benchmark failed. -> includes both Maria says benchmark failed and asserts benchmark failed (adds truth claim)."
+      ],
+      "reason": "CNL omits many original statements (questions, meta note, user access claim) and adds atomic facts not asserted in the original (benchmark failed, signature valid, etc.). Hence neither direction entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.externals.0.details: short ordered checklist, leave unrelated tasks independent",
+        "possible opaque clause at root.ambiguities.0.issue: The sentence expresses a negated universal quantifier (¬∀x user(x) → has_access(x)). It can be repre"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/dialogue/01-mixed-discussion",
+    "strategy": "evidence-guided-logic",
+    "path": "eval/fail/028-consolidated-first10/evidence-guided-logic/consolidated/dialogue/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: Invalid ProtoIR-normalized Formal IR: rules[11] head variable ?c is not bound in the body"
+    ]
+  },
+  {
+    "id": "consolidated/base/01-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/base/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Meta statement that notes are separate unless explicitly connected.",
+        "Attribution that my manager told me the project would be cancelled unless a sponsor is found.",
+        "Quantitative aspect of frustration ('how many unrelated details') and the phrase 'keep track of'.",
+        "The question asking which requests can be handled now and which need clarification.",
+        "The request to list unresolved questions before taking any action."
+      ],
+      "added": [
+        "Ambiguity annotation about unknown speaker identity.",
+        "Ambiguity annotation about time format for tomorrow 9 a.m.",
+        "Two generic 'QUESTION: find truth value.' entries."
+      ],
+      "changed": [],
+      "reason": "CNL omits several original statements (separation note, manager attribution, quantity of frustration, meta‑questions about handling and unresolved items) and adds meta‑annotations and placeholder truth‑value questions not present in the original, so neither direction entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0.issue: The identity of the speaker/user is not explicitly named in the source.",
+        "possible opaque clause at root.ambiguities.0.resolution: Represented as variable ?user in all user‑centric predicates.",
+        "possible opaque clause at root.ambiguities.1.issue: Exact time format for \"tomorrow at 9 a.m.\" and the follow‑up reminder is ambiguous regarding time zo",
+        "possible opaque clause at root.ambiguities.1.resolution: Kept as lexical strings \"tomorrow_9am\" and \"tomorrow_10am\"."
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/04-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/base/04-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Meta statement about notes being separate unless explicitly connected",
+        "Instruction to ignore the last message",
+        "Instruction not to send it yet",
+        "Request for a short ordered checklist and to leave unrelated tasks independent",
+        "Question: \"What should be checked first, and why?\""
+      ],
+      "added": [
+        "Generic question \"QUESTION: find truth value\" not present in original"
+      ],
+      "changed": [],
+      "reason": "CNL omits several original requests and instructions (checklist request, ignore previous message, delay sending) and adds an unrelated generic truth‑value question, so neither text fully entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.facts.4.pred: hotel_within_walking_distance_of_conference_centre"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/07-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/base/07-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them.",
+        "Cats usually sleep during the day.",
+        "If you were in my position, would you accept the offer?",
+        "Suppose the budget is cut by 20 percent; which projects would we drop first?",
+        "Could you possibly take a look at my resume when you have a moment?",
+        "I am worried that an important restriction will get lost in this discussion.",
+        "What information is still missing before we can decide what to do?",
+        "Keep the separate requests separate and do not invent links between them."
+      ],
+      "added": [
+        "QUESTION: find truth value.",
+        "QUESTION: find truth value.",
+        "QUESTION: find truth value.",
+        "QUESTION: find truth value."
+      ],
+      "changed": [
+        "restriction lost in discussion is worried about (misrepresents who is worried).",
+        "For all ?x, IF ?x is cat THEN ?x is sleeps during day (universal vs \"usually\").",
+        "For all ?x, IF ?x is had known about traffic THEN ?x is would have taken train (universal vs specific I).",
+        "IF we is had launched earlier THEN we is would have beaten competition (omits \"a week earlier\").",
+        "For all ?x, IF ?x is won lottery THEN ?x is would buy house by sea (universal vs specific I)."
+      ],
+      "reason": "Several CNL statements misrepresent or overgeneralize the original claims (e.g., universal quantifiers for usually/conditional statements, wrong subject of worry, omission of time detail). The CNL also adds four placeholder questions not present in the original and omits many original sentences (meta notes, questions, requests). Therefore neither direction entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.ambiguities.0.issue: The adverb \"usually\" indicates typical but not universal behavior; the exact frequency or exceptions",
+        "possible opaque clause at root.ambiguities.1.text: Suppose the budget is cut by 20 percent; which projects would we drop first?",
+        "possible opaque clause at root.ambiguities.1.issue: The question does not specify the set of projects, criteria for dropping, or any ordering; the inten"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/10-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/base/10-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Meta statement about separate situations: \"These notes concern separate situations unless I explicitly connect them.\"",
+        "Request to identify conflicting requirements: \"Can you identify any conflicting requirements in these notes?\"",
+        "Instruction to point out contradictions rather than resolve them: \"Point out contradictions rather than resolving them without asking me.\"",
+        "Universal negative exclusivity in \"Nobody except Ana has access to the production database.\" (the fact that no one else has access)"
+      ],
+      "added": [
+        "\"ana is is ana.\" (identity statement not present in original)",
+        "Universal rule linking any holder of access to being Ana: \"For all ?person, IF ?person is is ana THEN ?person is has access to production db.\"",
+        "Universal rule allowing transfer of personal data outside the EU when consent is given (original only prohibited without consent)",
+        "Explicit fact \"report is report late.\" (original only implied lateness)",
+        "All universal rules (tenant notice, refund condition, overtime entitlement, child accompaniment, guest non‑cancellation) that are formalizations not explicitly stated as rules in the original"
+      ],
+      "changed": [
+        "The exclusive‑access claim is transformed into an ambiguous rule that does not capture the universal negative that nobody else has access.",
+        "The statement about personal data transfer is expanded to include a positive permission when consent is given, which was not asserted in the original."
+      ],
+      "reason": "The CNL misses several original sentences (meta note, request, instruction) and fails to encode the universal negative that only Ana has access, while adding new facts and rules (identity, permission with consent, explicit lateness) not stated in the original. Hence neither direction of entailment holds.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics",
+        "possible opaque clause at root.rules.3.body.0.pred: works_more_than_40_hours_per_week",
+        "possible opaque clause at root.ambiguities.0.text: Nobody except Ana has access to the production database.",
+        "possible opaque clause at root.ambiguities.0.issue: Exclusive access is modeled by a rule linking any holder of access to the predicate is_ana, but the ",
+        "possible opaque clause at root.ambiguities.1.text: Not all of the guests have confirmed, but none have cancelled.",
+        "possible opaque clause at root.ambiguities.1.issue: The phrase \"Not all\" is rendered as a placeholder fact some_guest_not_confirmed, which abstracts the"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/14-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/base/14-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "These notes concern separate situations unless I explicitly connect them.",
+        "What should be checked first, and why?",
+        "Give me a short ordered checklist and leave unrelated tasks independent."
+      ],
+      "added": [
+        "?func is no results.",
+        "QUESTION: find truth value.",
+        "QUESTION: find truth value."
+      ],
+      "changed": [
+        "Make sure the function returns an empty list instead of null when there are no results. ↔ For all ?func, IF ?func is no results THEN ?func function returns empty list.",
+        "She has been working on the migration since March and expects to finish before the end of the quarter. ↔ person working on(?person, migration, march). expects finish before(?person, migration, end of quarter).",
+        "By the time you read this, I will have already left for the airport. ↔ speaker is left for airport."
+      ],
+      "reason": "Several original statements (meta note, specific question, checklist request) have no counterpart in the CNL, and the CNL introduces facts (?func is no results) and generic truth‑value questions that are not present in the original. Conversely, the CNL omits the meta note and the explicit checklist request, and its representations of the function rule, migration work, and airport departure differ in scope or tense, so neither direction fully entails the other.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "representation preserved, but reasoning backend covers only part of its semantics"
+      ],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/lab-development/01-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/lab-development/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: no answer within 120 s"
+    ]
+  },
+  {
+    "id": "consolidated/lab-development/02-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/lab-development/02-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: no answer within 120 s"
+    ]
+  },
+  {
+    "id": "consolidated/scope/01-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/scope/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: no answer within 120 s"
+    ]
+  },
+  {
+    "id": "consolidated/speech-acts/01-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/speech-acts/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: no answer within 120 s"
+    ]
+  },
+  {
+    "id": "consolidated/dialogue/01-mixed-discussion",
+    "strategy": "direct-context-logic",
+    "path": "eval/fail/028-consolidated-first10/direct-context-logic/consolidated/dialogue/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "formalization_error",
+    "hasCNL": false,
+    "judgmentView": "native",
+    "verdict": {
+      "status": "not_judged",
+      "equivalent": null,
+      "reason": "No valid CNL"
+    },
+    "audit": {
+      "eligible": false,
+      "issues": [
+        "no supported reasoning export"
+      ],
+      "screeningOnly": true
+    },
+    "errors": [
+      "Error: no answer within 120 s"
+    ]
+  }
+]

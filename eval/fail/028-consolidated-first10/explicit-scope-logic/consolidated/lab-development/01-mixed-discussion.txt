@@ -1,0 +1,22 @@
+Statement 1: the predicate “physicist” holds for “Mira”
+Statement 2: the predicate “owns” holds with ordered arguments [“Mira”; “workstation”]
+Statement 3: (the predicate “red” holds for “S1”) and (the predicate “mounted on” holds with ordered arguments [“S1”; “north wall”])
+Statement 4: (the predicate “speeds up” holds with ordered arguments [“C7”; “R2”]) and (it is not the case that (the predicate “consumed” holds with ordered arguments [“C7”; “R2”]))
+Statement 5: the predicate “sent” holds with ordered arguments [“Bob”; “Alice”; “report”; “Monday”]
+Statement 6: (the predicate “approved by” holds with ordered arguments [“report”; “Dana”]) and (the predicate “after” holds with ordered arguments [“audit”; the proposition that the predicate “approved by” holds with ordered arguments [“report”; “Dana”]])
+Statement 7: for every x, (if ((the predicate “server” holds for x) and (the predicate “overloaded” holds for x)), then (the predicate “moves” holds with ordered arguments [“scheduler”; “new jobs”; “elsewhere”]))
+Statement 8: the predicate “server” holds for “Node7”
+Statement 9: the predicate “overloaded” holds for “Node7”
+Statement 10: for every y, (if ((the predicate “researcher” holds for y) and (there exists a z such that ((the predicate “GPU” holds for z) and (the predicate “owns” holds with ordered arguments [y; z])))), then (the predicate “can run local model” holds for y))
+Statement 11: the predicate “researcher” holds for “Ana”
+Statement 12: the predicate “GPU” holds for “GPU1”
+Statement 13: the predicate “owns” holds with ordered arguments [“Ana”; “GPU1”]
+Statement 14: for every u, (if (the predicate “reviewer” holds for u), then (for every v, (if ((the predicate “paper” holds for v) and (the predicate “authored” holds with ordered arguments [u; v])), then (it is not the case that (the predicate “approve” holds with ordered arguments [u; v])))))
+Statement 15: the predicate “reviewer” holds for “Nina”
+Statement 16: the predicate “authored” holds with ordered arguments [“Nina”; “paper7”]
+Statement 17: (the predicate “clean” holds for “sample3”) and (the predicate “contaminated” holds for “sample4”)
+Statement 18: there exists a w such that ((the predicate “request” holds for w) and (it is not the case that (the predicate “requires auth” holds for w)))
+Statement 19: for every v6, (if (the predicate “public status request” holds for v6), then (it is not the case that (the predicate “requires auth” holds for v6)))
+Statement 20: the predicate “public status request” holds for “R17”
+Statement 21: (the predicate “annoyed” holds with ordered arguments [“speaker”; “delay”]) and (it is not the case that (the predicate “annoyed” holds with ordered arguments [“speaker”; “person helping me”]))
+Question 22: is it the case that (the predicate “identify conflict” holds with ordered arguments [“you”; “notes”])?

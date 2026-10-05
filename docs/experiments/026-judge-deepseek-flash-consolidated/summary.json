@@ -1,0 +1,41 @@
+{
+  "id": "026-judge-deepseek-flash-consolidated",
+  "model": "openference/DeepSeek-V4-Flash-0731",
+  "finished": "2026-10-05T15:46:00.767Z",
+  "n": 16,
+  "attempted": 16,
+  "correct": 15,
+  "falseAccepts": [],
+  "falseRejects": [
+    "formal-ordered-arguments"
+  ],
+  "uncertain": [],
+  "errors": [],
+  "labeled": 16,
+  "requests": 16,
+  "served": [],
+  "inputTokens": 7877,
+  "outputTokens": 19118,
+  "knownCredits": 12,
+  "unknownCreditRequests": 0,
+  "requestMs": [
+    17457,
+    25993,
+    24206,
+    39366,
+    22897,
+    51417,
+    11629,
+    13779,
+    21205,
+    21898,
+    21987,
+    50398,
+    5933,
+    16336,
+    9584,
+    39106
+  ],
+  "estimatedCatalogUsd": 0.006455819999999999,
+  "costNote": "Catalog token-price estimate is not the subscription charge. Credits are provider-reported; missing costs are unknown."
+}

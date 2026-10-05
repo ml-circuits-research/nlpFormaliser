@@ -1,0 +1,18 @@
+?func is no results.
+feature branch revert commits 2.
+NOT (main revert commits 2).
+development cache enabled false.
+production cache enabled true.
+meeting schedule(thursday, every other, 16 00, next week).
+december 24 office closed january 2.
+person location(speaker, berlin, monday, wednesday).
+thursday call rescheduled morning.
+person working on(?person, migration, march).
+expects finish before(?person, migration, end of quarter).
+speaker is left for airport.
+speaker feeling relieved.
+speaker feeling impatient.
+For all ?func, IF ?func is no results THEN ?func function returns empty list.
+For all ?contract, ?expiration, ?pay_date, IF ?contract last payment received ?pay_date AND days after(?pay_date, 30, ?expiration) THEN ?contract contract expires ?expiration.
+QUESTION: find truth value.
+QUESTION: find truth value.

@@ -1,39 +1,40 @@
-# Evaluation corpus and provenance
+# Consolidated evaluation texts
 
-Every example is a separate `.txt` file containing readable natural-language text. The original `base/` corpus remains unchanged. Archive examples follow the same simple convention; a connected conversation stays in one file with speakers and ordered lines.
+The active input corpus is `consolidated/`: **29 plain-text cases**, each in its own `.txt` file, with **13–33 sentences**. They combine 280 original formalization examples and include questions, instructions and emotional statements.
 
-For example, open `archive-lab-development/C10.txt` or `archive-discourse-dialogue/connected-chat.txt`. No JSON, formal programs or reference answers are needed to read an example. Add or edit text files normally.
+| Directory | Cases |
+|---|---:|
+| `consolidated/base` | 14 |
+| `consolidated/lab-development` | 3 |
+| `consolidated/lab-heldout` | 3 |
+| `consolidated/scope` | 3 |
+| `consolidated/speech-acts` | 5 |
+| `consolidated/dialogue` | 1 |
 
-| Set | Records | Preserved evaluation information |
-|---|---:|---|
-| `archive-lab-development` | 31 | source categories, gold IR, semantic queries, UNKNOWN/FALSE controls |
-| `archive-lab-heldout` | 29 | original source-heldout designation, gold IR and behavioral probes |
-| `archive-scope-semantics` | 30 | reference MicroIR wire and overlapping semantic tags |
-| `archive-scope-corruptions` | 11 | good/bad formalizations and expected corruption; judge tests, not extraction examples |
-| `archive-speech-acts` | 50 | gold CNL, tags and supplied conversational context |
-| `archive-speech-sample` | 1 | paired multiline source/CNL sample |
-| `archive-discourse-dialogue` | 1 session | all 30 ordered turns and speakers; never split into context-free examples |
+The connected dialogue preserves all 30 original turns and adds three mixed-act turns. Other cases combine source records with a sentence explicitly stating that unrelated situations remain separate. These are synthetic stress tests, not recorded natural conversations. Additions and source provenance are recorded in [consolidation.json](../docs/evaluation/consolidation.json).
 
-Total: 153 imported records, including 11 judge pairs and one 30-turn session. These supplement the 138 existing base texts. Individual sample strings may overlap; counts do not imply 291 statistically independent samples. Source-heldout means held out by that archive's authors, not a newly certified independent test set for this project.
+All **291 original texts** remain under [docs/evaluation/atomic](../docs/evaluation/atomic/). Eleven are paired judge-corruption controls, not formalization inputs; they are not concatenated. Original gold programs, behavioral probes and context remain in [metadata](../docs/evaluation/metadata/) and [source datasets](../docs/evaluation/sources/). Atomic references are not gold for a combined document: combination can change reference and consistency.
 
-## Record contract
+## First ten cases
 
-The `.txt` files are the authoritative evaluation inputs. Research annotations are stored separately under [`docs/evaluation/metadata/`](../docs/evaluation/metadata/), and original source datasets under [`docs/evaluation/sources/`](../docs/evaluation/sources/). The [import inventory](../docs/evaluation/archive-inventory.json) records their provenance. These files preserve references, queries, corruption pairs and source fields without cluttering the examples.
+[consolidated-first10.json](../docs/evaluation/selections/consolidated-first10.json) fixes the shared selection: five base cases, two Lab development cases, one scope case, one speech-act case and the connected dialogue. No Lab heldout case is included. This is development evidence, not an independent generalization estimate.
 
-The loader attaches annotations only when the visible text still matches the imported source. Editing an example invalidates its old references and structured turns rather than silently evaluating the new text against stale answers. Adding a `.txt` file requires no metadata file. Removing a text file removes that example from the loaded set.
+Visible text is authoritative. Editing it invalidates stale annotations. Only source text, context and turns enter model tasks; reference answers remain private to the evaluator. Archived sets remain explicitly loadable for reproducibility, but are not active sets.
 
-Only `text`, context and turns can enter model tasks through `sourceForModel`. Gold IR, reference CNL and expected behavioral answers remain evaluator-private. Tests enforce this boundary. Conversation-aware strategies receive ordered turns; generic model strategies receive an explicit speaker/turn serialization. The discourse parser preserves state across these turns.
+## CNL result mirrors
 
-Judge pairs must compare the CNL generated from both good and corrupted programs; they must not be counted as duplicate formalizer cases or silently discarded. Use representation-specific probes for gold IR/wire. Exact symbol F1 is secondary because open predicates can be synonymous.
+Runs using `--mirrors` write generated CNL under:
+
+`success/<experiment>/<strategy>/consolidated/<category>/<case>.txt`
+
+`fail/<experiment>/<strategy>/consolidated/<category>/<case>.txt`
+
+The relative case path mirrors the input. Files contain actual deterministic native CNL, not summaries or original input. If no CNL was produced, the file is empty; no substitute is invented.
+
+Success requires valid formalization, positive semantic equivalence, and passage of the reasoning-eligibility screen. Fail means **not accepted**, not necessarily semantically false: it includes parser failures, judge errors, uncertainty and unsupported reasoning. Exact reasons and output availability are recorded in each experiment's `mirror-index.json`. Neither output directory is an input corpus.
 
 ## Comparison discipline
 
-Report per source, construction/category, overlapping tag, context length, formalization status, backend coverage, behavioral controls and judge outcome. A strategy can specialize successfully. Missing operational semantics should be reported as unsupported, never as automatic false reasoning or silently flattened facts. Native benchmark references need independent review before being treated as ground truth.
+Report validity, equivalence, reasoning eligibility, infrastructure errors and costs separately. Whole-document equivalence is strict: losing one meaningful question or instruction is a failure. Opaque source-text copies are not reasoning representations even if a judge accepts their wording. The eligibility audit is a screen, not a proof of logical adequacy.
 
-Example offline inspection (no model requests):
-
-```sh
-node tools/formalize.mjs --list
-node tools/run-eval.mjs --strategy deterministic-rule-draft --set archive-lab-development --stage source --offline
-node tools/run-eval.mjs --strategy discourse-semantic-graph --set archive-discourse-dialogue --stage source --offline
-```
+Native CNL is judged in the first consolidated run. Common-CNL projections are saved alongside it; incomplete projections are not silently judged as complete documents. Strategies without a complete reasoning backend and the surface-normalization control cannot enter the reasoning success ranking.

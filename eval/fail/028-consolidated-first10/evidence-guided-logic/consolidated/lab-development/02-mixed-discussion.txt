@@ -1,0 +1,28 @@
+kim deleted account42.
+account42 is account.
+filea is file.
+filea is checksum differs.
+r1 is robot.
+b is box.
+r1 permitted pick up b.
+0 is temperature below.
+paris west of berlin.
+berlin west of warsaw.
+key belongs alice.
+bob holding key.
+key is key.
+experiment is failed.
+pump is lost power.
+pump is pump.
+promised(alice, bob, draft).
+draft is draft.
+d1 is device.
+NOT (backup succeed).
+For all ?x, ?a, IF ?x deleted ?a THEN ?x is administrator.
+IF NOT (backup succeed) THEN NOT (deployment start).
+For all ?x, IF ?x is file AND ?x is checksum differs THEN ?x is stale.
+For all ?r, ?b, IF ?r permitted pick up ?b THEN ?r is gripper empty.
+IF 0 is temperature below THEN water is can freeze.
+For all ?d, IF ?d is used THEN ?d is calibrated.
+IF pump is lost power THEN experiment is failed.
+AMBIGUOUS: {"text":"Which of these requests can be handled now, and which need clarification? List the unresolved questions before taking any action.","issue":"The specific requests and unresolved questions are not enumerated in the source, so the intended query cannot be formalized without additional information."}.

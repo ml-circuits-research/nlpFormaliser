@@ -1,0 +1,12 @@
+Statement 1: if (the predicate “noResults” holds), then ((the predicate “returnsEmptyList” holds for “function”) and (it is not the case that (the predicate “returnsNull” holds for “function”)))
+Statement 2: (the predicate “revertLastTwoCommits” holds for “featureBranch”) and (it is not the case that (the predicate “revertLastTwoCommits” holds for “main”))
+Statement 3: (the predicate “disableCache” holds for “development”) and (the predicate “enableCache” holds for “production”)
+Statement 4: (the predicate “meet” holds with ordered arguments [“we”; “Thursday”; “16:00”]) and (the predicate “startsNextWeek” holds with ordered arguments [“we”; “meeting”])
+Statement 5: the predicate “closed” holds with ordered arguments [“office”; “December 24”; “January 2”]
+Statement 6: (the predicate “inLocation” holds with ordered arguments [“speaker”; “Berlin”; “Monday”; “Wednesday”]) and (the predicate “moveCall” holds with ordered arguments [“Thursday”; “morning”])
+Statement 7: the predicate “expiresAfter” holds with ordered arguments [“contract”; “lastPayment”; “30days”]
+Statement 8: (the predicate “workingSince” holds with ordered arguments [“she”; “migration”; “March”]) and (the predicate “expectsFinishBefore” holds with ordered arguments [“she”; “quarterEnd”])
+Statement 9: if (the predicate “read” holds with ordered arguments [“you”; “this”]), then (the predicate “leftFor” holds with ordered arguments [“I”; “airport”])
+Statement 10: (the predicate “relieved” holds with ordered arguments [“I”; the proposition that the predicate “makingProgress” holds for “we”]) and (the predicate “impatient” holds for “I”)
+Statement 11: (which x satisfies that (the predicate “shouldBeCheckedFirst” holds for x)?) and (is it the case that (the predicate “why” holds for the proposition that the predicate “shouldBeCheckedFirst” holds for “x”)?)
+Statement 12: (the predicate “provideChecklist” holds with ordered arguments [“short”; “ordered”]) and (the predicate “leaveUnrelatedTasksIndependent” holds)

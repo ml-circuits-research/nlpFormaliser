@@ -5,16 +5,18 @@ import { ROOT } from "./strategies.mjs";
 
 export function listSets() {
   const d = join(ROOT, "eval");
-  return readdirSync(d, { withFileTypes: true }).filter((x) => x.isDirectory()&&!x.name.startsWith('_')).map((x) => x.name).sort();
+  return readdirSync(d, { withFileTypes: true }).filter((x) => x.isDirectory()&&!x.name.startsWith('_')&&!['success','fail'].includes(x.name)).map((x) => x.name).sort();
 }
 
 /** Load all examples of a set: [{ id, category, text, file }] (id = path relative to the set). */
 export function loadSet(nameOrPath) {
-  const dir = existsSync(join(ROOT, "eval", nameOrPath)) ? join(ROOT, "eval", nameOrPath) : resolve(nameOrPath);
+  if(['success','fail'].includes(nameOrPath))throw new Error('CNL result mirrors are not input corpora');
+  const archived=join(ROOT,'docs','evaluation','atomic',nameOrPath);
+  const dir = existsSync(join(ROOT, "eval", nameOrPath)) ? join(ROOT, "eval", nameOrPath) : existsSync(archived)?archived:resolve(nameOrPath);
   const out = [];
   const casesFile=join(ROOT,'docs','evaluation','metadata',`${basename(dir)}.jsonl`);
   const metadata = new Map();
-  if(resolve(dir)===resolve(ROOT,'eval',basename(dir))&&existsSync(casesFile)) {
+  if([resolve(ROOT,'eval',basename(dir)),resolve(ROOT,'docs','evaluation','atomic',basename(dir))].includes(resolve(dir))&&existsSync(casesFile)) {
     const rows=readFileSync(casesFile,'utf8').split('\n').filter(x=>x.trim()).map((line,i)=>{
       const r=JSON.parse(line);
       if(r.schema!=='nlp-eval/2'||typeof r.id!=='string'||typeof r.text!=='string'||!['formalization','conversation','judge-pair'].includes(r.kind))throw new Error(`Invalid eval record ${casesFile}:${i+1}`);

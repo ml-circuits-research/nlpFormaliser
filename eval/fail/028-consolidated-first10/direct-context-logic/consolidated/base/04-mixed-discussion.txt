@@ -1,0 +1,18 @@
+aisle is prefers seat.
+night flight prefers seat when window.
+monday schedule not before 10 00.
+peanuts is allergic to.
+hotel within walking distance of conference centre.
+150 is hotel cost less than.
+1200 is laptop budget amount.
+16 is laptop min memory gb.
+self is likes spicy food.
+mild is partner cannot handle spiciness above.
+thursday corrected day wednesday.
+2023 is intended report year.
+issue fixed.
+awaiting change second paragraph.
+relieved is feeling.
+impatient is feeling.
+For all ?restaurant, IF NOT (?restaurant is guarantee nut free kitchen) THEN ?restaurant is avoid restaurant.
+QUESTION: find truth value.

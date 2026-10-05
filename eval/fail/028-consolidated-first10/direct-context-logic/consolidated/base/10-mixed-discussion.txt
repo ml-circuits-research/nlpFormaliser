@@ -1,0 +1,22 @@
+ana is has access to production db.
+ana is is ana.
+report is report late.
+report cause of lateness holidays.
+NOT (report cause of lateness data team).
+NOT (i said would not come).
+some guest not confirmed.
+i annoyed about delay.
+NOT (i annoyed about person helping me).
+NOT (warranty covers water damage).
+NOT (warranty covers unauthorised repairs damage).
+For all ?person, IF ?person is is ana THEN ?person is has access to production db.
+For all ?tenant, IF ?tenant is thirty days written notice THEN ?tenant is may terminate lease.
+For all ?item, IF ?item is within 14 days of purchase AND ?item is item unused THEN ?item is refund available.
+For all ?employee, IF ?employee is works more than 40 hours per week THEN ?employee is entitled to overtime pay.
+For all ?data, IF ?data is personal data AND NOT (?data is customer explicit consent) THEN ?data is not transferred outside eu.
+For all ?data, IF ?data is personal data AND ?data is customer explicit consent THEN ?data is may transfer outside eu.
+For all ?child, ?age, IF ?child is child AND ?child age ?age AND ?age less than 12 THEN ?child is must be accompanied by adult.
+For all ?guest, IF ?guest is guest THEN ?guest is not cancelled.
+AMBIGUOUS: {"text":"Nobody except Ana has access to the production database.","issue":"Exclusive access is modeled by a rule linking any holder of access to the predicate is_ana, but the representation does not capture the universal negative (no one else has access) without an explicit inequality predicate."}.
+AMBIGUOUS: {"text":"Not all of the guests have confirmed, but none have cancelled.","issue":"The phrase \"Not all\" is rendered as a placeholder fact some_guest_not_confirmed, which abstracts the existential quantifier (∃ guest ¬confirmed). The precise set of guests and which ones are unconfirmed is not represented."}.
+QUESTION: find truth value.

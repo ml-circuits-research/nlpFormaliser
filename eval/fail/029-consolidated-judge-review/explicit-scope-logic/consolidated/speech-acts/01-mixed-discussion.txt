@@ -1,0 +1,14 @@
+Statement 1: the predicate “running” holds for “server”
+Statement 2: the predicate “believes” holds with ordered arguments [“I”; the proposition that the predicate “enough” holds for “small model”]
+Statement 3: the predicate “says” holds with ordered arguments [“Maria”; the proposition that the predicate “failed” holds for “benchmark”]
+Statement 4: it is not the case that (for every x, ((the predicate “user” holds for x) and (the predicate “hasAccess” holds for x)))
+Statement 5: the predicate “exactly three” holds for the proposition that the predicate “active” holds for “worker”
+Statement 6: if (the predicate “valid” holds for “signature”), then (the predicate “accepts” holds with ordered arguments [“system”; “file”])
+Statement 7: if (it is not the case that (the predicate “approves” holds with ordered arguments [“admin”; “request”])), then (the predicate “reject” holds for “request”)
+Question 8: which y satisfies that (the predicate “hasLowestLatency” holds for y)?
+Question 9: is it the case that (the predicate “knows” holds with ordered arguments [“we”; the proposition that the predicate “passed” holds for “test”])?
+Question 10: is it the case that (the predicate “check” holds with ordered arguments [“you”; the proposition that the predicate “passed” holds for “tests”])?
+Question 11: is it the case that (the predicate “canRun” holds with ordered arguments [“Luna”; “this hardware”])?
+Statement 12: (the predicate “relieved” holds with ordered arguments [“I”; the proposition that the predicate “makingProgress” holds for “we”]) and (the predicate “impatient” holds for “I”)
+Question 13: which z satisfies that (the predicate “shouldCheckFirst” holds for z)?
+Statement 14: (the predicate “giveChecklist” holds with ordered arguments [“me”; “short”]) and (the predicate “leaveIndependent” holds for “tasks”)

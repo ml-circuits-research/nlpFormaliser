@@ -1,0 +1,203 @@
+[
+  {
+    "id": "consolidated/base/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/029-consolidated-judge-review/explicit-scope-logic/consolidated/base/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Separate situations context",
+        "Explicit connection exception",
+        "Window seat on earliest flight",
+        "Exact time for reminder (9am and hour later)",
+        "Condition for second reminder (if not marked done)",
+        "Keep flagged important emails in inbox",
+        "Tom's belief vs speaker's doubt nuance",
+        "Manager's report nuance",
+        "Maria's question about 'anyone'",
+        "List unresolved questions before any action",
+        "Frustration intensity"
+      ],
+      "added": [
+        "Ordered arguments for flight (earliest, Bucharest, Vienna, next Tuesday)",
+        "Explicit quantifiers for file renaming",
+        "Conditional for send without cc",
+        "Explicit condition for second reminder",
+        "Ordered arguments for pizzas and delivery",
+        "Cancel only meetings owned by me",
+        "Archive only emails not flagged",
+        "Formal representation of Tom's thought and speaker's non-conviction",
+        "Formal representation of manager's telling with conditional",
+        "Maria's question as existential over 'seen'",
+        "Formal representation of frustration",
+        "Two separate questions for handled/clarification",
+        "Conditional for list before action"
+      ],
+      "changed": [
+        "Original first line is meta-context, CNL omits it",
+        "Original 'earliest flight' is superlative, CNL uses 'earliest' as argument",
+        "Original 'an hour later' is relative, CNL fixes to 10am",
+        "Original 'if I haven't marked it done' is condition for second reminder, CNL makes it conditional of second reminder",
+        "Original 'keep flagged important in inbox' is explicit, CNL only archives non-flagged (implies keep but not explicit)",
+        "Original 'I'm not convinced' is speaker's doubt, CNL states not convinced about Tom's thought",
+        "Original 'unless we found a sponsor' is condition for cancellation, CNL uses 'if not found then cancelled' (same but scope)",
+        "Original 'anyone' is existential with any person, CNL uses 'exists u'",
+        "Original 'Which of these requests' refers to list, CNL asks two separate questions",
+        "Original 'before taking any action' is temporal, CNL makes conditional 'if list then not action'"
+      ],
+      "reason": "The ORIGINAL includes a meta-note about separate situations, which is absent in CNL. CNL adds formal quantifiers and explicit ordered arguments, and changes temporal/conditional nuances (e.g., 'an hour later' fixed to 10am, 'before' as conditional). Speaker's doubt and manager's report are represented differently. Also, CNL omits 'keep flagged in inbox' and alters the force of the final request (two separate questions vs. list before action). A counterexample: if there is no flight next Tuesday, ORIGINAL still requests booking a window seat on earliest flight (impossible), but CNL asserts a flight predicate with 'earliest' as argument, which is semantically different.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/base/10-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/029-consolidated-judge-review/explicit-scope-logic/consolidated/base/10-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "The ORIGINAL includes a meta-note about 'separate situations unless explicitly connected' and a final instruction to 'Point out contradictions rather than resolving them without asking me.' These are not represented in the CNL.",
+        "The ORIGINAL's statement about 'Nobody except Ana has access' is ambiguous: it could mean Ana has access and no one else, or that Ana is the only one with access (including possibly no one). CNL asserts Ana has access and only Ana. This adds a fact not in ORIGINAL.",
+        "The ORIGINAL's statement about the report: 'wasn't late because of the data team; it was late because of the holidays' implies the report was late (the cause of lateness is holidays), but CNL's formalization only states conditional cause, not that the report is late. The condition 'if late then cause holidays' is weaker.",
+        "The ORIGINAL's statement 'Not all guests have confirmed, but none have cancelled' is ambiguous: 'not all' means at least one not confirmed, but CNL's existential 'there exists y such that guest and not confirmed' is equivalent, but 'none have cancelled' is correctly universal. However, CNL's 'for every z, if guest then not cancelled' is equivalent. No major loss here except the 'not all' vs 'exists not' is fine.",
+        "The ORIGINAL's 'A tenant may terminate the lease with thirty days' written notice' implies that if a tenant gives 30 days written notice, they may terminate. CNL's 'for every u, if tenant and notice holds [u;30] then may terminate' is similar, but the notice predicate in CNL lacks 'written' detail, and '30' is a number but not specified as days. Also, 'may' is modality; CNL represents 'may' as a predicate 'may' on proposition, but it's unclear if that captures permission correctly. Possibly acceptable.",
+        "The ORIGINAL's 'Refunds are available within 14 days of purchase, provided the item is unused.' CNL: 'for every v, if unused holds for v, then available refund holds with [v;14]' – this drops the 'within 14 days of purchase' condition; it only says if unused, refund available with 14 (presumably days) but no mention of purchase. Also, 'provided' is a condition, but CNL's antecedent only has 'unused', not 'within 14 days of purchase' as part of the condition. Actually, ORIGINAL says refunds available within 14 days provided unused; that is, if within 14 days and unused, then refund available. CNL only says if unused, refund available – missing the time constraint. Also, CNL's predicate 'available refund' with arguments [v;14] is unclear. This is a loss.",
+        "The ORIGINAL's 'Employees who work more than forty hours per week are entitled to overtime pay.' CNL: 'for every w, if employee and work hours gt [w;40] then entitled [w; overtime pay]' – this seems fine, but 'work hours gt' might not capture 'per week' – but 'work hours' could be weekly. Acceptable.",
+        "The ORIGINAL's 'No personal data may be transferred outside the EU without the customer's explicit consent.' CNL: 'for every v6, if personal data and transferred outside EU then consent customer' – this misses the 'may' (permission) and the 'without' condition: it states that if transferred, then consent, but doesn't state that it is forbidden to transfer without consent. The ORIGINAL says it may not be transferred without consent, implying prohibition. CNL's conditional only says if transferred then consent, but doesn't assert that transfer without consent is not allowed. Actually, the CNL is a material implication: if transferred, then consent. But the original says it is prohibited to transfer without consent – that is, for all x, if transferred, then consent (which is what CNL says) but also the prohibition is that it is not permitted to transfer without consent. The CNL doesn't capture the modality of 'may not'. Also, 'without' is not represented. Loss.",
+        "The ORIGINAL's 'The warranty does not cover damage caused by water or by unauthorised repairs.' CNL: 'it is not the case that covers warranty damage by water or covers warranty damage by unauth repairs' – this is equivalent to 'not (covers water or covers unauth)' which by De Morgan is 'not covers water and not covers unauth' – that matches the original's 'does not cover damage caused by water or by unauthorised repairs' meaning it covers neither. However, CNL's 'or' inside negation is fine. But the original says 'damage caused by water' – CNL has 'damage by water' but that's fine. Acceptable.",
+        "The ORIGINAL's 'Children under twelve must be accompanied by an adult at all times.' CNL: 'for every v7, if child and age lt [v7;12] then accompanied by adult' – this misses 'at all times' and 'must' modality. The CNL is a simple implication; 'must' is deontic modality not represented. Loss.",
+        "The ORIGINAL's 'I am annoyed about the delay, not about the person helping me.' CNL: 'annoyed about [I; delay] and not annoyed about [I; person helping me]' – this is fine. However, the CNL uses 'person helping me' as an argument but the original says 'the person helping me' – that is fine.",
+        "The ORIGINAL's first sentence: 'These notes concern separate situations unless I explicitly connect them.' This is a meta-statement about the notes, not represented in CNL at all. Lost.",
+        "The ORIGINAL's final request: 'Can you identify any conflicting requirements in these notes?' and 'Point out contradictions rather than resolving them without asking me.' – the CNL only has Question 12: 'is it the case that there exists v8 such that conflict holds for v8?' This asks if there is any conflict, but the original asks to identify (i.e., list) conflicts, not just whether there is one. Also, the final instruction to point out contradictions rather than resolve is not in CNL. Lost.",
+        "The ORIGINAL's 'Nobody except Ana has access to the production database.' – As noted, CNL adds Ana has access. Also, 'except' might mean Ana is the only exception, but if no one has access at all, that would be also 'nobody except Ana'? Actually, if no one has access, then Ana doesn't have access, so 'nobody except Ana' would be false? The phrase 'nobody except Ana' typically means Ana has access and no one else. But it could be ambiguous. CNL asserts Ana has access and only Ana. That adds a fact. Also, CNL's universal says for every x, if access then x=Ana, but does not assert Ana has access. Wait, CNL says 'Statement 1: (the predicate “access” holds with ordered arguments [“Ana”; “production database”]) and (for every x, ...)' – so it does assert Ana has access. So it adds that. The original might not assert Ana has access? Actually, 'Nobody except Ana has access' means the only person who has access is Ana, which implies Ana has access. So it's fine. But if 'nobody' includes Ana? No, 'except Ana' means Ana is excluded from 'nobody', so Ana has access. So it's fine. However, the original says 'nobody except Ana has access' – it could also mean that no one, including Ana? No, 'except' means Ana is an exception, so she has access. So CNL is correct. But the original also says 'production database' – CNL has that. So that is fine. However, the original says 'has access' – CNL uses 'access' predicate. That is fine.",
+        "The ORIGINAL's 'The report wasn't late because of the data team; it was late because of the holidays.' – The CNL's formalization: 'it is not the case that (if late then cause data team) and (if late then cause holidays)' – this is odd. The original says the report wasn't late because of the data team; it was late because of the holidays. This implies the report was late, and its cause is holidays, not data team. CNL's first part: 'not (if late then cause data team)' – that is equivalent to 'late and not cause data team'? Actually, 'not (if P then Q)' is equivalent to 'P and not Q'. So 'not (if late then cause data team)' means 'late and not cause data team' – but that would assert that the report is late. And the second part: 'if late then cause holidays' – with the first part asserting late, we get cause holidays. So CNL does imply the report was late and cause holidays. But the CNL as written has the conjunction of 'not (if late then cause data team)' and 'if late then cause holidays' – the first part asserts 'late and not cause data team' (since not (if P then Q) is P and not Q). So it does assert the report was late. But the original also says 'wasn't late because of the data team' – that could mean the report was not late, and the reason it was late (if it was) is not data team? Actually, the phrase 'the report wasn't late because of the data team' is ambiguous: it could mean the report was not late, and the cause of that (not being late) is the data team? Or it means the report was late, but the cause was not the data team. The original then says 'it was late because of the holidays' – so clearly the report was late, and the cause is holidays. So the first clause means 'the report wasn't late due to the data team' – meaning the cause of lateness is not data team. So CNL's formalization is correct in effect, but the logical form is a bit weird. However, CNL's 'if late then cause holidays' is fine. But the original says 'wasn't late because of the data team' – that is not simply 'not (if late then cause data team)' because that would be equivalent to 'late and not cause data team', which is true. But it's okay. However, the CNL does not explicitly state that the report was late – it is implied by the first part. So it's fine. But the original also says 'it was late because of the holidays' – CNL has that. So this is acceptable. But the CNL's formalization might have an issue: 'it is not the case that (if late then cause data team)' is not exactly 'not because of data team' – because 'because of' is a causal relation, not a material implication. The CNL treats 'cause' as a predicate, but the original's 'because' is a causal connective. This is a change. But for the purpose of this evaluation, we need to compare the meaning. The CNL's representation is likely an approximation.",
+        "The ORIGINAL's 'I never said I wouldn't come.' – CNL: 'it is not the case that (said [I; proposition that not come])' – that means I did not say that I wouldn't come. But 'I never said' means at no time did I say that. CNL's 'it is not the case that' is a single negation, which might not capture 'never' (which is for all times). The CNL says there is no statement of that type, but 'never' implies all times. CNL's negation of existence is equivalent to 'for all times, not said'? Actually, 'it is not the case that (said [I; not come])' is equivalent to 'there does not exist a time when I said that' – which is 'never said' in that sense. So it's fine. However, the proposition inside is 'it is not the case that (come holds for I)' – that is 'I wouldn't come' – that is fine. So this is acceptable.",
+        "The ORIGINAL's 'Not all of the guests have confirmed, but none have cancelled.' – CNL: existential not confirmed, and universal not cancelled. This matches. However, the original says 'not all' – which is 'some not' – fine. But note that 'none have cancelled' means for all guests, not cancelled. CNL has that. So okay.",
+        "The ORIGINAL's 'A tenant may terminate the lease with thirty days' written notice.' – CNL: 'for every u, if tenant and notice [u;30] then may terminate' – but the original says 'may terminate' – permission. CNL uses 'may' as a predicate on proposition. But the condition is 'with thirty days' written notice' – CNL has 'notice holds with [u;30]' – but does not specify 'written' or 'days'? It has 30, but not units. Also, the original says 'with' – the notice is a condition. CNL's conditional is fine, but the 'may' modality is represented as a predicate, which is questionable. Also, the original says 'A tenant' – generic, CNL universal. That is fine.",
+        "The ORIGINAL's 'Refunds are available within 14 days of purchase, provided the item is unused.' – CNL: 'for every v, if unused then available refund [v;14]' – this misses the 'within 14 days of purchase' – it only says if unused, refund available, and the '14' is an argument to 'available refund' but not as a time condition. Also, 'provided' is a condition, but the CNL only has 'unused' as antecedent, not the time. So it adds the possibility of refunds anytime if unused, which is not in original. Also, the original says 'within 14 days of purchase' – that is a time constraint. So lost.",
+        "The ORIGINAL's 'Employees who work more than forty hours per week are entitled to overtime pay.' – CNL: 'for every w, if employee and work hours gt [w;40] then entitled [w; overtime pay]' – this seems okay, but 'more than forty hours per week' – CNL's 'work hours gt' doesn't specify 'per week' – but likely understood. However, the original says 'entitled' – CNL uses 'entitled' predicate. Fine.",
+        "The ORIGINAL's 'No personal data may be transferred outside the EU without the customer's explicit consent.' – CNL: 'for every v6, if personal data and transferred outside EU then consent customer' – this is a conditional, but the original is a prohibition: it is not permitted to transfer without consent. CNL's conditional says that if it is transferred, then consent holds. But it doesn't say that it is not permitted to transfer without consent – it only says that if transfer occurs, then consent must have been given. That is a necessary condition but not a prohibition. Also, the original says 'may be transferred' – modality of permission. CNL's representation doesn't include modality. So it's a loss. Also, 'explicit consent' – CNL has 'consent customer' – not explicit.",
+        "The ORIGINAL's 'The warranty does not cover damage caused by water or by unauthorised repairs.' – CNL: 'not (covers water or covers unauth repairs)' – that is fine. But the original says 'damage caused by' – CNL has 'damage by water' and 'damage by unauth repairs' – that is okay.",
+        "The ORIGINAL's 'Children under twelve must be accompanied by an adult at all times.' – CNL: 'for every v7, if child and age lt [v7;12] then accompanied by adult' – misses 'must' (obligation) and 'at all times'. So it's a loss.",
+        "The ORIGINAL's 'I am annoyed about the delay, not about the person helping me.' – CNL: 'annoyed about [I; delay] and not annoyed about [I; person helping me]' – fine.",
+        "The ORIGINAL's question: 'Can you identify any conflicting requirements in these notes?' – This is a question asking to identify conflicts. CNL's Question 12: 'is it the case that there exists a v8 such that conflict holds for v8?' – This is a yes/no question asking whether there is any conflict, not to identify them. The force is different: original asks to list/identify, CNL asks for a boolean. Also, the original's final instruction 'Point out contradictions rather than resolving them without asking me.' – not in CNL.",
+        "Also, the ORIGINAL's first sentence 'These notes concern separate situations unless I explicitly connect them.' – This is a meta-note that says the statements are about separate situations unless connected. This is not in CNL at all. This might affect how the statements are interpreted (e.g., they are independent, no cross-statement implications). CNL treats each statement as independent logical statements, but the meta-note says they are separate unless connected – but the CNL doesn't have any connections. However, the original's meta-note might be a directive to the reader not to assume connections. CNL doesn't have that. So lost."
+      ],
+      "added": [
+        "CNL adds an explicit assertion that Ana has access to the production database (Statement 1 first conjunct). The ORIGINAL's 'Nobody except Ana' implies that, but it's not explicitly stated? Actually, it is implied. But it's fine.",
+        "CNL adds a predicate 'cause' with ordered arguments, but the original's 'because' is a causal connective. The CNL might add a specific cause relation that is not fully specified.",
+        "CNL adds the predicate 'notice' with arguments [u;30] but does not specify 'written' or 'days' – but that is a loss rather than addition.",
+        "CNL adds 'available refund' with [v;14] but the original says 'within 14 days of purchase' – the CNL's '14' is an argument but not as a time frame; it's a loss.",
+        "CNL adds 'consent customer' as a predicate but doesn't specify 'explicit' – loss.",
+        "CNL adds 'age lt' predicate – that's fine.",
+        "CNL adds 'conflict' predicate in Question 12 – the original doesn't define what a conflict is.",
+        "CNL adds a universal quantification for tenants, employees, children, etc., but the original uses generic statements – that's fine.",
+        "CNL adds the condition 'if unused' for refunds but doesn't include the time condition – it's a loss.",
+        "CNL adds the 'may' predicate for tenants, but the original's 'may' is modal – CNL's representation is a predicate on a proposition, which might be considered a change.",
+        "CNL adds the 'entitled' predicate – fine.",
+        "CNL adds the 'accompanied by adult' predicate – fine.",
+        "CNL adds the 'annoyed about' predicate – fine.",
+        "CNL adds the 'said' predicate – fine.",
+        "CNL adds the 'come' predicate – fine.",
+        "CNL adds the 'confirmed' and 'cancelled' predicates – fine.",
+        "CNL adds the 'cause' predicate – but it's a change from 'because'."
+      ],
+      "changed": [
+        "The ORIGINAL's first sentence about separate situations is missing; this changes the meta-context.",
+        "The ORIGINAL's 'I never said' is changed to a single negation 'it is not the case that I said' – that might be equivalent, but 'never' implies all times, but the CNL's negation of existence is equivalent to 'never' in this context. However, the CNL's proposition inside is 'it is not the case that come holds for I' – that is 'I wouldn't come' – fine.",
+        "The ORIGINAL's 'The report wasn't late because of the data team; it was late because of the holidays.' – The CNL's formalization uses 'cause' predicate and material implication; the original's 'because' is causal. The CNL's 'not (if late then cause data team)' is logically equivalent to 'late and not cause data team', which asserts the report was late. The original says it was late, so that's fine. But the CNL's second part 'if late then cause holidays' – with the first part asserting late, we get cause holidays. However, the CNL's formalization is not a direct translation of the causal 'because'. This is a change in representation.",
+        "The ORIGINAL's 'A tenant may terminate the lease with thirty days' written notice.' – The CNL's 'if notice holds [u;30] then may terminate' – the original's 'with' indicates a condition, but the CNL's condition is just the notice, not the written and days. The modality 'may' is represented as a predicate, which is a change.",
+        "The ORIGINAL's 'Refunds are available within 14 days of purchase, provided the item is unused.' – The CNL's 'if unused then available refund' loses the 'within 14 days' and 'purchase'. The condition is only 'unused', so the scope of the conditional is changed.",
+        "The ORIGINAL's 'No personal data may be transferred outside the EU without the customer's explicit consent.' – The CNL's 'if transferred then consent' is a material implication, not a prohibition. The original says 'may not be transferred without consent' – meaning it is not permitted to transfer without consent. The CNL's conditional only says that if transferred, then consent, but doesn't say that transferring without consent is not allowed. So the modality and the 'without' condition are changed.",
+        "The ORIGINAL's 'Children under twelve must be accompanied by an adult at all times.' – The CNL's 'if child and age lt then accompanied' misses 'must' and 'at all times'. The obligation is changed to a simple implication.",
+        "The ORIGINAL's question 'Can you identify any conflicting requirements in these notes?' – The CNL's question asks 'is there a conflict?' – that is a yes/no, not 'identify'. The force is changed from a request to identify to a boolean question. Also, the final instruction 'Point out contradictions rather than resolving them without asking me.' – not in CNL.",
+        "The ORIGINAL's 'I never said I wouldn't come.' – The CNL's 'it is not the case that said [I; proposition that not come]' – that is fine, but note that 'never' might imply all times, but the CNL's negation is fine. However, the proposition inside is 'not come' – that is correct.",
+        "The ORIGINAL's 'Not all guests have confirmed' – CNL's existential 'there exists y such that guest and not confirmed' – that is fine.",
+        "The ORIGINAL's 'None have cancelled' – CNL's universal 'for all z, if guest then not cancelled' – fine."
+      ],
+      "reason": "The CNL formalization loses the meta-note about separate situations and the final instruction to point out contradictions without resolving. It also changes several statements: the refund condition omits the 14-day purchase window, the personal data transfer loses the prohibition modality and 'without', the children's rule loses 'must' and 'at all times', and the question force changes from identifying conflicts to asking whether any exist. Additionally, the causal 'because' is represented as a predicate, and the 'may' modality is not captured. A counterexample: if a child under 12 is not accompanied at all times (only sometimes), the ORIGINAL's rule is violated, but CNL's conditional might be true if there is an adult present at some time? Actually, CNL says 'accompanied by adult' holds, but original says 'at all times' – so CNL could be true if accompanied at some time, but original requires all times. Also, for refunds, an item unused after 20 days would get a refund under CNL (if unused) but not under ORIGINAL (must be within 14 days). So CNL does not entail ORIGINAL, and ORIGINAL does not entail CNL because CNL's conditions are different. Also, the question force differs. So both directions fail.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  },
+  {
+    "id": "consolidated/speech-acts/01-mixed-discussion",
+    "strategy": "explicit-scope-logic",
+    "path": "eval/fail/029-consolidated-judge-review/explicit-scope-logic/consolidated/speech-acts/01-mixed-discussion.txt",
+    "bucket": "fail",
+    "status": "not_equivalent",
+    "hasCNL": true,
+    "judgmentView": "native",
+    "verdict": {
+      "nl_entails_cnl": false,
+      "cnl_entails_nl": false,
+      "lost": [
+        "Separate situations unless explicitly connected",
+        "Normally reject",
+        "and why",
+        "ordered checklist"
+      ],
+      "added": [
+        "Statement 1",
+        "Statement 2",
+        "Statement 3",
+        "Statement 4",
+        "Statement 5",
+        "Statement 6",
+        "Statement 7",
+        "Question 8",
+        "Question 9",
+        "Question 10",
+        "Question 11",
+        "Statement 12",
+        "Question 13",
+        "Statement 14"
+      ],
+      "changed": [
+        "Original has 'These notes concern separate situations unless I explicitly connect them' - CNL omits this context",
+        "Original 'Well, basically' and 'I think' nuance lost",
+        "Original 'probably enough' - CNL states 'enough' as fact",
+        "Original 'Normally reject' - CNL turns into unconditional conditional without 'normally'",
+        "Original 'Which model has the lowest latency?' - CNL 'which y satisfies hasLowestLatency' - loses 'model' restriction",
+        "Original 'Do we know whether the test passed?' - CNL adds 'we' as knower - original may be impersonal",
+        "Original 'Could you check' - CNL 'check' with 'you' - loses politeness",
+        "Original 'Can Luna run on this hardware?' - CNL 'canRun' - possibly same but predicate not defined",
+        "Original 'I am relieved that we are finally making progress' - CNL 'makingProgress' for 'we' - loses 'finally'",
+        "Original 'What should be checked first, and why?' - CNL loses 'why'",
+        "Original 'Give me a short ordered checklist and leave unrelated tasks independent' - CNL 'giveChecklist' and 'leaveIndependent' - loses 'ordered' and 'unrelated' nuance"
+      ],
+      "reason": "The CNL formalizes each statement as separate predicates, losing the introductory context about separate situations, modal adverbs like 'probably' and 'normally', the specific question about 'why', and the ordered nature of the checklist. It also introduces named predicates like 'hasLowestLatency' and 'shouldCheckFirst' without clear correspondence to the original's wording, and changes 'Do we know whether' to a specific 'we' as knower, losing potential impersonal reading. The 'lost' and 'added' lists capture these discrepancies, and 'changed' includes rephrasings that alter meaning.",
+      "status": "judged",
+      "equivalent": false
+    },
+    "audit": {
+      "eligible": true,
+      "issues": [],
+      "screeningOnly": true
+    },
+    "errors": []
+  }
+]

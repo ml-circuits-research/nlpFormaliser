@@ -1,0 +1,38 @@
+Statement 1: the predicate “plans” holds with ordered arguments [“Ravi”; “laptop”; “nextMonth”]
+Statement 2: the predicate “compared” holds with ordered arguments [“Ravi”; “model”; 3]
+Statement 3: it is not the case that (the predicate “orderPlaced” holds with ordered arguments [“Ravi”; “laptop”])
+Question 4: is it the case that (the predicate “bought” holds with ordered arguments [“Ravi”; “laptop”])?
+Statement 5: for every x, (if ((the predicate “employee” holds for x) and (the predicate “handlesCustomerData” holds for x)), then (the predicate “completedPrivacyTraining” holds for x))
+Statement 6: the predicate “employee” holds for “Ana”
+Statement 7: the predicate “handlesCustomerData” holds for “Ana”
+Question 8: is it the case that (the predicate “completedPrivacyTraining” holds for “Ana”)?
+Statement 9: for every y, (if (the predicate “exceeds” holds with ordered arguments [y; 10000]), then (if (the predicate “directorApproved” holds for y), then (the predicate “released” holds for y)))
+Statement 10: the predicate “exceeds” holds with ordered arguments [“P7”; 12500]
+Statement 11: the predicate “released” holds for “P7”
+Question 12: is it the case that (the predicate “directorApproved” holds for “P7”)?
+Statement 13: the predicate “told” holds with ordered arguments [“Lea”; “Omar”; the proposition that the predicate “offline” holds for “server”]
+Statement 14: it is not the case that (the predicate “verified” holds with ordered arguments [“Omar”; the proposition that the predicate “offline” holds for “server”])
+Question 15: is it the case that (the predicate “offline” holds for “server”)?
+Statement 16: for every z, (if (it is not the case that (the predicate “maintenanceEnabled” holds for z)), then (the predicate “backupRan” holds for z))
+Statement 17: the predicate “maintenanceEnabled” holds for “lastNight”
+Question 18: is it the case that (the predicate “backupRan” holds for “lastNight”)?
+Statement 19: for every u, (if (the predicate “downloaded” holds with ordered arguments [u; “dataset”]), then (the predicate “registered” holds for u))
+Statement 20: the predicate “downloaded” holds with ordered arguments [“Niko”; “dataset”]
+Question 21: is it the case that (the predicate “registered” holds for “Niko”)?
+Statement 22: the predicate “submitted” holds with ordered arguments [“Maria”; “proposal”; “Monday”]
+Statement 23: the predicate “forwarded” holds with ordered arguments [“Leo”; “proposal”; “Iris”; “Tuesday”]
+Statement 24: the predicate “read” holds with ordered arguments [“Iris”; “proposal”]
+Statement 25: the predicate “archived” holds with ordered arguments [“Iris”; “proposal”]
+Question 26: which v satisfies that (the predicate “archived” holds with ordered arguments [v; “proposal”])?
+Statement 27: for every w, (if (the predicate “failed” holds with ordered arguments [w; “test”]), then (it is not the case that (the predicate “replaced” holds for w)))
+Question 28: is it the case that (there exists a v6 such that ((the predicate “failed” holds with ordered arguments [v6; “test”]) and (the predicate “replaced” holds for v6)))?
+Statement 29: for every v7, (if (the predicate “paper” holds for v7), then (there exists a v8 such that (the predicate “authorOf” holds with ordered arguments [v8; v7])))
+Statement 30: there exists a v9 such that ((the predicate “authorOf” holds with ordered arguments [v9; “paper1”]) and (the predicate “authorOf” holds with ordered arguments [v9; “paper2”]) and (the predicate “authorOf” holds with ordered arguments [v9; “paper3”]))
+Question 31: is it the case that (there exists a v10 such that (there exists a v11 such that (the predicate “authorOf” holds with ordered arguments [v10; v11])))?
+Statement 32: it is not the case that (the predicate “promised” holds with ordered arguments [“Alice”; “attend”; “meeting”])
+Statement 33: the predicate “thinks” holds with ordered arguments [“Bob”; the proposition that the predicate “promised” holds with ordered arguments [“Alice”; “notAttend”; “meeting”]]
+Question 34: is it the case that (the predicate “promised” holds with ordered arguments [“Alice”; “attend”; “meeting”])?
+Statement 35: the predicate “frustrated” holds with ordered arguments [“speaker”; “details”]
+Question 36: which v12 satisfies that (the predicate “canHandleNow” holds for v12)?
+Question 37: which v13 satisfies that (the predicate “needsClarification” holds for v13)?
+Statement 38: the predicate “listUnresolvedQuestions” holds

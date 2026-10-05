@@ -1,0 +1,22 @@
+ana access production database.
+holidays cause report.
+data team not cause report.
+report is late.
+NOT (i said come not).
+guests is not all confirmed.
+guests is none cancelled.
+i annoyed delay.
+i not annoyed person helping me.
+warranty not cover damage water.
+warranty not cover damage unauthorised repairs.
+For all ?x, IF ?x neq ana THEN NOT (?x access production database).
+For all ?t, IF ?t is tenant AND ?t is written notice 30 days THEN ?t may terminate lease.
+For all ?item, IF ?item is within 14 days of purchase AND ?item is unused THEN ?item is refund available.
+For all ?e, ?h, IF ?e is employee AND ?e work hours per week ?h AND ?h greater than 40 THEN ?e is entitled overtime.
+IF customer is explicit consent THEN personal data transfer allowed outside eu.
+For all ?c, IF ?c is child AND ?c age less than 12 THEN ?c must be accompanied adult.
+AMBIGUOUS: {"text":"Nobody except Ana has access to the production database.","issue":"Interpretation of exclusive access (whether Ana is the only holder vs Ana definitely has access plus others may be excluded)."}.
+AMBIGUOUS: {"text":"Not all of the guests have confirmed","issue":"Quantifier scope – could mean ‘some guests have not confirmed’ (existential) or ‘the set of guests is not wholly confirmed’ (negative universal)."}.
+AMBIGUOUS: {"text":"none have cancelled","issue":"Ambiguity whether ‘none’ quantifies over all guests (no guest cancelled) or over a subset previously mentioned."}.
+AMBIGUOUS: {"text":"Refunds are available within 14 days of purchase, provided the item is unused.","issue":"Temporal condition “within 14 days of purchase” could be interpreted as a deadline for requesting a refund or as a period during which the refund is guaranteed."}.
+AMBIGUOUS: {"text":"No personal data may be transferred outside the EU without the customer's explicit consent.","issue":"Modal ‘may’ combined with a negative condition creates ambiguity about whether the default is prohibition or permission contingent on consent."}.

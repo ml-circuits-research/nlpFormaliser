@@ -1,0 +1,17 @@
+{
+  "schema": "eval-selection/1",
+  "set": "consolidated",
+  "ids": [
+    "consolidated/base/01-mixed-discussion",
+    "consolidated/base/04-mixed-discussion",
+    "consolidated/base/07-mixed-discussion",
+    "consolidated/base/10-mixed-discussion",
+    "consolidated/base/14-mixed-discussion",
+    "consolidated/lab-development/01-mixed-discussion",
+    "consolidated/lab-development/02-mixed-discussion",
+    "consolidated/scope/01-mixed-discussion",
+    "consolidated/speech-acts/01-mixed-discussion",
+    "consolidated/dialogue/01-mixed-discussion"
+  ],
+  "rationale": "Five base mixtures, two Lab development mixtures, one scoped mixture, one speech-act mixture and the connected dialogue. No Lab heldout examples."
+}

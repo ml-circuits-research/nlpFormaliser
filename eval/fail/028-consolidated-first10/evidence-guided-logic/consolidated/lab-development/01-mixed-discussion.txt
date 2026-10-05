@@ -1,0 +1,30 @@
+mira is physicist.
+mira owns workstation.
+s1 is red.
+s1 mounted on north wall.
+c7 speeds up r2.
+NOT (c7 consumed by r2).
+sent(bob, alice, report, monday).
+report approved by dana.
+approval of report after audit.
+leo entered lab.
+leo switched off alarm.
+leo switched off alarm after leo entered lab.
+node7 is server.
+node7 is overloaded.
+ana is researcher.
+ana owns gpu1.
+gpu1 is gpu.
+nina is reviewer.
+nina authored paper7.
+sample3 is clean.
+sample4 is contaminated.
+r17 is request.
+r17 is public status request.
+delay is annoyed about.
+NOT (person helping me is annoyed about).
+For all ?s, IF ?s is overloaded THEN moves(scheduler, new jobs, elsewhere).
+For all ?r, ?g, IF ?r is researcher AND ?r owns ?g AND ?g is gpu THEN ?r is can run local model.
+For all ?x, ?p, IF ?x is reviewer AND ?x authored ?p THEN NOT (?x approve ?p).
+For all ?r, IF ?r is public status request THEN NOT (?r is requires authentication).
+AMBIGUOUS: {"description":"The phrase \"public status request\" could be interpreted as two separate predicates (public and status_request) or as a single combined predicate. The representation chooses a single combined predicate public_status_request."}.

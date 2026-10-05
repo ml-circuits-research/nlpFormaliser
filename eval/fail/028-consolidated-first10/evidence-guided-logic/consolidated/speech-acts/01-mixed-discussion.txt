@@ -1,0 +1,21 @@
+server is server running.
+i think small model enough.
+benchmark is benchmark failed.
+maria says benchmark failed.
+3 is workers active count.
+signature valid.
+file is system accepts file.
+request is admin approves.
+request is reject request.
+i is relieved.
+we is making progress.
+i is impatient.
+IF signature valid THEN file is system accepts file.
+IF NOT (request is admin approves) THEN request is reject request.
+AMBIGUOUS: {"text":"Not every user has access.","issue":"The sentence expresses a negated universal quantifier (¬∀x user(x) → has_access(x)). It can be represented as an existential claim that some user lacks access, but the exact scope and whether to record a negated predicate or an existential fact is ambiguous."}.
+QUESTION: find truth value.
+QUESTION: find truth value.
+QUESTION: find truth value.
+QUESTION: find truth value.
+QUESTION: find truth value.
+EXTERNAL undefined().

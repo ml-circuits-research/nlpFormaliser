@@ -1,0 +1,23 @@
+book seat(?user, bucharest, vienna, next tuesday, window, earliest).
+rename files(reports, tmp, bak).
+send file(?user, maria, slides from yesterdays meeting).
+?user cc exclude sales team.
+remind(?user, call dentist, tomorrow 9am).
+remind if not done(?user, call dentist, tomorrow 10am).
+order pizza(?user, large, vegetarian, office).
+order pizza(?user, large, extra cheese, office).
+cancel meetings(?user, friday, afternoon).
+?user except meeting investors.
+?user archive emails last quarter.
+keep email(?user, important, inbox).
+tom thinks cause server crash memory leak.
+NOT (?user convinced cause server crash memory leak).
+maria asked keys seen question.
+?user frustrated unrelated details.
+IF NOT (sponsor is found) THEN project is project cancelled.
+For all ?meeting, IF meeting on(?meeting, friday, afternoon) AND NOT (?meeting is except meeting) THEN ?meeting is meeting cancelled.
+AMBIGUOUS: {"issue":"The identity of the speaker/user is not explicitly named in the source.","resolution":"Represented as variable ?user in all user‑centric predicates."}.
+AMBIGUOUS: {"issue":"Exact time format for \"tomorrow at 9 a.m.\" and the follow‑up reminder is ambiguous regarding time zones.","resolution":"Kept as lexical strings \"tomorrow_9am\" and \"tomorrow_10am\"."}.
+QUESTION: find truth value.
+QUESTION: find truth value.
+QUESTION: find truth value.

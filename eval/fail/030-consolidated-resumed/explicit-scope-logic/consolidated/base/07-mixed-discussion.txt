@@ -1,0 +1,12 @@
+Statement 1: for every x, (if (the predicate “whale” holds for x), then ((the predicate “mammal” holds for x) and (it is not the case that (the predicate “fish” holds for x))))
+Statement 2: for every y, (if (the predicate “metal” holds for y), then (if (the predicate “heated” holds for y), then (the predicate “expand” holds for y)))
+Statement 3: for every z, (if (the predicate “cat” holds for z), then (the predicate “sleepDuringDay” holds for z))
+Statement 4: the predicate “boilsAt” holds with ordered arguments [“water”; “100C”; “sea level”]
+Statement 5: if (the predicate “known” holds with ordered arguments [“I”; “traffic”]), then (the predicate “takenTrain” holds for “I”)
+Question 6: is it the case that (if (the predicate “inPosition” holds with ordered arguments [“you”; “myPosition”]), then (the predicate “acceptOffer” holds for “you”))?
+Statement 7: if (the predicate “launchedEarlier” holds with ordered arguments [“we”; “1week”]), then (the predicate “beatenCompetition” holds for “we”)
+Question 8: which u satisfies that (if (the predicate “budgetCut” holds with ordered arguments [“budget”; “20%”]), then (the predicate “dropFirst” holds for u))?
+Statement 9: if (the predicate “wonLottery” holds for “I”), then (the predicate “buyHouseBySea” holds for “I”)
+Question 10: is it the case that (if (the predicate “haveMoment” holds for “you”), then (the predicate “takeLookResume” holds for “you”))?
+Statement 11: the predicate “worried” holds with ordered arguments [“I”; the proposition that the predicate “willGetLost” holds for “importantRestriction”]
+Question 12: which v satisfies that ((the predicate “missing” holds for v) and (the predicate “beforeDecision” holds with ordered arguments [“we”; “whatToDo”]))?

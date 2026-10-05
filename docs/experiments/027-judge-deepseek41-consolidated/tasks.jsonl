@@ -1,0 +1,6 @@
+{"id":"t-6778402a3d388981587fde7c","status":"running","phase":"begin","steps":0}
+{"id":"t-01f852c7aebf7c163181c04f","status":"running","phase":"begin","steps":0}
+{"id":"t-6778402a3d388981587fde7c","status":"running","phase":"begin","steps":1}
+{"id":"t-01f852c7aebf7c163181c04f","status":"running","phase":"begin","steps":1}
+{"id":"t-6778402a3d388981587fde7c","status":"failed","phase":null,"steps":1,"result":null,"error":"status 402: {\"error\":\"This model is billed from your credit balance. Maintain a balance of at least $1.00 to use it, and top up to continue.\",\"code\":\"insufficient_credits\"}"}
+{"id":"t-01f852c7aebf7c163181c04f","status":"failed","phase":null,"steps":1,"result":null,"error":"status 402: {\"error\":\"This model is billed from your credit balance. Maintain a balance of at least $1.00 to use it, and top up to continue.\",\"code\":\"insufficient_credits\"}"}

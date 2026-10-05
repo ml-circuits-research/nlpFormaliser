@@ -1,0 +1,31 @@
+request book flight(self, window, bucharest, vienna, tuesday, earliest).
+request rename files(reports folder, tmp, bak).
+request send file(self, maria, slides yesterday meeting, ).
+request remind(self, call dentist, 2026 10 06t09 00).
+vegetarian request order pizza large.
+extra cheese request order pizza large.
+pizza request deliver to office.
+friday afternoon is request cancel meetings.
+last quarter is request archive emails.
+tom belief thinks server crashed.
+server crashed cause of memory leak.
+self is not convinced.
+told(manager, self, project cancelled unless sponsor found).
+maria question asked anyone seen keys.
+which requests can be handled now is meta query.
+which requests need clarification is meta query.
+list unresolved questions before action is meta query.
+IF call dentist is not marked done THEN request remind(self, call dentist, 2026 10 06t10 00).
+For all ?meeting, IF ?meeting meeting on friday afternoon AND ?meeting is not meeting with investors THEN ?meeting is cancel meeting.
+For all ?email, IF ?email flagged important AND ?email location inbox THEN ?email is keep email.
+IF not sponsor found THEN project is project cancelled.
+AMBIGUOUS: "Which specific flight qualifies as the \"earliest\" from Bucharest to Vienna on Tuesday?".
+AMBIGUOUS: "Which files exactly are meant by \"every file in the reports folder that ends in .tmp\" (e.g., sub‑folders, hidden files)?".
+AMBIGUOUS: "What exact slides are referred to by \"the slides from yesterday's meeting\"?".
+AMBIGUOUS: "Which meeting is \"the one with the investors\" that should be exempt from cancellation?".
+AMBIGUOUS: "Which emails are included in \"the emails from last quarter\" (e.g., all folders, only inbox, etc.)?".
+AMBIGUOUS: "Whether the memory leak is the sole cause of the server crash (causal claim may be uncertain).".
+AMBIGUOUS: "The conditional nature of the manager's statement: \"project would be cancelled unless we found a sponsor\" – exact condition for cancellation.".
+QUESTION: find truth value.
+QUESTION: find truth value.
+QUESTION: find truth value.

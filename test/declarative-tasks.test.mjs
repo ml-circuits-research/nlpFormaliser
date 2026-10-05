@@ -11,7 +11,7 @@ test('every predefined NLP task is JSON-compatible phased data, never a function
   const files=[];
   function walk(dir){for(const e of readdirSync(dir,{withFileTypes:true})){if(e.name.startsWith('_'))continue;const p=join(dir,e.name);if(e.isDirectory())walk(p);else if(/(?:^|-)task\.mjs$/.test(e.name))files.push(p);}}
   walk(join(ROOT,'strategies'));
-  files.push(join(ROOT,'tasks/judge-direct.mjs'),join(ROOT,'tasks/judge-bidirectional.mjs'));
+  files.push(join(ROOT,'tasks/judge-direct.mjs'),join(ROOT,'tasks/judge-bidirectional.mjs'),join(ROOT,'tasks/judge-units.mjs'));
   assert.ok(files.length>=10);
   for(const file of files){const task=assertDeclarativeTask(await loadTask(file));assert.deepEqual(JSON.parse(JSON.stringify(task)),task,file);}
 });

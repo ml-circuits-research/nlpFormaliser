@@ -1,4 +1,6 @@
 import {normalizeIR} from "./ir.mjs";
+import {renderIRCNL} from "./cnl.mjs";
+import {symbolWords} from "../../../tools/lib/symbols.mjs";
 
 export function compileFormalModule(input, {banner = true} = {}) {
   const ir = normalizeIR(input);
@@ -7,42 +9,13 @@ export function compileFormalModule(input, {banner = true} = {}) {
 
 export const formalIR = ${data};
 
-const humanize = (x) => String(x ?? "").replace(/^\\?/, "").replace(/_/g, " ");
-const isVar = (x) => typeof x === "string" && x.startsWith("?");
-const label = (x, ir) => isVar(x) ? x : (ir.symbols?.entities?.[x]?.label ?? humanize(x));
-const phrase = (p, ir) => ir.symbols?.predicates?.[p]?.label ?? humanize(p);
-const template = (s, args, ir) => s.replace(/\\{(\\d+)\\}/g, (_, i) => label(args[Number(i)], ir));
+${symbolWords.toString()}
 
-function atomCNL(a, ir, terminal = true) {
-  const pm = ir.symbols?.predicates?.[a.pred] ?? {};
-  let core;
-  if (pm.cnl) core = template(pm.cnl, a.args, ir);
-  else if (a.args.length === 0) core = phrase(a.pred, ir);
-  else if (a.args.length === 1) core = \`\${label(a.args[0], ir)} is \${phrase(a.pred, ir)}\`;
-  else if (a.args.length === 2) core = \`\${label(a.args[0], ir)} \${phrase(a.pred, ir)} \${label(a.args[1], ir)}\`;
-  else core = \`\${phrase(a.pred, ir)}(\${a.args.map((x) => label(x, ir)).join(", ")})\`;
-  if (a.neg) core = \`NOT (\${core})\`;
-  return terminal ? \`\${core}.\` : core;
-}
+${renderIRCNL.toString()}
 
+// Same structural renderer as the lab runtime (glosses are not rendered).
 export function toCNL(ir = formalIR) {
-  const lines = [];
-  for (const f of ir.facts ?? []) lines.push(atomCNL(f, ir));
-  for (const r of ir.rules ?? []) {
-    const vars = [...new Set([r.head, ...(r.body ?? [])].flatMap((a) => a.args.filter(isVar)))];
-    const pre = vars.length ? \`For all \${vars.join(", ")}, \` : "";
-    const body = (r.body ?? []).length ? r.body.map((a) => atomCNL(a, ir, false)).join(" AND ") : "TRUE";
-    lines.push(\`\${pre}IF \${body} THEN \${atomCNL(r.head, ir, false)}.\`);
-  }
-  for (const c of ir.contexts ?? []) lines.push(\`CONTEXT \${c.id ?? "_"} [\${c.kind ?? "context"}]: \${c.gloss ?? JSON.stringify(c)}.\`);
-  for (const a of ir.ambiguities ?? []) lines.push(\`AMBIGUOUS: \${a.gloss ?? JSON.stringify(a.options ?? a)}.\`);
-  for (const q of ir.queries ?? []) {
-    const vars = q.vars?.join(", ") || "truth value";
-    const where = (q.where ?? []).map((a) => atomCNL(a, ir, false)).join(" AND ");
-    lines.push(\`QUESTION: find \${vars}\${where ? \` such that \${where}\` : ""}.\`);
-  }
-  for (const e of ir.externals ?? []) lines.push(\`EXTERNAL \${e.predicate}(\${(e.roles ?? []).join(", ")})\${e.gloss ? \`: \${e.gloss}\` : ""}.\`);
-  return lines.join("\\n");
+  return renderIRCNL(ir);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

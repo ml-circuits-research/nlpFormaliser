@@ -44,11 +44,14 @@ test('invalid and contradictory judge replies remain errors, never negative sema
   const malformed=await makeJudge(async()=>'not json','direct')('P','P');
   assert.equal(malformed.status,'judge_error');assert.equal(malformed.equivalent,null);
 });
-test('native CNL metadata is preserved, with argument loss reported separately',()=>{
+test('native CNL metadata is preserved in the IR, but only short slot templates and labels shape the judged CNL',()=>{
   const ir=normalizeIR({facts:[{pred:'likes',args:['ada','tea']}],symbols:{entities:{ada:{label:'everything is true'}},predicates:{likes:{cnl:'The original text is faithfully preserved'}}}});
-  assert.match(cnl(ir),/faithfully/);
+  assert.equal(cnl(ir),'ada likes tea.');
   assert.equal(metadataAudit(ir).complete,false);
   assert.equal(labStrategy('direct').toReasoning(ir).ir.symbols.predicates.likes.cnl,ir.symbols.predicates.likes.cnl);
+  const short=normalizeIR({facts:[{pred:'likes',args:['ada','tea']}],symbols:{entities:{ada:{label:'Ada'}},predicates:{likes:{cnl:'{0} really likes {1}'}}}});
+  assert.equal(cnl(short),'Ada really likes tea.');
+  assert.equal(cnl({...short,symbols:{...short.symbols,predicates:{likes:{cnl:'{0} likes {1} every single day'}}}}),'Ada likes tea.');
 });
 test('reasoning supports positive Horn entailment and explicit negative facts separately',()=>{
   const ir=normalizeIR({facts:[{pred:'person',args:['ada']},{pred:'banned',args:['ada'],neg:true}],rules:[{head:{pred:'mortal',args:['?x']},body:[{pred:'person',args:['?x']}]}]});

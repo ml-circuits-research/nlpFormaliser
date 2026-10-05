@@ -16,6 +16,19 @@ The current implementations preserve the source architectures. Early restricted 
 
 Repair is explicit and excluded from first-pass runs. Speech Act Normalization is a research baseline for a future compiler stage, not mislabeled as logical inference. Deterministic Rule Draft is intentionally limited in the archive; it should be judged as a component rather than mistaken for the entire evidence-guided architecture.
 
+## Symbol length rule (3 words)
+
+Every symbol name has at most 3 words: predicates, relations, concept lemmas, entity/constant names, context ids, labels and the words of CNL templates. Words are counted by splitting on underscores, hyphens, spaces, digit boundaries and camelCase, so `ignoreLastMessage` has 3 words and `keepImportantEmailsInInbox` has 5. Quoted proper names have at most 3 tokens. Long names hide meaning that cannot be translated symbolically, so long ideas must be decomposed into compositional predicates, roles or nested propositions.
+
+- `tools/lib/symbols.mjs` is the shared deterministic checker. Each strategy exposes `symbols(formalization)` (its rendered symbols); the audit turns every violation into the ineligibility issue `symbol longer than 3 words at <path>: <name>`.
+- Every strategy task template states the rule with a good and a bad example; templates are generated from the prompt constants by `node tools/sync-task-templates.mjs` and checked by the tests.
+- Repair rounds get the violations as deterministic diagnostics: the MicroIR repair diff (`sym`), the Lab repair prompt and the EVL checker loop.
+- The audit reports eligibility in separate categories (`symbolLength`, `echo`, `coverage`, `controlOnly`, `unresolved`) plus metrics (symbol count, long symbols, `echoRatio` = share of source words copied as 4+ consecutive words into one symbol, label or template). Explanatory fields required by the protocol (ambiguity descriptions, glosses, notes) may be long but are never rendered into the judged CNL; the audit flags them if they are.
+
+## Review changes to the strategies
+
+Lab family: structure-derived judged CNL (no glosses; labels only restyle their own symbol; templates are slots plus at most 3 words), context-scoped rendering and Horn closure, `INCONSISTENT` on contradictions, prompt v2 with query/context/ambiguity schemas, stricter `validateIR`, a draft that refuses questions, conditionals, modal/attitude clauses and long objects instead of asserting them, contracted negation and per-sentence questions in ProtoIR. Compact/Explicit Scope Logic: free variable-like identifiers are rejected, top-level-only lists and question force, JSON numbers, strict judge parsing. Event Role Logic: nested FOL without free variables, operator-aware question answering, proper-name check, negation over names kept, `need`/`scope(neg(E), modal)`. Discourse Semantic Graph: abbreviation/decimal-aware splitting, contraction expansion, `UNRESOLVED_FRAGMENT#k` instead of verbatim text, ambiguities as `NOTED AMBIGUITY #k`. Speech Act Normalization: no empty `INPUT:` block. The unregistered `strategies/microir-hybrid` folder was removed; its code and note remain in `strategies/_superseded`. Every divergence from the archive is listed in the [restoration audit](restoration-audit.md).
+
 ## Representation is not backend coverage
 
 The lab stores contexts, ambiguities and external predicates that its small Horn engine cannot execute. The discourse archive explicitly defers the compiler. MicroIR permits nested propositions that need intensional semantics. Preserving these structures is required. Omitting them to make the backend appear complete is invalid. Backend gaps belong in `reasoning.coverage`, not in destructive normalization.

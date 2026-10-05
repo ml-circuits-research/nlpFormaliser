@@ -68,19 +68,29 @@ function addMarker(out, token, kind, value = token.norm) {
   out.push({id: `m${out.length}`, kind, value, tokenId: token.id, start: token.start, end: token.end});
 }
 
-export function extractMarkers(tokens, text) {
+// Contracted negation (n't) and "cannot" are negation markers too; "cannot"
+// and "can't" are also modality markers.
+const isNegation = (w) => NEG.has(w) || /n['’]t$/.test(w) || w === "cannot";
+
+export function extractMarkers(tokens, text, sentences = sentenceSpans(text, tokens)) {
   const out = [];
   for (const t of tokens) {
     const w = t.norm;
-    if (NEG.has(w)) addMarker(out, t, "negation");
+    if (isNegation(w)) addMarker(out, t, "negation");
     if (QUANT.has(w)) addMarker(out, t, "quantifier");
-    if (MODAL.has(w)) addMarker(out, t, "modality");
+    if (MODAL.has(w) || ["cannot", "can't", "can’t", "won't", "shouldn't", "mustn't", "couldn't", "wouldn't", "mightn't", "needn't"].includes(w)) addMarker(out, t, "modality");
     if (CONDITIONAL.has(w)) addMarker(out, t, "conditional");
     if (TEMPORAL.has(w)) addMarker(out, t, "temporal");
     if (COORD.has(w)) addMarker(out, t, "coordination");
     if (["before", "after", "because", "therefore", "so"].includes(w)) addMarker(out, t, "relation_signal");
   }
-  if (text.trim().endsWith("?")) out.push({id: `m${out.length}`, kind: "question", value: "question", start: text.lastIndexOf("?"), end: text.lastIndexOf("?") + 1});
+  // One question marker per interrogative sentence, not only for a final "?".
+  for (const s of sentences) {
+    const q = s.text.trimEnd();
+    if (!q.endsWith("?")) continue;
+    const at = s.start + q.length - 1;
+    out.push({id: `m${out.length}`, kind: "question", value: "question", sentenceId: s.id, start: at, end: at + 1});
+  }
   return out;
 }
 
@@ -153,7 +163,7 @@ export function buildProtoIR(text) {
     sentences,
     clauses,
     mentions: extractMentions(source, tokens),
-    markers: extractMarkers(tokens, source),
+    markers: extractMarkers(tokens, source, sentences),
     predicateCandidates: extractPredicateCandidates(tokens),
     surfaceRelations: surfaceRelations(source),
     meta: {policy: "high-recall-surface; preserve source; do not force semantic normalization"}

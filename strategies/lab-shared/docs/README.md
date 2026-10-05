@@ -5,3 +5,7 @@ This is not a separate strategy. It holds the restored lab runtime used by Direc
 `coverage.mjs` adds backend coverage and template-argument diagnostics without deleting fields or narrowing the original language. The adapters keep artifacts/provenance and separate structural validity from executable coverage. See the respective strategies' `docs/original/` for recovered source documentation.
 
 `judge.mjs` exposes the native repeated coverage/faithfulness judge through `judge-task.mjs`. This preserves directional scores and variance as a distinct instrument, alongside the common evaluator's binary judge.
+
+## Shared changes
+
+`src/cnl.mjs` renders a structure-derived CNL (`renderIRCNL`), which the standalone compiler embeds verbatim. `coverage.mjs` lists every IR symbol (`labSymbols`) for the 3-word rule and flags templates longer than 3 words. See [Direct Context Logic](../../direct-context-logic/docs/README.md) for prompt v2, validation, contexts and contradictions.

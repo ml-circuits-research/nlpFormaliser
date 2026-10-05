@@ -69,10 +69,15 @@ export function validate(ir) {
   const errors = [];
   const root = isDocument(ir) ? ir : [ir];
   if (!root.length) errors.push('Empty document');
-  function formula(x, path) {
-    if (!isNode(x)) errors.push(`${path}: expected a logical formula`);
-    else if (['A','O','N','I','Q'].includes(x[0])) x.slice(1).forEach((y,i)=>formula(y,`${path}[${i}]`));
-    else if (['U','E','W'].includes(x[0])) formula(x[2],`${path}.body`);
+  // Question force (Q/W) is allowed only as a whole document item or directly as
+  // a predicate argument (an embedded question). Nested under A/O/N/I/U/E/Q/W it
+  // would be rendered as a "Statement" and silently lose its force.
+  function formula(x, path, questionAllowed = true) {
+    if (!isNode(x)) { errors.push(`${path}: expected a logical formula`); return; }
+    if ((x[0] === 'Q' || x[0] === 'W') && !questionAllowed) errors.push(`${path}: question operator ${x[0]} must be a top-level document item or a predicate argument`);
+    if (['A','O','N','I','Q'].includes(x[0])) x.slice(1).forEach((y,i)=>formula(y,`${path}[${i}]`,false));
+    else if (['U','E','W'].includes(x[0])) formula(x[2],`${path}.body`,false);
+    else if (x[0] === '$') x.slice(2).forEach((y,i)=>{ if (isNode(y)) formula(y,`${path}.${x[1]}[${i}]`,true); });
   }
   root.forEach((x,i)=>formula(x,`$[${i}]`));
 

@@ -5,7 +5,15 @@ Identifiers are lowercase atoms: entities `x1, x2, ...`, events/states `e1, e2, 
 groups `g1, ...`, speech acts `a1, ...`, queried placeholders `q1, ...`.
 Lexical concepts are **single English lemmas** (lowercase, `snake_case` allowed for at most 3 parts,
 e.g. `ice_cream`, `take_off`) — never phrases or sentences.
-Proper names go in quotes: `name(x1, 'Mary')`. Numbers are Prolog numbers (`40`, `2.5`).
+Proper names go in quotes: `name(x1, 'Mary')`, at most 3 capitalised name tokens (`'Ada Lovelace'`),
+never a description or a sentence. Numbers are Prolog numbers (`40`, `2.5`).
+
+**Symbol length rule.** Every symbol (concept lemma, relation, unit, proper name) has at most 3 words.
+Words are counted by splitting on underscores, hyphens, digit boundaries and camelCase, so camelCase
+does not avoid the limit. Good: `event(e1, keep). role(e1, theme, x1). inst(x1, email). prop(x1, important).
+role(e1, location, x2). inst(x2, inbox).` Bad: `event(e1, keep_important_emails_in_inbox)`,
+`inst(x1, keepImportantEmails)`. Decompose a long idea into events, roles, properties and nested
+`content` events instead of one long name.
 
 Only the predicates below are interpreted; anything else is ignored, so everything that matters
 MUST be expressed with them.
@@ -33,14 +41,14 @@ MUST be expressed with them.
 | `role(E, Role, A)` | A participates in E with Role. A is an entity, an event (for `content`, `purpose`, `cause`, or a nominalised event as subject/object: "**increasing the temperature** speeds up reactions" → `role(e2, agent, e1)`), or an atom (for `manner`, `time`, `attribute`) |
 | `tense(E, T)` | T ∈ `past, present, future` (default `present`) |
 | `aspect(E, A)` | A ∈ `progressive, perfect, perfect_progressive` |
-| `modal(E, M)` | M ∈ `can, could, must, may, might, should, would` |
+| `modal(E, M)` | M ∈ `can, could, must, may, might, should, would, need` |
 | `neg(E)` | E does not happen / is not the case |
 | `voice(E, passive)` | realise E in passive voice |
 | `link(E1, Conn, E2)` | "E1 Conn E2". Conn ∈ `and, but, because, if, when, before, after, while, although, so, unless, until, since, as_soon_as, instead_of` |
 | `generic(E)` | E is a general law / habit / definition, not a particular occurrence ("Whales are mammals", "Heat speeds up reactions") |
 | `freq(E, F)` | adverb of quantification, F ∈ `always, usually, often, sometimes, rarely, never, typically, generally` |
 | `counterfactual(E)` | E is contrary to fact ("if it **had rained**, the match **would have been** postponed": mark both events) |
-| `scope(A, B)` | A takes scope over B. A, B are entity ids (their quantifiers) or `neg(E)`. Use it whenever the reading is not the surface order: "Not every child likes chocolate" → `scope(neg(e1), x1)`; "There is one book that every student read" → `scope(x2, x1)` |
+| `scope(A, B)` | A takes scope over B. A, B are entity ids (their quantifiers) or `neg(E)`. Use it whenever the reading is not the surface order: "Not every child likes chocolate" → `scope(neg(e1), x1)`; "There is one book that every student read" → `scope(x2, x1)`. `scope(neg(E), modal)` makes the negation outscope the modal: "You need not come" → `modal(e1, need). neg(e1). scope(neg(e1), modal).`; "is not required to" → `modal(e1, must). neg(e1). scope(neg(e1), modal).` |
 
 ### Roles
 `agent`, `experiencer`, `patient`, `theme`, `stimulus`, `recipient`, `beneficiary`, `instrument`,

@@ -11,3 +11,7 @@ The first integration incorrectly narrowed this strategy to Horn facts/rules and
 The decisive comparison is Direct Context Logic versus Evidence Guided Logic on the same model. Measure preservation, behavioral controls, prompt/output tokens, and errors by construction. More input tokens do not themselves establish efficiency; improvement with a smaller tier or fewer failures must be demonstrated. Do not treat the shallow heuristic draft as ProtoIR: their design objectives differ.
 
 Recovered documents: [architecture](original/ARCHITECTURE.md), [IR](original/IR.md), [recommended comparison](original/EXPERIMENT_PLAN.md), [integration](original/INTEGRATION.md), [limitations](original/LIMITATIONS.md). Native datasets: 31 development plus 29 original held-out records with their gold IR and queries retained in `eval/`.
+
+## Prompt v2 and judged CNL
+
+Uses the same Formal IR prompt v2, validation and structure-derived CNL as [Direct Context Logic](../../direct-context-logic/docs/README.md). ProtoIR now marks contracted negation (`n't`, `cannot`) and adds one question marker per interrogative sentence. Every symbol (predicate, relation, concept, entity/constant, context id, label, template words) has at most 3 words, counted on underscores, hyphens, spaces, digit and camelCase boundaries (`tools/lib/symbols.mjs`); quoted proper names have at most 3 tokens. The prompt states the rule with a good and a bad example and asks to decompose long ideas; the audit makes any violation ineligible (category `symbolLength`).

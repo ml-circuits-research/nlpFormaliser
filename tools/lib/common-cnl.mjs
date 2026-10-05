@@ -50,10 +50,14 @@ export function projectCommonCNL(strategyName, formalization) {
     });
     // Queries, attribution and modal context need distinct typed extensions;
     // their glosses are never smuggled into ordinary predicate assertions.
+    // version/meta/symbols are bookkeeping and lexical metadata: the common view
+    // never renders labels, templates or glosses, so they are not semantic residue.
+    // Empty sections (including nested empty objects) count as absent.
+    const empty=v=>v==null||(Array.isArray(v)?v.length===0:typeof v==='object'&&Object.values(v).every(empty));
     for(const key of Object.keys(ir)) {
-      if(['facts','rules'].includes(key))continue;
+      if(['facts','rules','version','meta','symbols'].includes(key))continue;
       const value=ir[key];
-      if(value!=null && (typeof value!=='object' || Object.keys(value).length))residual(key,value,'Native section retained; common semantic adapter not yet implemented');
+      if(!empty(value))residual(key,value,'Native section retained; common semantic adapter not yet implemented');
     }
   } else {
     residual('$',formalization,'No common semantic adapter for this strategy family yet');

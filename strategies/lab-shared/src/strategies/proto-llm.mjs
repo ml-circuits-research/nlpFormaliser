@@ -4,6 +4,8 @@ import {normalizeIR, validateIR} from "../ir.mjs";
 import {extractJsonObject} from "../util.mjs";
 import {FORMAL_IR_SPEC} from "./direct-llm.mjs";
 
+export const PROTO_SYSTEM = `${FORMAL_IR_SPEC}\nYou are a semantic normalizer. The ProtoIR is conservative surface evidence: it may contain false-positive candidates, but its spans and source text are authoritative evidence. Convert the meaning into Formal IR without inventing unsupported facts.`;
+
 export class ProtoLLMStrategy extends FormalizationStrategy {
   constructor({client, name = "proto-llm"} = {}) {
     super(name);
@@ -12,7 +14,7 @@ export class ProtoLLMStrategy extends FormalizationStrategy {
   }
 
   async formalize(text, {proto = buildProtoIR(text)} = {}) {
-    const system = `${FORMAL_IR_SPEC}\nYou are a semantic normalizer. The ProtoIR is conservative surface evidence: it may contain false-positive candidates, but its spans and source text are authoritative evidence. Convert the meaning into Formal IR without inventing unsupported facts.`;
+    const system = PROTO_SYSTEM;
     const user = [
       "Natural-language source:", text,
       `\nConservative ProtoIR:\n${JSON.stringify(compactProtoIR(proto))}`,

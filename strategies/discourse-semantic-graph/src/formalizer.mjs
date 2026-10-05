@@ -59,12 +59,49 @@ function cap(s) { return s ? s[0].toUpperCase()+s.slice(1) : s; }
 function isNumberish(s) { return /^(?:\d+(?:\.\d+)?|one|two|three|four|five|six|seven|eight|nine|ten|hundred|thousand)$/i.test(s); }
 function normQuote(s) { return cleanSpace(s).replace(/^['“”"]|['“”"]$/g,''); }
 
+// Decimals ("3.5") and file extensions (".tmp") are single tokens.
 function tokenize(text) {
-  return text.match(/[A-Za-zÀ-ÖØ-öø-ÿ0-9_'-]+|<=|>=|!=|==|%|[.,!?;:()]/g) ?? [];
+  return text.match(/\d+(?:[.,]\d+)+|(?<![\w])\.[A-Za-z0-9]+\b|[A-Za-zÀ-ÖØ-öø-ÿ0-9_'-]+|<=|>=|!=|==|%|[.,!?;:()]/g) ?? [];
 }
+// Abbreviation- and decimal-aware splitter: a period ends a sentence only when
+// followed by whitespace (not ".tmp" or "3.5"), it does not close a known
+// abbreviation ("a.m.", "e.g.", "Dr."), and the next word is not lower-case.
+const ABBREVIATIONS = new Set(['a.m','p.m','e.g','i.e','etc','vs','dr','mr','mrs','ms','prof','st','no','fig','approx','cf','jr','sr','inc','ltd','co','u.s','u.k']);
 function splitSentences(text) {
-  const parts = text.replace(/\n+/g,' ').match(/[^.!?]+[.!?]?/g) ?? [];
-  return parts.map(cleanSpace).filter(Boolean);
+  const s = text.replace(/\n+/g,' ');
+  const out = [];
+  let start = 0;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (!/[.!?]/.test(c)) continue;
+    const after = s.slice(i+1);
+    if (after && !/^["'”’)\]]*(?:\s|$)/.test(after)) continue;
+    if (c === '.') {
+      const word = (s.slice(start, i).match(/(\S+)$/)?.[1] ?? '').toLowerCase().replace(/^[("'“‘]+/,'');
+      if (ABBREVIATIONS.has(word) || /^(?:[a-z]\.)+[a-z]$/.test(word)) continue;
+      const next = after.match(/^["'”’)\]]*\s+(\S)/)?.[1];
+      if (next && /[a-z]/.test(next)) continue;
+    }
+    let end = i + 1;
+    while (end < s.length && /["'”’)\]]/.test(s[end])) end++;
+    out.push(s.slice(start, end));
+    start = end;
+  }
+  if (start < s.length) out.push(s.slice(start));
+  return out.map(cleanSpace).filter(Boolean);
+}
+
+// Contracted negation and auxiliaries become explicit NEG/AUX words before parsing.
+const CONTRACTIONS = [
+  [/\bcan['’]t\b/gi, 'cannot'], [/\bwon['’]t\b/gi, 'will not'], [/\bshan['’]t\b/gi, 'shall not'],
+  [/\b(do|does|did|is|are|was|were|has|have|had|could|would|should|must|might|need|may)n['’]t\b/gi, '$1 not'],
+  [/\b(I|you|we|they|he|she|it)['’]ll\b/gi, '$1 will'], [/\b(I|you|we|they)['’]ve\b/gi, '$1 have'],
+  [/\b(you|we|they)['’]re\b/gi, '$1 are'], [/\bI['’]m\b/g, 'I am'],
+];
+function expandContractions(text) {
+  let s = String(text);
+  for (const [re, to] of CONTRACTIONS) s = s.replace(re, to);
+  return s;
 }
 
 function lemma(word) {
@@ -274,7 +311,7 @@ function parseModalPrefix(s) {
 }
 
 function parseSentence(text,state,ambiguities,opts={}) {
-  let s=stripPunct(text);
+  let s=stripPunct(expandContractions(text));
   s=s.replace(/^(?:now|finally|then|otherwise)[:,]?\s+/i,'');
   s=s.replace(/^(?:now|finally|then)[:,]?\s+/i,'').replace(/^otherwise\s+/i,'');
   if (!s) return {type:'raw',text:''};
@@ -369,8 +406,14 @@ function parseSentence(text,state,ambiguities,opts={}) {
   // Explicit negation with auxiliary.
   m=s.match(/^(.+?)\s+(?:does|do|did)\s+not\s+(.+)$/i);
   if (m) return {type:'not',body:parseSentence(`${m[1]} ${m[2]}`,state,ambiguities,opts)};
-  m=s.match(/^(.+?)\s+is\s+not\s+(.+)$/i);
-  if (m) return {type:'not',body:parseSentence(`${m[1]} is ${m[2]}`,state,ambiguities,opts)};
+  m=s.match(/^(.+?)\s+(is|are|was|were)\s+not\s+(.+)$/i);
+  if (m) return {type:'not',body:parseSentence(`${m[1]} ${m[2]} ${m[3]}`,state,ambiguities,opts)};
+  // Perfect auxiliary negation: "X has not approved Y".
+  m=s.match(/^(.+?)\s+(has|have|had)\s+not\s+(.+)$/i);
+  if (m) return {type:'not',body:parseSentence(`${m[1]} ${m[3]}`,state,ambiguities,opts)};
+  // Future/conditional negation keeps the modal outside: "X will not V" = EXPECTED(NOT(...)).
+  m=s.match(/^(.+?)\s+(will|would|could|might)\s+not\s+(.+)$/i);
+  if (m) { const mm=parseModalPrefix(`${m[1]} ${m[2]} x`); return {type:'modal',modality:mm?.modality||'EXPECTED',body:{type:'not',body:parseSentence(`${m[1]} ${m[3]}`,state,ambiguities,opts)}}; }
 
   // Modal passive: 'the report can be approved'.
   m=s.match(/^(.+?)\s+(must not|must|should not|should|may not|may|cannot|can|could|will)\s+be\s+([A-Za-z'-]+ed|given|sent|shown|known|written|read)$/i);
@@ -770,18 +813,22 @@ function renderTurn(turn) {
   if (turn.speaker) lines.push(`  SPEAKER ${quoteAtom(turn.speaker)}`);
   if (turn.addressee && ['REQUEST','INSTRUCT','PROPOSE'].includes(turn.act)) lines.push(`  ADDRESSEE ${quoteAtom(turn.addressee)}`);
   lines.push('  CONTENT:');
-  lines.push(...renderNode(turn.content,2));
+  lines.push(...renderNode(turn.content,2,{fragments:0}));
+  // Ambiguities are listed as noted references. Their messages and helper
+  // questions are explanatory and are not rendered; a span or option is shown
+  // only when it is a short (at most 3-word) symbol.
   if (turn.ambiguities?.length) {
     lines.push('  AMBIGUITIES:');
-    for (const a of turn.ambiguities) {
-      lines.push(`    - ${a.id} ${a.severity.toUpperCase()} ${a.kind}: ${JSON.stringify(a.span)}`);
-      if (a.options?.length) lines.push(`      OPTIONS: ${a.options.map(quoteAtom).join(' | ')}`);
-      if (a.question) lines.push(`      ASK: ${JSON.stringify(a.question)}`);
-    }
+    turn.ambiguities.forEach((a,k)=>{
+      const span=typeof a.span==='string'&&shortText(a.span)?` ${JSON.stringify(a.span)}`:'';
+      lines.push(`    - NOTED AMBIGUITY #${k+1} ${a.id} ${a.severity.toUpperCase()} ${a.kind}${span}`);
+      if (a.options?.length) lines.push(`      OPTIONS: ${a.options.every(o=>shortText(String(o)))?a.options.map(quoteAtom).join(' | '):`${a.options.length} alternatives (not rendered)`}`);
+    });
   }
   lines.push(`  CONFIDENCE ${turn.confidence.toFixed(2)}`);
   return lines.join('\n');
 }
+function shortText(x) { return String(x??'').trim().split(/[\s_-]+/).filter(Boolean).length<=3; }
 function quoteAtom(x) { x=String(x??''); return /^[A-Za-z_][A-Za-z0-9_.-]*$/.test(x)?x:JSON.stringify(x); }
 function renderRef(r) {
   if (!r) return 'UNKNOWN';
@@ -791,21 +838,21 @@ function renderRef(r) {
   if (r.kind==='unresolved_ref') return `UNRESOLVED_REF(${JSON.stringify(r.text)})`;
   return JSON.stringify(r.text||'UNKNOWN');
 }
-function renderNode(node,indent=0) {
+function renderNode(node,indent=0,ctx={fragments:0}) {
   const p='  '.repeat(indent); if(!node)return [`${p}UNKNOWN`];
   switch(node.type) {
-    case 'if': return [`${p}IF:`,...renderNode(node.condition,indent+1),`${p}THEN:`,...renderNode(node.consequence,indent+1)];
-    case 'if_else': return [`${p}IF:`,...renderNode(node.condition,indent+1),`${p}THEN:`,...renderNode(node.then,indent+1),`${p}ELSE:`,...renderNode(node.else,indent+1)];
-    case 'even_if': return [`${p}EVEN_IF:`,...renderNode(node.condition,indent+1),`${p}STILL:`,...renderNode(node.body,indent+1)];
-    case 'not': return [`${p}NOT:`,...renderNode(node.body,indent+1)];
-    case 'only': return [`${p}ONLY ${renderRef(node.focus)}:`,...renderNode(node.body,indent+1)];
-    case 'modal': return [`${p}${node.modality}:`,...renderNode(node.body,indent+1)];
-    case 'quantifier': return [`${p}${node.quantifier} ${node.entityType} ${node.var}:`,...renderNode(node.body,indent+1)];
-    case 'and': return [`${p}AND:`,...node.items.flatMap(x=>renderNode(x,indent+1))];
-    case 'or': return [`${p}OR:`,...node.items.flatMap(x=>renderNode(x,indent+1))];
-    case 'attitude': { const a=[`${p}ATTITUDE ${node.predicate}:`,`${p}  AGENT ${renderRef(node.agent)}`]; if(node.recipient)a.push(`${p}  RECIPIENT ${renderRef(node.recipient)}`); a.push(`${p}  CONTENT:`,...renderNode(node.content,indent+2)); return a; }
-    case 'temporal': return [`${p}${node.relation}:`,`${p}  LEFT:`,...renderNode(node.left,indent+2),`${p}  RIGHT:`,...renderNode(node.right,indent+2)];
-    case 'causal': return [`${p}BECAUSE:`,...renderNode(node.cause,indent+1),`${p}THEREFORE:`,...renderNode(node.effect,indent+1)];
+    case 'if': return [`${p}IF:`,...renderNode(node.condition,indent+1,ctx),`${p}THEN:`,...renderNode(node.consequence,indent+1,ctx)];
+    case 'if_else': return [`${p}IF:`,...renderNode(node.condition,indent+1,ctx),`${p}THEN:`,...renderNode(node.then,indent+1,ctx),`${p}ELSE:`,...renderNode(node.else,indent+1,ctx)];
+    case 'even_if': return [`${p}EVEN_IF:`,...renderNode(node.condition,indent+1,ctx),`${p}STILL:`,...renderNode(node.body,indent+1,ctx)];
+    case 'not': return [`${p}NOT:`,...renderNode(node.body,indent+1,ctx)];
+    case 'only': return [`${p}ONLY ${renderRef(node.focus)}:`,...renderNode(node.body,indent+1,ctx)];
+    case 'modal': return [`${p}${node.modality}:`,...renderNode(node.body,indent+1,ctx)];
+    case 'quantifier': return [`${p}${node.quantifier} ${node.entityType} ${node.var}:`,...renderNode(node.body,indent+1,ctx)];
+    case 'and': return [`${p}AND:`,...node.items.flatMap(x=>renderNode(x,indent+1,ctx))];
+    case 'or': return [`${p}OR:`,...node.items.flatMap(x=>renderNode(x,indent+1,ctx))];
+    case 'attitude': { const a=[`${p}ATTITUDE ${node.predicate}:`,`${p}  AGENT ${renderRef(node.agent)}`]; if(node.recipient)a.push(`${p}  RECIPIENT ${renderRef(node.recipient)}`); a.push(`${p}  CONTENT:`,...renderNode(node.content,indent+2,ctx)); return a; }
+    case 'temporal': return [`${p}${node.relation}:`,`${p}  LEFT:`,...renderNode(node.left,indent+2,ctx),`${p}  RIGHT:`,...renderNode(node.right,indent+2,ctx)];
+    case 'causal': return [`${p}BECAUSE:`,...renderNode(node.cause,indent+1,ctx),`${p}THEREFORE:`,...renderNode(node.effect,indent+1,ctx)];
     case 'comparison': return [`${p}${node.relation}:`,`${p}  AGENT ${renderRef(node.agent)}`,`${p}  LEFT ${renderRef(node.left)}`,`${p}  RIGHT ${renderRef(node.right)}`];
     case 'event': {
       const a=[`${p}EVENT ${node.id} ${quoteAtom(node.predicate)}:`];
@@ -815,7 +862,7 @@ function renderNode(node,indent=0) {
     }
     case 'query': {
       const head=node.var?`${p}ASK ${node.queryKind} ${node.entityType||'entity'} ${node.var}${node.setRef?` FROM ${node.setRef}`:''}:`:`${p}ASK ${node.queryKind}${node.entityType?` ${node.entityType}`:''}:`;
-      const a=[head]; if(node.context)a.push(`${p}  GIVEN ${node.context}`); if(node.condition)a.push(`${p}  IF:`,...renderNode(node.condition,indent+2)); if(node.body)a.push(...renderNode(node.body,indent+1)); return a;
+      const a=[head]; if(node.context)a.push(`${p}  GIVEN ${node.context}`); if(node.condition)a.push(`${p}  IF:`,...renderNode(node.condition,indent+2,ctx)); if(node.body)a.push(...renderNode(node.body,indent+1,ctx)); return a;
     }
     case 'directive': {
       const a=[`${p}DIRECTIVE ${node.operator.toUpperCase()} TO ${quoteAtom(node.addressee)}`];
@@ -824,22 +871,24 @@ function renderNode(node,indent=0) {
       if(node.constraints) for(const c of node.constraints)a.push(`${p}  CONSTRAINT ${c.kind.toUpperCase()} ${quoteAtom(c.value)}`);
       if(node.items) for(const it of node.items)a.push(`${p}  ITEM ${renderRef(it)}`);
       if(node.dimension)a.push(`${p}  ON ${JSON.stringify(node.dimension)}`);
-      if(node.body)a.push(`${p}  BODY:`,...renderNode(node.body,indent+2));
+      if(node.body)a.push(`${p}  BODY:`,...renderNode(node.body,indent+2,ctx));
       return a;
     }
-    case 'selector': return [`${p}SELECT ${node.entityType} ${node.var} WHERE:`,...renderNode(node.body,indent+1)];
+    case 'selector': return [`${p}SELECT ${node.entityType} ${node.var} WHERE:`,...renderNode(node.body,indent+1,ctx)];
     case 'search': {
       const a=[`${p}FIND ${node.entityType} x:`];
       for(const c of node.constraints||[])a.push(`${p}  ${c.kind.toUpperCase()} ${JSON.stringify(c.value)}`);
       return a;
     }
-    case 'goal': return [`${p}GOAL:`,...renderNode(node.body,indent+1)];
-    case 'preference': return [`${p}PREFERENCE ${JSON.stringify(node.body?.text||'')}`];
-    case 'correction': return node.body?[`${p}CORRECT:`,...renderNode(node.body,indent+1)]:[`${p}REJECT_PREVIOUS`];
+    case 'goal': return [`${p}GOAL:`,...renderNode(node.body,indent+1,ctx)];
+    case 'preference': return [`${p}PREFERENCE UNRESOLVED_FRAGMENT#${++ctx.fragments}`];
+    case 'correction': return node.body?[`${p}CORRECT:`,...renderNode(node.body,indent+1,ctx)]:[`${p}REJECT_PREVIOUS`];
     case 'resolution_hint': return [`${p}RESOLVE_REFERENCE_AS ${JSON.stringify(node.value)}`];
     case 'confirm': return [`${p}CONFIRM ${node.target||'PREVIOUS'}`];
-    case 'raw': return [`${p}UNRESOLVED ${JSON.stringify(node.text)}`];
-    default: return [`${p}UNRESOLVED ${JSON.stringify(node)}`];
+    // Unparsed source text is never copied into the judged CNL; the fragment stays
+    // in the AST and in the coverage_gap record for helpers.
+    case 'raw': return [`${p}UNRESOLVED_FRAGMENT#${++ctx.fragments}`];
+    default: return [`${p}UNRESOLVED_NODE#${++ctx.fragments}`];
   }
 }
 function renderModifier(m) {

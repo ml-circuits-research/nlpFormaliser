@@ -2,6 +2,7 @@ import { fromWire, toWire } from './src/wire.mjs';
 import { toCNL } from './src/cnl.mjs';
 import { FORMALIZE_SYSTEM } from './src/prompts.mjs';
 import { isVar, isDocument } from './src/ir.mjs';
+import { microSymbols } from './src/symbols.mjs';
 export const SYSTEM=FORMALIZE_SYSTEM;
 
 export function toLogic(wire) {
@@ -25,5 +26,6 @@ export default {
   },
   check(wire) { try { fromWire(wire); return {ok:true, errors:[]}; } catch(e) { return {ok:false, errors:[e.message]}; } },
   toCNL: wire => toCNL(fromWire(wire)),
+  symbols: microSymbols,
   toReasoning: toLogic,
 };

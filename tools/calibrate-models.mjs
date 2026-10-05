@@ -3,18 +3,18 @@ import {parseArgs} from 'node:util';
 import {readFileSync,existsSync,mkdirSync,writeFileSync,appendFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {ROOT} from './lib/strategies.mjs';
-import {loadSet} from './lib/evalset.mjs';
 import {taskLLM,digest} from './lib/pworker.mjs';
 import {makeJudge,SYSTEMS} from './lib/judge.mjs';
-import {consolidatedJudgeControls} from './lib/judge-controls.mjs';
+import {judgeControls} from './lib/judge-controls.mjs';
 const {values:o}=parseArgs({options:{model:{type:'string'},id:{type:'string'},mode:{type:'string',default:'bidirectional'},'batch-size':{type:'string',default:'1'}}});
 if(!o.model||!/^[\w-]+$/.test(o.id??''))throw new Error('Provide --model upstream/model --id experiment');
 if(!SYSTEMS[o.mode])throw new Error('Invalid judge mode');
 const batchSize=Number(o['batch-size']);if(!Number.isSafeInteger(batchSize)||batchSize<1)throw new Error('Invalid batch size');
-const out=join(ROOT,'docs','experiments',o.id);
+const experiments=join(ROOT,'docs','experiments'),out=join(experiments,o.id);
 if(existsSync(out))throw new Error('Experiment already exists');
-const controls=consolidatedJudgeControls(loadSet('consolidated'));
-mkdirSync(out,{recursive:true});
+// Dedicated control document; never an evaluation document (see judge-controls.mjs).
+const controls=judgeControls();
+mkdirSync(experiments,{recursive:true});mkdirSync(out);
 const save=(file,value)=>writeFileSync(join(out,file),JSON.stringify(value,null,2)+'\n');
 const calls=[];
 const bridge=taskLLM({file:join(ROOT,'tasks',`judge-${o.mode}.mjs`),model:o.model,tier:'judge-calibration',batchSize,

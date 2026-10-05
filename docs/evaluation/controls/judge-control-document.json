@@ -1,0 +1,18 @@
+{
+  "schema": "judge-control-document/1",
+  "id": "control/clean-room",
+  "purpose": "Dedicated synthetic document for judge controls. It is not part of any formalization corpus, partition or selection, so judge calibration never uses a document that is also evaluated.",
+  "trust": "Hand-authored gold wire per sentence for this control only; labels follow controlled deterministic transformations, not another model.",
+  "units": [
+    {"id": "u01", "text": "Every technician who enters the clean room must wear gloves.", "wire": "U(x,I(A($.technician(x),$.enter(x,\"clean room\")),$.must($.wear(x,\"gloves\"))))"},
+    {"id": "u02", "text": "Nadia is a technician.", "wire": "$.technician(\"nadia\")"},
+    {"id": "u03", "text": "Nadia enters the clean room.", "wire": "$.enter(\"nadia\",\"clean room\")"},
+    {"id": "u04", "text": "Omar gives Nadia the badge.", "wire": "$.give(\"omar\",\"badge\",\"nadia\")"},
+    {"id": "u05", "text": "Nadia does not want to stay late.", "wire": "N($.want(\"nadia\",$.stay_late(\"nadia\")))"},
+    {"id": "u06", "text": "Kai believes that the sensor is faulty.", "wire": "$.believe(\"kai\",$.faulty(\"sensor\"))"},
+    {"id": "u07", "text": "Please send the calibration report to Omar.", "wire": "$.request(\"speaker\",$.send(\"listener\",\"calibration report\",\"omar\"))"},
+    {"id": "u08", "text": "Does Nadia wear gloves?", "wire": "Q($.wear(\"nadia\",\"gloves\"))"},
+    {"id": "u09", "text": "I am worried about the deadline.", "wire": "$.worried_about(\"speaker\",\"deadline\")"}
+  ],
+  "roles": {"instruction": "u07", "question": "u08", "emotion": "u09"}
+}

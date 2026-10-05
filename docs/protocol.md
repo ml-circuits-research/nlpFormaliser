@@ -44,6 +44,8 @@ For each source and semantic category/tag, report validity, missing/added/change
 
 The common judge offers direct equivalence and bidirectional checks. Either false direction disproves equivalence; otherwise an unknown direction leaves it unknown. Malformed and contradictory verdicts remain judge errors. Native strategy-specific judges and their protocols are preserved as separate instruments: discourse-context review and risk sampling, MicroIR compact difference scoring, lab coverage/faithfulness and repeated-judge variance.
 
+Reasoning eligibility is screened separately from equivalence and reported per category: symbol length (every symbol has at most 3 words, see the [strategy map](strategies.md)), source echo (4+ consecutive source words inside one symbol, label or template, with an echo ratio), coverage, control-only and unresolved content. Explanatory fields required by this protocol (ambiguity descriptions, glosses) may be long, but they are never rendered into the CNL that the judge scores.
+
 Calibrate judges with native corrupted pairs, positive controls, scope/role/speech-act perturbations and independent review. Same-model generation and judging is development evidence only. Stronger-tier rejudging reuses exact stored formalizations. Never infer semantic correctness from fluency or the judge's confidence alone.
 
 ## Reproducibility and costs

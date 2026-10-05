@@ -10,11 +10,33 @@ The old experiments remain evidence about those exact adapters and service behav
 
 | Family | Restored | Deliberate integration differences | Test evidence |
 |---|---|---|---|
-| Formalizer Lab | full IR/ProtoIR/artifacts; CNL templates; standalone compiler; behavior/structural/reuse metrics; corruption generator; original repair strategy | provider adapter replaced by predefined Pworker tasks; backend coverage and template-slot diagnostics added non-destructively | all 60 original heuristic outputs match IR, evidence and CNL; native tests; full-field compiler round trip |
+| Formalizer Lab | full IR/ProtoIR/artifacts; CNL templates; standalone compiler; behavior/structural/reuse metrics; corruption generator; original repair strategy | provider adapter replaced by predefined Pworker tasks; backend coverage and template-slot diagnostics added non-destructively; later review divergences below | all 60 original heuristic outputs matched IR, evidence and CNL at restoration (now: evidence matches, IR/CNL diverge as recorded below); native tests; full-field compiler round trip |
 | MicroIR | original prompt; full scoped vocabulary; readable/compact CNL; judge/repair pipeline with history and best selection; source benchmark and corrupted pairs | safe formula validation and constant quoting fixes; default repairs disabled; all runtime transports Pworker | 30 gold readable+compact CNL parity; original pipeline tests; finite-scope probes |
 | Discourse parser | conversation state; complete turns/acts/ambiguities; source audit; helper requests and load; all/risky/sampled judging; native response validation | direct HTTP caller removed; Pworker review task; explicit backend gap | full 30-turn state/AST/CNL parity and native review tests |
 | CNL-Core | frozen rules/prompts/examples; all speech acts; explicit ambiguity; surface contract | Pworker task replaces model transport; control-only research status | native tests and lossless 50-record dataset import |
 | EVL | existing checker, interpreter, FOL and QA implementation; original spec/prompts | first-pass rounds=0; task integration | original checker/CNL/FOL/QA fixtures |
+
+## Intentional divergences after the strategy review
+
+`strategies/_archive` stays untouched as provenance. `test/archive-parity.test.mjs` compares behaviour that is intentionally unchanged against the archive and changed behaviour against recorded fixtures (`test/fixtures/*.json`, re-recorded only deliberately with `test/fixtures/record-divergences.mjs`). `test/native-on-active.test.mjs` runs the archive's own lab, discourse, MicroIR and CNL-Core unit tests against the active modules; only the MicroIR assertions listed below are rewritten, by exact-match transforms.
+
+| Family | Divergence | Reason | Evidence |
+|---|---|---|---|
+| all | 3-word symbol rule in every prompt; audit category `symbolLength`; echo detector | user decision: long names hide untranslatable meaning | `test/symbols-audit.test.mjs` |
+| Lab | judged CNL ignores glosses, long labels/templates; labels only restyle their symbol; ambiguities render as `NOTED AMBIGUITY #k` | model-written metadata leaked meaning into the judged CNL | `test/strategy-regressions.test.mjs` (H1) |
+| Lab | contextual atoms render inside their context; closure partitions facts by context | contextual facts unified with global rules | (M1) |
+| Lab | `queryStatus` returns `INCONSISTENT` for p and not p in one partition | no contradiction detection | (M2) |
+| Lab | prompt v2 (schemas for queries/contexts/ambiguities/externals, symbol rule); `validateIR` checks queries, context references, arity | unchecked query and context structure | (Low) |
+| Lab | draft v2: questions, conditionals, modal/attitude clauses, unresolved pronouns and long objects become `unsupported_*`/`unrepresented_*` notes; subject coordination and relative type clauses handled; negation updates the antecedent; camelCase-aware, Unicode-preserving slugs | questions and conditionals were asserted as facts and clause text was copied into names | 58 of 60 archive cases recorded in `lab-divergences.json` (H4) |
+| Lab | ProtoIR negation markers for `n't`/`cannot`; one question marker per interrogative sentence | missed negation and multi-sentence questions | (M5); unchanged on the 60 archive cases |
+| Lab | common view ignores `version`/`meta`/`symbols` and empty sections | the Lab common view could never be complete | `test/common-cnl.test.mjs` (M3) |
+| MicroIR | constants serialized quoted (earlier fix); free variable-like identifiers (`x`, `v2`) rejected; nested lists, malformed numbers and nested Q/W rejected; strict judge types | unbound `x` silently became a constant; `Boolean("false")` was true | (H3, M8); archive gold `merge_approvals` leaves `c` unbound and is now rejected |
+| EVL | FOL nests content/cause/purpose events, conditionals, links and acts; entities quantified at the lowest covering proposition | embedded content was asserted as fact with free variables | 143 of 325 FOL fixtures differ, recorded in `fol-nested.json`; native FOL kept and still matches the Python reference (H6) |
+| EVL | QA compares modality, stated tense, frequency and `no`/`few` participants | operators were ignored | all 53 QA fixtures unchanged (H5) |
+| EVL | `name/2` must be a proper name of at most 3 tokens; lemmas counted with camelCase | free text in names | checker verdicts unchanged on all fixtures (M6) |
+| EVL | negation scoped over a name/pronoun/group stays on the verb; `modal(E, need)` and `scope(neg(E), modal)` | negation was dropped; "need not" was inexpressible | English fixtures unchanged (M7) |
+| Discourse | abbreviation/decimal-aware splitting and tokens; contraction expansion; `UNRESOLVED_FRAGMENT#k`; ambiguity questions/messages not rendered | verbatim source in the judged CNL; ".tmp", "9 a.m." split sentences | 30-turn AST and state equal the archive; CNL recorded in `discourse-divergences.json` (M4) |
+| CNL-Core | no empty `INPUT:` block in the predefined task | malformed prompt | (Low) |
 
 ## What is not claimed
 

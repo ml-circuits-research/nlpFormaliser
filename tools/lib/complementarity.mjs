@@ -22,7 +22,13 @@ function identity(row) {
   ])).digest('hex');
 }
 
-export function compareStrategies(rows) {
+export const isControlOnly = name => !!resolveStrategy(name)?.controlOnly;
+
+// Control-only strategies (surface normalization) are reported separately and
+// never enter pairwise oracle/complementarity or competence rankings.
+export function compareStrategies(allRows) {
+  const controlRows = allRows.filter(row => isControlOnly(row.strategy));
+  const rows = allRows.filter(row => !isControlOnly(row.strategy));
   const cases = new Map(), strategies = new Set();
   for (const row of rows) {
     if (!row.id || !row.strategy || typeof (row.sourceText ?? row.text) !== 'string') {
@@ -89,7 +95,13 @@ export function compareStrategies(rows) {
   const identicalJudgeInputs=[...duplicateInputs].filter(([,group])=>group.length>1).map(([hash,group])=>({
     hash,rows:group,contradictoryLabels:new Set(group.map(r=>r.label).filter(x=>x!==null)).size>1,
   }));
-  return {schema: 'strategy-complementarity/1', cases: cases.size, strategies: names, pairs, competence,
+  const controls = Object.fromEntries([...new Set(controlRows.map(r => r.strategy))].sort().map(name => {
+    const selected = controlRows.filter(r => r.strategy === name), labeled = selected.filter(r => semanticLabel(r) !== null);
+    const passed = labeled.filter(r => semanticLabel(r)).length;
+    return [name, {cases: selected.length, labeled: labeled.length, passed, accuracy: labeled.length ? passed / labeled.length : null,
+      note: 'Control-only strategy: excluded from pairs, oracle and competence rankings.'}];
+  }));
+  return {schema: 'strategy-complementarity/1', cases: cases.size, strategies: names, pairs, competence, controls,
     families:Object.fromEntries(names.map(name=>[name,resolveStrategy(name)?.family??'unknown'])),identicalJudgeInputs,
     limitations: [
       'Labels are model judgments, not independently established semantic truth.',

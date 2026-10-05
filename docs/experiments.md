@@ -89,3 +89,35 @@ Rejudges the eight formalizations from 019 without regenerating or repairing the
 ## 022 — Restored deterministic strategies across all base texts
 
 All 138 base texts, both original deterministic architectures, zero model calls and zero repairs. Deterministic Rule Draft yields three nonempty valid outputs and two screen-eligible exports. Discourse Semantic Graph yields 138 structurally valid outputs but zero reasoning-eligible exports: the original architecture retains unresolved structure and has no downstream compiler. This is coverage, not 138 semantic successes. Restoring completeness changes the visibility of unsupported material; it does not make it executable.
+
+## 024–027 — Judge calibration on consolidated controls
+
+Four requested judge models, sixteen controls each, individual requests, cache off, no repairs; see [judge calibration](evaluation/judge-calibration-consolidated.md). As recorded: GPT-OSS-120B 16/16; DeepSeek-V4-Flash-0731 15/16 with one false reject; Qwen3.8 27b 12/16 with four judge errors; DeepSeek-V4.1-Flash stopped after two provider failures (availability evidence only). GPT-OSS-120B was chosen as provisional judge.
+
+**Correction.** The decisive control, `formal-ordered-arguments`, was mislabeled: it paired "a printer" with the constant "printer", which loses the indefinite description and is not equivalent by the rubric. On corrected labels GPT-OSS-120B has one false accept and DeepSeek-V4 none, so the provisional choice rested on a mislabeled control. The long controls also reused `consolidated/base/01`, an evaluated document. The control set has been rebuilt on a dedicated document; the frozen 024–027 directories are unchanged.
+
+## 028 — First consolidated comparison (stopped at 30/80)
+
+Eight first-pass variants on the ten `consolidated-first10` documents, generation and bidirectional judging both with GPT-OSS-120B (self-judged: now refused without `--allow-self-judge`), batch size one, no repairs. The run was deliberately stopped at **30 of 80 rows** after provider 429 throttling and client deadlines; see `interrupted.json`. Recorded rows: Explicit Scope Logic 10 (8 valid, all 7 judged documents not equivalent, one judge timeout, one parse failure, one infrastructure timeout); Evidence Guided Logic 10 (7 valid, all judged not equivalent, 3 IR validation failures); Direct Context Logic 10 (5 valid, all judged not equivalent, 5 infrastructure timeouts). No document was accepted. Two independent audits ([audit](experiments/028-consolidated-first10/independent-audit.md)) find the negative verdicts largely justified but several judge explanations wrong in detail, and the reasoning screen passing outputs with lost request force.
+
+Evidence Guided Logic concretized "tomorrow" in `base/01` to `2026_10_06t09_00`/`10_00`, i.e. the run date leaked into the representation. That is unanchored temporal resolution and must be scored as **added** content, not as source-grounded equivalence; the harness now flags it deterministically (`addedContent`) and the unit judge is instructed accordingly. Consolidated cases then carried `reference:{}`, so 028–032 executed **zero behavioral probes**; atomic probes are now attached to consolidated documents. The selection also includes calibration cases `base/01` and `base/04`. Results are development evidence only, with no ranking.
+
+## 029 — Targeted second-model judge review
+
+Three frozen Explicit Scope Logic rows from 028 (`base/01`, `base/10`, `speech-acts/01`) rejudged with DeepSeek-V4-Flash-0731; no regeneration. All three documents were judged not equivalent in both directions. Diagnostic, non-random selection: it estimates neither judge accuracy nor strategy success. The [independent audit](experiments/029-consolidated-judge-review/independent-audit.md) finds the verdicts defensible but the explanations mixed with formatting complaints and claims contradicted by the CNL.
+
+## 030 — Resumed continuation (8 rows, interrupted)
+
+Continuation of 028 with lower concurrency and longer deadlines. Interrupted after **8 rows**, all Explicit Scope Logic: seven reused 028 outcomes and `base/10` was rejudged and again produced a judge error. No new semantic evidence. Under the current resume rules a run with this protocol would also be compared against tier/selection/batch options and Ploinky-Worker source differences would be listed.
+
+## 031 — Capacity-aware continuation (2 rows, incomplete)
+
+Canonical continuation attempt after Worker capacity-wait hardening. Only **2 rows** were written (`base/01`, `base/04`, both reused from 028) before the run stopped while waiting on provider capacity (`live-capacity-observation.json`: ten 429 responses, task still waiting). It has no summary and no new evidence; the 028 comparison remains incomplete at 30/80.
+
+## 032 — Deterministic baseline on the first ten
+
+Deterministic Rule Draft and Discourse Semantic Graph on the same ten documents, offline, no judgments. Deterministic Rule Draft: 3/10 valid, 1/10 reasoning-eligible; Discourse Semantic Graph: 10/10 structurally valid, 0/10 eligible (no downstream compiler). Equivalence is unmeasured, not 0%. Coverage evidence only.
+
+## Harness changes after 024–032
+
+Calibration cases are excluded from development/held-out partitions; judge controls use a dedicated document; self-judging is refused by default; `--controls` injects the control set and gates the run on sensitivity/specificity; judge prompts are unbatched by default; truncation and batch-envelope errors are budget/infrastructure failures retried on resume; resume compares the full protocol and lists Worker source differences; rejudge reuses the stored model input. The primary endpoint is now unit-level preservation with clustered intervals and paired tests (see [protocol](protocol.md#methodology)). Earlier runs are not re-scored in place.

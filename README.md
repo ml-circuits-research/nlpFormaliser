@@ -8,20 +8,24 @@ The archive architectures have been restored after an initially restrictive inte
 npm install
 node ../Ploinky-Worker/bin/pworker.mjs start
 npm test
-npm run eval -- --strategy all --stage calibration --tier medium --judge-tier medium --batch-size 5
+npm run eval -- --strategy all --stage calibration --tier medium --judge-model UPSTREAM/OTHER-FAMILY-MODEL --batch-size 5
 ```
 
-The five calibration cases are debugging material, never a strategy ranking. See [protocol](docs/protocol.md), [strategy inventory](docs/strategies.md), and [experiment log](docs/experiments.md). Results, prompts, responses, task progress, source hashes and model catalog snapshots are stored in `docs/experiments/<id>/`. Existing experiment directories are never overwritten.
+The five calibration cases are debugging material, never a strategy ranking. The judge must differ from the formalizer (`--allow-self-judge` marks an exception as development-only evidence). The primary endpoint is unit-level (sentence) preservation among eligible outputs, with clustered bootstrap intervals and paired comparisons; whole-document equivalence is secondary and eligibility is reported separately (see [protocol](docs/protocol.md#methodology)). See [protocol](docs/protocol.md), [strategy inventory](docs/strategies.md), and [experiment log](docs/experiments.md). Results, prompts, responses, task progress, source hashes and model catalog snapshots are stored in `docs/experiments/<id>/`. Existing experiment directories are never overwritten.
 
 ```sh
-# No model calls: inspect deterministic coverage across all 138 base cases.
-npm run eval -- --strategy symbolic --strategy lab-heuristic --stage full --offline
-# Development and held-out partitions exclude the calibration cases.
-npm run eval -- --strategy compact-scope-logic --stage development --tier medium --judge-tier best
-npm run eval -- --strategy compact-scope-logic --stage heldout --tier medium --judge-tier best
+# No model calls: inspect deterministic coverage across all 29 consolidated cases.
+npm run eval -- --strategy discourse-semantic-graph --strategy deterministic-rule-draft --stage full --offline
+# The 138 archived base texts remain loadable explicitly:
+npm run eval -- --set base --strategy discourse-semantic-graph --stage full --offline
+# Development and held-out partitions exclude the five calibration cases.
+# --controls injects the fixed judge control set and gates the run on it.
+npm run eval -- --strategy compact-scope-logic --stage development --tier medium --judge-model UPSTREAM/OTHER-FAMILY-MODEL --controls
+npm run eval -- --strategy compact-scope-logic --stage heldout --tier medium --judge-model UPSTREAM/OTHER-FAMILY-MODEL --controls
 # Rejudge identical saved formalizations, without paying for formalization again.
 npm run eval -- --rejudge docs/experiments/RUN/items.jsonl --judge-tier best
-# Calibrate the judge separately on identity, paraphrase, and semantic corruptions.
+# Calibrate the judge on the fixed control set (dedicated control document,
+# long native-CNL corruptions, rubric controls, archive scope-corruption pairs).
 node tools/calibrate-judge.mjs --tier medium --mode bidirectional
 ```
 

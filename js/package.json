@@ -7,7 +7,7 @@
   "exports": { ".": "./index.mjs" },
   "bin": { "nlpf": "./bin/nlpf.mjs" },
   "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test test/" },
+  "scripts": { "test": "node --test test/*.test.mjs" },
   "dependencies": { "compromise": "^14.17.0" },
   "optionalDependencies": { "@anthropic-ai/sdk": "^0.131.0" },
   "license": "MIT"

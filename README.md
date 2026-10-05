@@ -95,6 +95,46 @@ acceptate cu verbalizatorul LLM și le-am executat cu interpretorul determinist:
   (Haiku a „smuggle-uit” `more_than(forty_hours_per_week)` la s35). Asta e singurul cod acceptat
   din rulare care ar fi respins acum.
 
+## Folosire ca unealtă separată (CLI și librărie JS)
+
+Fiecare pas al buclei se poate folosi separat. Pașii deterministici (verificare, verbalizare, execuția
+întrebărilor) nu folosesc niciun LLM. Pașii cu LLM folosesc implicit Haiku: prin `ANTHROPIC_API_KEY` +
+SDK, sau prin `claude -p` dacă nu există cheie.
+
+### CLI
+
+```bash
+bin/nlpf check fapte.pl                 # validare în SWI-Prolog → JSON {ok, errors, warnings}; exit 1 dacă e invalid
+bin/nlpf verbalize fapte.pl             # execuție deterministă → engleză
+bin/nlpf fol fapte.pl                   # citire în logică de ordinul I
+bin/nlpf formalize "Not every child likes chocolate."                 # LLM → cod EVL
+bin/nlpf judge "text original" "text reconstruit"                     # LLM → {equivalent, differences}
+bin/nlpf refine "text" --code fapte.pl --realization "..." --differences "..."   # LLM → cod reparat
+bin/nlpf roundtrip "Can you pass me the salt?" --rounds 4 [--trace]   # toată bucla → JSON
+bin/nlpf ask --context ctx.pl --question-code q.pl                    # execută întrebarea în Prolog
+bin/nlpf answer --context "Most birds can fly, but penguins cannot. Pingu is a penguin." --question "Can Pingu fly?"
+bin/nlpf prompts                        # prompturile + specificația DSL, pentru LLM-ul tău
+bin/nlpf serve                          # server JSON-lines pe stdin/stdout
+```
+Orice argument de tip text sau cod poate fi un fișier, codul literal sau `-` (stdin).
+După `pip install -e .`, comanda se numește direct `nlpf`.
+
+### Librărie JS (`js/nlpformaliser.mjs`, Node ≥ 18, fără dependențe)
+
+```js
+import { Formaliser, customLoop } from "./js/nlpformaliser.mjs";
+const f = await Formaliser.start();                  // pornește o dată `nlpf serve`
+const code = await f.formalize("Mary bought a red car yesterday.");
+const { ok, errors } = await f.check(code);
+const back = await f.verbalize(code);                 // "Mary bought a red car yesterday."
+const v = await f.judge("Mary bought a red car yesterday.", back);
+const r = await f.roundtrip("Not every child likes chocolate.");          // bucla completă
+const a = await f.ask(code, "event(e1,buy). role(e1,agent,x1). wh(x1,who). act(a1,ask,e1).");
+await f.close();
+```
+`customLoop(f, text, {rounds, onStep})` din același fișier este bucla scrisă în JS din pașii separați, gata
+de modificat (alt judecător, altă regulă de oprire, om în buclă...). Exemplu rulabil: `node js/example.mjs [--llm]`.
+
 ## Structura repo-ului
 
 ```
@@ -108,6 +148,10 @@ nlpformaliser/
   loop.py              bucla formalizare → verificare → execuție → judecată → reparare
   mutate.py            mutații semantice pentru testarea judecătorului
   llm.py               acces LLM: Anthropic SDK (dacă există ANTHROPIC_API_KEY) sau `claude -p`, cu cache pe disc
+  kb.pl, qa.py         execuția întrebărilor ca interogări Prolog (taxonomie, generici cu excepții, reguli, praguri numerice)
+  cli.py               CLI `nlpf` + server JSON-lines
+bin/nlpf               rulează CLI-ul fără instalare
+js/nlpformaliser.mjs   librăria JS (+ js/example.mjs)
 experiments/run.py     rulează experimentul + evaluare + raport (reia de unde a rămas)
 experiments/crosscheck.py
 data/sentences.jsonl

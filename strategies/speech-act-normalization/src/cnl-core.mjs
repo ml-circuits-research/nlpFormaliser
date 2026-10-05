@@ -89,6 +89,8 @@ export function buildFormalizationPrompt(input, options = {}) {
     context = '',
     examples = DEFAULT_EXAMPLES,
     includeRules = true,
+    extraRules = [],
+    includeInput = true,
     modelNote = 'Return only CNL-Core lines.'
   } = options;
 
@@ -101,7 +103,7 @@ export function buildFormalizationPrompt(input, options = {}) {
 
   if (includeRules) {
     parts.push('', 'Rules:');
-    RULES.forEach((rule, i) => parts.push(`${i + 1}. ${rule}`));
+    [...RULES, ...extraRules].forEach((rule, i) => parts.push(`${i + 1}. ${rule}`));
   }
 
   if (examples && examples.length) {
@@ -121,8 +123,12 @@ export function buildFormalizationPrompt(input, options = {}) {
     parts.push(c);
   }
 
-  parts.push('', 'INPUT:');
-  parts.push(String(input ?? '').trim());
+  // A predefined task template supplies its input separately; it must not carry
+  // an empty INPUT: block.
+  if (includeInput) {
+    parts.push('', 'INPUT:');
+    parts.push(String(input ?? '').trim());
+  }
   parts.push('', modelNote);
   return parts.join('\n');
 }

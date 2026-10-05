@@ -1,8 +1,12 @@
 import {atomKey, normalizeAtom, normalizeIR} from "./ir.mjs";
 import {isVariable} from "./util.mjs";
 
+// Facts are partitioned by context: a global (context-free) rule atom matches
+// only global facts, and an atom scoped to context c matches only facts in c.
+// A belief or hypothetical therefore never feeds a global rule.
 function unifyAtom(pattern, fact, env) {
   if (pattern.pred !== fact.pred || Boolean(pattern.neg) !== Boolean(fact.neg) || pattern.args.length !== fact.args.length) return null;
+  if ((pattern.context ?? null) !== (fact.context ?? null)) return null;
   const next = {...env};
   for (let i = 0; i < pattern.args.length; i += 1) {
     const p = pattern.args[i];
@@ -51,9 +55,19 @@ export function closure(input, {maxRounds = 50} = {}) {
   return [...facts.values()];
 }
 
+/** Pairs p / NOT p derived inside the same context partition. */
+export function contradictions(input, facts = closure(input)) {
+  const keys = new Set(facts.map(atomKey));
+  return facts.filter((f) => !f.neg && keys.has(atomKey({...f, neg: true})));
+}
+
 export function queryStatus(input, query) {
   const q = normalizeAtom(query);
-  const keys = new Set(closure(input).map(atomKey));
+  const facts = closure(input);
+  // An inconsistent partition entails everything classically; report it instead
+  // of returning an arbitrary TRUE/FALSE.
+  if (contradictions(input, facts).some((f) => (f.context ?? null) === (q.context ?? null))) return "INCONSISTENT";
+  const keys = new Set(facts.map(atomKey));
   if (keys.has(atomKey(q))) return "TRUE";
   if (keys.has(atomKey({...q, neg: !q.neg}))) return "FALSE";
   return "UNKNOWN";

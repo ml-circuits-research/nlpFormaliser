@@ -2,6 +2,10 @@ import {buildProtoIR, compactProtoIR} from "./protoir.mjs";
 import {normalizeIR, validateIR} from "./ir.mjs";
 import {extractJsonObject} from "./util.mjs";
 import {FORMAL_IR_SPEC} from "./strategies/direct-llm.mjs";
+import {labSymbolViolations} from "../coverage.mjs";
+import {decompositionFeedback} from "../../../tools/lib/symbols.mjs";
+
+export const REPAIR_SYSTEM = `${FORMAL_IR_SPEC}\nYou are a semantic program repairer. The original NL is authoritative. The draft is fallible evidence. Preserve every correct item when possible; delete unsupported items; fix wrong roles, polarity, scope and reference; add omitted semantics. If the NL is genuinely ambiguous, preserve the ambiguity rather than guessing. Decompose every symbol that violates the 3-word rule.`;
 
 export class SemanticRepairer {
   constructor({client, includeProto = true} = {}) {
@@ -12,11 +16,13 @@ export class SemanticRepairer {
 
   async repair(text, draftInput, {proto = buildProtoIR(text)} = {}) {
     const draft = normalizeIR(draftInput);
-    const system = `${FORMAL_IR_SPEC}\nYou are a semantic program repairer. The original NL is authoritative. The draft is fallible evidence. Preserve every correct item when possible; delete unsupported items; fix wrong roles, polarity, scope and reference; add omitted semantics. If the NL is genuinely ambiguous, preserve the ambiguity rather than guessing.`;
+    const system = REPAIR_SYSTEM;
     const user = [
       "Natural-language source:", text,
       this.includeProto ? `\nConservative ProtoIR:\n${JSON.stringify(compactProtoIR(proto))}` : "",
       `\nDraft Formal IR:\n${JSON.stringify(draft)}`,
+      // Symbol-length violations are deterministic diagnostics for the repair round.
+      ...(() => { const v = decompositionFeedback(labSymbolViolations(draft)); return v.length ? [`\nSymbol violations to fix:\n- ${v.join("\n- ")}`] : []; })(),
       "\nReturn only repaired Formal IR JSON."
     ].join("\n");
     const raw = await this.client.complete({system, user});

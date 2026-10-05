@@ -6,7 +6,7 @@ import {validateIR} from './src/ir.mjs';
 import {renderCNL} from './src/cnl.mjs';
 import {compileFormalModule} from './src/compiler.mjs';
 import {behaviorMetrics,structuralMetrics,reuseMetrics} from './src/evaluator.mjs';
-import {reasoningCoverage,metadataAudit} from './coverage.mjs';
+import {reasoningCoverage,metadataAudit,labSymbols} from './coverage.mjs';
 
 export {renderCNL as cnl,validateIR as checkLogic};
 export function labStrategy(kind) {
@@ -20,7 +20,7 @@ export function labStrategy(kind) {
       return {formalization:r.ir,proto:r.proto,artifacts:r.artifacts,metadataAudit:metadataAudit(r.ir),
         ...(kind==='repair'?{reuse:reuseMetrics(r.artifacts.draft,r.ir)}:{})};
     },
-    check:validateIR,toCNL:renderCNL,
+    check:validateIR,toCNL:renderCNL,symbols:labSymbols,
     toReasoning(ir) {
       return {format:'formal-ir-module/0.2',ir,code:compileFormalModule(ir),coverage:reasoningCoverage(ir),
         semantics:'Standalone module renders the complete IR. The bundled Horn reasoner executes only its supported subset; retained contexts and ambiguity are not flattened into facts.'};

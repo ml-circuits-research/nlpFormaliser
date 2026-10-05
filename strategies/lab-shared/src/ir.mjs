@@ -127,6 +127,41 @@ export function validateIR(ir) {
       if (!bodyVars.has(v)) errors.push(`rules[${i}] head variable ${v} is not bound in the body`);
     }
   }
+  // Queries: {vars:[?x,...], where:[ATOM,...]}; every projected variable occurs in where.
+  const queryAtoms = [];
+  for (const [i, q] of n.queries.entries()) {
+    if (!q || typeof q !== "object" || Array.isArray(q)) { errors.push(`queries[${i}] must be an object {vars, where}`); continue; }
+    if (!Array.isArray(q.where) || !q.where.length) { errors.push(`queries[${i}].where must be a non-empty array of atoms`); continue; }
+    let atoms;
+    try { atoms = q.where.map(normalizeAtom); } catch (e) { errors.push(`queries[${i}].where: ${e.message}`); continue; }
+    queryAtoms.push(...atoms.map((a, j) => [a, `queries[${i}].where[${j}]`]));
+    const used = new Set(atoms.flatMap((a) => a.args.filter(isVariable)));
+    if (q.vars !== undefined && !Array.isArray(q.vars)) errors.push(`queries[${i}].vars must be an array`);
+    for (const v of q.vars ?? []) {
+      const nv = typeof v === "string" ? normalizeTerm(v) : v;
+      if (!isVariable(nv)) errors.push(`queries[${i}] projects ${JSON.stringify(v)}, which is not a ?variable`);
+      else if (!used.has(nv)) errors.push(`queries[${i}] variable ${nv} does not occur in where`);
+    }
+  }
+  // Context references must name a declared context; ids are unique.
+  const contextIds = new Set();
+  for (const [i, c] of n.contexts.entries()) {
+    if (!c || typeof c !== "object" || typeof c.id !== "string" || !c.id) { errors.push(`contexts[${i}] needs a string id`); continue; }
+    if (contextIds.has(c.id)) errors.push(`contexts[${i}] duplicates id ${c.id}`);
+    contextIds.add(c.id);
+  }
+  const allAtoms = [
+    ...n.facts.map((a, i) => [a, `facts[${i}]`]),
+    ...n.rules.flatMap((r, i) => [[r.head, `rules[${i}].head`], ...r.body.map((a, j) => [a, `rules[${i}].body[${j}]`])]),
+    ...queryAtoms
+  ];
+  for (const [a, path] of allAtoms) if (a.context !== undefined && !contextIds.has(a.context)) errors.push(`${path} refers to undeclared context ${a.context}`);
+  // One predicate name, one arity.
+  const arity = new Map();
+  for (const [a, path] of allAtoms) {
+    if (!arity.has(a.pred)) arity.set(a.pred, [a.args.length, path]);
+    else if (arity.get(a.pred)[0] !== a.args.length) errors.push(`${path} uses ${a.pred}/${a.args.length}, but ${arity.get(a.pred)[1]} uses ${a.pred}/${arity.get(a.pred)[0]}`);
+  }
   return {ok: errors.length === 0, errors, ir: n};
 }
 

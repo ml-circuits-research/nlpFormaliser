@@ -1,11 +1,15 @@
+// camelCase is split before lowercasing so that it cannot hide extra words from
+// the 3-word symbol rule; non-Latin letters are kept instead of collapsing to "".
 export function slug(value) {
   return String(value ?? "")
     .trim()
+    .replace(/(\p{Ll})(\p{Lu})/gu, "$1_$2")
+    .replace(/(\p{Lu}+)(\p{Lu}\p{Ll})/gu, "$1_$2")
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/^\s*(the|a|an)\s+/i, "")
-    .replace(/[^a-z0-9?]+/g, "_")
+    .replace(/[^\p{L}\p{N}?]+/gu, "_")
     .replace(/^_+|_+$/g, "");
 }
 

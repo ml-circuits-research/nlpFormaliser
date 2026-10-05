@@ -7,7 +7,9 @@ export const digest=x=>createHash('sha256').update(typeof x==='string'?x:JSON.st
 
 // Independent callers are collected into bounded waves. Each wave loads the
 // predefined task file and explicitly enqueues/flushes it through Pworker.
-export function taskLLM({file,tier='small',model=null,batchSize=5,cache='use',maxTokens=8000,timeoutMs=null,
+// A wave of batchSize inputs becomes one model request per task phase when Pworker's batch limits allow it:
+// maxItems defaults to the wave size and batchChars bounds the inputs' JSON size (Pworker splits larger waves).
+export function taskLLM({file,tier='small',model=null,batchSize=5,batchChars=200000,cache='use',maxTokens=8000,timeoutMs=null,
   purpose='job:nlpformaliser',onCall=()=>{},onTask=()=>{},client=null,offline=false}={}) {
   if(!file) throw new Error('A predefined .mjs task file is required');
   if(!Number.isSafeInteger(batchSize)||batchSize<1)throw new Error('Invalid batch size');
@@ -31,7 +33,7 @@ export function taskLLM({file,tier='small',model=null,batchSize=5,cache='use',ma
       const waveSize=batchSize===1?pending.length:batchSize;
       for(let start=0;start<pending.length;start+=waveSize) {
         const chunk=pending.slice(start,start+waveSize);
-        const worker=new Pworker({client:wrapped,config:{batching:{[tier]:{enabled:batchSize>1}}},onProgress:onTask});
+        const worker=new Pworker({client:wrapped,config:{batching:{[tier]:{enabled:batchSize>1,maxItems:batchSize,maxInputChars:batchChars}}},onProgress:onTask});
         for(const [i,p] of chunk.entries()) {
           if(base.begin.template!==p.system+INPUT_SUFFIX) throw new Error(`Prompt does not match predefined task ${taskFile}`);
           const task=structuredClone(base);

@@ -4,3 +4,7 @@ __pycache__/
 results/logs/
 results/v2/logs/
 js/node_modules/
+results/bench/run.log
+.llm_cache_js/
+results/bench/run*.log
+results/bench/summary.stdout

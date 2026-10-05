@@ -2,7 +2,10 @@
 // nlpf — command-line front-end of the nlpformaliser library. Every step of the loop is a command.
 import { readFileSync, existsSync } from "node:fs";
 import { parseArgs } from "node:util";
-import { Formaliser, anthropicLLM, ask, check, claudeCliLLM, fol, verbalize } from "../index.mjs";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
+import { Formaliser, SPEC, anthropicLLM, ask, benchmark, cachedLLM, check, claudeCliLLM, evlMethod, fol, llmRealizerMethod,
+  loadDataset, verbalize } from "../index.mjs";
 
 const HELP = `nlpf <command> [args]
 
@@ -20,6 +23,11 @@ LLM steps (default Haiku via ANTHROPIC_API_KEY, else the claude CLI; --model, --
   roundtrip "TEXT" [--rounds 4] [--context FILE] [--trace]   whole loop → JSON
   answer --context-text "TEXT" --question "TEXT" [--rounds 4] formalise both + execute → JSON
 
+benchmark (compare formalisation methods: NL → formalisation → execution → CNL → LLM judge):
+  bench --dataset FILE.jsonl [--method evl] [--method evl+llm] [--config methods.mjs]
+        [--rounds 4] [--concurrency 4] [--limit N] [--out DIR] [--model M] [--eval-model M] [--cache DIR]
+        --config: a module whose default export is ({ llm }) => [method, ...] (see src/methods.mjs)
+
 Arguments that name an existing file are read from it; "-" reads stdin.`;
 
 const read = (x) => (x === undefined || x === "-" ? readFileSync(0, "utf8") : existsSync(x) ? readFileSync(x, "utf8") : x);
@@ -32,17 +40,20 @@ const { values: o, positionals: pos } = parseArgs({
     code: { type: "string" }, realization: { type: "string" }, difference: { type: "string", multiple: true },
     error: { type: "string", multiple: true }, rounds: { type: "string" }, trace: { type: "boolean" },
     model: { type: "string" }, provider: { type: "string" }, help: { type: "boolean", short: "h" },
+    dataset: { type: "string" }, method: { type: "string", multiple: true }, config: { type: "string" },
+    concurrency: { type: "string" }, limit: { type: "string" }, out: { type: "string" }, "eval-model": { type: "string" },
+    cache: { type: "string" },
   },
 });
 const [cmd, ...args] = pos;
 if (!cmd || o.help) { console.log(HELP); process.exit(cmd ? 0 : 1); }
 
-const mkF = () => {
-  const model = o.model;
+const mkLLM = (model) => {
   const llm = o.provider === "sdk" ? anthropicLLM({ model }) : o.provider === "cli" ? claudeCliLLM({ model })
     : (process.env.ANTHROPIC_API_KEY ? anthropicLLM({ model }) : claudeCliLLM({ model }));
-  return new Formaliser({ llm });
+  return o.cache ? cachedLLM(llm, o.cache, model ?? "default") : llm;
 };
+const mkF = () => new Formaliser({ llm: mkLLM(o.model) });
 const ctx = o.context ? read(o.context) : undefined;
 
 switch (cmd) {
@@ -62,6 +73,23 @@ switch (cmd) {
   case "answer": {
     const r = await mkF().answer(o["context-text"], o.question, { rounds: Number(o.rounds ?? 4) });
     show({ answer: r.answer, support: r.support, mode: r.mode, contextCode: r.context.code, questionCode: r.question.code }); break;
+  }
+  case "bench": {
+    const llm = mkLLM(o.model ?? "claude-haiku-4-5");
+    const evalLLM = mkLLM(o["eval-model"] ?? "claude-sonnet-5-5");
+    let items = await loadDataset(o.dataset);
+    if (o.limit) items = items.slice(0, Number(o.limit));
+    const methods = [];
+    for (const name of o.method ?? (o.config ? [] : ["evl"])) {
+      if (name === "evl") methods.push(evlMethod({ llm }));
+      else if (name === "evl+llm") methods.push(llmRealizerMethod(evlMethod({ llm }), { llm, describe: SPEC }));
+      else throw new Error(`unknown built-in method ${name} (use --config for custom methods)`);
+    }
+    if (o.config) methods.push(...await (await import(pathToFileURL(resolve(o.config)).href)).default({ llm }));
+    const { markdown } = await benchmark({ methods, items, loopLLM: llm, evalLLM, rounds: Number(o.rounds ?? 4),
+      concurrency: Number(o.concurrency ?? 4), out: o.out,
+      onItem: (r) => console.error(`[${r.method}] ${r.id} rounds=${r.rounds} ${r.evalFinal?.label} :: ${r.finalCnl}`) });
+    console.log(markdown); break;
   }
   default: console.error(`unknown command: ${cmd}\n\n${HELP}`); process.exit(1);
 }

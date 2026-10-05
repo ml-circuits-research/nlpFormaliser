@@ -1,0 +1,6232 @@
+{
+  "id": "037-symbolic-offline-all29",
+  "stage": "full",
+  "requestedStage": "full",
+  "repairs": 0,
+  "finished": "2026-10-05T19:54:39.685Z",
+  "strategies": {
+    "discourse-semantic-graph": {
+      "controlOnly": false,
+      "probeRunner": false,
+      "n": 29,
+      "valid": 29,
+      "formalizationFailures": 0,
+      "budgetFailures": 0,
+      "infrastructureFailures": 0,
+      "notRunOffline": 0,
+      "reasoningEligible": 0,
+      "ineligibleBy": {
+        "symbolLength": 29,
+        "echo": 29,
+        "coverage": 29,
+        "controlOnly": 0,
+        "unresolved": 29
+      },
+      "meanEchoRatio": 0.24275172413793103,
+      "longSymbols": 236,
+      "judged": 0,
+      "equivalent": 0,
+      "notEquivalent": 0,
+      "uncertain": 0,
+      "equivalentWithNotes": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0,
+      "unanchoredDateRows": 0,
+      "behavioral": {
+        "casesWithProbes": 6,
+        "tested": 0,
+        "annotated": 146,
+        "coverage": 0,
+        "passed": 0,
+        "accuracy": null,
+        "accuracyAllAnnotated": 0,
+        "semantic": {
+          "tested": 0,
+          "passed": 0
+        },
+        "controls": {
+          "tested": 0,
+          "passed": 0
+        },
+        "unsupportedCases": 0
+      },
+      "byCategory": {
+        "base": {
+          "n": 14,
+          "valid": 14,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 14,
+            "echo": 14,
+            "coverage": 14,
+            "controlOnly": 0,
+            "unresolved": 14
+          },
+          "meanEchoRatio": 0.2819,
+          "longSymbols": 104,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "dialogue": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1689,
+          "longSymbols": 14,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "lab-development": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.15366666666666665,
+          "longSymbols": 19,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 3,
+            "tested": 0,
+            "annotated": 82,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "lab-heldout": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.26699999999999996,
+          "longSymbols": 33,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 3,
+            "tested": 0,
+            "annotated": 64,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "scope": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.21459999999999999,
+          "longSymbols": 39,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "speech-acts": {
+          "n": 5,
+          "valid": 5,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 5,
+            "echo": 5,
+            "coverage": 5,
+            "controlOnly": 0,
+            "unresolved": 5
+          },
+          "meanEchoRatio": 0.2037,
+          "longSymbols": 27,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        }
+      },
+      "byTag": {
+        "ability": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.31555,
+          "longSymbols": 14,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "ambiguity": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.11180000000000001,
+          "longSymbols": 8,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "and": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1678,
+          "longSymbols": 10,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "approximation": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3175,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "argument_order": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1678,
+          "longSymbols": 10,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "assertion": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3136,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "attribution": {
+          "n": 5,
+          "valid": 5,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 5,
+            "echo": 5,
+            "coverage": 5,
+            "controlOnly": 0,
+            "unresolved": 5
+          },
+          "meanEchoRatio": 0.25498000000000004,
+          "longSymbols": 53,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "belief": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.18065,
+          "longSymbols": 22,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "causality": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1678,
+          "longSymbols": 10,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "comparison": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.21885,
+          "longSymbols": 13,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "condition": {
+          "n": 6,
+          "valid": 6,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 6,
+            "echo": 6,
+            "coverage": 6,
+            "controlOnly": 0,
+            "unresolved": 6
+          },
+          "meanEchoRatio": 0.23978333333333335,
+          "longSymbols": 58,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "context": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1638,
+          "longSymbols": 5,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "converse": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.2825,
+          "longSymbols": 17,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "coreference": {
+          "n": 4,
+          "valid": 4,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 4,
+            "echo": 4,
+            "coverage": 4,
+            "controlOnly": 0,
+            "unresolved": 4
+          },
+          "meanEchoRatio": 0.1868,
+          "longSymbols": 41,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "embedded": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3136,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "emotion": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 29,
+            "echo": 29,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 29
+          },
+          "meanEchoRatio": 0.24275172413793103,
+          "longSymbols": 236,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "exception": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.2546333333333333,
+          "longSymbols": 34,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "exists": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.21459999999999999,
+          "longSymbols": 39,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "fluff": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.17906666666666668,
+          "longSymbols": 15,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "forall": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.21459999999999999,
+          "longSymbols": 39,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "hedge": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1202,
+          "longSymbols": 6,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "instruction": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 29,
+            "echo": 29,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 29
+          },
+          "meanEchoRatio": 0.24275172413793103,
+          "longSymbols": 236,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "intent": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1202,
+          "longSymbols": 6,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "intention": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.1336,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "mixed": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.11180000000000001,
+          "longSymbols": 8,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "mixed-speech-acts": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 29,
+            "echo": 29,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 29
+          },
+          "meanEchoRatio": 0.24275172413793103,
+          "longSymbols": 236,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "modal": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.21885,
+          "longSymbols": 13,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "modality": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.238,
+          "longSymbols": 29,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "modifier": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.2825,
+          "longSymbols": 17,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "multi_hop": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1678,
+          "longSymbols": 10,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "negation": {
+          "n": 7,
+          "valid": 7,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 7,
+            "echo": 7,
+            "coverage": 7,
+            "controlOnly": 0,
+            "unresolved": 7
+          },
+          "meanEchoRatio": 0.1921142857142857,
+          "longSymbols": 59,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "negation_scope": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1935,
+          "longSymbols": 12,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "obligation": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3175,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "only": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.2825,
+          "longSymbols": 17,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "only-if": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3175,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "only_if": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.18065,
+          "longSymbols": 22,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "or": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.22515,
+          "longSymbols": 27,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "ordering": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.238,
+          "longSymbols": 29,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "permission": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3175,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "polite": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3136,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "preference": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.12913333333333335,
+          "longSymbols": 13,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "preserve": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1202,
+          "longSymbols": 6,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "proposal": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.12913333333333335,
+          "longSymbols": 13,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "quantifier": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.25043333333333334,
+          "longSymbols": 20,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "quantity": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.2262666666666667,
+          "longSymbols": 29,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "question": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 29,
+            "echo": 29,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 29
+          },
+          "meanEchoRatio": 0.24275172413793103,
+          "longSymbols": 236,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "reference": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1202,
+          "longSymbols": 6,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "request": {
+          "n": 4,
+          "valid": 4,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 4,
+            "echo": 4,
+            "coverage": 4,
+            "controlOnly": 0,
+            "unresolved": 4
+          },
+          "meanEchoRatio": 0.17525000000000002,
+          "longSymbols": 20,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "revision": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.14200000000000002,
+          "longSymbols": 11,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "rules": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1678,
+          "longSymbols": 10,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "scope": {
+          "n": 4,
+          "valid": 4,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 4,
+            "echo": 4,
+            "coverage": 4,
+            "controlOnly": 0,
+            "unresolved": 4
+          },
+          "meanEchoRatio": 0.16847499999999999,
+          "longSymbols": 35,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "sequence": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1638,
+          "longSymbols": 5,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "stance": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1034,
+          "longSymbols": 2,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "state_change": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.2825,
+          "longSymbols": 17,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "temporal": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.21045,
+          "longSymbols": 9,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "time": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.21459999999999999,
+          "longSymbols": 39,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "tradeoff": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.1202,
+          "longSymbols": 6,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "uncertainty": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.31555,
+          "longSymbols": 14,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "unknown": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.22515,
+          "longSymbols": 27,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "unless": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 2,
+            "echo": 2,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 2
+          },
+          "meanEchoRatio": 0.2555,
+          "longSymbols": 19,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "until": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.3175,
+          "longSymbols": 7,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "usually": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 1,
+            "echo": 1,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 1
+          },
+          "meanEchoRatio": 0.2825,
+          "longSymbols": 17,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        },
+        "wh_question": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 3,
+            "echo": 3,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 3
+          },
+          "meanEchoRatio": 0.21459999999999999,
+          "longSymbols": 39,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 0
+          }
+        }
+      }
+    },
+    "deterministic-rule-draft": {
+      "controlOnly": false,
+      "probeRunner": true,
+      "n": 29,
+      "valid": 29,
+      "formalizationFailures": 0,
+      "budgetFailures": 0,
+      "infrastructureFailures": 0,
+      "notRunOffline": 0,
+      "reasoningEligible": 0,
+      "ineligibleBy": {
+        "symbolLength": 0,
+        "echo": 0,
+        "coverage": 29,
+        "controlOnly": 0,
+        "unresolved": 0
+      },
+      "meanEchoRatio": 0,
+      "longSymbols": 0,
+      "judged": 0,
+      "equivalent": 0,
+      "notEquivalent": 0,
+      "uncertain": 0,
+      "equivalentWithNotes": 0,
+      "eligibleEquivalent": 0,
+      "judgeErrors": 0,
+      "unanchoredDateRows": 0,
+      "behavioral": {
+        "casesWithProbes": 6,
+        "tested": 0,
+        "annotated": 146,
+        "coverage": 0,
+        "passed": 0,
+        "accuracy": null,
+        "accuracyAllAnnotated": 0,
+        "semantic": {
+          "tested": 0,
+          "passed": 0
+        },
+        "controls": {
+          "tested": 0,
+          "passed": 0
+        },
+        "unsupportedCases": 29
+      },
+      "byCategory": {
+        "base": {
+          "n": 14,
+          "valid": 14,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 14,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 14
+          }
+        },
+        "dialogue": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "lab-development": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 3,
+            "tested": 0,
+            "annotated": 82,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "lab-heldout": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 3,
+            "tested": 0,
+            "annotated": 64,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "scope": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "speech-acts": {
+          "n": 5,
+          "valid": 5,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 5,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 5
+          }
+        }
+      },
+      "byTag": {
+        "ability": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "ambiguity": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "and": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "approximation": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "argument_order": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "assertion": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "attribution": {
+          "n": 5,
+          "valid": 5,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 5,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 5
+          }
+        },
+        "belief": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "causality": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "comparison": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "condition": {
+          "n": 6,
+          "valid": 6,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 6,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 6
+          }
+        },
+        "context": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "converse": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "coreference": {
+          "n": 4,
+          "valid": 4,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 4,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 4
+          }
+        },
+        "embedded": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "emotion": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 29
+          }
+        },
+        "exception": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "exists": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "fluff": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "forall": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "hedge": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "instruction": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 29
+          }
+        },
+        "intent": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "intention": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "mixed": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "mixed-speech-acts": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 29
+          }
+        },
+        "modal": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "modality": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "modifier": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "multi_hop": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "negation": {
+          "n": 7,
+          "valid": 7,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 7,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 7
+          }
+        },
+        "negation_scope": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "obligation": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "only": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "only-if": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "only_if": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "or": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "ordering": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "permission": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "polite": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "preference": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "preserve": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "proposal": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "quantifier": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "quantity": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "question": {
+          "n": 29,
+          "valid": 29,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 29,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 6,
+            "tested": 0,
+            "annotated": 146,
+            "coverage": 0,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": 0,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 29
+          }
+        },
+        "reference": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "request": {
+          "n": 4,
+          "valid": 4,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 4,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 4
+          }
+        },
+        "revision": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "rules": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "scope": {
+          "n": 4,
+          "valid": 4,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 4,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 4
+          }
+        },
+        "sequence": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "stance": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "state_change": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "temporal": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "time": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        },
+        "tradeoff": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "uncertainty": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "unknown": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "unless": {
+          "n": 2,
+          "valid": 2,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 2,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 2
+          }
+        },
+        "until": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "usually": {
+          "n": 1,
+          "valid": 1,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 1,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 1
+          }
+        },
+        "wh_question": {
+          "n": 3,
+          "valid": 3,
+          "formalizationFailures": 0,
+          "budgetFailures": 0,
+          "infrastructureFailures": 0,
+          "notRunOffline": 0,
+          "reasoningEligible": 0,
+          "ineligibleBy": {
+            "symbolLength": 0,
+            "echo": 0,
+            "coverage": 3,
+            "controlOnly": 0,
+            "unresolved": 0
+          },
+          "meanEchoRatio": 0,
+          "longSymbols": 0,
+          "judged": 0,
+          "equivalent": 0,
+          "notEquivalent": 0,
+          "uncertain": 0,
+          "equivalentWithNotes": 0,
+          "eligibleEquivalent": 0,
+          "judgeErrors": 0,
+          "unanchoredDateRows": 0,
+          "behavioral": {
+            "casesWithProbes": 0,
+            "tested": 0,
+            "annotated": 0,
+            "coverage": null,
+            "passed": 0,
+            "accuracy": null,
+            "accuracyAllAnnotated": null,
+            "semantic": {
+              "tested": 0,
+              "passed": 0
+            },
+            "controls": {
+              "tested": 0,
+              "passed": 0
+            },
+            "unsupportedCases": 3
+          }
+        }
+      }
+    }
+  },
+  "calls": {
+    "requests": 0,
+    "uncached": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "knownCredits": 0,
+    "unknownCreditRequests": 0,
+    "knownUsd": 0,
+    "unknownUsdRequests": 0,
+    "byRole": {}
+  },
+  "ranking": {
+    "included": [
+      "discourse-semantic-graph",
+      "deterministic-rule-draft"
+    ],
+    "excludedControls": [],
+    "note": "Control-only strategies are reported but never ranked or used in oracle/complementarity."
+  },
+  "units": null,
+  "probeCoverage": {
+    "discourse-semantic-graph": {
+      "probeRunner": false,
+      "casesWithProbes": 6,
+      "annotated": 146,
+      "tested": 0,
+      "coverage": 0
+    },
+    "deterministic-rule-draft": {
+      "probeRunner": true,
+      "casesWithProbes": 6,
+      "annotated": 146,
+      "tested": 0,
+      "coverage": 0
+    }
+  },
+  "controls": null,
+  "independence": {
+    "status": "no-formalizer-model",
+    "selfJudge": false,
+    "sameFamily": false,
+    "warnings": [],
+    "served": {
+      "judgeServed": [],
+      "formalizerServed": [],
+      "overlap": []
+    }
+  },
+  "flags": [],
+  "warnings": [],
+  "rankingEligible": false
+}

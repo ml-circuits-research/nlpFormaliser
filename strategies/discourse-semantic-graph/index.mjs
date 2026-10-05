@@ -1,5 +1,6 @@
 import {formalizeText,formalizeConversation,renderTurn,auditConversation,buildBatchHelperRequests,summarizeHelperLoad,validateAst} from './src/formalizer.mjs';
 import {buildJudgeBatches,judgeBatches,combineValidation} from './src/judge.mjs';
+import {discourseSymbols} from './src/symbols.mjs';
 
 export function refreshCNL(conversation) {
   return {...conversation,turns:conversation.turns.map(t=>({...t,cnl:renderTurn(t),...(t.final_content?{final_cnl:renderTurn({...t,content:t.final_content})}:{})}))};
@@ -17,6 +18,7 @@ export default {
     return {ok:errors.length===0,errors};
   },
   toCNL: conversation=>refreshCNL(conversation).turns.map(t=>t.final_cnl??t.cnl).join('\n\n'),
+  symbols:discourseSymbols,
   toReasoning(conversation) {
     return {format:'discourse-ast/1',ast:conversation,coverage:{complete:false,unhandled:[{reason:'The source archive explicitly defers the downstream reasoning compiler. Full AST, uncertainty and discourse state are retained.'}]}};
   },
